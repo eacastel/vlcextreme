@@ -47,7 +47,8 @@ export default function Header({ logo }) {
             <div className="ml-4">
               <Link
                 to="/configure"
-                className="border-2 border-neon-green text-neon-green px-5 py-2 rounded-md font-bold hover:bg-neon-green/10 hover:shadow-[0_0_15px_#00FF87] transition-all text-sm xl:text-base whitespace-nowrap"
+                className="bg-neon-cyan text-carbon-black px-5 py-2 rounded-md font-bold text-sm xl:text-base whitespace-nowrap
+                transition-all duration-200 ease-in-out hover:bg-[#00A4C4] hover:shadow-[0_0_10px_#00A4C4]"
               >
                 Configura tu PC
               </Link>
@@ -82,7 +83,8 @@ export default function Header({ logo }) {
               <li className="mt-4">
                 <Link
                   to="/configure"
-                  className="border-2 border-neon-green text-neon-green px-8 py-2 rounded-md font-bold hover:bg-neon-green/10 hover:shadow-[0_0_15px_#FFE500] transition-all inline-block"
+                  className="bg-neon-cyan text-carbon-black px-8 py-2 rounded-md font-bold text-sm xl:text-base whitespace-nowrap
+                  transition-all duration-200 ease-in-out hover:bg-[#00A4C4] hover:shadow-[0_0_10px_#00A4C4]"
                 >
                   Configura tu PC
                 </Link>

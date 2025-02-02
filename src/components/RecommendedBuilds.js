@@ -117,25 +117,28 @@ const RecommendedBuilds = () => {
           ))}
         </div>
 
-        {/* 🔹 Grid Layout */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 mb-12">
-          {buildsData[activeTab].map((build, index) => (
-            <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
-              <div className="h-48 mb-4 rounded-lg overflow-hidden">
-                <GatsbyImage image={build.image} alt={build.name} className="rounded-lg" />
-              </div>
-              <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
-              <p className="text-medium-gray mb-4">{build.specs}</p>
-              <p className="text-light-gray text-sm mb-4">{build.premium}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-neon-cyan font-bold">{build.price}</span>
-                <Button to="/configure" size="sm" variant="outline" color="neongreen">
-                  Ver Configuración
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
+{/* 🔹 Grid Layout */}
+<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 mb-12">
+  {buildsData[activeTab].map((build, index) => (
+    <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
+      <div className="h-48 mb-4 rounded-lg overflow-hidden">
+        <GatsbyImage image={build.image} alt={build.name} className="rounded-lg" />
+      </div>
+      <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
+      <p className="text-medium-gray mb-4">{build.specs}</p>
+      <p className="text-light-gray text-sm mb-4">{build.premium}</p>
+
+      {/* 🔹 Flexbox Adjusted for Left Button & Right Price */}
+      <div className="flex justify-between items-center">
+        <Button to="/configure" size="sm" variant="outline" color="neongreen" className="order-1">
+          Ver Configuración
+        </Button>
+        <span className="text-light-gray font-bold order-2 lg:mr-4">{build.price}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
 
         {/* 🔹 Custom Configuration CTA */}
         <div className="text-center">

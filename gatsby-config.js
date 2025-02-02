@@ -18,50 +18,50 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-postcss`,
-        options: {
-          postCssPlugins: [
-            require(`tailwindcss`),
-            require(`autoprefixer`),
-          ],
-        },
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`),
+          require(`autoprefixer`),
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Zen Car Buying`,
-        short_name: `ZenCar`,
+        name: `VLCExtreme | Ordenadores Personalizados`,
+        short_name: `VLCExtreme`,
         start_url: `/`,
-        background_color: `#6B8385`, 
-        theme_color: `#F99F1B`, 
+        background_color: `#0D0D0D`, 
+        theme_color: `#00B4D8`, 
         display: `minimal-ui`,
-        icon: `src/images/vlcextreme-logo.png`, 
+        icon: `src/images/vlcextreme-logo.png`, // Ensure this is a valid PNG file
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-        head: false,
+        head: true,
         anonymize: true,
         respectDNT: true,
         exclude: ["/preview/**", "/do-not-track/me/too/"],
         pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        // Enables Google Optimize Experiment ID
-        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "zencarbuying.com",
+        cookieDomain: "vlcextreme.com",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: [`/admin/**`, `/private/**`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }
