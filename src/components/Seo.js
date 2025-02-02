@@ -11,6 +11,7 @@ const Seo = ({ title, description, pathname, children }) => {
             description
             author
             siteUrl
+            image
           }
         }
       }
@@ -19,7 +20,8 @@ const Seo = ({ title, description, pathname, children }) => {
 
   const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
+  const url = `${site.siteMetadata.siteUrl}${pathname || "/"}`
 
   return (
     <>
@@ -27,11 +29,13 @@ const Seo = ({ title, description, pathname, children }) => {
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={metaTitle} />
       <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={metaImage} />
+      <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata.author} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content={metaImage} />
       {canonical && <link rel="canonical" href={canonical} />}
       {children}
     </>
