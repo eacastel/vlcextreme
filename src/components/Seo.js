@@ -20,7 +20,10 @@ const Seo = ({ title, description, image, pathname, children }) => {
 
   const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
+  const metaImage = image 
+    ? `${site.siteMetadata.siteUrl}${image}` 
+    : `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`
+
   const url = `${site.siteMetadata.siteUrl}${pathname || "/"}`
 
   return (
@@ -36,7 +39,7 @@ const Seo = ({ title, description, image, pathname, children }) => {
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={metaImage} />
-      {canonical && <link rel="canonical" href={canonical} />}
+      {pathname && <link rel="canonical" href={url} />}
       {children}
     </>
   )
