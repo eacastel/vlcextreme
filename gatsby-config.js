@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Zen Car Buying`,
-    description: `Discover incredible deals on lightly used cars.`,
-    author: `@zencar`,
-    siteUrl: `https://zencarbuying.com`
+    title: `VLCExtreme | Ordenadores Personalizados de Sobremesa - Hechos a Medida`,
+    description: `Descubre VLCExtreme: ordenadores de sobremesa personalizados y hechos a medida para gaming, streaming e inteligencia artificial. Configura el tuyo hoy.`,
+    author: `@vlcextreme`,
+    siteUrl: `https://vlcextreme.com`
   },
   flags: {
     THE_FLAG: false
@@ -37,7 +37,7 @@ module.exports = {
         background_color: `#6B8385`, 
         theme_color: `#F99F1B`, 
         display: `minimal-ui`,
-        icon: `src/images/zen-car-buying-logo.png`, 
+        icon: `src/images/vlcextreme-logo.png`, 
       },
     },
     {

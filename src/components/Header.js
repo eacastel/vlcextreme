@@ -1,102 +1,95 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Squash as Hamburger } from 'hamburger-react'
 
-export default function Header() {
+export default function Header({ logo }) {
   const [isOpen, setOpen] = useState(false)
 
-  // Query for the logo image
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "zen-car-buying-logo-header.png" }) {
-        childImageSharp {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            placeholder: BLURRED
-            width: 300
-            formats: [AUTO, WEBP, AVIF]
-          )
-        }
-      }
-    }
-  `)
-
-  const logoImage = getImage(data.logo)
+  // Updated nav items without "Inicio"
+  const navItems = [
+    { name: "PCs Gaming & Streaming", path: "/gaming" },
+    { name: "Workstations IA", path: "/workstations" },
+    { name: "Sobre VLCExtreme", path: "/about" },
+    { name: "Contacto", path: "/contact" },
+  ]
 
   return (
-    <header className="bg-primary text-white" role="banner">
-      <nav className="container mx-auto px-4 md:px-6 py-4" aria-label="Main navigation">
+    <header className="bg-carbon-black/85 backdrop-blur-md sticky top-0 z-50 border-b border-dark-gray">
+      <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo with consistent sizing */}
-          <Link
-            to="/"
-            className="flex items-center focus:outline-none focus:ring-2 focus:ring-accent z-50"
+          {/* Logo with constrained size */}
+          <Link 
+            to="/" 
+            className="z-50 flex-shrink-0" 
+            style={{ width: '160px' }} // Constrain logo container width
           >
             <GatsbyImage
-              image={logoImage}
-              alt="Zen Car Buying Logo"
-              className="h-16 w-auto object-contain"
-              imgStyle={{ 
-                width: 'auto',
-                height: '100%',
-                maxWidth: '300px'
+              image={logo}
+              alt="VLCExtreme Logo"
+              className="h-12 w-auto" // Reduced height
+              imgStyle={{
+                objectFit: 'contain',
+                maxWidth: '200px' // Proper max-width for logo
               }}
             />
-            <span className="sr-only">Zen Car Buying</span>
           </Link>
 
-          {/* Hamburger Menu for Mobile */}
-          <div className="md:hidden">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-x-6 xl:gap-x-8 flex-1 justify-end">
+            <div className="flex items-center gap-x-4 xl:gap-x-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-light-gray hover:text-neon-cyan transition-colors font-medium text-sm xl:text-base whitespace-nowrap"
+                  activeClassName="text-neon-cyan"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+            <div className="ml-4">
+              <Link
+                to="/configure"
+                className="bg-neon-cyan text-carbon-black px-5 py-2 rounded-md font-bold hover:bg-[#00a4c4] transition-colors text-sm xl:text-base whitespace-nowrap"
+              >
+                Configura tu PC
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <div className="lg:hidden">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
               size={24}
-              color="#FFFFFF"
-              distance="sm"
+              color="#EAEAEA"
               rounded
             />
           </div>
 
-          {/* Navigation Links - Tightened spacing */}
-          <div
-            className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center absolute md:static top-full left-0 right-0 bg-primary z-40 shadow-lg md:shadow-none`}
-          >
-            <ul className="flex flex-col w-full md:w-auto md:flex-row md:items-center md:gap-x-4 lg:gap-x-6 space-y-4 md:space-y-0 py-4 md:py-0 px-4 md:px-0">
-              <li className="border-b border-gray-600 md:border-none w-full md:w-auto">
+          {/* Mobile Navigation */}
+          <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden absolute top-full left-0 right-0 bg-carbon-black z-40`}>
+            <ul className="flex flex-col items-center py-4 space-y-4">
+              {navItems.map((item) => (
+                <li key={item.path} className="w-full text-center">
+                  <Link
+                    to={item.path}
+                    className="block text-light-gray hover:text-neon-cyan py-2 px-4 transition-colors font-medium"
+                    activeClassName="text-neon-cyan"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+              <li className="mt-4">
                 <Link
-                  to="/services"
-                  className="block text-white font-bold hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent py-2 md:py-0"
-                  activeClassName="text-accent"
+                  to="/configure"
+                  className="bg-neon-cyan text-carbon-black px-8 py-2 rounded-md font-bold hover:bg-[#00a4c4] transition-colors inline-block"
                 >
-                  Services
-                </Link>
-              </li>
-              <li className="border-b border-gray-600 md:border-none w-full md:w-auto">
-                <Link
-                  to="/how-it-works"
-                  className="block text-white font-bold hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent py-2 md:py-0"
-                  activeClassName="text-accent"
-                >
-                  How It Works
-                </Link>
-              </li>
-              <li className="border-b border-gray-600 md:border-none w-full md:w-auto">
-                <Link
-                  to="/about"
-                  className="block text-white font-bold hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent py-2 md:py-0"
-                  activeClassName="text-accent"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="w-full md:w-auto mt-4 md:mt-0">
-                <Link
-                  to="/contact"
-                  className="block bg-accent px-4 py-2 rounded text-white font-bold hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-white whitespace-nowrap text-center md:text-left"
-                >
-                  Free Consultation
+                  Configura tu PC
                 </Link>
               </li>
             </ul>

@@ -1,9 +1,9 @@
 {
-  "name": "zen-car-buying",
+  "name": "vlcextreme",
   "private": true,
-  "description": "Zen Car Buying Concierge Service",
+  "description": "VLC Extreme",
   "version": "1.0.0",
-  "author": "Avanti Interactive <info@avantiinteractive.com>",
+  "author": "Horchata Labs <info@horchatalabs.com>",
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",

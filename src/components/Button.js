@@ -1,23 +1,25 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Button = ({ to, children, color = 'primary', size = 'base' }) => {
-  const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    base: 'px-6 py-3',
-    lg: 'px-8 py-4 text-lg'
+const Button = ({ to, children, color = 'neon-cyan', variant = 'solid', className = '' }) => {
+  const baseStyles = 'inline-block px-8 py-3 text-sm font-semibold text-center transition-colors rounded-md'
+  
+  const variants = {
+    solid: {
+      neoncyan: `bg-neon-cyan text-carbon-black hover:bg-[#00a4c4]`,
+      vividred: `bg-vivid-red text-light-gray hover:bg-[#e03600]`,
+    },
+    outline: `border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10`,
   }
 
-  const colors = {
-    primary: 'bg-primary hover:bg-primary-dark text-white',
-    accent: 'bg-accent hover:bg-accent-dark text-white',
-    secondary: 'bg-secondary text-primary hover:bg-secondary-dark'
-  }
+  const variantClass = variant === 'outline' 
+    ? variants.outline 
+    : variants.solid[color]
 
   return (
     <Link
       to={to}
-      className={`${colors[color]} ${sizes[size]} rounded-lg font-semibold transition-colors duration-200`}
+      className={`${baseStyles} ${variantClass} ${className}`}
     >
       {children}
     </Link>

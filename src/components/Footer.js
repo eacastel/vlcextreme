@@ -3,31 +3,48 @@ import { Link } from 'gatsby'
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white py-8">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Zen Car Buying</h3>
-            <p className="text-secondary">Your trusted concierge for stress-free car purchases</p>
+    <footer className="bg-footer-gray text-light-gray border-t border-dark-gray">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <h3 className="text-xl font-bold mb-4">VLCExtreme</h3>
+            <p className="text-medium-gray">
+              Especializados en PCs personalizados, ensamblados a mano para máximo rendimiento en gaming, streaming y desarrollo de IA.
+            </p>
           </div>
+          
           <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
-              <li><Link to="/services" className="text-secondary hover:text-white">Services</Link></li>
-              <li><Link to="/about" className="text-secondary hover:text-white">About Us</Link></li>
-              <li><Link to="/contact" className="text-secondary hover:text-white">Contact</Link></li>
+              {['Configurador', 'Preguntas Frecuentes', 'Tiempos de entrega', 'Política de garantía'].map((link) => (
+                <li key={link}>
+                  <Link to={`/${link.toLowerCase().replace(' ', '-')}`} className="text-medium-gray hover:text-neon-cyan transition-colors">
+                    {link}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
           <div>
-            <h4 className="font-bold mb-4">Legal</h4>
-            <ul className="space-y-2">
-              <li><Link to="/privacy" className="text-secondary hover:text-white">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-secondary hover:text-white">Terms of Service</Link></li>
-            </ul>
+            <h4 className="text-lg font-semibold mb-4">Contacto</h4>
+            <p className="text-medium-gray mb-2">support@vlcextreme.com</p>
+            <div className="flex gap-4">
+              {['Twitter', 'Instagram', 'YouTube'].map((social) => (
+                <a 
+                  key={social}
+                  href={`https://${social}.com/vlcextreme`}
+                  className="text-medium-gray hover:text-neon-cyan transition-colors"
+                >
+                  {social}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="border-t border-secondary mt-8 pt-4 text-center text-secondary">
-          © {new Date().getFullYear()} Zen Car Buying. All rights reserved.
+
+        <div className="border-t border-dark-gray mt-8 pt-8 text-center text-medium-gray">
+          <p>© {new Date().getFullYear()} VLCExtreme. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
