@@ -8,7 +8,7 @@ export default function Header() {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "vlcextreme-logo.png" }) {
+      logo: file(relativePath: { eq: "vlcextreme-logo-header.png" }) {
         childImageSharp {
           gatsbyImageData(
             width: 200
