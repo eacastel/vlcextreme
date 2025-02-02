@@ -6,6 +6,21 @@ import { Squash as Hamburger } from 'hamburger-react'
 export default function Header() {
   const [isOpen, setOpen] = useState(false)
 
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "vlcextreme-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 200
+            placeholder: BLURRED
+            formats: [AUTO, WEBP]
+            quality: 90 
+          )
+        }
+      }
+    }
+  `)
+
   const navItems = [
     { name: "PCs Gaming & Streaming", path: "/gaming" },
     { name: "Workstations IA", path: "/workstations" },
