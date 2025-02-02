@@ -7,22 +7,22 @@ const Why = () => {
     query {
       latestHardware: file(relativePath: { eq: "vlcextreme-latest-hardware.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
       optimizedPC: file(relativePath: { eq: "vlcextreme-optimized-pc.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
       stressTesting: file(relativePath: { eq: "vlcextreme-stress-testing.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
       customPC: file(relativePath: { eq: "vlcextreme-custom-pc.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
     }

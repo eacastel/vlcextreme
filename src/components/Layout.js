@@ -12,6 +12,7 @@ export default function Layout({ children }) {
             width: 200
             placeholder: BLURRED
             formats: [AUTO, WEBP, AVIF]
+            quality: 90 
           )
         }
       }

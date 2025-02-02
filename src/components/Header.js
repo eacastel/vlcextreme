@@ -13,8 +13,9 @@ export default function Header() {
         childImageSharp {
           gatsbyImageData(
             width: 200
-            placeholder: BLURRED
+            placeholder: DOMINANT_COLOR
             formats: [WEBP, PNG]
+            quality: 100
           )
         }
       }

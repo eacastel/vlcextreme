@@ -1,10 +1,15 @@
 [build]
-  command = "gatsby build"
+  command = "npm run build"
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "18" # Sharp requires Node 14+
-  ENABLE_GIT_INFO = "true"
+  NODE_VERSION = "18"
+  GATSBY_SHARP_LINUX_USE_SYSTEM_LIBVIPS = "true"
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
+  [plugins.inputs]
+    enableSharpPackage = true
+
+[context.production.environment]
+  ENABLE_GIT_INFO = "true"

@@ -11,13 +11,16 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ["auto", "webp", "png"],  
-          placeholder: "blurred",
+          formats: ["webp", "png"], // Explicitly exclude AVIF
+          placeholder: "dominantColor",
           quality: 90,
+          breakpoints: [750, 1080, 1366, 1920],
         },
-        failOnError: false
+        failOnError: false,
+        base64Width: 20,
+        forceBase64Format: "png",
       },
-    },    
+    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
