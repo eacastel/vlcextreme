@@ -52,7 +52,7 @@ export default function Header({ logo }) {
             <div className="ml-4">
               <Link
                 to="/configure"
-                className="bg-neon-cyan text-carbon-black px-5 py-2 rounded-md font-bold hover:bg-[#00a4c4] transition-colors text-sm xl:text-base whitespace-nowrap"
+                className="border-2 border-neon-cyan text-neon-cyan px-5 py-2 rounded-md font-bold hover:bg-neon-cyan/10 transition-colors text-sm xl:text-base whitespace-nowrap"
               >
                 Configura tu PC
               </Link>
@@ -87,7 +87,7 @@ export default function Header({ logo }) {
               <li className="mt-4">
                 <Link
                   to="/configure"
-                  className="bg-neon-cyan text-carbon-black px-8 py-2 rounded-md font-bold hover:bg-[#00a4c4] transition-colors inline-block"
+                  className="border-2 border-neon-cyan text-neon-cyan px-8 py-2 rounded-md font-bold hover:bg-neon-cyan/10 transition-colors inline-block"
                 >
                   Configura tu PC
                 </Link>

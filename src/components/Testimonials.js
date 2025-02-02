@@ -35,7 +35,7 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button to="/testimonios" variant="outline">
+          <Button to="/testimonios" variant="outline" color="neoncyan">
             Ver todas las opiniones
           </Button>
         </div>

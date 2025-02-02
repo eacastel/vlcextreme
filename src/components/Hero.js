@@ -22,23 +22,27 @@ const Hero = () => {
           Cada PC es ensamblado bajo pedido con los componentes más recientes. Sin stock, sin producción en masa, solo rendimiento extremo.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Button to="/configure" color="neon-cyan">
+          <Button to="/configure" variant="outline" color="neongreen">
             Configura tu PC ahora
           </Button>
-          <Button to="/contact" variant="outline">
+          <Button to="/contact" variant="outline" color="neoncyan">
             Consulta con un experto
           </Button>
         </div>
         
+        {/* 🔹 Improved Feature Boxes: White Border + More Contrast */}
         <div className="grid md:grid-cols-3 gap-8 mt-16 text-light-gray">
           {[
             { icon: '⚡', text: 'Potencia extrema y optimización personalizada' },
             { icon: '🛠', text: 'Componentes más recientes' },
             { icon: '✅', text: 'Testeado para máximo rendimiento' },
           ].map((feature, index) => (
-            <div key={index} className="flex items-center gap-4 p-4 border border-dark-gray rounded-lg bg-carbon-black/30 backdrop-blur-sm">
-              <span className="text-3xl">{feature.icon}</span>
-              <p className="text-medium-gray">{feature.text}</p>
+            <div 
+              key={index} 
+              className="flex items-center gap-4 p-4 border border-white border-opacity-30 rounded-lg bg-carbon-black/40 backdrop-blur-md shadow-lg"
+            >
+              <span className="text-4xl text-neon-green">{feature.icon}</span>
+              <p className="text-lg font-semibold text-light-gray">{feature.text}</p>
             </div>
           ))}
         </div>

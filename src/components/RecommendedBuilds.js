@@ -6,32 +6,32 @@ import Button from './Button'
 const RecommendedBuilds = () => {
     const data = useStaticQuery(graphql`
         query {
-          kidsStarter: file(relativePath: { eq: "vlcextreme-kids-starter-gaming-pc.jpg" }) {
+          kidsStarter: file(relativePath: { eq: "vlcextreme-kids-starter-gaming-pc.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
-          pro: file(relativePath: { eq: "vlcextreme-pro-rtx-4070ti-ryzen-7800x3d.jpg" }) {
+          pro: file(relativePath: { eq: "vlcextreme-pro-rtx-4070ti-ryzen-7800x3d.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
-          ultra: file(relativePath: { eq: "vlcextreme-ultra-rtx-4080-64gb-ram.jpg" }) {
+          ultra: file(relativePath: { eq: "vlcextreme-ultra-rtx-4080-64gb-ram.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
-          ultimateX: file(relativePath: { eq: "vlcextreme-ultimate-x-ryzen-9800x3d-rtx-4090.jpg" }) {
+          ultimateX: file(relativePath: { eq: "vlcextreme-ultimate-x-ryzen-9800x3d-rtx-4090.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
-          aiWorkstation: file(relativePath: { eq: "vlcextreme-ai-workstation-threadripper-128gb.jpg" }) {
+          aiWorkstation: file(relativePath: { eq: "vlcextreme-ai-workstation-threadripper-128gb.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
-          aiUltra: file(relativePath: { eq: "vlcextreme-ai-ultra-dual-rtx-4090-256gb.jpg" }) {
+          aiUltra: file(relativePath: { eq: "vlcextreme-ai-ultra-dual-rtx-4090-256gb.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
@@ -93,7 +93,31 @@ const RecommendedBuilds = () => {
   return (
     <section className="py-20 bg-carbon-black">
       <div className="container mx-auto px-4">
-        {/* Content Here */}
+        <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-4">
+          Encuentra el equipo perfecto para ti
+        </h2>
+        <p className="text-medium-gray text-center mb-12 max-w-xl mx-auto">
+          Todos nuestros ordenadores están hechos a medida con componentes premium. Sin stock antiguo, sin limitaciones: rendimiento extremo desde la primera configuración.
+        </p>
+
+        {/* 🔹 Category Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center mb-12">
+          {['gaming', 'ia'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-8 py-3 text-lg font-bold rounded-lg transition-colors ${
+                activeTab === tab
+                  ? 'bg-neon-cyan text-carbon-black shadow-lg'
+                  : 'bg-dark-gray text-light-gray hover:bg-neon-cyan/20'
+              }`}
+            >
+              {tab === 'gaming' ? '🎮 Gaming & Streaming' : '🤖 Workstations IA'}
+            </button>
+          ))}
+        </div>
+
+        {/* 🔹 Grid Layout */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 mb-12">
           {buildsData[activeTab].map((build, index) => (
             <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
@@ -105,12 +129,19 @@ const RecommendedBuilds = () => {
               <p className="text-light-gray text-sm mb-4">{build.premium}</p>
               <div className="flex justify-between items-center">
                 <span className="text-neon-cyan font-bold">{build.price}</span>
-                <Button to="/configure" size="sm" variant="outline">
+                <Button to="/configure" size="sm" variant="outline" color="neongreen">
                   Ver Configuración
                 </Button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* 🔹 Custom Configuration CTA */}
+        <div className="text-center">
+          <Button to="/configure" size="lg" variant="outline">
+            Crear configuración personalizada
+          </Button>
         </div>
       </div>
     </section>

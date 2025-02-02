@@ -1,4 +1,3 @@
-// tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -12,6 +11,7 @@ module.exports = {
         'medium-gray': '#B3B3B3',
         'neon-cyan': '#00B4D8',
         'vivid-red': '#FF3C00',
+        'neon-green': '#00FF87',
         'dark-gray': '#232323',
         'footer-gray': '#1A1A1A',
       },

@@ -42,7 +42,7 @@ const Process = () => {
               <p>Gaming & Streaming: <span className="text-neon-cyan">14-21 días</span></p>
               <p>Workstations IA: <span className="text-neon-cyan">21-30 días</span></p>
             </div>
-            <Button to="/proceso" variant="outline">
+            <Button to="/proceso" variant="outline" color="neoncyan">
               Más información
             </Button>
           </div>

@@ -1,6 +1,6 @@
-# Zen Car Buying Website
+# VLC Extreme Website
 
-This repository contains the source code for the Zen Car Buying website, built with **Gatsby** and **Tailwind CSS**. The goal is to provide a fast, SEO-friendly, and responsive website for Zen Car Buying.
+This repository contains the source code for the VLC Extreme Website, built with **Gatsby** and **Tailwind CSS**. The goal is to provide a fast, SEO-friendly, and responsive website for VLC Extreme Website.
 
 ---
 
@@ -8,9 +8,8 @@ This repository contains the source code for the Zen Car Buying website, built w
 
 - **Framework:** [Gatsby](https://www.gatsbyjs.com/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Calendar Integration:** [Calendly](https://calendly.com/) (or alternative)
 - **Forms:** TBD (Considering Netlify Forms, Typeform, or Formspree)
-- **Hosting:** Netlify/Vercel (To be determined)
+- **Hosting:** Netlify
 - **Analytics:** Google Analytics (GA4) + Google Tag Manager
 
 ---
