@@ -3,7 +3,7 @@ module.exports = {
     title: `VLCExtreme | Ordenadores Personalizados de Sobremesa - Hechos a Medida`,
     description: `Descubre VLCExtreme: ordenadores de sobremesa personalizados y hechos a medida para gaming, streaming e inteligencia artificial. Configura el tuyo hoy.`,
     author: `@vlcextreme`,
-    siteUrl: `https://vlcextreme.com`
+    siteUrl: `https://vlcextreme.com`,
     image: `/images/hero-bg.webp`
   },
   plugins: [
