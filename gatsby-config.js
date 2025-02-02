@@ -11,10 +11,11 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ["auto", "webp", "png"],  // Removed "avif"
+          formats: ["auto", "webp", "png"],  
           placeholder: "blurred",
           quality: 90,
         },
+        failOnError: false
       },
     },    
     `gatsby-transformer-sharp`,

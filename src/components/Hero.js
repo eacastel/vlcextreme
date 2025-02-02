@@ -1,31 +1,29 @@
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Button from './Button'
 
-const Hero = () => {
+const Hero = ({ backgroundImage }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Fixed background container */}
-      <div className="absolute inset-0 w-full h-full">
-        <StaticImage
-          src="../images/hero-bg.webp"
-          alt="Setup gaming futurista"
-          className="w-full h-full"
-          placeholder="blurred"
-          layout="fullWidth"
-          formats={["auto", "webp", "avif"]}
-          transformOptions={{ fit: "cover" }}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center"
-          }}
-        />
-      </div>
+      {/* Background Image */}
+      {backgroundImage && (
+        <div className="absolute inset-0 w-full h-full">
+          <GatsbyImage
+            image={backgroundImage}
+            alt="Setup gaming futurista"
+            className="w-full h-full"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center"
+            }}
+          />
+        </div>
+      )}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-carbon-black/70" />
