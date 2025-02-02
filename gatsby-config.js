@@ -5,9 +5,6 @@ module.exports = {
     author: `@vlcextreme`,
     siteUrl: `https://vlcextreme.com`
   },
-  flags: {
-    THE_FLAG: false
-  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

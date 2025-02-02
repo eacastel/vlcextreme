@@ -6,7 +6,6 @@ import { Squash as Hamburger } from 'hamburger-react'
 export default function Header({ logo }) {
   const [isOpen, setOpen] = useState(false)
 
-  // Updated nav items without "Inicio"
   const navItems = [
     { name: "PCs Gaming & Streaming", path: "/gaming" },
     { name: "Workstations IA", path: "/workstations" },
@@ -18,19 +17,15 @@ export default function Header({ logo }) {
     <header className="bg-carbon-black/85 backdrop-blur-md sticky top-0 z-50 border-b border-dark-gray">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo with constrained size */}
-          <Link 
-            to="/" 
-            className="z-50 flex-shrink-0" 
-            style={{ width: '160px' }} // Constrain logo container width
-          >
+          {/* Logo */}
+          <Link to="/" className="z-50 flex-shrink-0" style={{ width: '160px' }}>
             <GatsbyImage
               image={logo}
               alt="VLCExtreme Logo"
-              className="h-12 w-auto" // Reduced height
+              className="h-12 w-auto"
               imgStyle={{
                 objectFit: 'contain',
-                maxWidth: '200px' // Proper max-width for logo
+                maxWidth: '200px'
               }}
             />
           </Link>
@@ -52,7 +47,7 @@ export default function Header({ logo }) {
             <div className="ml-4">
               <Link
                 to="/configure"
-                className="border-2 border-neon-cyan text-neon-cyan px-5 py-2 rounded-md font-bold hover:bg-neon-cyan/10 transition-colors text-sm xl:text-base whitespace-nowrap"
+                className="border-2 border-neon-green text-neon-green px-5 py-2 rounded-md font-bold hover:bg-neon-green/10 hover:shadow-[0_0_15px_#00FF87] transition-all text-sm xl:text-base whitespace-nowrap"
               >
                 Configura tu PC
               </Link>
@@ -87,7 +82,7 @@ export default function Header({ logo }) {
               <li className="mt-4">
                 <Link
                   to="/configure"
-                  className="border-2 border-neon-cyan text-neon-cyan px-8 py-2 rounded-md font-bold hover:bg-neon-cyan/10 transition-colors inline-block"
+                  className="border-2 border-neon-green text-neon-green px-8 py-2 rounded-md font-bold hover:bg-neon-green/10 hover:shadow-[0_0_15px_#FFE500] transition-all inline-block"
                 >
                   Configura tu PC
                 </Link>
