@@ -19,9 +19,16 @@ module.exports = {
         failOnError: false,
         base64Width: 20,
         forceBase64Format: "png",
+        useMozJpeg: false, 
+        stripMetadata: true,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedExtensions: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
