@@ -1,10 +1,25 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Squash as Hamburger } from 'hamburger-react'
 
-export default function Header({ logo }) {
+export default function Header() {
   const [isOpen, setOpen] = useState(false)
+
+  // Add the static query
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      logo: file(relativePath: { eq: "vlcextreme-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            width: 200
+            placeholder: BLURRED
+            formats: [WEBP, PNG]
+          )
+        }
+      }
+    }
+  `)
 
   const navItems = [
     { name: "PCs Gaming & Streaming", path: "/gaming" },
@@ -20,7 +35,7 @@ export default function Header({ logo }) {
           {/* Logo */}
           <Link to="/" className="z-50 flex-shrink-0" style={{ width: '160px' }}>
             <GatsbyImage
-              image={logo}
+              image={data.logo.childImageSharp.gatsbyImageData}
               alt="VLCExtreme Logo"
               className="h-12 w-auto"
               imgStyle={{
