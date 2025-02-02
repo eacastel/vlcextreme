@@ -11,7 +11,7 @@ export default function Layout({ children }) {
           gatsbyImageData(
             width: 200
             placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
             quality: 90 
           )
         }

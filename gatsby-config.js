@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ["webp", "png"], // Explicitly exclude AVIF
+          formats: ["webp", "png"], 
           placeholder: "dominantColor",
           quality: 90,
           breakpoints: [750, 1080, 1366, 1920],
