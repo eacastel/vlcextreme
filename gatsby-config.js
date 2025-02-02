@@ -7,7 +7,16 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ["auto", "webp", "png"],  // Removed "avif"
+          placeholder: "blurred",
+          quality: 90,
+        },
+      },
+    },    
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
