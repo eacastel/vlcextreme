@@ -126,7 +126,7 @@ export const query = graphql`
         gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
     }
-    comparison: file(relativePath: { eq: "bespoke-vs-prebuilt.webp" }) {
+    comparison: file(relativePath: { eq: "bespoke.png" }) {
       childImageSharp {
         gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
