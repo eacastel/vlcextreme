@@ -6,100 +6,117 @@ import Button from '../components/Button'
 import Seo from '../components/Seo'
 
 const GamingPage = ({ data }) => {
-    const heroImage = getImage(data.hero)
-    const comparisonImage = getImage(data.comparison)
-    const gamingPro = getImage(data.gamingPro)
-    const gamingUltra = getImage(data.gamingUltra)
-    const gamingUltimate = getImage(data.gamingUltimate)
+  const heroImage = getImage(data.hero)
+  const comparisonImage = getImage(data.comparison)
+  const gamingPro = getImage(data.gamingPro)
+  const gamingUltra = getImage(data.gamingUltra)
+  const gamingUltimate = getImage(data.gamingUltimate)
 
-    return (
-        <Layout>
-            {/* 🔹 SEO Metadata */}
-            <Seo
-                title="PCs Gaming Personalizados | Máximo Rendimiento con VLCExtreme"
-                description="Descubre VLCExtreme Gaming: PCs personalizados con los últimos procesadores y tarjetas gráficas para jugar sin límites. Configura el tuyo hoy."
-                image={data.hero.childImageSharp.gatsbyImageData.images.fallback.src}
-                pathname="/gaming"
+  return (
+    <Layout>
+      {/* 🔹 SEO Metadata */}
+      <Seo 
+        title="PCs Gaming Personalizados | Máximo Rendimiento con VLCExtreme"
+        description="Descubre VLCExtreme Gaming: PCs personalizados con los últimos procesadores y tarjetas gráficas para jugar sin límites. Configura el tuyo hoy."
+        image={data.hero.childImageSharp.gatsbyImageData.images.fallback.src}
+        pathname="/gaming"
+      />
+
+      {/* 🔹 Hero Section with Background Fix */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        {heroImage && (
+          <div className="absolute inset-0 w-full h-full">
+            <GatsbyImage
+              image={heroImage}
+              alt="Setup gaming profesional con iluminación RGB"
+              className="w-full h-full"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center"
+              }}
             />
+          </div>
+        )}
 
-            {/* 🔹 Hero Section */}
-            <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-                <GatsbyImage image={heroImage} alt="Setup gaming profesional con iluminación RGB" className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-carbon-black/80" />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-carbon-black/80" />
 
-                <div className="container mx-auto px-4 relative text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-                        PCs Gaming Personalizados con Rendimiento Extremo
-                    </h1>
-                    <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-                        Diseñados para **máximos FPS y mínimo lag**. Sin stock antiguo, sin compromisos.
-                    </p>
-                    <Button to="/configure" color="neoncyan">
-                        Configura tu PC Gaming
-                    </Button>
+        {/* Content */}
+        <div className="container mx-auto px-4 relative text-center z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
+            PCs Gaming Personalizados con Rendimiento Extremo
+          </h1>
+          <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
+            Diseñados para <strong>máximos FPS y mínimo lag</strong>. Sin stock antiguo, sin compromisos.
+          </p>
+          <Button to="/configure" color="neoncyan">
+            Configura tu PC Gaming
+          </Button>
+        </div>
+      </section>
+
+      {/* 🔹 Why Custom PCs? */}
+      <section className="py-20 bg-dark-gray">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
+            ¿Por qué elegir un VLC Extreme Gaming personalizado?
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <GatsbyImage image={comparisonImage} alt="Comparación de PCs personalizados vs preensamblados" className="rounded-lg" />
+            </div>
+            <div className="space-y-6">
+              <p className="text-medium-gray text-lg">
+                No todos los jugadores quieren pasar horas investigando qué piezas elegir. En <strong>VLCExtreme</strong>, eliminamos la complejidad para que solo te preocupes de jugar.
+              </p>
+              <ul className="list-disc pl-6 text-medium-gray space-y-2">
+                <li>Nos encargamos de elegir los mejores componentes para maximizar tu inversión.</li>
+                <li>Sin preocupaciones por compatibilidad, ensamblamos y optimizamos cada detalle.</li>
+                <li>Máximo rendimiento garantizado con overclocking y refrigeración avanzada.</li>
+                <li>Selección de hardware sin stock antiguo: solo lo mejor del mercado.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔹 Gaming Builds Showcase */}
+      <section className="py-20 bg-carbon-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
+            Elige tu PC Gaming Extremo
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: 'VLCExtreme Pro', specs: 'RTX 4070 Ti, Ryzen 7 7800X3D, 32GB RAM', price: 'Desde 2.200€', image: gamingPro },
+              { name: 'VLCExtreme Ultra', specs: 'RTX 4080, Intel i7-13700KF, 64GB RAM', price: 'Desde 3.400€', image: gamingUltra },
+              { name: 'VLCExtreme Ultimate', specs: 'RTX 4090, Intel i9-14900KF, 128GB RAM', price: 'Desde 5.900€', image: gamingUltimate },
+            ].map((build, index) => (
+              <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
+                <GatsbyImage image={build.image} alt={build.name} className="rounded-lg mb-4" />
+                <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
+                <p className="text-medium-gray mb-4">{build.specs}</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-neon-cyan font-bold">{build.price}</span>
+                  <Button to="/configure" size="sm" variant="outline">
+                    Ver Configuración
+                  </Button>
                 </div>
-            </section>
-
-            {/* 🔹 Why Custom PCs? */}
-            <section className="py-20 bg-dark-gray">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-                        ¿Por qué elegir un VLC Extreme Gaming personalizado?
-                    </h2>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <GatsbyImage image={comparisonImage} alt="Comparación de PCs personalizados vs preensamblados" className="rounded-lg" />
-                        </div>
-                        <div className="space-y-6">
-                            <p className="text-medium-gray text-lg">
-                                No todos los jugadores quieren pasar horas investigando y comparando piezas para construir su PC ideal. <strong>En VLCExtreme, simplificamos el proceso para que solo te concentres en jugar.</strong>
-                            </p>
-                            <ul className="list-disc pl-6 text-medium-gray space-y-2">
-                                <li><strong>Nos encargamos de todo:</strong> seleccionamos los mejores componentes y los optimizamos para obtener el máximo rendimiento.</li>
-                                <li><strong>Sin complicaciones:</strong> olvídate de problemas de compatibilidad o configuraciones incorrectas.</li>
-                                <li><strong>Máximo rendimiento garantizado:</strong> cada PC está ajustado para FPS altos, latencia mínima y estabilidad absoluta.</li>
-                                <li><strong>Construcción de calidad:</strong> cada ordenador es ensamblado por expertos, probado a fondo y optimizado a nivel de BIOS y overclocking.</li>
-                                <li><strong>Tu inversión bien aprovechada:</strong> seleccionamos las piezas más avanzadas del mercado, sin stock antiguo ni productos desfasados.</li>
-                            </ul>
-                            <p className="text-medium-gray text-lg">
-                                En VLCExtreme, no solo vendemos PCs, <strong>creamos máquinas optimizadas para el gaming más exigente.</strong>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 🔹 Gaming Builds Showcase */}
-            <section className="py-20 bg-carbon-black">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-                        Elige tu PC Gaming Extremo
-                    </h2>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            { name: 'VLCExtreme Pro', specs: 'RTX 4070 Ti, Ryzen 7 7800X3D, 32GB RAM', price: 'Desde 2.200€', image: gamingPro },
-                            { name: 'VLCExtreme Ultra', specs: 'RTX 4080, Intel i7-13700KF, 64GB RAM', price: 'Desde 3.400€', image: gamingUltra },
-                            { name: 'VLCExtreme Ultimate', specs: 'RTX 4090, Intel i9-14900KF, 128GB RAM', price: 'Desde 5.900€', image: gamingUltimate },
-                        ].map((build, index) => (
-                            <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
-                                <GatsbyImage image={build.image} alt={build.name} className="rounded-lg mb-4" />
-                                <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
-                                <p className="text-medium-gray mb-4">{build.specs}</p>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-neon-cyan font-bold">{build.price}</span>
-                                    <Button to="/configure" size="sm" variant="outline">
-                                        Ver Configuración
-                                    </Button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        </Layout>
-    )
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
 }
 
 export const query = graphql`
@@ -109,7 +126,7 @@ export const query = graphql`
         gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
     }
-    comparison: file(relativePath: { eq: "bespoke.png" }) {
+    comparison: file(relativePath: { eq: "bespoke-vs-prebuilt.webp" }) {
       childImageSharp {
         gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
