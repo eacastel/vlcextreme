@@ -26,12 +26,12 @@ const RecommendedBuilds = () => {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
             }
           }
-          aiWorkstation: file(relativePath: { eq: "vlcextreme-ai-workstation-threadripper-128gb.webp" }) {
+          aiWorkstation: file(relativePath: { eq: "vlcextreme-ai-ultra-dual-rtx-4090-256gb.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
             }
           }
-          aiUltra: file(relativePath: { eq: "vlcextreme-ai-ultra-dual-rtx-4090-256gb.webp" }) {
+          aiUltra: file(relativePath: { eq: "vlcextreme-ai-workstation-threadripper-128gb.webp" }) {
             childImageSharp {
               gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
             }
@@ -42,7 +42,7 @@ const RecommendedBuilds = () => {
   const buildsData = {
     gaming: [
       {
-        name: 'VLCExtreme Kids Starter',
+        name: 'VLCExtreme Junior Starter',
         specs: 'GTX 1650 / RTX 3050, Ryzen 5 5600G / Intel i5-12400F, 16GB RAM (expandable)',
         premium: 'Opciones de SSD NVMe 1TB, Wi-Fi 6E, RGB total, Chasis premium',
         price: 'Desde 1.200€',

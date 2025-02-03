@@ -4,7 +4,7 @@ module.exports = {
     description: `Descubre VLCExtreme: ordenadores de sobremesa personalizados y hechos a medida para gaming, streaming e inteligencia artificial. Configura el tuyo hoy.`,
     author: `@vlcextreme`,
     siteUrl: `https://vlcextreme.com`,
-    image: `/hero-bg.jpg`
+    image: `/og-vlcextreme-ensamblaje-ordenadores-sobremesa.png`
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -12,7 +12,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ["webp", "png"], 
+          formats: ["auto", "webp", "png"], 
           placeholder: "dominantColor",
           quality: 90,
           breakpoints: [750, 1080, 1366, 1920],

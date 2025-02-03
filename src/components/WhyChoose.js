@@ -10,7 +10,7 @@ const Why = () => {
           gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
-      optimizedPC: file(relativePath: { eq: "vlcextreme-optimized-pc.webp" }) {
+      optimizedPC: file(relativePath: { eq: "equipos-ordenadores-personalizados-valencia.png" }) {
         childImageSharp {
           gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
@@ -20,7 +20,7 @@ const Why = () => {
           gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
-      customPC: file(relativePath: { eq: "vlcextreme-custom-pc.webp" }) {
+      customPC: file(relativePath: { eq: "satisfaccion-cliente-ordenador-personalizado-gaming-2.png" }) {
         childImageSharp {
           gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }

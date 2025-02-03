@@ -4,13 +4,13 @@ import Seo from "../components/Seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <h1>404 No Existe</h1>
+    <p>Lo sentimos en este enchufe no hay corriente...</p>
   </Layout>
 )
 export const Head = () => (
   <Seo
-      title="404 Not Found | Zen Car Buying"
+      title="404 No Existe | VLC Extreme"
   />
 )
 export default NotFoundPage
