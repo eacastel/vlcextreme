@@ -33,21 +33,25 @@ const Why = () => {
       title: '1. Sin Stock Antiguo', 
       desc: 'Usamos los últimos procesadores, tarjetas gráficas y memorias RAM del mercado.',
       image: getImage(data.latestHardware),
+      alt: 'Componentes de hardware más recientes en un taller de ensamblaje VLCExtreme.'
     },
     { 
       title: '2. Optimización Extrema', 
       desc: 'Cada PC es afinado a nivel de BIOS, overclocking y flujo de aire.',
       image: getImage(data.optimizedPC),
+      alt: 'Técnico ajustando un PC para optimización extrema con flujo de aire mejorado.'
     },
     { 
       title: '3. Testeado a Fondo', 
       desc: 'Cada PC se somete a pruebas intensivas de rendimiento y estabilidad antes del envío.',
       image: getImage(data.stressTesting),
+      alt: 'Bancos de pruebas en el laboratorio VLCExtreme verificando la estabilidad de ordenadores personalizados.'
     },
     { 
       title: '4. Personalización Total', 
       desc: 'Desde el diseño del chasis hasta el sistema de refrigeración, tú decides.',
       image: getImage(data.customPC),
+      alt: 'Cliente satisfecho con su PC gaming personalizado VLCExtreme, con RGB y componentes de alta gama.'
     },
   ]
 
@@ -66,7 +70,7 @@ const Why = () => {
               className="p-8 bg-carbon-black rounded-xl hover:bg-neon-cyan/10 transition-all text-center shadow-lg"
             >
               <div className="mb-6 flex justify-center rounded-full overflow-hidden w-32 h-32 mx-auto">
-                <GatsbyImage image={point.image} alt={point.title} className="rounded-full object-cover" />
+                <GatsbyImage image={point.image} alt={point.alt} className="rounded-full object-cover" />
               </div>
               <h3 className="text-xl text-light-gray font-bold mb-3">{point.title}</h3>
               <p className="text-medium-gray text-lg">{point.desc}</p>
