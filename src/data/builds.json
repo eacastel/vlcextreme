@@ -1,0 +1,699 @@
+{
+  "builds": {
+    "G001": {
+      "name": "Casual Cruiser",
+      "description": "Perfecto para juegos ligeros, el cole y medios. Maneja Minecraft, Roblox, Los Sims y esports casuales.",
+      "price_range": {
+        "min": 846,
+        "max": 1145
+      },
+      "base_components": {
+        "CPU": {
+          "name": "AMD Ryzen 5 7600",
+          "brand": "AMD",
+          "price": 249,
+          "performance_score": 75,
+          "form_factor": "AM5",
+          "compatibility": {
+            "motherboard_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5"
+          }
+        },
+        "GPU": {
+          "name": "Radeon 760M Integrado",
+          "brand": "AMD",
+          "price": 0,
+          "performance_score": 60,
+          "optional_upgrades": [
+            {
+              "name": "AMD Radeon RX 7600",
+              "price": 269,
+              "performance_score": 72,
+              "interface": "PCIe x16",
+              "compatible_games": [
+                "Fortnite",
+                "Warzone",
+                "GTA V"
+              ]
+            },
+            {
+              "name": "NVIDIA RTX 4060",
+              "price": 299,
+              "performance_score": 75,
+              "interface": "PCIe x16",
+              "compatible_games": [
+                "Cyberpunk 2077",
+                "Hogwarts Legacy",
+                "Apex Legends"
+              ]
+            }
+          ]
+        },
+        "Motherboard": {
+          "name": "MSI MAG B650 Tomahawk",
+          "brand": "MSI",
+          "price": 189,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "Corsair Vengeance LPX 16GB DDR5",
+          "brand": "Corsair",
+          "price": 80,
+          "performance_score": 75,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "B650",
+              "X670"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Samsung 990 PRO 1TB NVMe",
+          "brand": "Samsung",
+          "price": 149,
+          "performance_score": 85,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "EVGA 650W 80+ Bronze",
+          "brand": "EVGA",
+          "price": 75,
+          "performance_score": 70,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 650,
+            "gpu_compatibility": [
+              "RX 7600",
+              "RTX 4060"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "Disipador AMD Wraith de serie",
+          "brand": "AMD",
+          "price": 0,
+          "performance_score": 65,
+          "form_factor": "Air",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5"
+            ]
+          }
+        },
+        "Case": {
+          "name": "NZXT H5 Flow",
+          "brand": "NZXT",
+          "price": 89,
+          "form_factor": "ATX Mid-Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "ATX",
+              "MicroATX",
+              "Mini-ITX"
+            ],
+            "gpu_clearance": "340mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Minecraft",
+        "Roblox",
+        "Fortnite",
+        "Los Sims 4",
+        "League of Legends"
+      ],
+      "optional_upgrades": [
+        "GPU",
+        "More RAM",
+        "Better Storage"
+      ]
+    },
+    "G002": {
+      "name": "eSports Edge",
+      "description": "Optimizado para eSports competitivos con altas tasas de FPS en 1080p y monitores de 144Hz o más.",
+      "price_range": {
+        "min": 1200,
+        "max": 1700
+      },
+      "base_components": {
+        "CPU": {
+          "name": "Intel Core i5-13600KF",
+          "brand": "Intel",
+          "price": 320,
+          "performance_score": 85,
+          "form_factor": "LGA1700",
+          "compatibility": {
+            "motherboard_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5"
+          }
+        },
+        "GPU": {
+          "name": "NVIDIA RTX 4060 Ti",
+          "brand": "NVIDIA",
+          "price": 399,
+          "performance_score": 85,
+          "interface": "PCIe x16",
+          "compatible_games": [
+            "CS:GO",
+            "Valorant",
+            "Overwatch",
+            "Fortnite",
+            "Apex Legends"
+          ]
+        },
+        "Motherboard": {
+          "name": "MSI PRO Z690-A WiFi",
+          "brand": "MSI",
+          "price": 189,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "Kingston Fury Beast 16GB DDR5 6000MHz",
+          "brand": "Kingston",
+          "price": 130,
+          "performance_score": 80,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "Z690",
+              "Z790"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "WD Black SN850X 1TB NVMe",
+          "brand": "Western Digital",
+          "price": 140,
+          "performance_score": 85,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Corsair RM650e 650W 80+ Gold",
+          "brand": "Corsair",
+          "price": 95,
+          "performance_score": 75,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 650,
+            "gpu_compatibility": [
+              "RTX 4060 Ti",
+              "RX 6700 XT"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "Noctua NH-U12S Redux",
+          "brand": "Noctua",
+          "price": 59,
+          "performance_score": 80,
+          "form_factor": "Air",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Lian Li Lancool 215",
+          "brand": "Lian Li",
+          "price": 89,
+          "form_factor": "ATX Mid-Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "ATX",
+              "MicroATX",
+              "Mini-ITX"
+            ],
+            "gpu_clearance": "370mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "CS:GO",
+        "Valorant",
+        "Overwatch",
+        "Fortnite",
+        "Apex Legends"
+      ],
+      "optional_upgrades": [
+        "Better GPU (RTX 4070 Ti)",
+        "More RAM (32GB)",
+        "Larger SSD"
+      ]
+    },
+    "G003": {
+      "name": "AAA Avenger",
+      "description": "Diseñado para juegos AAA modernos en 1080p Ultra o 1440p High con 60-100 FPS.",
+      "price_range": {
+        "min": 1700,
+        "max": 2500
+      },
+      "base_components": {
+        "CPU": {
+          "name": "AMD Ryzen 7 7800X3D",
+          "brand": "AMD",
+          "price": 429,
+          "performance_score": 87,
+          "form_factor": "AM5",
+          "compatibility": {
+            "motherboard_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5"
+          }
+        },
+        "GPU": {
+          "name": "NVIDIA RTX 4070 Ti",
+          "brand": "NVIDIA",
+          "price": 849,
+          "performance_score": 82,
+          "interface": "PCIe x16",
+          "compatible_games": [
+            "Cyberpunk 2077",
+            "Assassin’s Creed Valhalla",
+            "Battlefield 2042",
+            "Hogwarts Legacy",
+            "Starfield"
+          ]
+        },
+        "Motherboard": {
+          "name": "ASUS ROG Strix B650-A Gaming",
+          "brand": "ASUS",
+          "price": 269,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz",
+          "brand": "G.Skill",
+          "price": 200,
+          "performance_score": 90,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "B650",
+              "X670"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "WD Black SN850X 1TB NVMe",
+          "brand": "Western Digital",
+          "price": 169,
+          "performance_score": 85,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Corsair RM750x 750W 80+ Gold",
+          "brand": "Corsair",
+          "price": 139,
+          "performance_score": 80,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 750,
+            "gpu_compatibility": [
+              "RTX 4070 Ti"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "Noctua NH-D15",
+          "brand": "Noctua",
+          "price": 119,
+          "performance_score": 80,
+          "form_factor": "Air",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Lian Li Lancool III RGB",
+          "brand": "Lian Li",
+          "price": 159,
+          "form_factor": "ATX Mid-Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "ATX",
+              "MicroATX",
+              "Mini-ITX"
+            ],
+            "gpu_clearance": "400mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Cyberpunk 2077",
+        "Assassin’s Creed Valhalla",
+        "Battlefield 2042",
+        "Hogwarts Legacy",
+        "Starfield",
+        "Red Dead Redemption 2"
+      ],
+      "optional_upgrades": [
+        "Better GPU (RTX 4080)",
+        "More RAM (64GB)",
+        "2TB SSD"
+      ]
+    },
+    "G004": {
+      "name": "Titan Dominator (i9)",
+      "description": "Máquina definitiva para gaming 4K Ultra, streaming simultáneo y mods pesados. Potencia extrema y componentes de última generación.",
+      "price_range": {
+        "min": 3500,
+        "max": 5000
+      },
+      "base_components": {
+        "CPU": {
+          "name": "Intel Core i9-14900K",
+          "brand": "Intel",
+          "price": 649,
+          "performance_score": 95,
+          "form_factor": "LGA1700",
+          "compatibility": {
+            "motherboard_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5"
+          }
+        },
+        "GPU": {
+          "name": "NVIDIA RTX 4090",
+          "brand": "NVIDIA",
+          "price": 1849,
+          "performance_score": 100,
+          "interface": "PCIe x16",
+          "compatible_games": [
+            "Cyberpunk 2077 (Overdrive Mode)",
+            "Microsoft Flight Simulator",
+            "Starfield",
+            "Red Dead Redemption 2",
+            "Baldur’s Gate 3"
+          ]
+        },
+        "Motherboard": {
+          "name": "ASUS ROG Maximus Z790 Hero",
+          "brand": "ASUS",
+          "price": 649,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "G.Skill Trident Z5 RGB 64GB (2x32GB) DDR5 7200MHz",
+          "brand": "G.Skill",
+          "price": 399,
+          "performance_score": 95,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "Z790"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Samsung 990 PRO 2TB NVMe",
+          "brand": "Samsung",
+          "price": 279,
+          "performance_score": 90,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Corsair HX1000i 1000W 80+ Platinum",
+          "brand": "Corsair",
+          "price": 259,
+          "performance_score": 90,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 1000,
+            "gpu_compatibility": [
+              "RTX 4090"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "Corsair iCUE H170i Elite Capellix XT 420mm",
+          "brand": "Corsair",
+          "price": 299,
+          "performance_score": 95,
+          "form_factor": "AIO Liquid Cooling",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700",
+              "AM5"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Lian Li O11 Dynamic EVO XL",
+          "brand": "Lian Li",
+          "price": 219,
+          "form_factor": "ATX Full-Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "E-ATX",
+              "ATX",
+              "MicroATX"
+            ],
+            "gpu_clearance": "450mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Cyberpunk 2077 (Overdrive Mode)",
+        "Microsoft Flight Simulator",
+        "Starfield",
+        "Red Dead Redemption 2",
+        "Baldur’s Gate 3",
+        "Forza Horizon 5",
+        "Hogwarts Legacy"
+      ],
+      "optional_upgrades": [
+        "Custom Loop Cooling",
+        "4TB SSD",
+        "128GB RAM"
+      ]
+    },
+    "G005": {
+      "name": "Titan Fury (AMD)",
+      "description": "Máxima potencia con AMD. Ideal para juegos en 4K y alto rendimiento con menor consumo.",
+      "price_range": {
+        "min": 2900,
+        "max": 4000
+      },
+      "base_components": {
+        "CPU": {
+          "name": "AMD Ryzen 9 7950X3D",
+          "brand": "AMD",
+          "price": 699,
+          "performance_score": 98,
+          "form_factor": "AM5",
+          "compatibility": {
+            "motherboard_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5"
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 9 7950X",
+              "price": 599,
+              "performance_score": 95,
+              "form_factor": "AM5"
+            },
+            {
+              "name": "Intel Core i9-14900K",
+              "price": 649,
+              "performance_score": 95,
+              "form_factor": "LGA1700"
+            }
+          ]
+        },
+        "GPU": {
+          "name": "AMD Radeon RX 7900 XTX",
+          "brand": "AMD",
+          "price": 999,
+          "performance_score": 97,
+          "interface": "PCIe x16",
+          "compatibility": {
+            "motherboard_slots": [
+              "PCIe x16"
+            ],
+            "psu_requirement": 850
+          },
+          "alternatives": [
+            {
+              "name": "NVIDIA RTX 4080",
+              "price": 1099,
+              "performance_score": 96,
+              "interface": "PCIe x16"
+            }
+          ]
+        },
+        "Motherboard": {
+          "name": "ASUS ROG Strix X670E",
+          "brand": "ASUS",
+          "price": 399,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "G.Skill Trident Z5 RGB 32GB DDR5",
+          "brand": "G.Skill",
+          "price": 200,
+          "performance_score": 90,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "X670E"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Samsung 990 PRO 2TB NVMe",
+          "brand": "Samsung",
+          "price": 249,
+          "performance_score": 90,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Corsair RM1000x 1000W",
+          "brand": "Corsair",
+          "price": 199,
+          "performance_score": 90,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 1000,
+            "gpu_compatibility": [
+              "RX 7900 XTX",
+              "RTX 4080"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "NZXT Kraken Z73 RGB 360mm AIO",
+          "brand": "NZXT",
+          "price": 289,
+          "performance_score": 92,
+          "form_factor": "AIO",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5",
+              "LGA1700"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Fractal Design Torrent",
+          "brand": "Fractal Design",
+          "price": 249,
+          "form_factor": "Full Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "ATX",
+              "E-ATX"
+            ],
+            "gpu_clearance": "400mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Cyberpunk 2077",
+        "Baldur’s Gate 3",
+        "Forza Horizon 5",
+        "Elden Ring"
+      ],
+      "optional_upgrades": [
+        "More RAM",
+        "Custom Cooling"
+      ]
+    }
+  }
+}

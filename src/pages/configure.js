@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import ConfigurationForm from '../components/ConfigurationForm'
+import SelectConfigure from '../components/SelectConfigure'
 
 const ConfigurePage = ({ data }) => {
   const backgroundImage = data.configureBg?.childImageSharp?.gatsbyImageData
@@ -11,7 +11,7 @@ const ConfigurePage = ({ data }) => {
   return (
     <Layout>
       <Seo 
-        title="Configura tu PC a Medida | VLCExtreme"
+        title="Elige tu PC a Medida | VLCExtreme"
         description="Configura tu PC personalizado con componentes de última generación para gaming, producción o IA."
       />
 
@@ -35,15 +35,15 @@ const ConfigurePage = ({ data }) => {
         <div className="container mx-auto px-4 relative z-10 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-light-gray mb-4">
-              Configura tu PC de Alto Rendimiento
+              Elige tu PC de Alto Rendimiento
             </h1>
             <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-              Personaliza cada aspecto de tu equipo con nuestra herramienta de configuración inteligente.
+              Elige el ordenador perfecto según tu uso o personaliza cada aspecto de tu equipo con nuestra herramienta de configuración inteligente.
             </p>
           </div>
 
           {/* 🔹 Integrated Multi-Step Form */}
-          <ConfigurationForm />
+          <SelectConfigure />
         </div>
       </div>
     </Layout>
