@@ -69,7 +69,7 @@ const Why = () => {
               key={index} 
               className="p-8 bg-carbon-black rounded-xl hover:bg-neon-cyan/10 transition-all text-center shadow-lg"
             >
-              <div className="mb-6 flex justify-center rounded-full overflow-hidden w-32 h-32 mx-auto">
+              <div className="mb-6 flex justify-center rounded-full overflow-hidden w-52 h-52 mx-auto">
                 <GatsbyImage image={point.image} alt={point.alt} className="rounded-full object-cover" />
               </div>
               <h3 className="text-xl text-light-gray font-bold mb-3">{point.title}</h3>

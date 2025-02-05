@@ -1,0 +1,413 @@
+{
+  "CPU": [
+    {
+      "id": "cpu-intel-14900k",
+      "name": "Intel Core i9-14900K",
+      "brand": "Intel",
+      "price": 649,
+      "category": ["Gaming", "Workstation"],
+      "socket": "LGA1700",
+      "performanceScore": 95,
+      "compatibility": {
+        "motherboardSockets": ["LGA1700"],
+        "memoryType": "DDR5",
+        "notes": "High-end Intel CPU for gaming and workstation tasks"
+      }
+    },
+    {
+      "id": "cpu-amd-7950x3d",
+      "name": "AMD Ryzen 9 7950X3D",
+      "brand": "AMD",
+      "price": 729,
+      "category": ["Gaming", "AI"],
+      "socket": "AM5",
+      "performanceScore": 98,
+      "compatibility": {
+        "motherboardSockets": ["AM5"],
+        "chipsets": ["X670E", "B650"],
+        "memoryType": "DDR5",
+        "notes": "High-performance AMD CPU with 3D V-Cache for gaming/AI"
+      }
+    },
+    {
+      "id": "cpu-intel-14700k",
+      "name": "Intel Core i7-14700K",
+      "brand": "Intel",
+      "price": 469,
+      "category": ["Gaming", "Workstation"],
+      "socket": "LGA1700",
+      "performanceScore": 85,
+      "compatibility": {
+        "motherboardSockets": ["LGA1700"],
+        "memoryType": "DDR5",
+        "notes": "Balanced Intel CPU for both gaming and professional workloads"
+      }
+    },
+    {
+      "id": "cpu-amd-7800x3d",
+      "name": "AMD Ryzen 7 7800X3D",
+      "brand": "AMD",
+      "price": 429,
+      "category": ["Gaming"],
+      "socket": "AM5",
+      "performanceScore": 87,
+      "compatibility": {
+        "motherboardSockets": ["AM5"],
+        "memoryType": "DDR5",
+        "notes": "High-refresh gaming CPU with 3D V-Cache"
+      }
+    },
+    {
+      "id": "cpu-intel-13600k",
+      "name": "Intel Core i5-13600K",
+      "brand": "Intel",
+      "price": 329,
+      "category": ["Budget", "Gaming"],
+      "socket": "LGA1700",
+      "performanceScore": 78,
+      "compatibility": {
+        "motherboardSockets": ["LGA1700"],
+        "memoryType": "DDR5",
+        "notes": "Mid-range Intel CPU offering great gaming performance"
+      }
+    },
+    {
+      "id": "cpu-amd-7600",
+      "name": "AMD Ryzen 5 7600",
+      "brand": "AMD",
+      "price": 249,
+      "category": ["Budget", "Gaming"],
+      "socket": "AM5",
+      "performanceScore": 75,
+      "compatibility": {
+        "motherboardSockets": ["AM5"],
+        "memoryType": "DDR5",
+        "notes": "Cost-effective AMD CPU for budget-friendly gaming"
+      }
+    },
+    {
+      "id": "cpu-amd-7995wx",
+      "name": "AMD Threadripper PRO 7995WX",
+      "brand": "AMD",
+      "price": 5499,
+      "category": ["Workstation", "AI"],
+      "socket": "sTR5",
+      "performanceScore": 99,
+      "compatibility": {
+        "motherboardSockets": ["sTR5"],
+        "memoryType": "DDR4/ECC",
+        "notes": "Professional-grade CPU for heavy workloads, AI, and workstation tasks"
+      }
+    },
+    {
+      "id": "cpu-intel-xeon-w9-3495x",
+      "name": "Intel Xeon w9-3495X",
+      "brand": "Intel",
+      "price": 4899,
+      "category": ["Workstation", "AI"],
+      "socket": "LGA4677",
+      "performanceScore": 98,
+      "compatibility": {
+        "motherboardSockets": ["LGA4677"],
+        "memoryType": "DDR5/ECC",
+        "notes": "High-core Intel Xeon for workstation/AI compute tasks"
+      }
+    }
+  ],
+  "GPU": [
+    {
+      "id": "gpu-nvidia-rtx-4090",
+      "name": "NVIDIA RTX 4090",
+      "brand": "NVIDIA",
+      "price": 1849,
+      "category": ["Gaming", "AI"],
+      "psuRequirement": 850,
+      "performanceScore": 100,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "Requires powerful PSU and large case for airflow"
+      }
+    },
+    {
+      "id": "gpu-amd-7900xtx",
+      "name": "AMD Radeon RX 7900 XTX",
+      "brand": "AMD",
+      "price": 999,
+      "category": ["Gaming"],
+      "psuRequirement": 750,
+      "performanceScore": 92,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "High-end AMD GPU for top-tier gaming"
+      }
+    },
+    {
+      "id": "gpu-nvidia-4070ti",
+      "name": "NVIDIA RTX 4070 Ti",
+      "brand": "NVIDIA",
+      "price": 849,
+      "category": ["Gaming"],
+      "psuRequirement": 650,
+      "performanceScore": 82,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "Mid-high range for gaming at 1440p/4K"
+      }
+    },
+    {
+      "id": "gpu-nvidia-4060ti",
+      "name": "NVIDIA RTX 4060 Ti",
+      "brand": "NVIDIA",
+      "price": 489,
+      "category": ["Budget", "Gaming"],
+      "psuRequirement": 550,
+      "performanceScore": 75,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "Budget-friendly ray tracing support"
+      }
+    },
+    {
+      "id": "gpu-amd-rx-7600",
+      "name": "AMD Radeon RX 7600",
+      "brand": "AMD",
+      "price": 269,
+      "category": ["Budget", "Gaming"],
+      "psuRequirement": 500,
+      "performanceScore": 72,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "Entry-level 1080p gaming solution"
+      }
+    },
+    {
+      "id": "gpu-nvidia-rtx-a6000",
+      "name": "NVIDIA RTX A6000",
+      "brand": "NVIDIA",
+      "price": 6899,
+      "category": ["Workstation", "AI"],
+      "psuRequirement": 850,
+      "performanceScore": 98,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "Professional-grade GPU for AI/3D/Workstation"
+      }
+    },
+    {
+      "id": "gpu-amd-w7900",
+      "name": "AMD Radeon PRO W7900",
+      "brand": "AMD",
+      "price": 3999,
+      "category": ["Workstation", "AI"],
+      "psuRequirement": 750,
+      "performanceScore": 97,
+      "compatibility": {
+        "interface": "PCIe x16",
+        "notes": "Pro-level AMD GPU for workstation/AI compute"
+      }
+    }
+  ],
+  "Motherboard": [
+    {
+      "id": "mb-asus-rog-strix-z790-e",
+      "name": "ASUS ROG Strix Z790-E",
+      "brand": "ASUS",
+      "price": 399,
+      "category": ["Gaming", "Workstation"],
+      "socket": "LGA1700",
+      "chipset": "Z790",
+      "compatibility": {
+        "cpuSockets": ["LGA1700"],
+        "chipset": "Z790",
+        "memoryType": "DDR5",
+        "formFactor": "ATX"
+      }
+    },
+    {
+      "id": "mb-msi-mag-x670e-tomahawk",
+      "name": "MSI MAG X670E Tomahawk",
+      "brand": "MSI",
+      "price": 299,
+      "category": ["Gaming", "Workstation"],
+      "socket": "AM5",
+      "chipset": "X670E",
+      "compatibility": {
+        "cpuSockets": ["AM5"],
+        "chipset": "X670E",
+        "memoryType": "DDR5",
+        "formFactor": "ATX"
+      }
+    },
+    {
+      "id": "mb-asus-pro-ws-wrx80e-sage-se",
+      "name": "ASUS Pro WS WRX80E-SAGE SE",
+      "brand": "ASUS",
+      "price": 999,
+      "category": ["Workstation", "AI"],
+      "socket": "sTR5",
+      "chipset": "WRX80",
+      "compatibility": {
+        "cpuSockets": ["sTR5"],
+        "chipset": "WRX80",
+        "memoryType": "DDR4/ECC",
+        "formFactor": "E-ATX"
+      }
+    }
+  ],
+  "PowerSupply": [
+    {
+      "id": "psu-corsair-rm1000x",
+      "name": "Corsair RM1000x 1000W",
+      "brand": "Corsair",
+      "price": 199,
+      "category": ["Gaming", "Workstation", "AI"],
+      "wattage": 1000,
+      "compatibility": {
+        "maxWattage": 1000,
+        "compatibleSystems": "High-end gaming, workstation, and AI builds"
+      }
+    },
+    {
+      "id": "psu-evga-supernova-850w",
+      "name": "EVGA SuperNOVA 850W",
+      "brand": "EVGA",
+      "price": 149,
+      "category": ["Gaming"],
+      "wattage": 850,
+      "compatibility": {
+        "maxWattage": 850,
+        "compatibleSystems": "Mid to high-end gaming builds"
+      }
+    },
+    {
+      "id": "psu-coolermaster-mwe-750w",
+      "name": "Cooler Master MWE 750W",
+      "brand": "Cooler Master",
+      "price": 109,
+      "category": ["Budget"],
+      "wattage": 750,
+      "compatibility": {
+        "maxWattage": 750,
+        "compatibleSystems": "Budget builds up to mid-range GPUs"
+      }
+    }
+  ],
+  "Cooling": [
+    {
+      "id": "cooling-corsair-h150i-elite",
+      "name": "Corsair iCUE H150i Elite",
+      "price": 289,
+      "category": ["Gaming"],
+      "type": "AIO",
+      "compatibility": {
+        "supportedSockets": [
+          "LGA115x",
+          "LGA1200",
+          "LGA1700",
+          "AM4",
+          "AM5"
+        ]
+      }
+    },
+    {
+      "id": "cooling-noctua-nh-d15",
+      "name": "Noctua NH-D15",
+      "price": 119,
+      "category": ["Workstation"],
+      "type": "Air",
+      "compatibility": {
+        "supportedSockets": [
+          "LGA115x",
+          "LGA1200",
+          "LGA1700",
+          "AM4",
+          "AM5"
+        ]
+      }
+    },
+    {
+      "id": "cooling-ek-quantum-velocity2-drgb",
+      "name": "EK-Quantum Velocity² D-RGB",
+      "price": 229,
+      "category": ["AI"],
+      "type": "Custom Loop",
+      "compatibility": {
+        "supportedSockets": [
+          "LGA115x",
+          "LGA1200",
+          "LGA1700",
+          "AM4",
+          "AM5",
+          "sTR5"
+        ],
+        "notes": "Requires custom loop components"
+      }
+    }
+  ],
+  "Storage": [
+    {
+      "id": "storage-samsung-990-pro-2tb",
+      "name": "Samsung 990 PRO 2TB NVMe",
+      "brand": "Samsung",
+      "price": 219,
+      "category": ["Gaming", "Workstation"],
+      "type": "NVMe"
+    },
+    {
+      "id": "storage-wd-black-sn850x-4tb",
+      "name": "WD Black SN850X 4TB",
+      "brand": "Western Digital",
+      "price": 349,
+      "category": ["Workstation", "AI"],
+      "type": "NVMe"
+    }
+  ],
+  "OS": [
+    {
+      "id": "os-windows-11-pro",
+      "name": "Windows 11 Pro",
+      "price": 189,
+      "category": ["Workstation"]
+    },
+    {
+      "id": "os-windows-11-home",
+      "name": "Windows 11 Home",
+      "price": 149,
+      "category": ["Gaming"]
+    },
+    {
+      "id": "os-ubuntu-22lts",
+      "name": "Ubuntu 22.04 LTS",
+      "price": 0,
+      "category": ["AI", "Workstation"]
+    }
+  ],
+  "Aesthetics": [
+    {
+      "id": "aesthetic-lianli-strimer-v2",
+      "name": "Lian Li Strimer Plus V2",
+      "price": 69,
+      "category": ["Gaming"]
+    },
+    {
+      "id": "aesthetic-nzxt-h9-elite",
+      "name": "NZXT H9 Elite RGB Case",
+      "price": 249,
+      "category": ["Gaming"],
+      "compatibility": {
+        "motherboardFormFactors": ["ATX", "MicroATX", "Mini-ITX"],
+        "notes": "Ensure GPU length and cooler clearance"
+      }
+    },
+    {
+      "id": "aesthetic-fractal-define-7",
+      "name": "Fractal Design Define 7",
+      "price": 199,
+      "category": ["Workstation"],
+      "compatibility": {
+        "motherboardFormFactors": ["ATX", "MicroATX", "Mini-ITX"],
+        "notes": "Focus on low-noise design"
+      }
+    }
+  ]
+}
