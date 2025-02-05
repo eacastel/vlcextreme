@@ -1,0 +1,51 @@
+{
+    "CPU": [
+      { "name": "Intel Core i9-14900K", "brand": "Intel", "price": 649, "category": ["Gaming", "Workstation"], "socket": "LGA1700", "performanceScore": 95 },
+      { "name": "AMD Ryzen 9 7950X3D", "brand": "AMD", "price": 729, "category": ["Gaming", "AI"], "socket": "AM5", "performanceScore": 98 },
+      { "name": "Intel Core i7-14700K", "brand": "Intel", "price": 469, "category": ["Gaming", "Workstation"], "socket": "LGA1700", "performanceScore": 85 },
+      { "name": "AMD Ryzen 7 7800X3D", "brand": "AMD", "price": 429, "category": ["Gaming"], "socket": "AM5", "performanceScore": 87 },
+      { "name": "Intel Core i5-13600K", "brand": "Intel", "price": 329, "category": ["Budget", "Gaming"], "socket": "LGA1700", "performanceScore": 78 },
+      { "name": "AMD Ryzen 5 7600", "brand": "AMD", "price": 249, "category": ["Budget", "Gaming"], "socket": "AM5", "performanceScore": 75 },
+      { "name": "AMD Threadripper PRO 7995WX", "brand": "AMD", "price": 5499, "category": ["Workstation", "AI"], "socket": "sTR5", "performanceScore": 99 },
+      { "name": "Intel Xeon w9-3495X", "brand": "Intel", "price": 4899, "category": ["Workstation", "AI"], "socket": "LGA4677", "performanceScore": 98 }
+    ],
+    "GPU": [
+      { "name": "NVIDIA RTX 4090", "brand": "NVIDIA", "price": 1849, "category": ["Gaming", "AI"], "psuRequirement": 850, "performanceScore": 100 },
+      { "name": "AMD Radeon RX 7900 XTX", "brand": "AMD", "price": 999, "category": ["Gaming"], "psuRequirement": 750, "performanceScore": 92 },
+      { "name": "NVIDIA RTX 4070 Ti", "brand": "NVIDIA", "price": 849, "category": ["Gaming"], "psuRequirement": 650, "performanceScore": 82 },
+      { "name": "NVIDIA RTX 4060 Ti", "brand": "NVIDIA", "price": 489, "category": ["Budget", "Gaming"], "psuRequirement": 550, "performanceScore": 75 },
+      { "name": "AMD Radeon RX 7600", "brand": "AMD", "price": 269, "category": ["Budget", "Gaming"], "psuRequirement": 500, "performanceScore": 72 },
+      { "name": "NVIDIA RTX A6000", "brand": "NVIDIA", "price": 6899, "category": ["Workstation", "AI"], "psuRequirement": 850, "performanceScore": 98 },
+      { "name": "AMD Radeon PRO W7900", "brand": "AMD", "price": 3999, "category": ["Workstation", "AI"], "psuRequirement": 750, "performanceScore": 97 }
+    ],
+    "Motherboard": [
+      { "name": "ASUS ROG Strix Z790-E", "brand": "ASUS", "price": 399, "category": ["Gaming", "Workstation"], "socket": "LGA1700", "chipset": "Z790" },
+      { "name": "MSI MAG X670E Tomahawk", "brand": "MSI", "price": 299, "category": ["Gaming", "Workstation"], "socket": "AM5", "chipset": "X670E" },
+      { "name": "ASUS Pro WS WRX80E-SAGE SE", "brand": "ASUS", "price": 999, "category": ["Workstation", "AI"], "socket": "sTR5", "chipset": "WRX80" }
+    ],
+    "PowerSupply": [
+      { "name": "Corsair RM1000x 1000W", "brand": "Corsair", "price": 199, "category": ["Gaming", "Workstation", "AI"], "wattage": 1000 },
+      { "name": "EVGA SuperNOVA 850W", "brand": "EVGA", "price": 149, "category": ["Gaming"], "wattage": 850 },
+      { "name": "Cooler Master MWE 750W", "brand": "Cooler Master", "price": 109, "category": ["Budget"], "wattage": 750 }
+    ],
+    "Cooling": [
+      { "name": "Corsair iCUE H150i Elite", "price": 289, "category": ["Gaming"], "type": "AIO" },
+      { "name": "Noctua NH-D15", "price": 119, "category": ["Workstation"], "type": "Air" },
+      { "name": "EK-Quantum Velocity² D-RGB", "price": 229, "category": ["AI"], "type": "Custom Loop" }
+    ],
+    "Storage": [
+      { "name": "Samsung 990 PRO 2TB NVMe", "brand": "Samsung", "price": 219, "category": ["Gaming", "Workstation"], "type": "NVMe" },
+      { "name": "WD Black SN850X 4TB", "brand": "Western Digital", "price": 349, "category": ["Workstation", "AI"], "type": "NVMe" }
+    ],
+    "OS": [
+      { "name": "Windows 11 Pro", "price": 189, "category": ["Workstation"] },
+      { "name": "Windows 11 Home", "price": 149, "category": ["Gaming"] },
+      { "name": "Ubuntu 22.04 LTS", "price": 0, "category": ["AI", "Workstation"] }
+    ],
+    "Aesthetics": [
+      { "name": "Lian Li Strimer Plus V2", "price": 69, "category": ["Gaming"] },
+      { "name": "NZXT H9 Elite RGB Case", "price": 249, "category": ["Gaming"] },
+      { "name": "Fractal Design Define 7", "price": 199, "category": ["Workstation"] }
+    ]
+  }
+  
