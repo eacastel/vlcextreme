@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { graphql, useStaticQuery } from "gatsby";
 import buildsData from '../data/builds.json'; // Ensure the JSON file is in the correct path
 // Import your separate build card components:
 import GamingBuildCard from './builds/GamingBuildCard';
@@ -7,7 +8,21 @@ import AIBuildCard from './builds/AIBuildCard';
 // import MiningBuildCard from './builds/MiningBuildCard';
 import CategoryButton from './CategoryButton';
 
+
 const SelectConfigure = () => {
+  // Fetch the sticker image for special builds
+  const data = useStaticQuery(graphql`
+    query {
+      sticker: file(relativePath: { eq: "extreme-build-sticker.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 96, height: 96, layout: FIXED)
+        }
+      }
+    }
+  `);
+
+  const stickerImage = data?.sticker?.childImageSharp?.gatsbyImageData;
+
   // State to keep track of the selected category; default is "gaming"
   const [selectedCategory, setSelectedCategory] = useState("gaming");
 
@@ -27,13 +42,13 @@ const SelectConfigure = () => {
   const renderBuildCard = (build) => {
     switch (build.category) {
       case 'gaming':
-        return <GamingBuildCard key={build.id} build={build} />;
+        return <GamingBuildCard key={build.id} build={build} stickerImage={stickerImage} />;
       case 'production':
-        return <ProductionBuildCard key={build.id} build={build} />;
-        case 'ai':
-        return <AIBuildCard key={build.id} build={build} />;
+        return <ProductionBuildCard key={build.id} build={build} stickerImage={stickerImage} />;
+      case 'ai':
+        return <AIBuildCard key={build.id} build={build} stickerImage={stickerImage} />;
       /*
-        case 'mining':
+      case 'mining':
         return <MiningBuildCard key={build.id} build={build} />;
       */
       default:
@@ -45,54 +60,18 @@ const SelectConfigure = () => {
     <div className="w-full max-w-5xl mx-auto mt-10 px-4">
       {/* Top Category Buttons */}
       <div className="flex flex-wrap justify-center mb-6 space-x-4">
-        <CategoryButton
-          categoryKey="gaming"
-          label={categories.gaming}
-          isActive={selectedCategory === "gaming"}
-          onClick={setSelectedCategory}
-          variant="outline"
-          color="neongreen"
-          activeClass="bg-emerald-900 !text-neon-green shadow-xl"  
-        />
-        <CategoryButton
-          categoryKey="production"
-          label={categories.production}
-          isActive={selectedCategory === "production"}
-          onClick={setSelectedCategory}
-          variant="outline"
-          color="neonyellow"
-          activeClass="bg-yellow-950 !text-neon-yellow shadow-xl"  // Custom active styling for production
-        />
-        <CategoryButton
-          categoryKey="ai"
-          label={categories.ai}
-          isActive={selectedCategory === "ai"}
-          onClick={setSelectedCategory}
-          variant="outline"
-          color="neonorange"
-          activeClass="bg-amber-950 !text-neon-orange shadow-xl"
-        />
-        {/*   
-        <CategoryButton 
-          categoryKey="mining"
-          label={categories.mining}
-          isActive={selectedCategory === "mining"}
-          onClick={setSelectedCategory}
-          variant="outline"
-          color="vividred"
-          activeClass="bg-vivid-red text-black shadow-xl"  // Custom active styling for mining
-        />
-        
-        <CategoryButton
-          categoryKey="help"
-          label={categories.help}
-          isActive={selectedCategory === "help"}
-          onClick={setSelectedCategory}
-          variant="outline"
-          color="neoncyan"
-          activeClass="border-2 border-neon-cyan bg-neon-cyan text-carbon-black shadow-xl"  // Custom active styling for help
-        />
-        */}
+        {Object.keys(categories).map(categoryKey => (
+          <CategoryButton
+            key={categoryKey}
+            categoryKey={categoryKey}
+            label={categories[categoryKey]}
+            isActive={selectedCategory === categoryKey}
+            onClick={setSelectedCategory}
+            variant="outline"
+            color={categoryKey === "gaming" ? "neongreen" : categoryKey === "production" ? "neonyellow" : "neonorange"}
+            activeClass={`bg-${categoryKey === "gaming" ? "green-950" : categoryKey === "production" ? "yellow-950" : "amber-950"} !text-neon-${categoryKey === "gaming" ? "green" : categoryKey === "production" ? "yellow" : "orange"} shadow-xl`}
+          />
+        ))}
       </div>
 
       {/* Responsive Grid of Build Cards */}

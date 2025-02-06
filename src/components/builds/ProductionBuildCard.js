@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const BuildCard = ({ build }) => {
-  // Compute total price of the build with European thousands separator (e.g. 1.234€)
+const ProductionBuildCard = ({ build, stickerImage }) => {
   const totalPrice = Object.values(build.base_components)
     .reduce((sum, component) => sum + component.price, 0)
     .toLocaleString('es-ES', { useGrouping: true, minimumFractionDigits: 0, maximumFractionDigits: 0 });
@@ -10,8 +10,23 @@ const BuildCard = ({ build }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all 
+    <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all 
                     hover:text-carbon-black hover:shadow-[0_0_20px_#FFD700] text-center">
+      
+            {/* Floating Sticker - Uses Gatsby Image if available */}
+            {build.sticker && (
+              <div className="absolute top-[235px] -right-2 w-24 h-24 flex items-center justify-center rounded-full shadow-md overflow-hidden">
+                {build.sticker.image ? (
+                  <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
+                ) : (
+                  <div className={`w-full h-full rounded-full bg-${build.sticker.bg} flex items-center justify-center text-${build.sticker.textColor}`}>
+                    {build.sticker.text}
+                  </div>
+                )}
+              </div>
+            )}
+      
+      
       {/* Short Description Banner */}
       <div className="bg-neon-yellow text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
         {build.short_description}
@@ -23,7 +38,7 @@ const BuildCard = ({ build }) => {
         <h3 className="text-2xl font-bold text-neon-yellow mt-2 mb-4">{build.name}</h3>
 
         {/* Build Description */}
-        <p className="mb-4 text-gray-300">{build.description}</p>
+        <p className="mb-2 text-gray-300">{build.description}</p>
 
         {/* Compatible Games Section */}
         {build.compatible_software && build.compatible_software.length > 0 && (
@@ -57,7 +72,7 @@ const BuildCard = ({ build }) => {
         {/* Total Price & Selection Button */}
         <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
           <span className="text-sm uppercase">Precio Total:</span>
-          <span className="text-neon-yellow text-2xl font-bold">€{totalPrice}</span>
+          <span className="text-neon-yellow text-2xl font-bold">{totalPrice}€</span>
         </div>
 
         <div className="mt-4">
@@ -75,4 +90,4 @@ const BuildCard = ({ build }) => {
   );
 };
 
-export default BuildCard;
+export default ProductionBuildCard;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const BuildCard = ({ build }) => {
+const AIBuildCard = ({ build, stickerImage  }) => {
   // Compute total price of the build with European thousands separator (e.g. 1.234€)
   const totalPrice = Object.values(build.base_components)
     .reduce((sum, component) => sum + component.price, 0)
@@ -10,7 +11,21 @@ const BuildCard = ({ build }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#FF8C00] text-center">
+    <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#FF8C00] text-center">
+
+            {/* Floating Sticker - Uses Gatsby Image if available */}
+            {build.sticker && (
+              <div className="absolute top-[230px] -right-2 w-24 h-24 flex items-center justify-center rounded-full shadow-md overflow-hidden">
+                {build.sticker.image ? (
+                  <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
+                ) : (
+                  <div className={`w-full h-full rounded-full bg-${build.sticker.bg} flex items-center justify-center text-${build.sticker.textColor}`}>
+                    {build.sticker.text}
+                  </div>
+                )}
+              </div>
+            )}
+
       {/* Short Description Banner */}
       <div className="bg-neon-orange text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
         {build.short_description}
@@ -72,4 +87,4 @@ const BuildCard = ({ build }) => {
   );
 };
 
-export default BuildCard;
+export default AIBuildCard;

@@ -31,7 +31,7 @@ const Hero = ({ backgroundImage }) => {
       {/* Content Container */}
       <div className="container mx-auto px-4 relative z-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-light-gray mb-6 px-4">
-          VLCExtreme: Potencia a tu medida
+        ¿Hasta qué extremo quieres llegar? 
         </h1>
         <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
           Cada PC es ensamblado bajo pedido con los componentes más recientes. Sin stock, sin producción en masa, solo rendimiento extremo.
