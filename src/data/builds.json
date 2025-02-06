@@ -3,6 +3,7 @@
     "G001": {
       "name": "Casual Cruiser",
       "description": "Perfecto para juegos ligeros, el cole y medios. Maneja Minecraft, Roblox, Los Sims y esports casuales.",
+      "short_description": "Juegos básicos y multimedia",
       "price_range": {
         "min": 846,
         "max": 1145
@@ -151,6 +152,7 @@
     "G002": {
       "name": "eSports Edge",
       "description": "Optimizado para eSports competitivos con altas tasas de FPS en 1080p y monitores de 144Hz o más.",
+      "short_description": "Máxima fluidez en competición",
       "price_range": {
         "min": 1200,
         "max": 1700
@@ -283,6 +285,7 @@
     "G003": {
       "name": "AAA Avenger",
       "description": "Diseñado para juegos AAA modernos en 1080p Ultra o 1440p High con 60-100 FPS.",
+      "short_description": "Gráficos espectaculares sin cortes",
       "price_range": {
         "min": 1700,
         "max": 2500
@@ -415,6 +418,7 @@
     "G004": {
       "name": "Titan Dominator (i9)",
       "description": "Máquina definitiva para gaming 4K Ultra, streaming simultáneo y mods pesados. Potencia extrema y componentes de última generación.",
+      "short_description": "Gaming extremo y streaming",
       "price_range": {
         "min": 3500,
         "max": 5000
@@ -548,6 +552,7 @@
     "G005": {
       "name": "Titan Fury (AMD)",
       "description": "Máxima potencia con AMD. Ideal para juegos en 4K y alto rendimiento con menor consumo.",
+      "short_description": "Rendimiento 4K con AMD",
       "price_range": {
         "min": 2900,
         "max": 4000
@@ -693,6 +698,314 @@
       "optional_upgrades": [
         "More RAM",
         "Custom Cooling"
+      ]
+    },
+    "G006": {
+      "name": "Virtual Voyager (VR)",
+      "description": "Experiencia inmersiva en VR con un rendimiento fluido y sin mareos. Diseñado para títulos exigentes como Half-Life: Alyx y simuladores de vuelo.",
+      "short_description": "VR fluido y envolvente",
+      "price_range": {
+        "min": 2900,
+        "max": 4000
+      },
+      "base_components": {
+        "CPU": {
+          "name": "Intel Core i7-14700K",
+          "brand": "Intel",
+          "price": 449,
+          "performance_score": 94,
+          "form_factor": "LGA1700",
+          "compatibility": {
+            "motherboard_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5"
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 7 7800X3D",
+              "price": 449,
+              "performance_score": 92,
+              "form_factor": "AM5"
+            }
+          ]
+        },
+        "GPU": {
+          "name": "NVIDIA RTX 4080 Super",
+          "brand": "NVIDIA",
+          "price": 999,
+          "performance_score": 98,
+          "interface": "PCIe x16",
+          "compatibility": {
+            "motherboard_slots": [
+              "PCIe x16"
+            ],
+            "psu_requirement": 750
+          },
+          "alternatives": [
+            {
+              "name": "AMD Radeon RX 7900 XTX",
+              "price": 999,
+              "performance_score": 97,
+              "interface": "PCIe x16"
+            }
+          ]
+        },
+        "Motherboard": {
+          "name": "ASUS ROG Strix Z790-E Gaming WiFi",
+          "brand": "ASUS",
+          "price": 399,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "Corsair Vengeance RGB 32GB DDR5 6000MHz",
+          "brand": "Corsair",
+          "price": 249,
+          "performance_score": 92,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "Z790"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Samsung 990 PRO 2TB NVMe",
+          "brand": "Samsung",
+          "price": 249,
+          "performance_score": 90,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Corsair RM850x 850W",
+          "brand": "Corsair",
+          "price": 179,
+          "performance_score": 90,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 850,
+            "gpu_compatibility": [
+              "RTX 4080 Super",
+              "RX 7900 XTX"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "NZXT Kraken Elite RGB 360mm AIO",
+          "brand": "NZXT",
+          "price": 299,
+          "performance_score": 94,
+          "form_factor": "AIO",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700",
+              "AM5"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Lian Li Lancool III RGB",
+          "brand": "Lian Li",
+          "price": 169,
+          "form_factor": "Mid Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "ATX",
+              "E-ATX"
+            ],
+            "gpu_clearance": "420mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Half-Life: Alyx",
+        "VR Chat",
+        "Microsoft Flight Simulator",
+        "Asgard’s Wrath 2"
+      ],
+      "optional_upgrades": [
+        "64GB RAM",
+        "Higher wattage PSU",
+        "Custom liquid cooling"
+      ]
+    },
+    "G007": {
+      "name": "PowerStack",
+      "description": "Rendimiento extremo para juegos AAA y tareas avanzadas. Diseñado para jugadores con grandes bibliotecas de mods y multitarea intensiva.",
+      "short_description": "Juegos, mods y trabajo",
+      "price_range": {
+        "min": 2900,
+        "max": 4000
+      },
+      "base_components": {
+        "CPU": {
+          "name": "AMD Ryzen 9 7900X",
+          "brand": "AMD",
+          "price": 549,
+          "performance_score": 96,
+          "form_factor": "AM5",
+          "compatibility": {
+            "motherboard_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5"
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i9-13900K",
+              "price": 579,
+              "performance_score": 96,
+              "form_factor": "LGA1700"
+            }
+          ]
+        },
+        "GPU": {
+          "name": "NVIDIA RTX 4080 Super",
+          "brand": "NVIDIA",
+          "price": 999,
+          "performance_score": 98,
+          "interface": "PCIe x16",
+          "compatibility": {
+            "motherboard_slots": [
+              "PCIe x16"
+            ],
+            "psu_requirement": 750
+          },
+          "alternatives": [
+            {
+              "name": "AMD Radeon RX 7900 XT",
+              "price": 849,
+              "performance_score": 96,
+              "interface": "PCIe x16"
+            }
+          ]
+        },
+        "Motherboard": {
+          "name": "MSI MAG X670E TOMAHAWK",
+          "brand": "MSI",
+          "price": 349,
+          "form_factor": "ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "G.Skill Trident Z5 RGB 64GB DDR5 6000MHz",
+          "brand": "G.Skill",
+          "price": 349,
+          "performance_score": 94,
+          "form_factor": "DIMM",
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "X670E"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Samsung 990 PRO 2TB NVMe",
+          "brand": "Samsung",
+          "price": 249,
+          "performance_score": 90,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
+              "price": 449,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe",
+              "compatibility": {
+                "motherboard_slots": [
+                  "M.2"
+                ],
+                "pcie_version": "Gen4"
+              }
+            }
+          ]
+        },
+        "PowerSupply": {
+          "name": "Corsair RM850x 850W",
+          "brand": "Corsair",
+          "price": 179,
+          "performance_score": 90,
+          "form_factor": "ATX",
+          "compatibility": {
+            "max_wattage": 850,
+            "gpu_compatibility": [
+              "RTX 4080 Super",
+              "RX 7900 XT"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "NZXT Kraken Elite RGB 360mm AIO",
+          "brand": "NZXT",
+          "price": 299,
+          "performance_score": 94,
+          "form_factor": "AIO",
+          "compatibility": {
+            "cpu_sockets": [
+              "AM5",
+              "LGA1700"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Fractal Design North",
+          "brand": "Fractal Design",
+          "price": 179,
+          "form_factor": "Mid Tower",
+          "compatibility": {
+            "motherboard_sizes": [
+              "ATX",
+              "E-ATX"
+            ],
+            "gpu_clearance": "400mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Cyberpunk 2077 (RT Overdrive)",
+        "Starfield",
+        "Baldur’s Gate 3",
+        "Elden Ring",
+        "Modded Skyrim / Fallout 4"
+      ],
+      "optional_upgrades": [
+        "4TB NVMe SSD with heatsink",
+        "128GB RAM",
+        "Custom water cooling"
       ]
     }
   }
