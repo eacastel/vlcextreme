@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-const BuildCard = ({ build }) => {
-  // Compute total price of the build with European thousands separator (e.g. 1.234€)
+const GamingBuildCard = ({ build }) => {
   const totalPrice = Object.values(build.base_components)
     .reduce((sum, component) => sum + component.price, 0)
     .toLocaleString('es-ES', { useGrouping: true, minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-  // State to toggle visibility of the details
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -23,12 +21,12 @@ const BuildCard = ({ build }) => {
         <h3 className="text-2xl font-bold text-neon-green mt-2 mb-4">{build.name}</h3>
 
         {/* Build Description */}
-        <p className="mb-2 text-gray-300">{build.description}</p>
+        <p className="mb-4 text-gray-300">{build.description}</p>
 
         {/* Compatible Games Section */}
         {build.compatible_games && build.compatible_games.length > 0 && (
           <p className="text-sm text-gray-300 italic mb-4">
-            🎮 Juegos Compatibles: <span className="text-white">{build.compatible_games.join(', ')}</span>
+            <span className="text-white">{build.compatible_games.join(', ')}</span>
           </p>
         )}
 
@@ -57,7 +55,7 @@ const BuildCard = ({ build }) => {
         {/* Total Price & Selection Button */}
         <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
           <span className="text-sm uppercase">Precio Total:</span>
-          <span className="text-neon-green text-2xl font-bold">{totalPrice}€</span>
+          <span className="text-neon-green text-2xl font-bold">€{totalPrice}</span>
         </div>
 
         <div className="mt-4">
@@ -75,4 +73,4 @@ const BuildCard = ({ build }) => {
   );
 };
 
-export default BuildCard;
+export default GamingBuildCard;
