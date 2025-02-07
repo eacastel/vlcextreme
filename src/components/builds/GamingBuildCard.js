@@ -1,50 +1,12 @@
 import React, { useState } from 'react';
 import { GatsbyImage } from "gatsby-plugin-image";
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
 const GamingBuildCard = ({ build, stickerImage }) => {
   const totalPrice = Object.values(build.base_components)
     .reduce((sum, component) => sum + component.price, 0)
-    .toLocaleString('es-ES', { 
-      useGrouping: true, 
-      minimumFractionDigits: 0, 
-      maximumFractionDigits: 0 
-    });
+    .toLocaleString('es-ES', { useGrouping: true, minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
   const [showDetails, setShowDetails] = useState(false);
-
-  // Handle Stripe Checkout
-  const handleCheckout = async () => {
-    try {
-      const stripe = await stripePromise;
-      
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          buildId: build.id,
-          price: Math.round(build.price_range.min * 100) // Convert to cents
-        }),
-      });
-
-      const session = await response.json();
-      
-      const result = await stripe.redirectToCheckout({
-        sessionId: session.id
-      });
-
-      if (result.error) {
-        alert(result.error.message);
-      }
-    } catch (error) {
-      console.error('Checkout error:', error);
-      alert('Error al procesar la compra');
-    }
-  };
 
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all 
@@ -102,7 +64,7 @@ const GamingBuildCard = ({ build, stickerImage }) => {
           </div>
         )}
 
-        {/* Total Price & Checkout Button */}
+        {/* Total Price & Selection Button */}
         <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
           <span className="text-sm uppercase">Precio Total:</span>
           <span className="text-neon-green text-2xl font-bold">€{totalPrice}</span>
@@ -110,11 +72,12 @@ const GamingBuildCard = ({ build, stickerImage }) => {
 
         <div className="mt-4">
           <button
-            onClick={handleCheckout}
+            onClick={() => alert(`Configuración "${build.name}" seleccionada.`)}
             className="bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base 
-                      transition-all duration-200 ease-in-out hover:bg-neon-green hover:shadow-[0_0_15px_#00FF87]"
+                      transition-all duration-200 ease-in-out hover:bg-neon-green 
+                      hover:shadow-[0_0_15px_#00FF87]"
           >
-            Comprar Ahora
+            Seleccionar
           </button>
         </div>
       </div>
