@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const SuccessPage = () => (
-  <div className="text-center mt-20">
-    <h1 className="text-3xl font-bold text-neon-green">¡Gracias por tu compra!</h1>
-    <p>Tu pedido está en proceso. Recibirás un correo de confirmación pronto.</p>
+  <div className="min-h-screen bg-carbon-black text-light-gray flex items-center justify-center">
+    <div className="text-center">
+      <h1 className="text-3xl mb-4">¡Pago exitoso!</h1>
+      <p>Gracias por tu compra. Recibirás un correo de confirmación.</p>
+    </div>
   </div>
 );
 

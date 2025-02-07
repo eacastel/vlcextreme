@@ -51,6 +51,15 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {},
+        mergeSecurityHeaders: true,
+        mergeLinkHeaders: true,
+        mergeCachingHeaders: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `VLCExtreme | Ordenadores Personalizados`,
@@ -59,7 +68,7 @@ module.exports = {
         background_color: `#0D0D0D`, 
         theme_color: `#00B4D8`, 
         display: `minimal-ui`,
-        icon: `src/images/vlcextreme-logo-header.png`, 
+        icon: `src/images/vlc-square-for-manifest.png`, 
       },
     },
     {
