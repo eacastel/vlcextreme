@@ -21,7 +21,7 @@ module.exports = {
           quality: 90,
           breakpoints: [750, 1080, 1366, 1920],
         },
-        failOnError: false,
+        failOn: "none",
         base64Width: 20,
         forceBase64Format: "png",
         useMozJpeg: false, 
@@ -55,7 +55,6 @@ module.exports = {
       options: {
         headers: {},
         mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
         mergeCachingHeaders: true,
       },
     },

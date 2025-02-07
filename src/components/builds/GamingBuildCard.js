@@ -20,7 +20,7 @@ const GamingBuildCard = ({ build, stickerImage }) => {
     try {
       const stripe = await stripePromise;
       
-      const response = await fetch('/.netlify/functions/checkout', {
+      const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
