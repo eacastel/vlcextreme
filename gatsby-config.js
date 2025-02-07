@@ -63,17 +63,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "process.env.GATSBY_YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        pageTransitionDelay: 0,
-        cookieDomain: "vlcextreme.com",
+        trackingIds: [process.env.GATSBY_GOOGLE_GTAG_ID], 
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true, 
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
       },
-    },
+    },    
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
