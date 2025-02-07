@@ -19,6 +19,15 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    'top-[265px]',
+    '-right-2', 
+    'bg-red-500',
+    'bg-green-500',
+    'bg-blue-500',
+    'text-white',
+    'text-black',
+  ],
   plugins: [
     require('@tailwindcss/typography'),
   ],

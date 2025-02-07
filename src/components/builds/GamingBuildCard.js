@@ -8,6 +8,31 @@ const GamingBuildCard = ({ build, stickerImage }) => {
 
   const [showDetails, setShowDetails] = useState(false);
 
+  // Handle Stripe Checkout
+  const handleCheckout = async () => {
+    try {
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ buildId: build.id, price: build.price_range.min }),
+      });
+
+      const session = await response.json();
+      console.log("Stripe session response:", session); // For debugging in production
+      if (session.id) {
+        window.location.href = session.url; // Redirect to Stripe Checkout
+      } else {
+        console.error("Stripe session error", session);
+        alert("Error al procesar la compra.");
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+      alert("Error en la compra.");
+    }
+  };
+
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all 
                     hover:text-carbon-black hover:shadow-[0_0_20px_#00FF87] text-center">
@@ -64,7 +89,7 @@ const GamingBuildCard = ({ build, stickerImage }) => {
           </div>
         )}
 
-        {/* Total Price & Selection Button */}
+        {/* Total Price & Buy Now Button */}
         <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
           <span className="text-sm uppercase">Precio Total:</span>
           <span className="text-neon-green text-2xl font-bold">€{totalPrice}</span>
@@ -72,12 +97,12 @@ const GamingBuildCard = ({ build, stickerImage }) => {
 
         <div className="mt-4">
           <button
-            onClick={() => alert(`Configuración "${build.name}" seleccionada.`)}
+            onClick={handleCheckout}
             className="bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base 
                       transition-all duration-200 ease-in-out hover:bg-neon-green 
                       hover:shadow-[0_0_15px_#00FF87]"
           >
-            Seleccionar
+            Comprar Ahora
           </button>
         </div>
       </div>
