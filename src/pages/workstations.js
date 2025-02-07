@@ -23,7 +23,25 @@ const WorkstationsPage = ({ data }) => {
 
       {/* 🔹 Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <GatsbyImage image={heroImage} alt="Workstation IA con múltiples pantallas y renderizado" className="absolute inset-0 w-full h-full object-cover" />
+               {/* Background Image */}
+                {heroImage && (
+                  <div className="absolute inset-0 w-full h-full">
+                    <GatsbyImage
+                      image={heroImage}
+                      alt="Workstation IA con múltiples pantallas y renderizado"
+                      className="w-full h-full"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center"
+                      }}
+                    />
+                  </div>
+                )}
         <div className="absolute inset-0 bg-carbon-black/80" />
         
         <div className="container mx-auto px-4 relative text-center">
