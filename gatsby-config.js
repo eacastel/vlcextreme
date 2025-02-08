@@ -51,14 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        headers: {},
-        mergeSecurityHeaders: true,
-        mergeCachingHeaders: true,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `VLCExtreme | Ordenadores Personalizados`,
