@@ -6,9 +6,11 @@
 
 import './src/styles/globals.css'
 
-export const onClientEntry = () => {
-    const script = document.createElement("script");
-    script.src = "https://cmp.osano.com/yxyO4yMBFs/65f27da8-1bdd-4673-b5db-6963d9c87630/osano.js";
-    script.async = true;
-    document.head.appendChild(script);
-  };
+import React from "react";
+
+export const onInitialClientRender = () => {
+  const script = document.createElement("script");
+  script.src = "https://cmp.osano.com/yxyO4yMBFs/65f27da8-1bdd-4673-b5db-6963d9c87630/osano.js";
+  script.async = true;
+  document.body.appendChild(script);
+};
