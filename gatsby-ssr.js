@@ -11,7 +11,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <script
       key="osano-cmp"
-      src="https://cmp.osano.com/yxyO4yMBFs/65f27da8-1bdd-4673-b5db-6963d9c87630/osano.js"
+      src="https://cmp.osano.com/yxyO4yMBFs/b090757f-6ce3-4269-b8c8-73e249743538/osano.js"
       async
     />,
   ]);
