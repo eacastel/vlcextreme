@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
-              {['Configurador', 'Preguntas Frecuentes', 'Tiempos de entrega', 'Política de garantía'].map((link) => (
+              {['Configurador', 'Privacidad', 'Condiciones de Uso', 'Politica de Garantía'].map((link) => (
                 <li key={link}>
                   <Link to={`/${link.toLowerCase().replace(' ', '-')}`} className="text-medium-gray hover:text-neon-cyan transition-colors">
                     {link}
