@@ -6,11 +6,19 @@
 
 import './src/styles/globals.css'
 
-import React from "react";
+import React, { useEffect } from "react";
 
-export const onInitialClientRender = () => {
-  const script = document.createElement("script");
-  script.src = "https://cmp.osano.com/yxyO4yMBFs/65f27da8-1bdd-4673-b5db-6963d9c87630/osano.js";
-  script.async = true;
-  document.head.appendChild(script);
+export const wrapRootElement = ({ element }) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://cmp.osano.com/yxyO4yMBFs/65f27da8-1bdd-4673-b5db-6963d9c87630/osano.js";
+    script.async = true;
+    document.body.appendChild(script); // Append to body instead of head
+
+    return () => {
+      document.body.removeChild(script); // Cleanup script on unmount
+    };
+  }, []);
+
+  return element;
 };
