@@ -52,7 +52,7 @@ const WorkstationsPage = ({ data }) => {
             Equipos diseñados para <strong>Machine Learning, Renderizado 3D y Simulaciones Avanzadas</strong>.  
             Máxima potencia, optimización total, sin stock antiguo.
           </p>
-          <Button to="/configure" color="neoncyan">
+          <Button to="/configuraciones" color="neoncyan">
             Configura tu Workstation IA
           </Button>
         </div>
@@ -102,7 +102,7 @@ const WorkstationsPage = ({ data }) => {
                 <p className="text-medium-gray mb-4">{build.specs}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-neon-cyan font-bold">{build.price}</span>
-                  <Button to="/configure" size="sm" variant="outline">
+                  <Button to="/configuraciones" size="sm" variant="outline">
                     Ver Configuración
                   </Button>
                 </div>

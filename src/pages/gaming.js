@@ -55,7 +55,7 @@ const GamingPage = ({ data }) => {
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
             Diseñados para <strong>máximos FPS y mínimo lag</strong>. Sin stock antiguo, sin compromisos.
           </p>
-          <Button to="/configure" color="neoncyan">
+          <Button to="/configuraciones" color="neoncyan">
             Configura tu PC Gaming
           </Button>
         </div>
@@ -106,7 +106,7 @@ const GamingPage = ({ data }) => {
                 <p className="text-medium-gray mb-4">{build.specs}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-neon-cyan font-bold">{build.price}</span>
-                  <Button to="/configure" size="sm" variant="outline">
+                  <Button to="/configuraciones" size="sm" variant="outline">
                     Ver Configuración
                   </Button>
                 </div>

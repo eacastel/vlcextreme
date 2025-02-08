@@ -61,7 +61,7 @@ export default function Header() {
             </div>
             <div className="ml-4">
               <Link
-                to="/configure"
+                to="/configuraciones"
                 className="bg-neon-cyan text-carbon-black px-5 py-2 rounded-md font-bold text-sm xl:text-base whitespace-nowrap
                 transition-all duration-200 ease-in-out hover:bg-[#00A4C4] hover:shadow-[0_0_10px_#00A4C4]"
               >
@@ -97,11 +97,11 @@ export default function Header() {
               ))}
               <li className="mt-4">
                 <Link
-                  to="/configure"
+                  to="/configuraciones"
                   className="bg-neon-cyan text-carbon-black px-8 py-2 rounded-md font-bold text-sm xl:text-base whitespace-nowrap
                   transition-all duration-200 ease-in-out hover:bg-[#00A4C4] hover:shadow-[0_0_10px_#00A4C4]"
                 >
-                  Configura tu PC
+                  Configuraciones
                 </Link>
               </li>
             </ul>

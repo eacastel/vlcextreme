@@ -39,7 +39,7 @@ const Hero = ({ backgroundImage }) => {
         
         {/* Buttons Container */}
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-        <Button to="/configure" variant="outline" color="neongreen">
+        <Button to="/configuraciones" variant="outline" color="neongreen">
             Configura tu PC ahora
           </Button>
           <Button to="/contact" variant="outline" color="neoncyan">

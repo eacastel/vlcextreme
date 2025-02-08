@@ -130,7 +130,7 @@ const RecommendedBuilds = () => {
 
       {/* 🔹 Flexbox Adjusted for Left Button & Right Price */}
       <div className="flex justify-between items-center">
-        <Button to="/configure" size="sm" variant="outline" color="neongreen" className="order-1">
+        <Button to="/configuraciones" size="sm" variant="outline" color="neongreen" className="order-1">
           Ver Configuración
         </Button>
         <span className="text-light-gray font-bold order-2 lg:mr-4">{build.price}</span>
@@ -142,7 +142,7 @@ const RecommendedBuilds = () => {
 
         {/* 🔹 Custom Configuration CTA */}
         <div className="text-center">
-          <Button to="/configure" size="lg" variant="outline">
+          <Button to="/configuraciones" size="lg" variant="outline">
             Crear configuración personalizada
           </Button>
         </div>
