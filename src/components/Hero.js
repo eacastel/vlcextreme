@@ -40,11 +40,11 @@ const Hero = ({ backgroundImage }) => {
         {/* Buttons Container */}
         <div className="flex flex-col md:flex-row gap-4 justify-center">
         <Button to="/configuraciones" variant="outline" color="neongreen">
-            Configura tu PC ahora
+            Ver Configuraciones
           </Button>
-          <Button to="/contact" variant="outline" color="neoncyan">
-            Consulta con un experto
-          </Button>
+         {/*  <Button to="/contact" variant="outline" color="neoncyan">
+         Consulta con un experto
+          </Button>*/}
         </div>
         
         {/* Feature Grid */}

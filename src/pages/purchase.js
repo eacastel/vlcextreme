@@ -12,7 +12,7 @@ const PurchasePage = ({ data }) => {
     <Layout>
       <Seo 
         title="Elige tu PC a Medida | VLCExtreme"
-        description="Configura tu PC personalizado con componentes de última generación para gaming, producción o IA."
+        description="Compra tu ordenador personalizado con componentes de última generación para gaming, producción o IA."
       />
 
       {/* 🔹 Background Image & Overlay */}

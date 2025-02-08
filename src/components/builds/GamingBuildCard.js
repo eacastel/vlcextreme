@@ -1,10 +1,64 @@
 import React, { useState } from 'react';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useStaticQuery, graphql } from "gatsby";
 
-const GamingBuildCard = ({ build, stickerImage }) => {
-  const totalPrice = Object.values(build.base_components)
-    .reduce((sum, component) => sum + component.price, 0)
-    .toLocaleString('es-ES', { useGrouping: true, minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const GamingBuildCard = ({ build }) => {
+  // Fetch all images from the "builds" folder + sticker
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "builds" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+            }
+          }
+        }
+      }
+      noImage: file(relativePath: { eq: "builds/imagen-no-disponible.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+        }
+      }
+      sticker: file(relativePath: { eq: "extreme-build-sticker.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 96, height: 96, layout: FIXED)
+        }
+      }
+    }
+  `);
+
+  // **DEBUGGING: Print all available image names**
+  console.log("Available Images in GraphQL:", data.allFile.edges.map(edge => edge.node.name));
+
+  // Function to find the correct image from the JSON-defined imageKey
+  const findImage = (imageName) => {
+    if (!imageName) {
+      console.warn(`⚠️ No imageName provided for build: ${build.name}`);
+      return getImage(data.noImage.childImageSharp);
+    }
+    
+    const foundImage = data.allFile.edges.find(edge => edge.node.name === imageName);
+    
+    if (!foundImage) {
+      console.warn(`⚠️ No matching image found for: ${imageName}`);
+      return getImage(data.noImage.childImageSharp);
+    }
+
+    return getImage(foundImage.node.childImageSharp);
+  };
+
+  // Assign the correct image using `imageKeys`
+  const buildImage = findImage(build.imageKeys ? build.imageKeys[0] : null);
+  
+  // Assign the sticker image (fallback to no sticker if missing)
+  const stickerImage = build.sticker && data.sticker ? getImage(data.sticker.childImageSharp) : null;
+
+  // Compute total price with a 40% markup
+  const totalPrice = Math.ceil(
+    Object.values(build.base_components).reduce((sum, component) => sum + component.price, 0) * 1.4
+  ).toLocaleString('es-ES', { useGrouping: true, minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
   const [showDetails, setShowDetails] = useState(false);
 
@@ -12,16 +66,10 @@ const GamingBuildCard = ({ build, stickerImage }) => {
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all 
                     hover:text-carbon-black hover:shadow-[0_0_20px_#00FF87] text-center">
       
-      {/* Floating Sticker - Uses Gatsby Image if available */}
-      {build.sticker && (
-        <div className="absolute top-[265px] -right-2 w-24 h-24 flex items-center justify-center rounded-full shadow-md overflow-hidden">
-          {build.sticker.image ? (
-            <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
-          ) : (
-            <div className={`w-full h-full rounded-full bg-${build.sticker.bg} flex items-center justify-center text-${build.sticker.textColor}`}>
-              {build.sticker.text}
-            </div>
-          )}
+      {/* Floating Sticker - Only Show If It Exists */}
+      {build.sticker && stickerImage && (
+        <div className="absolute z-40 top-[265px] -right-2 w-24 h-24 flex items-center justify-center rounded-full shadow-md overflow-hidden">
+          <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
         </div>
       )}
 
@@ -33,6 +81,13 @@ const GamingBuildCard = ({ build, stickerImage }) => {
       {/* Content Section */}
       <div className="bg-inherit text-light-gray p-6 mb-6 transition-all duration-200 flex flex-col justify-center min-h-[300px]">
         <h3 className="text-2xl font-bold text-neon-green mt-2 mb-4">{build.name}</h3>
+
+        {/* Build Image Below Title */}
+        <div className="mb-4 rounded-lg overflow-hidden">
+          <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
+        </div>
+
+        {/* Description */}
         <p className="mb-4 text-gray-300">{build.description}</p>
 
         {/* Compatible Games Section */}

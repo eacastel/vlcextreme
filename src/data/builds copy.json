@@ -109,10 +109,6 @@
         "Quad RTX 4090",
         "More Storage",
         "Bespoke Water Cooling"
-      ],
-      "imageKeys": [
-        "godmode-gamer-1.png",
-        "godmode-gamer-2.png"
       ]
     },
     "G001": {
@@ -238,10 +234,6 @@
         "GPU",
         "More RAM",
         "Better Storage"
-      ],
-      "imageKeys": [
-        "casual-cruiser-1.png",
-        "casual-cruiser-2.png"
       ]
     },
     "G002": {
@@ -360,10 +352,6 @@
         "Better GPU (RTX 4070 Ti)",
         "More RAM (32GB)",
         "Larger SSD"
-      ],
-      "imageKeys": [
-        "esports-edge-1.png",
-        "esports-edge-2.png"
       ]
     },
     "G003": {
@@ -532,10 +520,6 @@
         "Better GPU (RTX 4080)",
         "More RAM (64GB)",
         "4TB SSD"
-      ],
-      "imageKeys": [
-        "aaa-avenger-1.png",
-        "aaa-avenger-2.png"
       ]
     },
     "G004": {
@@ -703,10 +687,6 @@
         "Custom Loop Cooling",
         "128GB RAM",
         "Larger SSD"
-      ],
-      "imageKeys": [
-        "titan-dominator-(i9)-1.png",
-        "titan-dominator-(i9)-2.png"
       ]
     },
     "G005": {
@@ -903,10 +883,6 @@
         "64GB RAM",
         "Custom Water Cooling",
         "Larger SSD"
-      ],
-      "imageKeys": [
-        "titan-fury-(amd)-1.png",
-        "titan-fury-(amd)-2.png"
       ]
     },
     "G006": {
@@ -1076,10 +1052,6 @@
         "64GB RAM",
         "Higher wattage PSU",
         "Custom liquid cooling"
-      ],
-      "imageKeys": [
-        "virtual-voyager-(vr)-1.png",
-        "virtual-voyager-(vr)-2.png"
       ]
     },
     "G007": {
@@ -1265,10 +1237,6 @@
         "4TB NVMe SSD with heatsink",
         "128GB RAM",
         "Custom water cooling"
-      ],
-      "imageKeys": [
-        "powerstack-1.png",
-        "powerstack-2.png"
       ]
     },
     "UP001": {
@@ -1340,10 +1308,6 @@
         "More Storage",
         "Additional GPUs",
         "Higher RAM"
-      ],
-      "imageKeys": [
-        "cineforge-1.png",
-        "cineforge-2.png"
       ]
     },
     "P001": {
@@ -1517,10 +1481,6 @@
         "64GB RAM Upgrade",
         "2TB NVMe SSD",
         "4TB HDD for Storage"
-      ],
-      "imageKeys": [
-        "workstation-i-1.png",
-        "workstation-i-2.png"
       ]
     },
     "P002": {
@@ -1716,10 +1676,6 @@
         "4TB NVMe SSD",
         "8TB HDD for content storage",
         "Custom RGB Cooling"
-      ],
-      "imageKeys": [
-        "studio-forge-1.png",
-        "studio-forge-2.png"
       ]
     },
     "P003": {
@@ -1890,10 +1846,6 @@
         "128GB RAM Upgrade",
         "4TB NVMe SSD",
         "8TB HDD Storage"
-      ],
-      "imageKeys": [
-        "cinestorm-1.png",
-        "cinestorm-2.png"
       ]
     },
     "P004": {
@@ -2056,10 +2008,6 @@
         "256GB RAM Upgrade",
         "8TB HDD Storage",
         "Custom Water Cooling"
-      ],
-      "imageKeys": [
-        "vertex-forge-1.png",
-        "vertex-forge-2.png"
       ]
     },
     "P005": {
@@ -2233,10 +2181,6 @@
         "128GB RAM Upgrade",
         "4TB NVMe SSD",
         "8TB HDD for Sample Storage"
-      ],
-      "imageKeys": [
-        "resonance-1.png",
-        "resonance-2.png"
       ]
     },
     "UA001": {
@@ -2309,10 +2253,6 @@
         "Additional GPUs",
         "Extra RAM (2TB Max)",
         "Higher Capacity Storage"
-      ],
-      "imageKeys": [
-        "omnibrain-1.png",
-        "omnibrain-2.png"
       ]
     },
     "AI001": {
@@ -2459,10 +2399,6 @@
         "128GB RAM Upgrade",
         "4TB NVMe SSD",
         "10Gb Ethernet Networking"
-      ],
-      "imageKeys": [
-        "neural-nexus-1.png",
-        "neural-nexus-2.png"
       ]
     },
     "AI002": {
@@ -2574,11 +2510,7 @@
             "gpu_clearance": "Unlimited"
           }
         }
-      },
-      "imageKeys": [
-        "tensorforge-1.png",
-        "tensorforge-2.png"
-      ]
+      }
     }
   }
 }

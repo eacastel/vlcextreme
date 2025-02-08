@@ -1,94 +1,74 @@
-import React, { useState } from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, useStaticQuery } from 'gatsby'
-import Button from './Button'
+import React from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Button from './Button';
+import buildsJson from '../data/builds.json';
+
+// Category Styles
+const categoryStyles = {
+  gaming: { bg: 'bg-neon-green', text: 'text-neon-green', shadow: 'shadow-[0_0_20px_#00E472]' },
+  workstations: { bg: 'bg-neon-yellow', text: 'text-neon-yellow', shadow: 'shadow-[0_0_20px_#FFD000]' },
+  ai: { bg: 'bg-neon-orange', text: 'text-neon-orange', shadow: 'shadow-[0_0_20px_#FF8C00]' }
+};
 
 const RecommendedBuilds = () => {
-    const data = useStaticQuery(graphql`
-        query {
-          kidsStarter: file(relativePath: { eq: "vlcextreme-kids-starter-gaming-pc.webp" }) {
+  // GraphQL Query for Builds Images
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { sourceInstanceName: { eq: "builds" } }) {
+        edges {
+          node {
+            name
             childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
-            }
-          }
-          pro: file(relativePath: { eq: "vlcextreme-pro-rtx-4070ti-ryzen-7800x3d.webp" }) {
-            childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
-            }
-          }
-          ultra: file(relativePath: { eq: "vlcextreme-ultra-rtx-4080-64gb-ram.webp" }) {
-            childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
-            }
-          }
-          ultimateX: file(relativePath: { eq: "vlcextreme-ultimate-x-ryzen-9800x3d-rtx-4090.webp" }) {
-            childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
-            }
-          }
-          aiWorkstation: file(relativePath: { eq: "vlcextreme-ai-ultra-dual-rtx-4090-256gb.webp" }) {
-            childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
-            }
-          }
-          aiUltra: file(relativePath: { eq: "vlcextreme-ai-workstation-threadripper-128gb.webp" }) {
-            childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
+              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
             }
           }
         }
-      `)
+      }
+      noImage: file(relativePath: { eq: "builds/imagen-no-disponible.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+        }
+      }
+    }
+  `);
 
-  const buildsData = {
-    gaming: [
-      {
-        name: 'VLCExtreme Junior Starter',
-        specs: 'RTX 3050 / RTX 4060, Ryzen 5 7600 / Intel i5-14600, 16GB DDR5 RAM (expandable)',
-        premium: 'Opciones de SSD NVMe 1TB, Wi-Fi 6E, RGB total, Chasis premium',
-        price: 'Desde 1.400€',
-        image: getImage(data.kidsStarter),
-      },
-      {
-        name: 'VLCExtreme Pro',
-        specs: 'RTX 4070 SUPER / 4080, Ryzen 7 7800X3D / Intel i7-14700KF, 32GB DDR5 RAM',
-        premium: 'Opciones de SSD NVMe 2TB, RAM expandible a 64GB, Refrigeración líquida',
-        price: 'Desde 3.400€',
-        image: getImage(data.pro),
-      },
-      {
-        name: 'VLCExtreme Ultra',
-        specs: 'RTX 4080 SUPER / 4090, Ryzen 9 7950X3D / Intel i9-14900KF, 64GB DDR5 RAM',
-        premium: 'Opciones de SSD NVMe 4TB, Custom Watercooling, Panel de vidrio templado',
-        price: 'Desde 5.200€',
-        image: getImage(data.ultra),
-      },
-      {
-        name: 'VLCExtreme Ultimate X',
-        specs: 'RTX 4090 / Dual RTX 4090, Ryzen 9 9950X3D / Threadripper PRO 7985WX, 128GB DDR5 RAM',
-        premium: 'Opciones de 8TB SSD, Custom Watercooling EKWB, Estación de carga integrada',
-        price: 'Desde 15.500€',
-        image: getImage(data.ultimateX),
-      },
-    ],
-    ia: [
-      {
-        name: 'VLCExtreme AI Workstation',
-        specs: 'RTX 4090 / 2x RTX 4080, AMD Threadripper PRO 5975WX, 128GB DDR5 RAM',
-        premium: 'Opciones de SSD 4TB NVMe, 10Gb Ethernet, Refrigeración líquida',
-        price: 'Desde 12.000€',
-        image: getImage(data.aiWorkstation),
-      },
-      {
-        name: 'VLCExtreme AI Ultra',
-        specs: '2x RTX 4090, AMD Threadripper 5995WX, 256GB DDR5 RAM',
-        premium: 'Opciones de almacenamiento RAID 10, Optimización CUDA, Chasis premium RGB',
-        price: 'Desde 20.000€',
-        image: getImage(data.aiUltra),
-      },
-    ],
-  }
+  // Function to Find Image by Name or Use Placeholder
+  const findImage = (imageName) => {
+    const foundImage = data.allFile.edges.find(edge => edge.node.name === imageName);
+    return foundImage ? getImage(foundImage.node.childImageSharp) : getImage(data.noImage.childImageSharp);
+  };
 
-  const [activeTab, setActiveTab] = useState('gaming')
+  // Process Builds from JSON
+  const buildsData = Object.values(buildsJson.builds).map(build => ({
+    ...build,
+    image: findImage(build.imageKeys ? build.imageKeys[0] : null),
+    price: Math.ceil(build.price_range.min * 1.4).toLocaleString('es-ES', { minimumFractionDigits: 0 }) + "€"
+  }));
+
+  // Group builds by category
+  const groupedBuilds = buildsData.reduce((acc, build) => {
+    if (!acc[build.category]) acc[build.category] = [];
+    acc[build.category].push(build);
+    return acc;
+  }, {});
+
+  // Slick Carousel Settings
+  const sliderSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } }
+    ]
+  };
 
   return (
     <section className="py-20 bg-carbon-black">
@@ -100,55 +80,62 @@ const RecommendedBuilds = () => {
           Todos nuestros ordenadores están hechos a medida con componentes premium. Sin stock antiguo, sin limitaciones: rendimiento extremo desde la primera configuración.
         </p>
 
-        {/* 🔹 Category Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          {['gaming', 'ia'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-8 py-3 text-lg font-bold rounded-lg transition-colors ${
-                activeTab === tab
-                  ? 'bg-neon-cyan text-carbon-black shadow-lg'
-                  : 'bg-dark-gray text-light-gray hover:bg-neon-cyan/20'
-              }`}
-            >
-              {tab === 'gaming' ? '🎮 Gaming & Streaming' : '🤖 Workstations IA'}
-            </button>
-          ))}
-        </div>
+        {/* Loop Through Categories */}
+        {Object.entries(groupedBuilds).map(([category, builds]) => (
+          <div key={category} className="mb-16">
+            {/* Category Title */}
+            <h3 className={`text-2xl font-bold text-center uppercase ${categoryStyles[category]?.text || 'text-white'} mb-4`}>
+              {category === 'gaming' ? '🎮 Gaming & Streaming' : category === 'workstations' ? '💼 Workstations' : '🤖 AI Workstations'}
+            </h3>
 
-{/* 🔹 Grid Layout */}
-<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 mb-12">
-  {buildsData[activeTab].map((build, index) => (
-    <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
-      <div className="h-48 mb-4 rounded-lg overflow-hidden">
-        <GatsbyImage image={build.image} alt={build.name} className="rounded-lg" />
-      </div>
-      <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
-      <p className="text-medium-gray mb-4">{build.specs}</p>
-      <p className="text-light-gray text-sm mb-4">{build.premium}</p>
+            {/* Carousel */}
+            <Slider {...sliderSettings}>
+              {builds.map((build, index) => (
+                <div key={index} className="p-4">
+                  <div className={`relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:${categoryStyles[category]?.shadow || ''} text-center`}>
+                    
+                    {/* Short Description Banner */}
+                    <div className={`${categoryStyles[category]?.bg || 'bg-gray-700'} text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2`}>
+                      {build.short_description}
+                    </div>
 
-      {/* 🔹 Flexbox Adjusted for Left Button & Right Price */}
-      <div className="flex justify-between items-center">
-        <Button to="/configuraciones" size="sm" variant="outline" color="neongreen" className="order-1">
-          Ver Configuración
-        </Button>
-        <span className="text-light-gray font-bold order-2 lg:mr-4">{build.price}</span>
-      </div>
-    </div>
-  ))}
-</div>
+                    {/* Image */}
+                    <div className="h-48 mb-4 rounded-lg overflow-hidden">
+                      {build.image ? (
+                        <GatsbyImage image={build.image} alt={build.name || 'Build'} className="rounded-lg" />
+                      ) : (
+                        <p className="text-gray-400">Imagen no disponible</p>
+                      )}
+                    </div>
 
+                    {/* Build Info */}
+                    <div className="bg-inherit text-light-gray p-6 transition-all duration-200">
+                      <h3 className={`text-2xl font-bold text-center uppercase ${categoryStyles[category]?.text || 'text-white'} mb-4`}>
+                        {build.name}
+                      </h3>                      
+                      <p className="mb-4 text-gray-300">{build.description}</p>
 
-        {/* 🔹 Custom Configuration CTA */}
-        <div className="text-center">
-          <Button to="/configuraciones" size="lg" variant="outline">
-            Crear configuración personalizada
-          </Button>
-        </div>
+                      {/* Price & Button */}
+                      <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
+                        <span className="text-sm uppercase">Desde:</span>
+                        <span className="text-2xl">{build.price}</span>
+                      </div>
+
+                      <div className="mt-4">
+                        <Button to={`/builds/${build.name.toLowerCase().replace(/\s+/g, "-")}`} size="sm" variant="outline" color="neongreen">
+                          Ver Configuración
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default RecommendedBuilds
+export default RecommendedBuilds;

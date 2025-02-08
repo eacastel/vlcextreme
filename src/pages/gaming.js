@@ -56,7 +56,7 @@ const GamingPage = ({ data }) => {
             Diseñados para <strong>máximos FPS y mínimo lag</strong>. Sin stock antiguo, sin compromisos.
           </p>
           <Button to="/configuraciones" color="neoncyan">
-            Configura tu PC Gaming
+            Elige tu PC Gaming
           </Button>
         </div>
       </section>
