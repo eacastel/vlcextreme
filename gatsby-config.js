@@ -81,6 +81,7 @@ module.exports = {
           head: false, 
           respectDNT: true,
           exclude: [],
+          delayOnRouteUpdate: 2000,
         },
       },
     },    
@@ -97,5 +98,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        analyzerMode: "static",
+        openAnalyzer: false,
+      },
+    },
   ],
 }
