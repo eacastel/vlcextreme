@@ -60,7 +60,7 @@ export default function Footer() {
               href="mailto:support@vlcextreme.com"
               className="text-medium-gray hover:text-neon-cyan transition-colors block mb-2"
             >
-              support@vlcextreme.com
+              info@vlcextreme.com
             </a>
 
             {/* Payment Methods */}
