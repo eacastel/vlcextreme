@@ -142,6 +142,9 @@ const ProductionBuildCard = ({ build }) => {
                 <p className="text-md font-semibold">{component.name}</p>
               </div>
             ))}
+                                    <p className="text-xs text-gray-300 pt-6">
+              **En caso de que no exista disponibilidad de algún componente, o por fluctuación de precios, éste se sustituirá por otro de rendimiento, marca y calidad similares.**
+            </p>
           </div>
         )}
 
