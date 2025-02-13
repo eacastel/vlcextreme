@@ -25,7 +25,7 @@ export default function ContactPage() {
       />
 
       <section className="container mx-auto px-6 pt-16">
-        <h1 className="text-4xl font-bold text-neon-cyan text-center mb-2" role="heading" aria-level="1">
+        <h1 className="text-4xl font-bold text-neon-cyan text-center mb-2"  aria-level="1">
           Contáctanos
         </h1>
 
