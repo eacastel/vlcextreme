@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
 
 const ProductionBuildCard = ({ build }) => {
-  // Fetch images from "builds" folder + sticker + fallback image
+  // Fetch all images from "builds" folder + sticker + fallback image
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "builds" } }) {
@@ -11,8 +11,8 @@ const ProductionBuildCard = ({ build }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90, transformOptions: { cropFocus: CENTER }),             
-              }
+              gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90, transformOptions: { cropFocus: CENTER })             
+            }
           }
         }
       }
@@ -29,6 +29,7 @@ const ProductionBuildCard = ({ build }) => {
     }
   `);
 
+  // **Find and return the correct image**
   const findImage = (imageKeys) => {
     if (!imageKeys || imageKeys.length === 0) {
       return getImage(data.noImage.childImageSharp);
@@ -53,11 +54,45 @@ const ProductionBuildCard = ({ build }) => {
   const buildImage = findImage(build.imageKeys);
   const stickerImage = build.sticker && data.sticker ? getImage(data.sticker.childImageSharp) : null;
 
-  const totalPrice = Object.values(build.base_components)
-    .reduce((sum, component) => sum + component.price, 0)
-    .toLocaleString('es-ES', { useGrouping: true });
+  // **Calculate total price with 40% markup**
+  const totalPrice = Math.ceil(
+    Object.values(build.base_components).reduce((sum, component) => sum + component.price, 0) * 1.4
+  ).toLocaleString('es-ES', { useGrouping: true });
 
   const [showDetails, setShowDetails] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // **Handle Purchase Process**
+  const handlePurchase = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          products: [
+            { 
+              name: build.name, 
+              price: Math.ceil(
+                Object.values(build.base_components).reduce((sum, component) => sum + component.price, 0) * 1.4
+              )
+            }
+          ]
+        }),
+      });
+
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url; // Redirect to Stripe Checkout
+      } else {
+        console.error("Checkout error:", data.error);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#00A4C4] text-center">
@@ -117,10 +152,11 @@ const ProductionBuildCard = ({ build }) => {
 
         <div className="mt-4">
           <button
-            onClick={() => alert(`Configuración "${build.name}" seleccionada.`)}
-            className="bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base transition-all duration-200 ease-in-out hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4]"
+            onClick={handlePurchase}
+            className={`bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base transition-all duration-200 ease-in-out hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4] ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+            disabled={loading}
           >
-            Seleccionar
+            {loading ? "Procesando..." : "Comprar Ahora"}
           </button>
         </div>
       </div>
