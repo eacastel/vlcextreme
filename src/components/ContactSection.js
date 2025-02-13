@@ -49,6 +49,7 @@ const ContactForm = () => {
               method="POST"
               data-netlify="true"
               action="/contact/success"
+              data-netlify-recaptcha="true"
               onSubmit={handleSubmit}
               className="grid gap-6"
             >
