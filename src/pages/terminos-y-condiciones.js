@@ -11,7 +11,7 @@ const TermsPage = () => {
         </h1>
 
         <p className="text-lg text-light-gray mb-6 text-center">
-          Estos Términos y Condiciones regulan la venta, garantía y uso de servicios ofrecidos por  <strong>VLCExtreme</strong>. Al realizar un pedido, el cliente acepta las siguientes condiciones.
+          Estos Términos y Condiciones regulan la venta, garantía y uso de servicios ofrecidos por <strong>VLCExtreme</strong>. Al realizar un pedido, el cliente acepta las siguientes condiciones.
         </p>
 
         {/* Presupuestos y Precios */}
@@ -31,6 +31,24 @@ const TermsPage = () => {
             <li>Para iniciar el pedido y ensamblaje, se requiere el <strong>pago completo</strong>.</li>
             <li>Métodos de pago aceptados: <strong>Tarjeta de Crédito/Débito (Visa, MasterCard, Amex), Transferencia Bancaria (IBAN España), PayPal, ₿ Bitcoin (BTC), Ξ Ethereum (ETH)</strong>.</li>
             <li>Los pedidos personalizados no pueden modificarse después de la confirmación de pago.</li>
+          </ul>
+        </section>
+
+        {/* Disponibilidad de Componentes y Fluctuaciones de Precios */}
+        <section className="mb-10">
+          <h2 className="text-2xl text-light-gray font-semibold mb-4">Disponibilidad de Componentes y Fluctuaciones de Precios</h2>
+          <ul className="list-disc list-inside text-light-gray">
+            <li><strong>VLCExtreme no mantiene stock permanente</strong> de componentes; cada equipo se ensambla bajo pedido.</li>
+            <li>Los precios de los componentes pueden variar según la disponibilidad del mercado. Si, antes de su compra por parte de VLCExtreme, alguno sufre un <strong>aumento de precio</strong> o deja de estar disponible, nos pondremos en contacto con el cliente para evaluar las alternativas.</li>
+            <li>
+              En caso de <strong>no encontrar un componente</strong> o que su precio sea significativamente mayor al presupuestado:
+              <ul className="list-disc ml-6">
+                <li>Se ofrecerá un <strong>componente equivalente o superior</strong> para sustituirlo.</li>
+                <li>Si el precio final aumenta, el cliente puede <strong>aceptar la diferencia</strong> o <strong>rechazar la nueva propuesta</strong>.</li>
+                <li>En caso de no llegar a un acuerdo, se procederá al <strong>reembolso total o parcial</strong> (según corresponda) del pedido.</li>
+              </ul>
+            </li>
+            <li>VLCExtreme <strong>no se responsabiliza</strong> por las fluctuaciones de precios en el mercado de componentes, pero siempre informará al cliente y buscará la mejor solución para ambas partes.</li>
           </ul>
         </section>
 
@@ -77,7 +95,7 @@ const TermsPage = () => {
         <section className="mb-10">
           <h2 className="text-2xl text-light-gray font-semibold mb-4">Derecho de Desistimiento</h2>
           <p className="text-light-gray">
-            Dado que los equipos son ensamblados <strong>a medida</strong>, no se aplican las mismas condiciones de devolución que en productos estándar.  
+            Dado que los equipos son ensamblados <strong>a medida</strong>, no se aplican las mismas condiciones de devolución que en productos estándar.
             Cualquier cancelación antes del envío puede incurrir en <strong>costes de gestión y tasas de reposición</strong>.
           </p>
         </section>
@@ -99,8 +117,8 @@ const TermsPage = () => {
         </section>
 
         <p className="text-sm text-light-gray-400 text-center mt-8">
-          VLCExtreme se reserva el derecho a actualizar estos términos en cualquier momento.  
-          Última actualización:  <strong>12 de Febrero de 2025</strong>.
+          VLCExtreme se reserva el derecho a actualizar estos términos en cualquier momento.<br />
+          Última actualización: <strong>12 de Febrero de 2025</strong>.
         </p>
       </section>
     </Layout>
