@@ -4,17 +4,17 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Button from '../components/Button'
 import Seo from '../components/Seo'
+import SelectConfigureCarouselSections from "../components/SelectConfigureCarouselSections";
+
 
 const WorkstationsPage = ({ data }) => {
   const heroImage = getImage(data.hero)
   const comparisonImage = getImage(data.comparison)
-  const aiWorkstation = getImage(data.aiWorkstation)
-  const aiUltra = getImage(data.aiUltra)
 
   return (
     <Layout>
       {/* 🔹 SEO Metadata */}
-      <Seo 
+      <Seo
         title="Workstations IA Personalizadas | Potencia y Rendimiento con VLCExtreme"
         description="Descubre VLCExtreme AI Workstations: ordenadores personalizados para IA, aprendizaje automático y renderizado 3D. Máximo rendimiento, sin stock antiguo."
         image={data.hero.childImageSharp.gatsbyImageData.images.fallback.src}
@@ -23,33 +23,33 @@ const WorkstationsPage = ({ data }) => {
 
       {/* 🔹 Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-               {/* Background Image */}
-                {heroImage && (
-                  <div className="absolute inset-0 w-full h-full">
-                    <GatsbyImage
-                      image={heroImage}
-                      alt="Workstation IA con múltiples pantallas y renderizado"
-                      className="w-full h-full"
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center"
-                      }}
-                    />
-                  </div>
-                )}
+        {/* Background Image */}
+        {heroImage && (
+          <div className="absolute inset-0 w-full h-full">
+            <GatsbyImage
+              image={heroImage}
+              alt="Workstation IA con múltiples pantallas y renderizado"
+              className="w-full h-full"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center"
+              }}
+            />
+          </div>
+        )}
         <div className="absolute inset-0 bg-carbon-black/80" />
-        
+
         <div className="container mx-auto px-4 relative text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
             Workstations IA de Alto Rendimiento
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-            Equipos diseñados para <strong>Machine Learning, Renderizado 3D y Simulaciones Avanzadas</strong>.  
+            Equipos diseñados para <strong>Machine Learning, Renderizado 3D y Simulaciones Avanzadas</strong>.
             Máxima potencia, optimización total, sin stock antiguo.
           </p>
           <Button to="/configuraciones" color="neoncyan">
@@ -62,7 +62,7 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-dark-gray">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-          Máximo Poder para IA: La Tecnología que Impulsa el Futuro
+            Máximo Poder para IA: La Tecnología que Impulsa el Futuro
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -70,16 +70,16 @@ const WorkstationsPage = ({ data }) => {
               <GatsbyImage image={comparisonImage} alt="Comparación entre workstations personalizadas y preensambladas" className="rounded-lg" />
             </div>
             <div className="space-y-6">
-  <p className="text-medium-gray text-lg">
-    No todas las Workstations están diseñadas para soportar cargas de trabajo realmente exigentes. En <strong>VLCExtreme</strong>, no solo ensamblamos equipos, sino que creamos soluciones de alto rendimiento, optimizadas para el futuro de la inteligencia artificial y la producción avanzada.  
-  </p>
-  <ul className="list-disc pl-6 text-medium-gray space-y-2">
-    <li><strong>Hardware de última generación</strong>, sin stock obsoleto, para asegurar el máximo rendimiento desde el primer día.</li>
-    <li><strong>Optimización extrema</strong> enfocada en inteligencia artificial, machine learning y renderizado 3D, sin cuellos de botella.</li>
-    <li><strong>Refrigeración avanzada</strong>: desde sistemas de aire de alto flujo hasta soluciones líquidas y custom para máxima eficiencia térmica.</li>
-    <li><strong>Estabilidad absoluta</strong> para cargas de trabajo críticas, garantizando fiabilidad y consistencia en proyectos de alto impacto.</li>
-  </ul>
-</div>
+              <p className="text-medium-gray text-lg">
+                No todas las Workstations están diseñadas para soportar cargas de trabajo realmente exigentes. En <strong>VLCExtreme</strong>, no solo ensamblamos equipos, sino que creamos soluciones de alto rendimiento, optimizadas para el futuro de la inteligencia artificial y la producción avanzada.
+              </p>
+              <ul className="list-disc pl-6 text-medium-gray space-y-2">
+                <li><strong>Hardware de última generación</strong>, sin stock obsoleto, para asegurar el máximo rendimiento desde el primer día.</li>
+                <li><strong>Optimización extrema</strong> enfocada en inteligencia artificial, machine learning y renderizado 3D, sin cuellos de botella.</li>
+                <li><strong>Refrigeración avanzada</strong>: desde sistemas de aire de alto flujo hasta soluciones líquidas y custom para máxima eficiencia térmica.</li>
+                <li><strong>Estabilidad absoluta</strong> para cargas de trabajo críticas, garantizando fiabilidad y consistencia en proyectos de alto impacto.</li>
+              </ul>
+            </div>
 
           </div>
         </div>
@@ -91,26 +91,9 @@ const WorkstationsPage = ({ data }) => {
           <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
             Elige tu Workstation IA
           </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { name: 'VLCExtreme AI Workstation', specs: 'RTX 4090 / 2x RTX 4080, Threadripper PRO 5975WX, 128GB RAM', price: 'Desde 12.000€', image: aiWorkstation },
-              { name: 'VLCExtreme AI Ultra', specs: '2x RTX 4090, Threadripper 5995WX, 256GB RAM', price: 'Desde 20.000€', image: aiUltra },
-            ].map((build, index) => (
-              <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-cyan transition-all">
-                <GatsbyImage image={build.image} alt={build.name} className="rounded-lg mb-4" />
-                <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
-                <p className="text-medium-gray mb-4">{build.specs}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-neon-cyan font-bold">{build.price}</span>
-                  <Button to="/configuraciones" size="sm" variant="outline">
-                    Ver Configuración
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SelectConfigureCarouselSections category="ai" />
         </div>
+
       </section>
     </Layout>
   )

@@ -11,7 +11,7 @@ const AIBuildCard = ({ build }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+              gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90, transformOptions: { cropFocus: CENTER }), 
             }
           }
         }

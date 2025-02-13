@@ -4,12 +4,12 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Button from '../components/Button'
 import Seo from '../components/Seo'
+import SelectConfigureCarouselSections from "../components/SelectConfigureCarouselSections";
+
 
 const ProductionWorkstationsPage = ({ data }) => {
   const heroImage = getImage(data.hero)
   const comparisonImage = getImage(data.comparison)
-  const editingWorkstation = getImage(data.editingWorkstation)
-  const renderingWorkstation = getImage(data.renderingWorkstation)
 
   return (
     <Layout>
@@ -85,33 +85,18 @@ const ProductionWorkstationsPage = ({ data }) => {
         </div>
       </section>
 
-      {/* 🔹 Production Workstation Builds Showcase */}
+
       <section className="py-20 bg-carbon-black">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Workstations para Producción Audiovisual y Renderizado 3D
+            Elige tu Workstation: Producción Audiovisual y Renderizado 3D
           </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { name: 'VLCExtreme Editing Workstation', specs: 'RTX 4080, Intel i9 14900K, 128GB RAM, 4TB NVMe', price: 'Desde 6.500€', image: editingWorkstation },
-              { name: 'VLCExtreme Rendering Workstation', specs: 'RTX 4090, Threadripper 5995WX, 256GB RAM', price: 'Desde 15.000€', image: renderingWorkstation },
-            ].map((build, index) => (
-              <div key={index} className="group relative bg-dark-gray rounded-lg p-6 border border-dark-gray hover:border-neon-yellow transition-all">
-                <GatsbyImage image={build.image} alt={build.name} className="rounded-lg mb-4" />
-                <h3 className="text-xl font-bold text-light-gray mb-2">{build.name}</h3>
-                <p className="text-medium-gray mb-4">{build.specs}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-neon-yellow font-bold">{build.price}</span>
-                  <Button to="/configuraciones" size="sm" variant="outline">
-                    Ver Configuración
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SelectConfigureCarouselSections category="production" />
         </div>
       </section>
+
+
+
     </Layout>
   )
 }
