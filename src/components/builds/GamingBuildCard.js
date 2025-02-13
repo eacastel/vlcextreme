@@ -11,14 +11,14 @@ const GamingBuildCard = ({ build }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+              gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90, transformOptions: { cropFocus: CENTER }), 
             }
           }
         }
       }
       noImage: file(relativePath: { eq: "builds/imagen-no-disponible.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+          gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
         }
       }
       sticker: file(relativePath: { eq: "extreme-build-sticker.png" }) {
@@ -35,7 +35,7 @@ const GamingBuildCard = ({ build }) => {
     }
 
     const normalizedKeys = imageKeys.map(key =>
-      key.replace(/\.(png|jpg|jpeg)$/i, "").replace(/[()]/g, "")
+      key.replace(/\.(png|jpg|jpeg|webp)$/i, "").replace(/[()]/g, "")
     );
 
     let foundImages = data.allFile.edges.filter(edge =>
