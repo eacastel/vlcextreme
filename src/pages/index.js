@@ -18,7 +18,17 @@ const HomePage = ({ data }) => {
       <WhyChoose />
       <Testimonials />
       <Process />
+      <div className='p-8'>
+      <h3 className="text-4xl font-bold text-neon-cyan text-center mb-8">
+          Contáctanos
+        </h3>
+
+        <p className="text-medium-gray text-center max-w-2xl mx-auto mb-12">
+          ¿Tienes dudas sobre nuestros ordenadores personalizados?  
+          Envíanos un mensaje y te responderemos lo antes posible.
+        </p>
       <ContactForm />
+      </div>
     </Layout>
   )
 }

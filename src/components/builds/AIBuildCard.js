@@ -61,7 +61,7 @@ const AIBuildCard = ({ build }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#FF8C00] text-center">
+    <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#00A4C4] text-center">
       
       {/* Floating Sticker */}
       {build.sticker && stickerImage && (
@@ -71,13 +71,13 @@ const AIBuildCard = ({ build }) => {
       )}
 
       {/* Short Description */}
-      <div className="bg-neon-orange text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
+      <div className="bg-neon-cyan text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
         {build.short_description}
       </div>
 
       {/* Content */}
       <div className="bg-inherit text-light-gray p-6 mb-6 transition-all flex flex-col justify-center min-h-[300px]">
-        <h3 className="text-2xl font-bold text-neon-orange mt-2 mb-4">{build.name}</h3>
+        <h3 className="text-2xl font-bold text-neon-cyan mt-2 mb-4">{build.name}</h3>
 
         <div className="mb-4 rounded-lg overflow-hidden">
           <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
@@ -113,13 +113,13 @@ const AIBuildCard = ({ build }) => {
 
         <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
           <span className="text-sm uppercase">Precio Total:</span>
-          <span className="text-neon-orange text-2xl font-bold">{totalPrice} €</span>
+          <span className="text-neon-cyan text-2xl font-bold">{totalPrice} €</span>
         </div>
 
         <div className="mt-4">
           <button
             onClick={() => alert(`Configuración "${build.name}" seleccionada.`)}
-            className="bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base transition-all duration-200 ease-in-out hover:bg-neon-orange hover:shadow-[0_0_15px_#FF8C00]"
+            className="bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base transition-all duration-200 ease-in-out hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4]"
           >
             Seleccionar
           </button>

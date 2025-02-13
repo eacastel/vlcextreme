@@ -74,15 +74,15 @@ const SelectConfigureCarousel = () => {
       <div className="flex flex-wrap justify-center mb-6 space-x-4">
         {Object.keys(categories).map(categoryKey => (
           <CategoryButton
-            key={categoryKey}
-            categoryKey={categoryKey}
-            label={categories[categoryKey]}
-            isActive={selectedCategory === categoryKey}
-            onClick={setSelectedCategory}
-            variant="outline"
-            color={categoryKey === "gaming" ? "neongreen" : categoryKey === "production" ? "neonyellow" : "neonorange"}
-            activeClass={`bg-${categoryKey === "gaming" ? "green-950" : categoryKey === "production" ? "yellow-950" : "amber-950"} !text-neon-${categoryKey === "gaming" ? "green" : categoryKey === "production" ? "yellow" : "orange"} shadow-xl`}
-          />
+          key={categoryKey}
+          categoryKey={categoryKey}
+          label={categories[categoryKey]}
+          isActive={selectedCategory === categoryKey}
+          onClick={setSelectedCategory}
+          variant="outline" // Ensure background color is applied instead of outline
+          color="neoncyan" // Make all buttons use neon cyan color
+          activeClass="bg-neon-cyan !text-carbon-black shadow-[0_0_15px_#00A4C4] !font-bold hover:!bg-neon-cyan hover:!text-carbon-black hover:!shadow-[0_0_15px_#00A4C4]" 
+        />
         ))}
       </div>
 
