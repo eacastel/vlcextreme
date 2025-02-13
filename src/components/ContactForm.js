@@ -9,7 +9,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     const formData = new FormData(event.target);
-    const encodedData = new URLSearchParams(formData).toString(); // Ensures Netlify reads the data correctly
+    const encodedData = new URLSearchParams(formData).toString(); // Netlify requires x-www-form-urlencoded
 
     try {
       const response = await fetch("/", {
@@ -43,7 +43,6 @@ const ContactForm = () => {
           name="contact"
           method="POST"
           data-netlify="true"
-          data-netlify-recaptcha="true"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -107,9 +106,6 @@ const ContactForm = () => {
               className="w-full p-3 border border-gray-500 rounded bg-carbon-black text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
             ></textarea>
           </div>
-
-          {/* Netlify reCAPTCHA */}
-          <div data-netlify-recaptcha="true" className="mb-4"></div>
 
           <button
             type="submit"
