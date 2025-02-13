@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import Button from "./Button";
+import React, { useState } from 'react';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
-const ContactForm = () => {
+export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -12,9 +13,10 @@ const ContactForm = () => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch(event.target.action, {
+      const response = await fetch("/", {
         method: "POST",
         body: formData,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
       });
 
       if (response.ok) {
@@ -32,89 +34,115 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-carbon-black">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            ¿Tienes dudas? Hablemos.
-          </h2>
+    <Layout>
+      <section className="container mx-auto px-6 py-16">
+        <h1 className="text-4xl font-bold text-neon-cyan text-center mb-8">
+          Contáctanos
+        </h1>
 
-          {submitted ? (
-            <div className="bg-neon-green text-black text-center py-4 rounded-md shadow-lg" role="alert">
-              ¡Tu mensaje ha sido enviado con éxito! Te responderemos pronto.
+        <p className="text-medium-gray text-center max-w-2xl mx-auto mb-12">
+          ¿Tienes dudas sobre nuestros ordenadores personalizados?  
+          Envíanos un mensaje y te responderemos lo antes posible.
+        </p>
+
+        {submitted ? (
+          <div className="bg-neon-green text-black text-center py-4 rounded-md shadow-lg max-w-lg mx-auto">
+            ✅ ¡Tu mensaje ha sido enviado con éxito! Te responderemos pronto.
+          </div>
+        ) : (
+          <form
+            className="max-w-2xl mx-auto bg-dark-gray p-8 rounded-xl shadow-lg"
+            name="contact"
+            method="POST"
+            action="/contact/success"
+            data-netlify="true"
+            data-netlify-recaptcha="true"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div className="mb-6">
+              <label htmlFor="name" className="block text-light-gray font-semibold mb-2">
+                Nombre Completo
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="w-full p-3 border border-medium-gray rounded bg-carbon-black text-white focus:ring-2 focus:ring-neon-green"
+              />
             </div>
-          ) : (
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              action="/contact/success"
-              data-netlify-recaptcha="true"
-              onSubmit={handleSubmit}
-              className="grid gap-6"
-            >
-              <input type="hidden" name="form-name" value="contact" />
 
-              <label className="block text-light-gray">
-                Nombre
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Tu nombre"
-                  className="w-full p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
-                />
+            <div className="mb-6">
+              <label htmlFor="email" className="block text-light-gray font-semibold mb-2">
+                Correo Electrónico
               </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full p-3 border border-medium-gray rounded bg-carbon-black text-white focus:ring-2 focus:ring-neon-green"
+              />
+            </div>
 
-              <label className="block text-light-gray">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Tu email"
-                  className="w-full p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
-                />
-              </label>
-
-              <label className="block text-light-gray">
+            <div className="mb-6">
+              <label htmlFor="tipo" className="block text-light-gray font-semibold mb-2">
                 Tipo de PC que buscas
-                <select
-                  name="tipo"
-                  required
-                  className="w-full p-3 bg-dark-gray rounded text-light-gray focus:ring-2 focus:ring-neon-cyan"
-                >
-                  <option value="">Selecciona una opción</option>
-                  <option>Gaming & Streaming</option>
-                  <option>Workstation IA</option>
-                  <option>Edición y Producción</option>
-                  <option>Otro</option>
-                </select>
               </label>
+              <select
+                id="tipo"
+                name="tipo"
+                required
+                className="w-full p-3 border border-medium-gray rounded bg-carbon-black text-white focus:ring-2 focus:ring-neon-green"
+              >
+                <option value="">Selecciona una opción</option>
+                <option>Gaming & Streaming</option>
+                <option>Workstation IA</option>
+                <option>Edición y Producción</option>
+                <option>Otro</option>
+              </select>
+            </div>
 
-              <label className="block text-light-gray">
+            <div className="mb-6">
+              <label htmlFor="message" className="block text-light-gray font-semibold mb-2">
                 Mensaje
-                <textarea
-                  name="message"
-                  rows="4"
-                  required
-                  placeholder="Tu mensaje..."
-                  className="w-full p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
-                />
               </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                className="w-full p-3 border border-medium-gray rounded bg-carbon-black text-white focus:ring-2 focus:ring-neon-green"
+              ></textarea>
+            </div>
 
-              {/* Google reCAPTCHA */}
-              <div data-netlify-recaptcha="true" className="mb-4"></div>
+            {/* Netlify reCAPTCHA */}
+            <div data-netlify-recaptcha="true" className="mb-4"></div>
 
-              <Button type="submit" color="neon-cyan" className="w-full">
-                {isSubmitting ? "Enviando..." : "Enviar consulta"}
-              </Button>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full px-6 py-3 rounded-md font-bold text-black transition-all duration-200 ${
+                isSubmitting
+                  ? 'bg-medium-gray cursor-not-allowed'
+                  : 'bg-neon-cyan hover:bg-neon-green hover:shadow-[0_0_15px_#00FF87]'
+              }`}
+            >
+              {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+            </button>
+          </form>
+        )}
+      </section>
+    </Layout>
   );
-};
+}
 
-export default ContactForm;
+export const Head = () => (
+  <Seo 
+    title="Contacto | VLCExtreme | Ensamblaje de Ordenadores Personalizados"
+    description="¿Tienes dudas o necesitas asesoramiento sobre tu PC personalizado? Contacta con VLCExtreme, expertos en hardware de alto rendimiento."
+    pathname="/contact"
+  />
+);
