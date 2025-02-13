@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button'
 
 const Testimonials = () => {
   const testimonials = [
@@ -41,12 +40,12 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-        
+        {/*
         <div className="text-center mt-12">
           <Button to="/testimonios" variant="outline" color="neoncyan">
             Ver todas las opiniones
           </Button>
-        </div>
+        </div>*/}
       </div>
 
       {/* ✅ JSON-LD Schema Markup for Testimonials */}

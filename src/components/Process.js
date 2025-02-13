@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+
 
 const Process = () => {
   return (
@@ -14,7 +14,7 @@ const Process = () => {
             {
               step: 'Paso 1',
               title: 'Configura tu equipo',
-              desc: 'Elige entre configuraciones optimizadas o personaliza cada detalle'
+              desc: 'Elige entre configuraciones optimizadas o dinos lo que quieres'
             },
             {
               step: 'Paso 2',
@@ -42,9 +42,6 @@ const Process = () => {
               <p>Gaming & Streaming: <span className="text-neon-cyan">14-21 días</span></p>
               <p>Workstations IA: <span className="text-neon-cyan">21-30 días</span></p>
             </div>
-            <Button to="/proceso" variant="outline" color="neoncyan">
-              Más información
-            </Button>
           </div>
         </div>
       </div>
