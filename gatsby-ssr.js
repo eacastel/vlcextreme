@@ -29,10 +29,7 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
       defer
     />,
   ]);
-};
-
-
-export const onRenderBody = ({ setPostBodyComponents }) => {
+  
   setPostBodyComponents([
     <form
       name="contact"
