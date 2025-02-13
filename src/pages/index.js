@@ -6,7 +6,6 @@ import SelectConfigureCarousel  from '../components/SelectConfigureCarousel'
 import WhyChoose from '../components/WhyChoose'
 import Testimonials from '../components/Testimonials'
 import Process from '../components/Process'
-import ContactSection from '../components/ContactSection'
 import Seo from '../components/Seo'
 
 
