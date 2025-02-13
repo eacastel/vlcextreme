@@ -62,7 +62,7 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-dark-gray">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            ¿Por qué elegir una Workstation Personalizada?
+          Máximo Poder para IA: La Tecnología que Impulsa el Futuro
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -70,16 +70,17 @@ const WorkstationsPage = ({ data }) => {
               <GatsbyImage image={comparisonImage} alt="Comparación entre workstations personalizadas y preensambladas" className="rounded-lg" />
             </div>
             <div className="space-y-6">
-              <p className="text-medium-gray text-lg">
-                No todas las Workstations están preparadas para cargas de trabajo exigentes. En <strong>VLCExtreme</strong>, creamos equipos con la mejor refrigeración, estabilidad y capacidad de expansión.
-              </p>
-              <ul className="list-disc pl-6 text-medium-gray space-y-2">
-                <li><strong>Hardware de última generación</strong> (sin stock antiguo)</li>
-                <li><strong>Optimización extrema</strong> para IA y renderizado 3D</li>
-                <li><strong>Refrigeración avanzada</strong> (aire, líquida o custom)</li>
-                <li><strong>Máxima estabilidad</strong> en tareas de alto rendimiento</li>
-              </ul>
-            </div>
+  <p className="text-medium-gray text-lg">
+    No todas las Workstations están diseñadas para soportar cargas de trabajo realmente exigentes. En <strong>VLCExtreme</strong>, no solo ensamblamos equipos, sino que creamos soluciones de alto rendimiento, optimizadas para el futuro de la inteligencia artificial y la producción avanzada.  
+  </p>
+  <ul className="list-disc pl-6 text-medium-gray space-y-2">
+    <li><strong>Hardware de última generación</strong>, sin stock obsoleto, para asegurar el máximo rendimiento desde el primer día.</li>
+    <li><strong>Optimización extrema</strong> enfocada en inteligencia artificial, machine learning y renderizado 3D, sin cuellos de botella.</li>
+    <li><strong>Refrigeración avanzada</strong>: desde sistemas de aire de alto flujo hasta soluciones líquidas y custom para máxima eficiencia térmica.</li>
+    <li><strong>Estabilidad absoluta</strong> para cargas de trabajo críticas, garantizando fiabilidad y consistencia en proyectos de alto impacto.</li>
+  </ul>
+</div>
+
           </div>
         </div>
       </section>
@@ -88,7 +89,7 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-carbon-black">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Elige tu Workstation IA Extrema
+            Elige tu Workstation IA
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -123,7 +124,7 @@ export const query = graphql`
         gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
     }
-    comparison: file(relativePath: { eq: "vlcextreme-ai-ultra-dual-rtx-4090-256gb.webp" }) {
+    comparison: file(relativePath: { eq: "ai-lab.png" }) {
       childImageSharp {
         gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const Button = ({ to, children, color = 'neon-cyan', variant = 'solid', className = '' }) => {
-  const baseStyles = 'inline-block px-8 py-3 text-sm font-semibold text-center transition-all rounded-md shadow-lg'
+  const baseStyles = 'inline-block px-8 py-3 text-sm font-semibold text-center transition-all rounded-md shadow-lg cursor-pointer'
 
   const variants = {
     solid: {

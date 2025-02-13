@@ -34,7 +34,7 @@ const Hero = ({ backgroundImage }) => {
         ¿Hasta qué extremo quieres llegar? 
         </h1>
         <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-          Cada PC es ensamblado bajo pedido con los componentes más recientes. Sin stock, sin producción en masa, solo rendimiento extremo.
+          Explora nuestros ordenadores de alto rendimiento para gaming, creación e IA, ensamblados bajo pedido con los mejores componentes. Sin stock, sin producción en masa, solo rendimiento extremo a tu medida.
         </p>
         
         {/* Buttons Container */}

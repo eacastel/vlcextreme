@@ -1,52 +1,96 @@
 import React, { useState } from 'react';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useStaticQuery, graphql } from "gatsby";
 
-const AIBuildCard = ({ build, stickerImage  }) => {
-  // Compute total price of the build with European thousands separator (e.g. 1.234€)
+const AIBuildCard = ({ build }) => {
+  // Fetch all images from "builds" folder + sticker + fallback image
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { relativeDirectory: { eq: "builds" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+            }
+          }
+        }
+      }
+      noImage: file(relativePath: { eq: "builds/imagen-no-disponible.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+        }
+      }
+      sticker: file(relativePath: { eq: "extreme-build-sticker.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 96, height: 96, layout: FIXED)
+        }
+      }
+    }
+  `);
+
+  // **Find and return the correct image**
+  const findImage = (imageKeys) => {
+    if (!imageKeys || imageKeys.length === 0) {
+      return getImage(data.noImage.childImageSharp);
+    }
+
+    const normalizedKeys = imageKeys.map(key =>
+      key.replace(/\.(png|jpg|jpeg)$/i, "").replace(/[()]/g, "")
+    );
+
+    let foundImages = data.allFile.edges.filter(edge =>
+      normalizedKeys.includes(edge.node.name)
+    );
+
+    if (foundImages.length === 0) {
+      return getImage(data.noImage.childImageSharp);
+    }
+
+    foundImages.sort((a, b) => a.node.name.localeCompare(b.node.name, undefined, { numeric: true }));
+    return getImage(foundImages[0].node.childImageSharp);
+  };
+
+  const buildImage = findImage(build.imageKeys);
+  const stickerImage = build.sticker && data.sticker ? getImage(data.sticker.childImageSharp) : null;
+
   const totalPrice = Object.values(build.base_components)
     .reduce((sum, component) => sum + component.price, 0)
-    .toLocaleString('es-ES', { useGrouping: true, minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    .toLocaleString('es-ES', { useGrouping: true });
 
-  // State to toggle visibility of the details
   const [showDetails, setShowDetails] = useState(false);
 
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#FF8C00] text-center">
+      
+      {/* Floating Sticker */}
+      {build.sticker && stickerImage && (
+        <div className="absolute top-[230px] z-40 -right-2 w-24 h-24 rounded-full shadow-md overflow-hidden">
+          <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
+        </div>
+      )}
 
-            {/* Floating Sticker - Uses Gatsby Image if available */}
-            {build.sticker && (
-              <div className="absolute top-[230px] -right-2 w-24 h-24 flex items-center justify-center rounded-full shadow-md overflow-hidden">
-                {build.sticker.image ? (
-                  <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
-                ) : (
-                  <div className={`w-full h-full rounded-full bg-${build.sticker.bg} flex items-center justify-center text-${build.sticker.textColor}`}>
-                    {build.sticker.text}
-                  </div>
-                )}
-              </div>
-            )}
-
-      {/* Short Description Banner */}
+      {/* Short Description */}
       <div className="bg-neon-orange text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
         {build.short_description}
       </div>
 
-      {/* This container will be vertically centered within the card */}
-      <div className="bg-inherit text-light-gray p-6 mb-6 transition-all duration-200 flex flex-col justify-center min-h-[300px]">
-        {/* Build Title */}
+      {/* Content */}
+      <div className="bg-inherit text-light-gray p-6 mb-6 transition-all flex flex-col justify-center min-h-[300px]">
         <h3 className="text-2xl font-bold text-neon-orange mt-2 mb-4">{build.name}</h3>
 
-        {/* Build Description */}
+        <div className="mb-4 rounded-lg overflow-hidden">
+          <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
+        </div>
+
         <p className="mb-4 text-gray-300">{build.description}</p>
 
-        {/* Compatible Games Section */}
-        {build.compatible_software && build.compatible_software.length > 0 && (
+        {build.compatible_software?.length > 0 && (
           <p className="text-sm text-gray-300 italic mb-4">
             <span className="text-white">{build.compatible_software.join(', ')}</span>
           </p>
         )}
 
-        {/* Toggle Details Link */}
         <div className="mt-2">
           <button
             onClick={() => setShowDetails(!showDetails)}
@@ -56,7 +100,6 @@ const AIBuildCard = ({ build, stickerImage  }) => {
           </button>
         </div>
 
-        {/* Conditionally Rendered Components List */}
         {showDetails && (
           <div className="space-y-1 mt-4 mb-4">
             {Object.entries(build.base_components).map(([key, component]) => (
@@ -68,10 +111,9 @@ const AIBuildCard = ({ build, stickerImage  }) => {
           </div>
         )}
 
-        {/* Total Price & Selection Button */}
         <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
           <span className="text-sm uppercase">Precio Total:</span>
-          <span className="text-neon-orange text-2xl font-bold">{totalPrice}€</span>
+          <span className="text-neon-orange text-2xl font-bold">{totalPrice} €</span>
         </div>
 
         <div className="mt-4">

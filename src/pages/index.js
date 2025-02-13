@@ -2,18 +2,19 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import RecommendedBuilds from '../components/RecommendedBuilds'
+import SelectConfigureCarousel  from '../components/SelectConfigureCarousel'
 import WhyChoose from '../components/WhyChoose'
 import Testimonials from '../components/Testimonials'
 import Process from '../components/Process'
 import ContactSection from '../components/ContactSection'
 import Seo from '../components/Seo'
 
+
 const HomePage = ({ data }) => {
   return (
     <Layout>
       <Hero backgroundImage={data.heroImage.childImageSharp.gatsbyImageData} />
-      <RecommendedBuilds />
+      <SelectConfigureCarousel />
       <WhyChoose />
       <Testimonials />
       <Process />
@@ -38,9 +39,9 @@ export const query = graphql`
 `
 
 export const Head = () => (
-  <Seo 
-    title="VLCExtreme | Ordenadores Personalizados de Sobremesa - Hechos a Medida"
-    description="Descubre VLCExtreme: ordenadores de sobremesa personalizados y hechos a medida para gaming, streaming e inteligencia artificial. Configura el tuyo hoy."
+  <Seo
+    title="VLCExtreme: Ordenadores de Gama Alta en Valencia | Gaming, Creación y IA"
+    description="Descubre ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA."
   />
 )
 

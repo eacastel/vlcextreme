@@ -16,8 +16,8 @@ const GamingPage = ({ data }) => {
     <Layout>
       {/* 🔹 SEO Metadata */}
       <Seo 
-        title="PCs Gaming Personalizados | Máximo Rendimiento con VLCExtreme"
-        description="Descubre VLCExtreme Gaming: PCs personalizados con los últimos procesadores y tarjetas gráficas para jugar sin límites. Configura el tuyo hoy."
+        title="PC Gaming en Valencia | Configuraciones Extremas y eSports"
+        description="Descubre PCs Gaming de alta gama, diseñados para 8K, VR y eSports competitivos. Toda la potencia que un gamer exigente necesita."
         image={data.hero.childImageSharp.gatsbyImageData.images.fallback.src}
         pathname="/gaming"
       />
@@ -50,10 +50,10 @@ const GamingPage = ({ data }) => {
         {/* Content */}
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            PCs Gaming Personalizados con Rendimiento Extremo
+          Ordenadores Gaming Personalizados con Rendimiento Extremo
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-            Diseñados para <strong>máximos FPS y mínimo lag</strong>. Sin stock antiguo, sin compromisos.
+          Encuentra tu próximo PC Gaming de gama alta en Valencia, con la última tecnología en CPUs, GPUs y refrigeración.
           </p>
           <Button to="/configuraciones" color="neoncyan">
             Elige tu PC Gaming
@@ -126,7 +126,7 @@ export const query = graphql`
         gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
     }
-    comparison: file(relativePath: { eq: "bespoke.png" }) {
+    comparison: file(relativePath: { eq: "bespoke-3.png" }) {
       childImageSharp {
         gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }

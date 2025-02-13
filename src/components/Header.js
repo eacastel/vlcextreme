@@ -22,11 +22,11 @@ export default function Header() {
   `)
 
   const navItems = [
-    { name: "PCs Gaming & Streaming", path: "/gaming" },
-    { name: "Workstations IA", path: "/workstations" },
-    { name: "Sobre VLCExtreme", path: "/about" },
-    { name: "Contacto", path: "/contact" },
-  ]
+    { name: "Gaming Élite", path: "/ordenadores-para-gaming" },
+    { name: "Creadores Extrem", path: "/ordenadores-para-creadores-y-streamers" },
+    { name: "Workstations IA", path: "/ordenadores-ia" },
+    { name: "VIP & Contacto", path: "/contact" },
+  ];
 
   return (
     <header className="bg-carbon-black/85 backdrop-blur-md sticky top-0 z-50 border-b border-dark-gray">
@@ -52,7 +52,7 @@ export default function Header() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-light-gray hover:text-neon-cyan transition-colors font-medium text-sm xl:text-base whitespace-nowrap"
+                  className="text-light-gray hover:text-neon-cyan transition-colors font-bold text-sm xl:text-base whitespace-nowrap"
                   activeClassName="text-neon-cyan"
                 >
                   {item.name}

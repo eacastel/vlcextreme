@@ -85,7 +85,7 @@ const RecommendedBuilds = () => {
           <div key={category} className="mb-16">
             {/* Category Title */}
             <h3 className={`text-2xl font-bold text-center uppercase ${categoryStyles[category]?.text || 'text-white'} mb-4`}>
-              {category === 'gaming' ? '🎮 Gaming & Streaming' : category === 'workstations' ? '💼 Workstations' : '🤖 AI Workstations'}
+              {category === 'gaming' ? '🎮 Gaming & Streaming' : category === 'workstations' ? '💼 Creators' : '🤖 AI Workstations'}
             </h3>
 
             {/* Carousel */}
