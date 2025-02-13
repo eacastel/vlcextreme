@@ -7,6 +7,7 @@ import WhyChoose from '../components/WhyChoose'
 import Testimonials from '../components/Testimonials'
 import Process from '../components/Process'
 import Seo from '../components/Seo'
+import ContactForm from '../components/ContactForm'
 
 
 const HomePage = ({ data }) => {
@@ -17,6 +18,7 @@ const HomePage = ({ data }) => {
       <WhyChoose />
       <Testimonials />
       <Process />
+      <ContactForm />
     </Layout>
   )
 }
