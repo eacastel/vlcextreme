@@ -12,7 +12,7 @@ const ContactForm = () => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch(event.target.action, {
+      const response = await fetch("/", {  // <-- Changed to "/"
         method: "POST",
         body: formData,
       });
@@ -39,21 +39,20 @@ const ContactForm = () => {
             ¿Tienes dudas? Hablemos.
           </h2>
 
-          {/* Success Message */}
+          {/* ✅ Success Message */}
           {submitted ? (
             <div className="bg-neon-green text-black text-center py-4 rounded-md shadow-lg">
               ✅ ¡Tu mensaje ha sido enviado con éxito! Te responderemos pronto.
             </div>
           ) : (
             <form
-              className="grid gap-6"
               name="contact"
               method="POST"
               data-netlify="true"
-              netlify-honeypot="bot-field"
-              action="/contact/success"
+              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
             >
+              {/* Hidden Form Name */}
               <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
                 <label>
@@ -61,49 +60,49 @@ const ContactForm = () => {
                 </label>
               </p>
 
-              <input
-                type="text"
-                name="name"
-                placeholder="Nombre"
-                required
-                className="p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
-              />
+              <div className="grid gap-6">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre"
+                  required
+                  className="p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
+                />
 
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                className="p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
-              />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  className="p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
+                />
 
-              <select
-                name="tipo"
-                required
-                className="p-3 bg-dark-gray rounded text-light-gray focus:ring-2 focus:ring-neon-cyan"
-              >
-                <option value="">Tipo de PC que buscas</option>
-                <option>Gaming & Streaming</option>
-                <option>Workstation IA</option>
-                <option>Edición y Producción</option>
-                <option>Otro</option>
-              </select>
+                <select
+                  name="tipo"
+                  required
+                  className="p-3 bg-dark-gray rounded text-light-gray focus:ring-2 focus:ring-neon-cyan"
+                >
+                  <option value="">Tipo de PC que buscas</option>
+                  <option>Gaming & Streaming</option>
+                  <option>Workstation IA</option>
+                  <option>Edición y Producción</option>
+                  <option>Otro</option>
+                </select>
 
-              <textarea
-                name="message"
-                placeholder="Mensaje"
-                rows="4"
-                required
-                className="p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
-              />
+                <textarea
+                  name="message"
+                  placeholder="Mensaje"
+                  rows="4"
+                  required
+                  className="p-3 bg-dark-gray rounded text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
+                />
 
-              <Button type="submit" color="neon-cyan" className="w-full">
-                {isSubmitting ? "Enviando..." : "Enviar consulta"}
-              </Button>
+                <Button type="submit" color="neon-cyan" className="w-full">
+                  {isSubmitting ? "Enviando..." : "Enviar consulta"}
+                </Button>
+              </div>
             </form>
           )}
-
-         
         </div>
       </div>
     </section>

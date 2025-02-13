@@ -77,7 +77,7 @@ const GamingBuildCard = ({ build }) => {
       )}
 
       {/* Short Description Banner */}
-      <div className="bg-neon-green text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
+      <div className="bg-neon-green text-black text-s font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
         {build.short_description}
       </div>
 
