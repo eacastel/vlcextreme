@@ -36,7 +36,7 @@ const ContactForm = () => {
     <div className="max-w-2xl mx-auto bg-dark-gray p-8 rounded-xl shadow-lg border border-gray-600">
       {submitted ? (
         <div className="bg-neon-cyan text-black text-center py-4 rounded-md shadow-lg">
-          ✅ ¡Tu mensaje ha sido enviado con éxito! Te responderemos pronto.
+          ¡Tu mensaje ha sido enviado con éxito! Te responderemos lo antes posible.
         </div>
       ) : (
         <form
