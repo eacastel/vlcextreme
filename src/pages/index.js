@@ -18,7 +18,6 @@ const HomePage = ({ data }) => {
       <WhyChoose />
       <Testimonials />
       <Process />
-      <ContactSection />
     </Layout>
   )
 }
