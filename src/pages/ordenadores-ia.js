@@ -52,7 +52,7 @@ const WorkstationsPage = ({ data }) => {
             Equipos diseñados para <strong>Machine Learning, Renderizado 3D y Simulaciones Avanzadas</strong>.
             Máxima potencia, optimización total, sin stock antiguo.
           </p>
-          <Button to="/configuraciones" color="neoncyan">
+          <Button to="/configuraciones?category=ai" color="neoncyan">
             Configura tu Workstation IA
           </Button>
         </div>

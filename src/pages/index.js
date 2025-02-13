@@ -48,7 +48,6 @@ export const query = graphql`
   }
 `
 
-// ✅ SEO & Schema Markup
 export const Head = () => {
   const siteUrl = "https://vlcextreme.com"
 
@@ -59,73 +58,48 @@ export const Head = () => {
         description="Descubre ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA."
       />
       
-      {/* ✅ Structured Data (JSON-LD Schema Markup) */}
-      <script type="application/ld+json">
-  {JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Store", // ✅ General store type since "OnlineStore" isn't an official type yet
-    "name": "VLCExtreme",
-    "description": "Ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA.",
-    "url": "https://vlcextreme.com",
-    "logo": "https://vlcextreme.com/vlc-square-for-manifest-w.png", // ✅ Replace with actual logo
-    "image": "https://vlcextreme.com/hero-bg.jpg", // ✅ Add a representative image
-    "priceRange": "€€€",
-    "areaServed": "ES", // ✅ Spain as the primary market
-    "availableDeliveryMethod": "OnlineShipping", // ✅ Important for e-commerce stores
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "3",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewBody": "Mi PC gaming llegó optimizado al 100% y listo para jugar sin hacer nada más",
-        "author": {
-          "@type": "Person",
-          "name": "Juan M."
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
-      },
-      {
-        "@type": "Review",
-        "reviewBody": "Mi estación VLCExtreme maneja grandes datasets de IA sin problemas",
-        "author": {
-          "@type": "Person",
-          "name": "Laura G."
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
-      },
-      {
-        "@type": "Review",
-        "reviewBody": "6 meses de uso y funciona como el primer día",
-        "author": {
-          "@type": "Person",
-          "name": "David S."
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
-      }
-    ]
-  })}
-</script>
 
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Store",
+          "name": "VLCExtreme",
+          "description": "Ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA.",
+          "url": siteUrl, 
+          "logo": `${siteUrl}/vlc-square-for-manifest-w.png`,  
+          "image": `${siteUrl}/hero-bg.jpg`,  
+          "priceRange": "€€€",
+          "areaServed": "ES",
+          "availableDeliveryMethod": "OnlineShipping",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "3",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "reviewBody": "Mi PC gaming llegó optimizado al 100% y listo para jugar sin hacer nada más",
+              "author": { "@type": "Person", "name": "Juan M." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+            },
+            {
+              "@type": "Review",
+              "reviewBody": "Mi estación VLCExtreme maneja grandes datasets de IA sin problemas",
+              "author": { "@type": "Person", "name": "Laura G." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+            },
+            {
+              "@type": "Review",
+              "reviewBody": "6 meses de uso y funciona como el primer día",
+              "author": { "@type": "Person", "name": "David S." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+            }
+          ]
+        })}
+      </script>
     </>
   )
 }

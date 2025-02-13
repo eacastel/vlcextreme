@@ -34,7 +34,7 @@ const GamingPage = ({ data }) => {
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
             Encuentra tu próximo PC Gaming de gama alta en Valencia, con la última tecnología en CPUs, GPUs y refrigeración.
           </p>
-          <Button to="/configuraciones" color="neoncyan">
+          <Button to="/configuraciones?category=gaming" color="neoncyan">
             Elige tu PC Gaming
           </Button>
         </div>

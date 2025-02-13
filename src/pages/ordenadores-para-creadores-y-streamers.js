@@ -53,7 +53,7 @@ const ProductionWorkstationsPage = ({ data }) => {
           <h3 className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
             Diseñadas para edición de vídeo, efectos visuales y renderizado 3D. Potencia extrema para los profesionales de la industria.
           </h3>
-          <Button to="/configuraciones" color="neoncyan">
+          <Button to="/configuraciones?category=production" color="neoncyan">
             Configura tu Workstation
           </Button>
         </div>
