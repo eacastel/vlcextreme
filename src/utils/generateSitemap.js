@@ -14,7 +14,7 @@ const pages = [
   { path: "/politica-de-garantia/", priority: 0.4, changefreq: "yearly" },
   { path: "/terminos-y-condiciones/", priority: 0.3, changefreq: "yearly" },
   { path: "/cookies/", priority: 0.3, changefreq: "yearly" },
-  { path: "/sobre-nosotros/", priority: 0.7, changefreq: "monthly" }, // ✅ Add About Page
+  { path: "/sobre-nosotros/", priority: 0.7, changefreq: "monthly" } // ✅ Add About Page
 ];
 
 // Build XML structure
@@ -28,8 +28,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     </url>`).join("")}
 </urlset>`;
 
+// ✅ Correcting the public path issue
+const outputPath = path.join(process.cwd(), "public", "sitemap.xml");
+
 // Ensure the directory exists
-const outputPath = path.join(__dirname, "..", "public", "sitemap.xml");
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
+// Write sitemap
 fs.writeFileSync(outputPath, sitemap);
-
-
+console.log("✅ SEO-Optimized Sitemap Generated Successfully!");
