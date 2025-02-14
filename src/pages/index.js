@@ -19,9 +19,9 @@ const HomePage = ({ data }) => {
       <Process />
 
       <div className='p-8'>
-        <h3 className="text-4xl font-bold text-neon-cyan text-center mb-8">
+      <h2 id="vlcextreme-process-title" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
           Contáctanos
-        </h3>
+        </h2>
         <p className="text-medium-gray text-center max-w-2xl mx-auto mb-12">
           ¿Tienes dudas sobre nuestros ordenadores personalizados?  
           Envíanos un mensaje y te responderemos lo antes posible.

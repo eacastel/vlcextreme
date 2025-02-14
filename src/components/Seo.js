@@ -22,6 +22,56 @@ const Seo = ({ title, description, image, pathname, children }) => {
     "priceRange": "€€€",
     "areaServed": "ES",
     "availableDeliveryMethod": "OnlineShipping",
+    "brand": [
+      {
+        "@type": "Brand",
+        "name": "Intel",
+        "logo": `${siteUrl}/brands/intel-logo.png`,
+        "url": "https://www.intel.es"
+      },
+      {
+        "@type": "Brand",
+        "name": "AMD",
+        "logo": `${siteUrl}/brands/amd-logo.png`,
+        "url": "https://www.amd.com"
+      },
+      {
+        "@type": "Brand",
+        "name": "NVIDIA",
+        "logo": `${siteUrl}/brands/nvidia-logo.png`,
+        "url": "https://www.nvidia.com"
+      },
+      {
+        "@type": "Brand",
+        "name": "ASUS",
+        "logo": `${siteUrl}/brands/asus-logo.png`,
+        "url": "https://www.asus.com"
+      },
+      {
+        "@type": "Brand",
+        "name": "MSI",
+        "logo": `${siteUrl}/brands/msi-logo.png`,
+        "url": "https://www.msi.com"
+      },
+      {
+        "@type": "Brand",
+        "name": "Corsair",
+        "logo": `${siteUrl}/brands/corsair-logo.png`,
+        "url": "https://www.corsair.com"
+      },
+      {
+        "@type": "Brand",
+        "name": "G.Skill",
+        "logo": `${siteUrl}/brands/gskill-logo.png`,
+        "url": "https://www.gskill.com"
+      },
+      {
+        "@type": "Brand",
+        "name": "Lian Li",
+        "logo": `${siteUrl}/brands/lian-li-logo.png`,
+        "url": "https://www.lian-li.com"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
@@ -50,6 +100,9 @@ const Seo = ({ title, description, image, pathname, children }) => {
       }
     ]
   };
+  
+
+  
 
   return (
     <>
