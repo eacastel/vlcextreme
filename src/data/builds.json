@@ -458,7 +458,7 @@
         "Storage": {
           "name": "WD Black SN850X 2TB NVMe",
           "brand": "Western Digital",
-          "price": 269,
+          "price": 230,
           "performance_score": 90,
           "form_factor": "M.2",
           "interface": "NVMe",
@@ -471,7 +471,7 @@
           "optional_upgrades": [
             {
               "name": "Samsung 990 PRO 4TB NVMe",
-              "price": 499,
+              "price": 360,
               "performance_score": 95,
               "form_factor": "M.2",
               "interface": "NVMe"
@@ -551,7 +551,7 @@
         "CPU": {
           "name": "Intel Core i9-14900K",
           "brand": "Intel",
-          "price": 871,
+          "price": 650,
           "performance_score": 95,
           "form_factor": "LGA1700",
           "compatibility": {
