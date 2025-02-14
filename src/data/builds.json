@@ -155,13 +155,13 @@
           "optional_upgrades": [
             {
               "name": "AMD Radeon RX 7600",
-              "price": 269,
+              "price": 279,
               "performance_score": 72,
               "interface": "PCIe x16"
             },
             {
               "name": "NVIDIA RTX 4060",
-              "price": 299,
+              "price": 644,
               "performance_score": 75,
               "interface": "PCIe x16"
             }
@@ -170,7 +170,7 @@
         "Motherboard": {
           "name": "MSI MAG B650 Tomahawk",
           "brand": "MSI",
-          "price": 189,
+          "price": 206,
           "form_factor": "ATX",
           "compatibility": {
             "cpu_sockets": [
@@ -185,7 +185,7 @@
             {
               "name": "MSI PRO B660M-A WiFi",
               "brand": "MSI",
-              "price": 139,
+              "price": 143,
               "form_factor": "Micro-ATX",
               "compatibility": {
                 "cpu_sockets": [
@@ -223,7 +223,7 @@
         "Case": {
           "name": "NZXT H5 Flow",
           "brand": "NZXT",
-          "price": 89,
+          "price": 120,
           "performance_score": 80
         }
       },
@@ -270,7 +270,7 @@
             {
               "name": "AMD Ryzen 7 7800X3D",
               "brand": "AMD",
-              "price": 449,
+              "price": 520,
               "performance_score": 92,
               "form_factor": "AM5"
             }
@@ -279,7 +279,7 @@
         "GPU": {
           "name": "NVIDIA RTX 4060 Ti",
           "brand": "NVIDIA",
-          "price": 399,
+          "price": 450,
           "performance_score": 85,
           "compatible_games": [
             "CS:GO",
@@ -292,7 +292,7 @@
         "Motherboard": {
           "name": "MSI PRO Z690-A WiFi",
           "brand": "MSI",
-          "price": 189,
+          "price": 220,
           "form_factor": "ATX",
           "compatibility": {
             "cpu_sockets": [
@@ -307,7 +307,7 @@
             {
               "name": "MSI MAG B650 TOMAHAWK WiFi",
               "brand": "MSI",
-              "price": 209,
+              "price": 220,
               "form_factor": "ATX",
               "compatibility": {
                 "cpu_sockets": [
@@ -321,31 +321,31 @@
         "RAM": {
           "name": "Kingston Fury Beast 16GB DDR5 6000MHz",
           "brand": "Kingston",
-          "price": 130,
+          "price": 110,
           "performance_score": 80
         },
         "Storage": {
           "name": "WD Black SN850X 1TB NVMe",
           "brand": "Western Digital",
-          "price": 140,
+          "price": 120,
           "performance_score": 85
         },
         "PowerSupply": {
           "name": "Corsair RM650e 650W 80+ Gold",
           "brand": "Corsair",
-          "price": 95,
+          "price": 99,
           "performance_score": 75
         },
         "Cooling": {
           "name": "Noctua NH-U12S Redux",
           "brand": "Noctua",
-          "price": 59,
+          "price": 79,
           "performance_score": 80
         },
         "Case": {
           "name": "Lian Li Lancool 215",
           "brand": "Lian Li",
-          "price": 89,
+          "price": 115,
           "performance_score": 80
         }
       },
@@ -379,7 +379,7 @@
         "CPU": {
           "name": "AMD Ryzen 7 7800X3D",
           "brand": "AMD",
-          "price": 429,
+          "price": 509,
           "performance_score": 87,
           "form_factor": "AM5",
           "compatibility": {
@@ -391,7 +391,7 @@
           "alternatives": [
             {
               "name": "Intel Core i7-13700K",
-              "price": 419,
+              "price": 441,
               "performance_score": 88,
               "form_factor": "LGA1700"
             }
@@ -400,7 +400,7 @@
         "GPU": {
           "name": "NVIDIA RTX 4070 Ti",
           "brand": "NVIDIA",
-          "price": 849,
+          "price": 1000,
           "performance_score": 94,
           "interface": "PCIe x16",
           "compatibility": {
@@ -508,7 +508,7 @@
         "Case": {
           "name": "Lian Li Lancool III RGB",
           "brand": "Lian Li",
-          "price": 159,
+          "price": 156,
           "form_factor": "ATX Mid-Tower",
           "compatibility": {
             "motherboard_sizes": [
@@ -551,7 +551,7 @@
         "CPU": {
           "name": "Intel Core i9-14900K",
           "brand": "Intel",
-          "price": 649,
+          "price": 871,
           "performance_score": 95,
           "form_factor": "LGA1700",
           "compatibility": {
