@@ -1,6 +1,6 @@
 import React from "react";
 
-export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     // CookieYes Consent Banner
     <script
@@ -8,15 +8,6 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
       id="cookieyes"
       type="text/javascript"
       src="https://cdn-cookieyes.com/client_data/8a1fc6aec17f5166519ee614/script.js"
-      defer
-    />,
-  ]);
-  setPostBodyComponents([
-    // Cloudflare Email Decode Script
-    <script
-      key="cloudflare"
-      src="https://vlcextreme.com/cloudflare-static/email-decode.min.js"
-      type="text/javascript"
       defer
     />,
   ]);
