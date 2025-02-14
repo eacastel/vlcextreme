@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import PaymentMethods from "./PaymentMethods";
 
 const slugify = (text) => {
   return text
@@ -68,6 +69,7 @@ export default function Footer() {
             <ul className="space-y-1 text-medium-gray">
               <li>Tarjeta de Crédito/Débito (Visa, MasterCard, Amex), Transferencia Bancaria (IBAN España), PayPal, ₿ Bitcoin (BTC), Ξ Ethereum (ETH)</li>
             </ul>
+            <PaymentMethods />
           </div>
 
           {/* Social Media */}

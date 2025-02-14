@@ -1,7 +1,7 @@
 {
   "name": "vlcextreme",
   "private": true,
-  "description": "VLC Extreme",
+  "description": "VLCExtreme",
   "version": "1.0.0",
   "author": "Horchata Labs <info@horchatalabs.com>",
   "dependencies": {

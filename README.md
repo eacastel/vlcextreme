@@ -1,6 +1,6 @@
-# VLC Extreme Website
+# VLCExtreme Website
 
-This repository contains the source code for the VLC Extreme Website, built with **Gatsby** and **Tailwind CSS**. The goal is to provide a fast, SEO-friendly, and responsive website for VLC Extreme Website.
+This repository contains the source code for the VLCExtreme Website, built with **Gatsby** and **Tailwind CSS**. The goal is to provide a fast, SEO-friendly, and responsive website for VLCExtreme Website.
 
 ---
 

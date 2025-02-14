@@ -100,7 +100,7 @@ const ProductionBuildCard = ({ build }) => {
       {/* Floating Sticker */}
       {build.sticker && stickerImage && (
         <div className="absolute top-[230px] z-40 -right-2 w-24 h-24 rounded-full shadow-md overflow-hidden">
-          <GatsbyImage image={stickerImage} alt="VLC Extreme Build" className="w-full h-full object-cover" />
+          <GatsbyImage image={stickerImage} alt="VLCExtreme Build" className="w-full h-full object-cover" />
         </div>
       )}
 

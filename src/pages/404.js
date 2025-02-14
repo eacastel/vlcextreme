@@ -10,7 +10,7 @@ const NotFoundPage = () => (
 )
 export const Head = () => (
   <Seo
-      title="404 No Existe | VLC Extreme"
+      title="404 No Existe | VLCExtreme"
   />
 )
 export default NotFoundPage
