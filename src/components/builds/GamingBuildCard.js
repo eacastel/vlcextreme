@@ -120,7 +120,7 @@ const GamingBuildCard = ({ build }) => {
 
         {build.compatible_games?.length > 0 && (
           <p className="text-sm text-gray-300 italic mb-4">
-            <span className="text-white">{build.compatible_games.join(', ')}</span>
+            <span className="text-white">Programas compatibles: {build.compatible_games.join(', ')}. (No incluidos).</span>
           </p>
         )}
 
@@ -143,6 +143,9 @@ const GamingBuildCard = ({ build }) => {
             ))}
                         <p className="text-xs text-gray-300 pt-6">
               **En caso de que no exista disponibilidad de algún componente, o por fluctuación de precios, éste se sustituirá por otro de rendimiento, marca y calidad similares.**
+            </p>
+            <p className="text-xs text-gray-300 pt-6">
+              **Nos pondremos en contacto contigo para confirmar la instalación de los componentes finales y del sistema operativo (incluido: Windows o Linux).**
             </p>
           </div>
         )}

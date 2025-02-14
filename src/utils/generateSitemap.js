@@ -9,8 +9,8 @@ const pages = [
   { path: "/ordenadores-para-creadores-y-streamers/", priority: 0.9, changefreq: "weekly" },
   { path: "/ordenadores-ia/", priority: 0.9, changefreq: "weekly" },
   { path: "/configuraciones/", priority: 0.8, changefreq: "monthly" },
-  { path: "/contact/", priority: 0.8, changefreq: "monthly" },
-  { path: "/politica-de-garantia/", priority: 0.5, changefreq: "yearly" },
+  { path: "/contact/", priority: 0.7, changefreq: "monthly" },
+  { path: "/politica-de-garantia/", priority: 0.4, changefreq: "yearly" },
   { path: "/terminos-y-condiciones/", priority: 0.3, changefreq: "yearly" },
   { path: "/cookies/", priority: 0.3, changefreq: "yearly" },
 ];
@@ -27,4 +27,4 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 </urlset>`;
 
 fs.writeFileSync("public/sitemap.xml", sitemap);
-console.log("SEO-Optimized Sitemap Generated Successfully!");
+console.log("✅ SEO-Optimized Sitemap Generated Successfully!");

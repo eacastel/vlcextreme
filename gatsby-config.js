@@ -4,11 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `VLCExtreme | Ordenadores Personalizados de Sobremesa - Hechos a Medida`,
-    description: `Descubre VLCExtreme: ordenadores de sobremesa personalizados y hechos a medida para gaming, streaming e inteligencia artificial. Configura el tuyo hoy.`,
+    title: `VLCExtreme | Ordenadores Gaming y Workstations de Alta Gama`,
+    description: `Descubre VLCExtreme: especialistas en ordenadores de sobremesa gaming, estaciones de trabajo IA y PC personalizados de alta gama. Potencia máxima y rendimiento sin límites.`,
     author: `@vlcextreme`,
     siteUrl: `https://vlcextreme.com`,
-    image: `/og-vlcextreme-ensamblaje-ordenadores-sobremesa.png`
+    image: `/og-vlcextreme-ensamblaje-ordenadores-sobremesa.webp`
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -85,12 +85,6 @@ module.exports = {
         },
       },
     },    
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-      },
-    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {

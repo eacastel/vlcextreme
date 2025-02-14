@@ -6,94 +6,84 @@ import Button from '../components/Button'
 import Seo from '../components/Seo'
 import SelectConfigureCarouselSections from "../components/SelectConfigureCarouselSections";
 
-
 const WorkstationsPage = ({ data }) => {
   const heroImage = getImage(data.hero)
   const comparisonImage = getImage(data.comparison)
 
   return (
     <Layout>
-      {/* 🔹 SEO Metadata */}
+      {/* ✅ Optimized SEO */}
       <Seo
-        title="Workstations IA Personalizadas | Potencia y Rendimiento con VLCExtreme"
-        description="Descubre VLCExtreme AI Workstations: ordenadores personalizados para IA, aprendizaje automático y renderizado 3D. Máximo rendimiento, sin stock antiguo."
-        image={data.hero.childImageSharp.gatsbyImageData.images.fallback.src}
-        pathname="/workstations"
+        title="Workstations IA para Machine Learning y Deep Learning | VLCExtreme"
+        description="Descubre nuestras Workstations IA con GPUs NVIDIA H100 y AMD Threadripper. Diseñadas para Machine Learning, Data Science y entrenamiento de modelos de inteligencia artificial."
+        image="/og-pc-ia.png"
+        pathname="/ordenadores-ia"
       />
 
       {/* 🔹 Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Image */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden" aria-labelledby="ai-workstations-hero-title">
         {heroImage && (
           <div className="absolute inset-0 w-full h-full">
             <GatsbyImage
               image={heroImage}
-              alt="Workstation IA con múltiples pantallas y renderizado"
-              className="w-full h-full"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center"
-              }}
+              alt="Workstation IA de alto rendimiento con múltiples GPUs NVIDIA y refrigeración líquida avanzada"
+              className="w-full h-full object-cover"
             />
           </div>
         )}
         <div className="absolute inset-0 bg-carbon-black/80" />
 
-        <div className="container mx-auto px-4 relative text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            Workstations IA de Alto Rendimiento
+        <div className="container mx-auto px-4 relative text-center z-10">
+          <h1 id="ai-workstations-hero-title" className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
+            Workstations IA para Machine Learning y Deep Learning
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-            Equipos diseñados para <strong>Machine Learning, Renderizado 3D y Simulaciones Avanzadas</strong>.
-            Máxima potencia, optimización total, sin stock antiguo.
+            <span className='font-bold'>Ordenadores de alto rendimiento diseñados para IA, Data Science y simulaciones avanzadas</span>.  GPUs de última generación, refrigeración extrema y estabilidad garantizada.
           </p>
           <Button to="/configuraciones?category=ai" color="neoncyan">
-            Configura tu Workstation IA
+            Encuentra tu Workstation IA
           </Button>
         </div>
       </section>
 
-      {/* 🔹 Why Custom Workstations? */}
-      <section className="py-20 bg-dark-gray">
+      {/* 🔹 Why AI Workstations? */}
+      <section className="py-20 bg-dark-gray" aria-labelledby="why-ai-workstations">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Máximo Poder para IA: La Tecnología que Impulsa el Futuro
+          <h2 id="why-ai-workstations" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
+            Máximo Poder para Inteligencia Artificial y Ciencia de Datos
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <GatsbyImage image={comparisonImage} alt="Comparación entre workstations personalizadas y preensambladas" className="rounded-lg" />
+              <GatsbyImage 
+                image={comparisonImage} 
+                alt="Comparación entre workstation IA personalizada y workstation preensamblada" 
+                className="rounded-lg"
+              />
             </div>
             <div className="space-y-6">
               <p className="text-medium-gray text-lg">
-                No todas las Workstations están diseñadas para soportar cargas de trabajo realmente exigentes. En <strong>VLCExtreme</strong>, no solo ensamblamos equipos, sino que creamos soluciones de alto rendimiento, optimizadas para el futuro de la inteligencia artificial y la producción avanzada.
+                En <span className='font-bold'>VLCExtreme</span>, fabricamos <span className='font-bold'>workstations IA personalizadas</span> para proyectos de Machine Learning, Data Science y entrenamiento de modelos de inteligencia artificial.
               </p>
               <ul className="list-disc pl-6 text-medium-gray space-y-2">
-                <li><strong>Hardware de última generación</strong>, sin stock obsoleto, para asegurar el máximo rendimiento desde el primer día.</li>
-                <li><strong>Optimización extrema</strong> enfocada en inteligencia artificial, machine learning y renderizado 3D, sin cuellos de botella.</li>
-                <li><strong>Refrigeración avanzada</strong>: desde sistemas de aire de alto flujo hasta soluciones líquidas y custom para máxima eficiencia térmica.</li>
-                <li><strong>Estabilidad absoluta</strong> para cargas de trabajo críticas, garantizando fiabilidad y consistencia en proyectos de alto impacto.</li>
+                <li><span className='font-bold'>GPUs NVIDIA H100 y RTX 6000</span> para entrenamiento acelerado.</li>
+                <li><span className='font-bold'>Optimización extrema</span> para TensorFlow, PyTorch y CUDA.</li>
+                <li><span className='font-bold'>Refrigeración avanzada</span>: aire de alto flujo o sistemas líquidos custom.</li>
+                <li><span className='font-bold'>Máxima estabilidad</span> para cargas de trabajo críticas.</li>
               </ul>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* 🔹 AI Workstation Builds Showcase */}
-      <section className="py-20 bg-carbon-black">
+      <section className="py-20 bg-carbon-black" aria-labelledby="ai-workstation-builds">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
+          <h2 id="ai-workstation-builds" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
             Elige tu Workstation IA
           </h2>
           <SelectConfigureCarouselSections category="ai" />
         </div>
-
       </section>
     </Layout>
   )

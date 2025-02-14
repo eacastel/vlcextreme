@@ -49,57 +49,14 @@ export const query = graphql`
 `
 
 export const Head = () => {
-  const siteUrl = "https://vlcextreme.com"
-
   return (
     <>
       <Seo
-        title="VLCExtreme: Ordenadores de Gama Alta en Valencia | Gaming, Creación y IA"
-        description="Descubre ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA."
+        title="VLCExtreme: Ordenadores de Gama Alta en Valencia | Gaming, Creadores y IA"
+        description="Ordenadores de alto rendimiento ensamblados por expertos en Valencia. PCs gaming de alta gama, estaciones de trabajo IA y soluciones para creadores de contenido."
+        pathname="/"
+        image="/og-vlcextreme-ensamblaje-ordenadores-sobremesa.png"
       />
-      
-
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Store",
-          "name": "VLCExtreme",
-          "description": "Ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA.",
-          "url": siteUrl, 
-          "logo": `${siteUrl}/vlc-square-for-manifest-w.png`,  
-          "image": `${siteUrl}/hero-bg.jpg`,  
-          "priceRange": "€€€",
-          "areaServed": "ES",
-          "availableDeliveryMethod": "OnlineShipping",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "3",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "reviewBody": "Mi PC gaming llegó optimizado al 100% y listo para jugar sin hacer nada más",
-              "author": { "@type": "Person", "name": "Juan M." },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "Mi estación VLCExtreme maneja grandes datasets de IA sin problemas",
-              "author": { "@type": "Person", "name": "Laura G." },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
-            },
-            {
-              "@type": "Review",
-              "reviewBody": "6 meses de uso y funciona como el primer día",
-              "author": { "@type": "Person", "name": "David S." },
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
-            }
-          ]
-        })}
-      </script>
     </>
   )
 }
