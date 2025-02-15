@@ -5,3 +5,9 @@
  */
 
 import './src/styles/globals.css'
+
+// Clear Old Service Workers on Every Update
+
+export const onServiceWorkerUpdateReady = () => {
+    window.location.reload();
+  };

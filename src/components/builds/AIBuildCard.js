@@ -36,7 +36,7 @@ const AIBuildCard = ({ build }) => {
     }
 
     const normalizedKeys = imageKeys.map(key =>
-      key.replace(/\.(png|jpg|jpeg)$/i, "").replace(/[()]/g, "")
+      key.replace(/\.(png|jpg|jpeg|webp)$/i, "").replace(/[()]/g, "")
     );
 
     let foundImages = data.allFile.edges.filter(edge =>
