@@ -23,11 +23,13 @@ const ConfigurePage = ({ data }) => {
       <div className="relative min-h-screen bg-fixed bg-cover bg-center" aria-labelledby="config-page-title">
         {/* 🔹 Background Image */}
         {backgroundImage && (
+          <div className="absolute inset-0 w-full h-full">
           <GatsbyImage
             image={backgroundImage}
             alt="Selección de ordenadores recomendados para gaming, IA y producción"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-full object-cover"
           />
+          </div>
         )}
         <div className="absolute inset-0 bg-carbon-black/80" />
         
