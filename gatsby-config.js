@@ -88,6 +88,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
+        host: "https://vlcextreme.com",
+        sitemap: "https://vlcextreme.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

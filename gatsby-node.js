@@ -8,43 +8,70 @@
 const fs = require("fs");
 const path = require("path");
 
-exports.onPostBuild = async ({ graphql }) => {
-  const siteUrl = "https://vlcextreme.com";
+const outputPath = path.join(__dirname, "../../public/sitemap.xml");
 
-  // Define the static pages for the sitemap
-  const pages = [
-    { path: "/", priority: 1.0, changefreq: "daily" },
-    { path: "/ordenadores-para-gaming/", priority: 0.9, changefreq: "weekly" },
-    { path: "/ordenadores-para-creadores-y-streamers/", priority: 0.9, changefreq: "weekly" },
-    { path: "/ordenadores-ia/", priority: 0.9, changefreq: "weekly" },
-    { path: "/configuraciones/", priority: 0.8, changefreq: "monthly" },
-    { path: "/contacto/", priority: 0.7, changefreq: "monthly" },
-    { path: "/nosotros/", priority: 0.7, changefreq: "monthly" },
-    { path: "/politica-de-garantia/", priority: 0.4, changefreq: "yearly" },
-    { path: "/terminos-y-condiciones/", priority: 0.3, changefreq: "yearly" },
-    { path: "/cookies/", priority: 0.3, changefreq: "yearly" },
-  ];
+// 🛑 Remove existing `sitemap.xml` directory if it exists
+if (fs.existsSync(outputPath) && fs.lstatSync(outputPath).isDirectory()) {
+  fs.rmdirSync(outputPath, { recursive: true });
+  console.log("🗑️ Deleted existing sitemap.xml directory.");
+}
 
-  // Generate the sitemap XML
-  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+// Define Sitemap Content
+const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${pages
-    .map(
-      (page) => `
+  
     <url>
-      <loc>${siteUrl}${page.path}</loc>
-      <changefreq>${page.changefreq}</changefreq>
-      <priority>${page.priority}</priority>
-    </url>`
-    )
-    .join("")}
+      <loc>https://vlcextreme.com/</loc>
+      <changefreq>daily</changefreq>
+      <priority>1</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/ordenadores-para-gaming/</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/ordenadores-para-creadores-y-streamers/</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/ordenadores-ia/</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/configuraciones/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/about/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/contact/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/politica-de-garantia/</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.4</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/terminos-y-condiciones/</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+    </url>
+    <url>
+      <loc>https://vlcextreme.com/cookies/</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+    </url>
 </urlset>`;
 
-  // Ensure the `public` directory exists
-  const outputPath = path.join(__dirname, "public", "sitemap.xml");
-  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-
-  // Write the sitemap.xml file
-  fs.writeFileSync(outputPath, sitemapContent);
-  console.log("✅ Custom Sitemap Generated Successfully!");
-};
+// ✅ Write the new `sitemap.xml` file
+fs.writeFileSync(outputPath, sitemapContent);
+console.log("✅ Custom Sitemap Generated Successfully!");
