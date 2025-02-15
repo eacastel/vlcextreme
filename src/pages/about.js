@@ -47,7 +47,7 @@ const AboutPage = ({ data }) => {
     <h2 className="text-center text-3xl md:text-4xl font-bold text-light-gray mb-6">Nuestra Historia</h2>
     <p className="text-medium-gray max-w-3xl mx-auto">
       Como apasionados del gaming, la productividad y la IA, nos frustraba la rápida obsolescencia de los portátiles.
-      Queríamos una solución que ofreciece máxima potencia, personalización y durabilidad. Así nació <strong>VLCExtreme</strong>, 
+      Queríamos una solución que ofreciese máxima potencia, personalización y durabilidad. Así nació <strong>VLCExtreme</strong>, 
       desde Valencia, un emergente hub tecnológico en Europa.
     </p>
     <p className="text-medium-gray max-w-3xl mx-auto mt-4">
