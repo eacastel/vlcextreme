@@ -32,7 +32,7 @@ const ProductionBuildCard = ({ build }) => {
   // **Find and return the correct image**
   const findImage = (imageKeys) => {
     if (!imageKeys || imageKeys.length === 0) {
-      return getImage(data.noImage.childImageSharp);
+      return data.noImage ? getImage(data.noImage.childImageSharp) : null;
     }
 
     const normalizedKeys = imageKeys.map(key =>
@@ -44,15 +44,17 @@ const ProductionBuildCard = ({ build }) => {
     );
 
     if (foundImages.length === 0) {
-      return getImage(data.noImage.childImageSharp);
+      return data.noImage ? getImage(data.noImage.childImageSharp) : null;
     }
 
     foundImages.sort((a, b) => a.node.name.localeCompare(b.node.name, undefined, { numeric: true }));
-    return getImage(foundImages[0].node.childImageSharp);
+
+    return getImage(foundImages[0]?.node?.childImageSharp) || (data.noImage ? getImage(data.noImage.childImageSharp) : null);
   };
 
+  // **Assign Images Before Usage**
   const buildImage = findImage(build.imageKeys);
-  const stickerImage = build.sticker && data.sticker ? getImage(data.sticker.childImageSharp) : null;
+  const stickerImage = data.sticker ? getImage(data.sticker.childImageSharp) : null;
 
   // **Calculate total price with 40% markup**
   const totalPrice = Math.ceil(
@@ -114,7 +116,13 @@ const ProductionBuildCard = ({ build }) => {
         <h3 className="text-2xl font-bold text-neon-cyan mt-2 mb-4">{build.name}</h3>
 
         <div className="mb-4 rounded-lg overflow-hidden">
-          <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
+          {buildImage ? (
+            <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
+          ) : (
+            <div className="w-full h-64 bg-gray-700 flex items-center justify-center">
+              <span className="text-light-gray">Imagen no disponible</span>
+            </div>
+          )}
         </div>
 
         <p className="mb-4 text-gray-300">{build.description}</p>
@@ -142,7 +150,7 @@ const ProductionBuildCard = ({ build }) => {
                 <p className="text-md font-semibold">{component.name}</p>
               </div>
             ))}
-                                    <p className="text-xs text-gray-300 pt-6">
+            <p className="text-xs text-gray-300 pt-6">
               **En caso de que no exista disponibilidad de algún componente, o por fluctuación de precios, éste se sustituirá por otro de rendimiento, marca y calidad similares.**
             </p>
             <p className="text-xs text-gray-300 pt-6">

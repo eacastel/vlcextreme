@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-const Button = ({ to, children, color = 'neon-cyan', variant = 'solid', className = '' }) => {
-  const baseStyles = 'inline-block px-8 py-3 text-sm font-semibold text-center transition-all rounded-md shadow-lg cursor-pointer'
+const Button = ({ to, onClick, children, color = 'neoncyan', variant = 'solid', className = '', disabled = false }) => {
+  const baseStyles = 'inline-block px-8 py-3 text-sm font-semibold text-center transition-all rounded-md shadow-lg cursor-pointer';
 
   const variants = {
     solid: {
@@ -17,18 +17,27 @@ const Button = ({ to, children, color = 'neon-cyan', variant = 'solid', classNam
       neongreen: `border-2 border-neon-green text-neon-green hover:bg-neon-green/10 hover:shadow-neon-green`,
       neonyellow: `border-2 border-neon-yellow text-neon-yellow hover:bg-neon-yellow/10 hover:shadow-neon-yellow`,
     },
-  }
+  };
 
   const variantClass = variants[variant]?.[color] || variants.solid.neoncyan;
 
+  if (onClick) {
+    return (
+      <button
+        onClick={onClick}
+        disabled={disabled}
+        className={`${baseStyles} ${variantClass} ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`}
+      >
+        {children}
+      </button>
+    );
+  }
+
   return (
-    <Link
-      to={to}
-      className={`${baseStyles} ${variantClass} ${className}`}
-    >
+    <Link to={to} className={`${baseStyles} ${variantClass} ${className}`}>
       {children}
     </Link>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
