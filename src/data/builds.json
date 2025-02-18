@@ -105,10 +105,27 @@
         "Baldur’s Gate 3",
         "Elden Ring"
       ],
-      "optional_upgrades": [
-        "Quad RTX 4090",
-        "More Storage",
-        "Bespoke Water Cooling"
+      "optionalUpgrades": [
+        {
+          "name": "Quad NVIDIA RTX 4090 (4-Way SLI)",
+          "price": 7200,
+          "note": "Máximo rendimiento gráfico con 4 tarjetas RTX 4090 en paralelo, ideal para gaming 8K, modelado 3D extremo y simulaciones avanzadas."
+        },
+        {
+          "name": "Storage Upgrade - 8TB NVMe SSD",
+          "price": 1299,
+          "note": "Reduce drásticamente los tiempos de carga en juegos y software profesional. Ideal para creadores con grandes archivos de video y proyectos."
+        },
+        {
+          "name": "RAM Upgrade - 256GB DDR5 8000MHz",
+          "price": 2999,
+          "note": "Más memoria para modding, multitarea y cargas extremas de software. Perfecto para streamers con configuraciones de alto rendimiento."
+        },
+        {
+          "name": "Custom Liquid Cooling Loop",
+          "price": 1999,
+          "note": "Solución de refrigeración personalizada para mantener temperaturas óptimas incluso en cargas extremas, asegurando estabilidad a largo plazo."
+        }
       ],
       "imageKeys": [
         "godmode-gamer-1.png",
@@ -234,10 +251,22 @@
         "Los Sims 4",
         "League of Legends"
       ],
-      "optional_upgrades": [
-        "GPU",
-        "More RAM",
-        "Better Storage"
+      "optionalUpgrades": [
+        {
+          "name": "AMD Radeon RX 7600",
+          "price": 279,
+          "note": "Añade una GPU dedicada para mejorar el rendimiento en juegos como Fortnite y Valorant a 1080p con mayores FPS."
+        },
+        {
+          "name": "NVIDIA RTX 4060",
+          "price": 644,
+          "note": "Para jugadores que buscan Ray Tracing y rendimiento superior en juegos modernos."
+        },
+        {
+          "name": "32GB RAM Upgrade",
+          "price": 149,
+          "note": "Doble de memoria para manejar múltiples aplicaciones y juegos sin ralentizaciones."
+        }
       ],
       "imageKeys": [
         "casual-cruiser-1.jpeg",
@@ -356,10 +385,22 @@
         "Fortnite",
         "Apex Legends"
       ],
-      "optional_upgrades": [
-        "Better GPU (RTX 4070 Ti)",
-        "More RAM (32GB)",
-        "Larger SSD"
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4070 Ti",
+          "price": 899,
+          "note": "Para jugadores competitivos que buscan FPS extremos en 1440p con monitores de alta tasa de refresco."
+        },
+        {
+          "name": "32GB RAM Upgrade",
+          "price": 179,
+          "note": "Para multitarea extrema mientras juegas y transmites en vivo."
+        },
+        {
+          "name": "2TB NVMe SSD",
+          "price": 249,
+          "note": "Espacio adicional para almacenar juegos, evitando tiempos de carga largos."
+        }
       ],
       "imageKeys": [
         "esports-edge-1.png",
@@ -528,10 +569,22 @@
         "Starfield",
         "Red Dead Redemption 2"
       ],
-      "optional_upgrades": [
-        "Better GPU (RTX 4080)",
-        "More RAM (64GB)",
-        "4TB SSD"
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4080",
+          "price": 1199,
+          "note": "Mejor rendimiento en 4K y gaming ultra con trazado de rayos avanzado."
+        },
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para edición de video, gaming extremo y creación de contenido."
+        },
+        {
+          "name": "4TB NVMe SSD",
+          "price": 499,
+          "note": "Almacena más juegos AAA con tiempos de carga ultra rápidos."
+        }
       ],
       "imageKeys": [
         "aaa-avenger-1.png",
@@ -699,10 +752,22 @@
         "Forza Horizon 5",
         "Hogwarts Legacy"
       ],
-      "optional_upgrades": [
-        "Custom Loop Cooling",
-        "128GB RAM",
-        "Larger SSD"
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4090",
+          "price": 1849,
+          "note": "Para gaming 4K extremo y renderizado avanzado con IA."
+        },
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para profesionales que también usan su PC para edición de video y modelado 3D."
+        },
+        {
+          "name": "Custom Liquid Cooling",
+          "price": 1299,
+          "note": "Optimiza la temperatura en sesiones largas de gaming o trabajo intensivo."
+        }
       ],
       "imageKeys": [
         "titan-dominator-(i9)-1.png",
@@ -899,10 +964,22 @@
         "Forza Horizon 5",
         "Elden Ring"
       ],
-      "optional_upgrades": [
-        "64GB RAM",
-        "Custom Water Cooling",
-        "Larger SSD"
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4080 Super",
+          "price": 1099,
+          "note": "Opción alternativa si prefieres NVIDIA sobre AMD."
+        },
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para mejorar la fluidez en juegos y aplicaciones pesadas."
+        },
+        {
+          "name": "Seagate IronWolf Pro 8TB HDD",
+          "price": 279,
+          "note": "Ideal para almacenar grandes bibliotecas de juegos y mods."
+        }
       ],
       "imageKeys": [
         "titan-fury-(amd)-1.png",
@@ -1072,10 +1149,22 @@
         "Microsoft Flight Simulator",
         "Asgard’s Wrath 2"
       ],
-      "optional_upgrades": [
-        "64GB RAM",
-        "Higher wattage PSU",
-        "Custom liquid cooling"
+      "optionalUpgrades": [
+        {
+          "name": "AMD Radeon RX 7900 XTX",
+          "price": 999,
+          "note": "Alternativa a NVIDIA para usuarios que prefieren AMD en VR."
+        },
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para trabajar con múltiples simulaciones y entornos VR sin interrupciones."
+        },
+        {
+          "name": "Custom Liquid Cooling",
+          "price": 1299,
+          "note": "Mantiene temperaturas bajas en sesiones prolongadas de VR."
+        }
       ],
       "imageKeys": [
         "virtual-voyager-(vr)-1.png",
@@ -1261,10 +1350,22 @@
         "Elden Ring",
         "Modded Skyrim / Fallout 4"
       ],
-      "optional_upgrades": [
-        "4TB NVMe SSD with heatsink",
-        "128GB RAM",
-        "Custom water cooling"
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4090",
+          "price": 1849,
+          "note": "Para rendimiento gráfico extremo en gaming y creación de contenido."
+        },
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para edición de video 8K, diseño 3D y simulaciones pesadas."
+        },
+        {
+          "name": "8TB NVMe SSD",
+          "price": 1299,
+          "note": "Almacena proyectos de gran tamaño sin comprometer la velocidad."
+        }
       ],
       "imageKeys": [
         "powerstack-1.png",
@@ -1336,10 +1437,27 @@
         "Autodesk Maya",
         "Cinema 4D"
       ],
-      "optional_upgrades": [
-        "More Storage",
-        "Additional GPUs",
-        "Higher RAM"
+      "optionalUpgrades": [
+        {
+          "name": "Additional NVIDIA RTX 6000 Ada",
+          "price": 4500,
+          "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real."
+        },
+        {
+          "name": "Storage Expansion - 60TB NVMe RAID",
+          "price": 9999,
+          "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción."
+        },
+        {
+          "name": "512GB DDR5 ECC RAM",
+          "price": 4999,
+          "note": "Expande la memoria para proyectos de postproducción y simulaciones que requieren alta estabilidad."
+        },
+        {
+          "name": "Custom Dual Loop Liquid Cooling",
+          "price": 2999,
+          "note": "Sistema de refrigeración de circuito doble para CPU y GPU, optimizando la disipación térmica en cargas extremas."
+        }
       ],
       "imageKeys": [
         "cineforge-1.png",
@@ -1513,10 +1631,22 @@
         "Visual Studio Code",
         "DaVinci Resolve (light use)"
       ],
-      "optional_upgrades": [
-        "64GB RAM Upgrade",
-        "2TB NVMe SSD",
-        "4TB HDD for Storage"
+      "optionalUpgrades": [
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para cargas de trabajo más pesadas como edición de video o diseño CAD."
+        },
+        {
+          "name": "4TB NVMe SSD",
+          "price": 549,
+          "note": "Para almacenar archivos de gran tamaño y proyectos profesionales."
+        },
+        {
+          "name": "Silent Cooling System",
+          "price": 299,
+          "note": "Refrigeración mejorada para un entorno de trabajo sin ruido."
+        }
       ],
       "imageKeys": [
         "workstation-i-1.png",
@@ -1711,11 +1841,17 @@
         "Streamlabs",
         "Blender (light use)"
       ],
-      "optional_upgrades": [
-        "64GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "8TB HDD for content storage",
-        "Custom RGB Cooling"
+      "optionalUpgrades": [
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para edición de video y multitarea más intensiva."
+        },
+        {
+          "name": "8TB HDD Storage",
+          "price": 279,
+          "note": "Para almacenamiento masivo de archivos de video y proyectos multimedia."
+        }
       ],
       "imageKeys": [
         "studio-forge-1.png",
@@ -1886,10 +2022,17 @@
         "Final Cut Pro",
         "Autodesk Flame"
       ],
-      "optional_upgrades": [
-        "128GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "8TB HDD Storage"
+      "optionalUpgrades": [
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para edición de video 8K y proyectos de VFX complejos."
+        },
+        {
+          "name": "Seagate Exos X18 16TB HDD",
+          "price": 699,
+          "note": "Para almacenamiento de grandes volúmenes de contenido en alta calidad."
+        }
       ],
       "imageKeys": [
         "cinestorm-1.png",
@@ -2052,10 +2195,17 @@
         "ZBrush",
         "Unreal Engine"
       ],
-      "optional_upgrades": [
-        "256GB RAM Upgrade",
-        "8TB HDD Storage",
-        "Custom Water Cooling"
+      "optionalUpgrades": [
+        {
+          "name": "256GB RAM Upgrade",
+          "price": 1499,
+          "note": "Para renderizado en tiempo real y simulaciones 3D pesadas."
+        },
+        {
+          "name": "Dual NVIDIA RTX 4090",
+          "price": 3598,
+          "note": "Para cargas de trabajo ultra exigentes en diseño y modelado 3D."
+        }
       ],
       "imageKeys": [
         "vertex-forge-1.png",
@@ -2229,10 +2379,17 @@
         "Cubase",
         "Studio One"
       ],
-      "optional_upgrades": [
-        "128GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "8TB HDD for Sample Storage"
+      "optionalUpgrades": [
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 749,
+          "note": "Para trabajar con DAWs y VSTs pesados sin latencia."
+        },
+        {
+          "name": "8TB HDD for Sample Storage",
+          "price": 279,
+          "note": "Para almacenar librerías de audio y proyectos extensos."
+        }
       ],
       "imageKeys": [
         "resonance-1.png",
@@ -2305,10 +2462,17 @@
         "CUDA",
         "Stable Diffusion"
       ],
-      "optional_upgrades": [
-        "Additional GPUs",
-        "Extra RAM (2TB Max)",
-        "Higher Capacity Storage"
+      "optionalUpgrades": [
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para entrenamientos de IA más grandes y procesamiento de datos intensivo."
+        },
+        {
+          "name": "10Gb Ethernet Networking",
+          "price": 349,
+          "note": "Conectividad ultra rápida para grandes transferencias de datos."
+        }
       ],
       "imageKeys": [
         "omnibrain-1.png",
@@ -2455,10 +2619,19 @@
         "Scikit-Learn",
         "CUDA"
       ],
-      "optional_upgrades": [
-        "128GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "10Gb Ethernet Networking"
+      "optionalUpgrades": [
+        {
+          "name": "RAM Upgrade - 128GB DDR5",
+          "price": 899
+        },
+        {
+          "name": "Storage Upgrade - 4TB NVMe SSD",
+          "price": 599
+        },
+        {
+          "name": "Networking Upgrade - 10Gb Ethernet",
+          "price": 299
+        }
       ],
       "imageKeys": [
         "neural-nexus-1.png",
@@ -2575,6 +2748,18 @@
           }
         }
       },
+      "optionalUpgrades": [
+        {
+          "name": "Additional RTX 4090 GPUs",
+          "price": 1849,
+          "note": "Aumenta la potencia de cómputo para IA y redes neuronales profundas."
+        },
+        {
+          "name": "512GB RAM Upgrade",
+          "price": 2999,
+          "note": "Para manejar modelos de aprendizaje automático de gran tamaño."
+        }
+      ],
       "imageKeys": [
         "tensorforge-1.png",
         "tensorforge-2.png"
