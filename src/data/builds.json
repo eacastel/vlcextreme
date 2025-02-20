@@ -11,7 +11,6 @@
       },
       "description": "PC de gaming definitivo. 8K, Ray Tracing, 4K 240Hz, VR y mods extremos sin límites.",
       "short_description": "El sueño gamer hecho realidad",
-      "long_description": "El **GODMODE GAMER** representa la cima del **gaming extremo y la potencia sin límites**. Diseñado para aquellos que buscan **romper barreras de rendimiento** y disfrutar de la mejor experiencia visual y de fluidez posible, este PC **puede con absolutamente todo**. Desde **juegos en 8K con Ray Tracing**, **VR a máxima calidad sin mareos**, **modding masivo** y **simulaciones hiperrealistas**, este equipo es la cúspide del hardware gaming.\n\nEste monstruo está impulsado por el **Intel Core i9-14900KS**, el procesador más potente de Intel con **una frecuencia boost de hasta 6.2 GHz**, asegurando un rendimiento sin precedentes en juegos exigentes y cargas de trabajo extremas. Como alternativa, el **AMD Ryzen 9 7950X3D** ofrece una opción optimizada para gaming, con una eficiencia térmica mejorada y un rendimiento sobresaliente en cargas multi-hilo.\n\nEl **sistema gráfico es una bestia única**: **dos NVIDIA RTX 4090 en SLI** brindan **una potencia inigualable para 8K y Ray Tracing a 240Hz**, garantizando **la mejor fidelidad gráfica jamás vista**. Si esto no es suficiente, existe la posibilidad de ampliar a **cuatro RTX 4090**, llevando el rendimiento gráfico más allá de cualquier configuración convencional.\n\nLa **memoria RAM de 128GB DDR5 a 8000MHz** permite una multitarea sin límites y asegura que **ningún juego o software de edición pesada se quede corto en rendimiento**. Complementado con un almacenamiento **Samsung 990 PRO de 4TB NVMe**, se obtienen tiempos de carga **casi instantáneos** en juegos y aplicaciones profesionales de alto consumo de recursos.\n\nEl GODMODE GAMER también ha sido diseñado con una refrigeración de primer nivel. Su sistema de **Custom Liquid Cooling Loop de EKWB** es una obra maestra de ingeniería térmica, permitiendo que la CPU y las GPUs operen a temperaturas óptimas incluso bajo carga extrema. Para alimentar esta bestia, el **Corsair AX1600i 1600W 80+ Titanium** proporciona **la estabilidad y eficiencia necesarias para esta configuración extrema**.\n\nTodo este poder está contenido en el **Lian Li V3000 PLUS**, una caja full-tower **premium con flujo de aire optimizado**, espacio para múltiples GPUs y una presentación estética impecable.\n\nEl **GODMODE GAMER** es la elección definitiva para entusiastas del gaming, streamers profesionales, creadores de contenido en 3D y cualquiera que busque **la máxima potencia sin compromisos**.",
       "price_range": {
         "min": 9500,
         "max": 12000
@@ -106,10 +105,27 @@
         "Baldur’s Gate 3",
         "Elden Ring"
       ],
-      "optional_upgrades": [
-        "Quad RTX 4090",
-        "More Storage",
-        "Bespoke Water Cooling"
+      "optionalUpgrades": [
+        {
+          "name": "Quad NVIDIA RTX 4090 (4-Way SLI)",
+          "price": 7200,
+          "note": "Máximo rendimiento gráfico con 4 tarjetas RTX 4090 en paralelo, ideal para gaming 8K, modelado 3D extremo y simulaciones avanzadas."
+        },
+        {
+          "name": "Storage Upgrade - 8TB NVMe SSD",
+          "price": 1299,
+          "note": "Reduce drásticamente los tiempos de carga en juegos y software profesional. Ideal para creadores con grandes archivos de video y proyectos."
+        },
+        {
+          "name": "RAM Upgrade - 256GB DDR5 8000MHz",
+          "price": 2999,
+          "note": "Más memoria para modding, multitarea y cargas extremas de software. Perfecto para streamers con configuraciones de alto rendimiento."
+        },
+        {
+          "name": "Custom Liquid Cooling Loop",
+          "price": 1999,
+          "note": "Solución de refrigeración personalizada para mantener temperaturas óptimas incluso en cargas extremas, asegurando estabilidad a largo plazo."
+        }
       ],
       "imageKeys": [
         "godmode-gamer-1.png",
@@ -121,7 +137,6 @@
       "name": "Casual Cruiser",
       "description": "Perfecto para juegos ligeros, el cole y medios. Maneja Minecraft, Roblox, Los Sims y esports casuales.",
       "short_description": "Juegos básicos y multimedia",
-      "long_description": "El Casual Cruiser es un PC perfecto para quienes buscan rendimiento sólido en juegos como Minecraft, Roblox, Fortnite y League of Legends sin gastar una fortuna. Con un procesador AMD Ryzen 5 7600 y gráficos Radeon 760M, este equipo garantiza una experiencia fluida en juegos y productividad.\n\nSi buscas gráficos más avanzados, puedes elegir una tarjeta gráfica dedicada como la AMD Radeon RX 7600 o la NVIDIA RTX 4060. Con almacenamiento NVMe ultrarrápido y memoria DDR5, los tiempos de carga se reducen significativamente, lo que también lo hace ideal para streaming ligero o edición básica de videos. \n\nEste equipo es una excelente opción para jugadores ocasionales, estudiantes y creadores de contenido en crecimiento, ofreciendo gran capacidad de actualización en el futuro.",
       "price_range": {
         "min": 846,
         "max": 1200
@@ -150,22 +165,22 @@
           ]
         },
         "GPU": {
-          "name": "AMD Radeon RX 7600",
+          "name": "Radeon 760M Integrado",
           "brand": "AMD",
-          "price": 279,
-          "performance_score": 72,
-          "alternatives": [
+          "price": 0,
+          "performance_score": 60,
+          "optional_upgrades": [
             {
-              "name": "NVIDIA RTX 4060",
-              "brand": "NVIDIA",
-              "price": 299,
-              "performance_score": 75
+              "name": "AMD Radeon RX 7600",
+              "price": 279,
+              "performance_score": 72,
+              "interface": "PCIe x16"
             },
             {
-              "name": "Intel Arc A750",
-              "brand": "Intel",
-              "price": 249,
-              "performance_score": 73
+              "name": "NVIDIA RTX 4060",
+              "price": 644,
+              "performance_score": 75,
+              "interface": "PCIe x16"
             }
           ]
         },
@@ -185,10 +200,16 @@
           },
           "alternatives": [
             {
-              "name": "ASRock B650M Pro RS",
-              "brand": "ASRock",
-              "price": 179,
-              "form_factor": "Micro-ATX"
+              "name": "MSI PRO B660M-A WiFi",
+              "brand": "MSI",
+              "price": 143,
+              "form_factor": "Micro-ATX",
+              "compatibility": {
+                "cpu_sockets": [
+                  "LGA1700"
+                ],
+                "memory_type": "DDR4"
+              }
             }
           ]
         },
@@ -196,66 +217,31 @@
           "name": "Corsair Vengeance LPX 16GB DDR5",
           "brand": "Corsair",
           "price": 80,
-          "performance_score": 75,
-          "upgrades": [
-            {
-              "name": "Corsair Vengeance LPX 32GB DDR5",
-              "price": 149,
-              "performance_score": 85
-            }
-          ]
+          "performance_score": 75
         },
         "Storage": {
           "name": "Samsung 990 PRO 1TB NVMe",
           "brand": "Samsung",
           "price": 149,
-          "performance_score": 85,
-          "upgrades": [
-            {
-              "name": "Samsung 990 PRO 2TB NVMe",
-              "price": 249,
-              "performance_score": 90
-            }
-          ]
+          "performance_score": 85
         },
         "PowerSupply": {
-          "name": "Corsair CV650 650W 80+ Bronze",
-          "brand": "Corsair",
+          "name": "EVGA 650W 80+ Bronze",
+          "brand": "EVGA",
           "price": 75,
-          "performance_score": 70,
-          "upgrades": [
-            {
-              "name": "Corsair RM750e 750W 80+ Gold",
-              "price": 110,
-              "performance_score": 85
-            }
-          ]
+          "performance_score": 70
         },
         "Cooling": {
           "name": "Disipador AMD Wraith de serie",
           "brand": "AMD",
           "price": 0,
-          "performance_score": 65,
-          "upgrades": [
-            {
-              "name": "Cooler Master Hyper 212 Black Edition",
-              "price": 55,
-              "performance_score": 80
-            }
-          ]
+          "performance_score": 65
         },
         "Case": {
           "name": "NZXT H5 Flow",
           "brand": "NZXT",
           "price": 120,
-          "performance_score": 80,
-          "alternatives": [
-            {
-              "name": "Lian Li Lancool 215",
-              "price": 110,
-              "performance_score": 78
-            }
-          ]
+          "performance_score": 80
         }
       },
       "compatible_games": [
@@ -264,6 +250,23 @@
         "Fortnite",
         "Los Sims 4",
         "League of Legends"
+      ],
+      "optionalUpgrades": [
+        {
+          "name": "AMD Radeon RX 7600",
+          "price": 279,
+          "note": "Añade una GPU dedicada para mejorar el rendimiento en juegos como Fortnite y Valorant a 1080p con mayores FPS."
+        },
+        {
+          "name": "NVIDIA RTX 4060",
+          "price": 644,
+          "note": "Para jugadores que buscan Ray Tracing y rendimiento superior en juegos modernos."
+        },
+        {
+          "name": "32GB RAM Upgrade",
+          "price": 149,
+          "note": "Doble de memoria para manejar múltiples aplicaciones y juegos sin ralentizaciones."
+        }
       ],
       "imageKeys": [
         "casual-cruiser-1.jpeg",
@@ -275,7 +278,6 @@
       "name": "eSports Edge",
       "description": "Optimizado para eSports competitivos con altas tasas de FPS en 1080p y monitores de 144Hz o más.",
       "short_description": "Máxima fluidez en competición",
-      "long_description": "El **eSports Edge** es una máquina diseñada para los jugadores competitivos que buscan **máxima fluidez y precisión** en títulos de alto rendimiento como CS:GO, Valorant, Overwatch y Apex Legends. \n\nCon una **RTX 4060 Ti y el Intel Core i5-13600KF**, este equipo está optimizado para **144Hz y 240Hz**, asegurando un tiempo de respuesta rápido y un rendimiento estable en 1080p. Su **SSD NVMe de alta velocidad** reduce los tiempos de carga, y la memoria **DDR5 de 6000MHz** maximiza la estabilidad en escenarios de alta intensidad.\n\nSi necesitas más potencia, puedes mejorar con una **RTX 4070 Ti** para 1440p o expandir la RAM a **32GB** para multitarea avanzada. La refrigeración optimizada con **Noctua NH-U12S Redux** mantiene las temperaturas bajo control incluso en sesiones largas de gaming. \n\nEs la elección ideal para jugadores de eSports que buscan **máximo FPS, estabilidad y posibilidad de actualización** en el futuro.",
       "price_range": {
         "min": 1300,
         "max": 1800
@@ -300,13 +302,6 @@
               "price": 520,
               "performance_score": 92,
               "form_factor": "AM5"
-            },
-            {
-              "name": "Intel Core i7-13700KF",
-              "brand": "Intel",
-              "price": 419,
-              "performance_score": 89,
-              "form_factor": "LGA1700"
             }
           ]
         },
@@ -321,18 +316,6 @@
             "Overwatch",
             "Fortnite",
             "Apex Legends"
-          ],
-          "upgrades": [
-            {
-              "name": "NVIDIA RTX 4070 Ti",
-              "price": 850,
-              "performance_score": 92
-            },
-            {
-              "name": "AMD Radeon RX 7800 XT",
-              "price": 499,
-              "performance_score": 88
-            }
           ]
         },
         "Motherboard": {
@@ -361,12 +344,6 @@
                 ],
                 "memory_type": "DDR5"
               }
-            },
-            {
-              "name": "ASUS ROG Strix B660-F Gaming",
-              "brand": "ASUS",
-              "price": 199,
-              "form_factor": "ATX"
             }
           ]
         },
@@ -374,66 +351,31 @@
           "name": "Kingston Fury Beast 16GB DDR5 6000MHz",
           "brand": "Kingston",
           "price": 110,
-          "performance_score": 80,
-          "upgrades": [
-            {
-              "name": "Kingston Fury Beast 32GB DDR5 6000MHz",
-              "price": 199,
-              "performance_score": 90
-            }
-          ]
+          "performance_score": 80
         },
         "Storage": {
           "name": "WD Black SN850X 1TB NVMe",
           "brand": "Western Digital",
           "price": 120,
-          "performance_score": 85,
-          "upgrades": [
-            {
-              "name": "WD Black SN850X 2TB NVMe",
-              "price": 189,
-              "performance_score": 90
-            }
-          ]
+          "performance_score": 85
         },
         "PowerSupply": {
           "name": "Corsair RM650e 650W 80+ Gold",
           "brand": "Corsair",
           "price": 99,
-          "performance_score": 75,
-          "upgrades": [
-            {
-              "name": "Corsair RM750e 750W 80+ Gold",
-              "price": 119,
-              "performance_score": 85
-            }
-          ]
+          "performance_score": 75
         },
         "Cooling": {
           "name": "Noctua NH-U12S Redux",
           "brand": "Noctua",
           "price": 79,
-          "performance_score": 80,
-          "upgrades": [
-            {
-              "name": "Deepcool AK620",
-              "price": 99,
-              "performance_score": 90
-            }
-          ]
+          "performance_score": 80
         },
         "Case": {
           "name": "Lian Li Lancool 215",
           "brand": "Lian Li",
           "price": 115,
-          "performance_score": 80,
-          "alternatives": [
-            {
-              "name": "NZXT H510 Flow",
-              "price": 109,
-              "performance_score": 78
-            }
-          ]
+          "performance_score": 80
         }
       },
       "compatible_games": [
@@ -442,6 +384,23 @@
         "Overwatch",
         "Fortnite",
         "Apex Legends"
+      ],
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4070 Ti",
+          "price": 899,
+          "note": "Para jugadores competitivos que buscan FPS extremos en 1440p con monitores de alta tasa de refresco."
+        },
+        {
+          "name": "32GB RAM Upgrade",
+          "price": 179,
+          "note": "Para multitarea extrema mientras juegas y transmites en vivo."
+        },
+        {
+          "name": "2TB NVMe SSD",
+          "price": 249,
+          "note": "Espacio adicional para almacenar juegos, evitando tiempos de carga largos."
+        }
       ],
       "imageKeys": [
         "esports-edge-1.png",
@@ -453,7 +412,6 @@
       "name": "AAA Avenger",
       "description": "Diseñado para juegos AAA modernos en 1080p Ultra o 1440p High con 60-100 FPS.",
       "short_description": "Gráficos espectaculares sin cortes",
-      "long_description": "El **AAA Avenger** es un PC diseñado específicamente para los amantes de los videojuegos de última generación que exigen el **máximo nivel de detalle** y una experiencia **fluida y sin cortes** en **1080p Ultra o 1440p High**. Equipado con una **NVIDIA RTX 4070 Ti** y el potente **AMD Ryzen 7 7800X3D**, este equipo es perfecto para títulos **gráficamente exigentes** como **Cyberpunk 2077, Starfield y Red Dead Redemption 2**. \n\nEl procesador **Ryzen 7 7800X3D** es una de las mejores opciones para gaming gracias a su **caché 3D**, que mejora significativamente el rendimiento en juegos que dependen del CPU. La **RTX 4070 Ti** ofrece un **rendimiento de trazado de rayos optimizado** con DLSS 3 para mantener FPS altos sin sacrificar la calidad visual.\n\nCon **32GB de RAM DDR5 a 6000MHz**, cargas ultra rápidas con un **SSD NVMe Gen4 de 2TB**, y un **Noctua NH-D15** para mantener temperaturas óptimas, este equipo **está listo para lo que venga**. \n\nSi buscas **más potencia**, puedes mejorar a una **RTX 4080** para gaming en 4K o ampliar la memoria hasta **64GB de RAM** para multitarea extrema y modding avanzado. ¡Con AAA Avenger, la **nueva generación de gaming** está al alcance de tus manos!",
       "price_range": {
         "min": 1700,
         "max": 2500
@@ -474,17 +432,9 @@
           "alternatives": [
             {
               "name": "Intel Core i7-13700K",
-              "brand": "Intel",
               "price": 441,
               "performance_score": 88,
               "form_factor": "LGA1700"
-            },
-            {
-              "name": "AMD Ryzen 9 7900X",
-              "brand": "AMD",
-              "price": 549,
-              "performance_score": 90,
-              "form_factor": "AM5"
             }
           ]
         },
@@ -506,12 +456,6 @@
               "price": 1199,
               "performance_score": 98,
               "interface": "PCIe x16"
-            },
-            {
-              "name": "AMD Radeon RX 7900 XTX",
-              "price": 999,
-              "performance_score": 96,
-              "interface": "PCIe x16"
             }
           ]
         },
@@ -528,15 +472,7 @@
             "expansion_slots": [
               "PCIe x16"
             ]
-          },
-          "alternatives": [
-            {
-              "name": "Gigabyte X670E AORUS Master",
-              "brand": "Gigabyte",
-              "price": 399,
-              "form_factor": "ATX"
-            }
-          ]
+          }
         },
         "RAM": {
           "name": "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000MHz",
@@ -551,11 +487,12 @@
               "X670"
             ]
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "G.Skill Trident Z5 RGB 64GB (2x32GB) DDR5 6000MHz",
               "price": 399,
-              "performance_score": 95
+              "performance_score": 95,
+              "form_factor": "DIMM"
             }
           ]
         },
@@ -572,11 +509,13 @@
             ],
             "pcie_version": "Gen4"
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "Samsung 990 PRO 4TB NVMe",
               "price": 360,
-              "performance_score": 95
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
             }
           ]
         },
@@ -592,14 +531,7 @@
               "RTX 4070 Ti",
               "RTX 4080"
             ]
-          },
-          "upgrades": [
-            {
-              "name": "Corsair RM1000x 1000W 80+ Gold",
-              "price": 219,
-              "performance_score": 90
-            }
-          ]
+          }
         },
         "Cooling": {
           "name": "Noctua NH-D15",
@@ -612,14 +544,7 @@
               "AM5",
               "LGA1700"
             ]
-          },
-          "upgrades": [
-            {
-              "name": "Deepcool Assassin III",
-              "price": 129,
-              "performance_score": 92
-            }
-          ]
+          }
         },
         "Case": {
           "name": "Lian Li Lancool III RGB",
@@ -633,14 +558,7 @@
               "Mini-ITX"
             ],
             "gpu_clearance": "400mm"
-          },
-          "alternatives": [
-            {
-              "name": "NZXT H7 Flow",
-              "price": 149,
-              "performance_score": 88
-            }
-          ]
+          }
         }
       },
       "compatible_games": [
@@ -650,6 +568,23 @@
         "Hogwarts Legacy",
         "Starfield",
         "Red Dead Redemption 2"
+      ],
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4080",
+          "price": 1199,
+          "note": "Mejor rendimiento en 4K y gaming ultra con trazado de rayos avanzado."
+        },
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para edición de video, gaming extremo y creación de contenido."
+        },
+        {
+          "name": "4TB NVMe SSD",
+          "price": 499,
+          "note": "Almacena más juegos AAA con tiempos de carga ultra rápidos."
+        }
       ],
       "imageKeys": [
         "aaa-avenger-1.png",
@@ -661,7 +596,6 @@
       "name": "Titan Dominator (i9)",
       "description": "Máquina definitiva para gaming 4K Ultra, streaming simultáneo y mods pesados. Potencia extrema y componentes de última generación.",
       "short_description": "Gaming extremo y streaming",
-      "long_description": "El **Titan Dominator (i9)** es la bestia definitiva para jugadores y streamers que buscan un rendimiento extremo en **4K Ultra, con trazado de rayos y tasas de FPS fluidas**. Diseñado para quienes no aceptan compromisos, este PC está impulsado por el **Intel Core i9-14900K**, una CPU de alto rendimiento con **24 núcleos y 32 hilos**, capaz de manejar **streaming, edición de video en vivo y multitarea extrema** sin problemas.\n\nLa **NVIDIA RTX 4090**, la GPU más potente del mercado, permite ejecutar títulos AAA como **Cyberpunk 2077 en Overdrive Mode**, **Microsoft Flight Simulator en ultra**, y **Red Dead Redemption 2 en 4K con todos los gráficos al máximo**. Gracias a **DLSS 3 y Ray Tracing**, experimentarás un nivel de detalle y fluidez que redefine la experiencia de juego.\n\nCon **64GB de RAM DDR5 a 6600MHz**, este equipo está optimizado para **mods pesados**, **creación de contenido** y **simulaciones exigentes**. Su almacenamiento de **4TB NVMe Gen4** garantiza velocidades de carga ultra rápidas y espacio de sobra para todos tus juegos, grabaciones y proyectos.\n\nPara mantener la estabilidad térmica, el **Corsair iCUE H170i Elite Capellix XT 420mm** asegura temperaturas óptimas incluso bajo cargas extremas. Y si buscas llevar la personalización al límite, puedes optar por un sistema de **enfriamiento custom con EKWB Quantum Vector²**.\n\nEn resumen, el **Titan Dominator (i9)** es la máquina definitiva para gamers y creadores que exigen **máxima potencia, estabilidad y longevidad**. **Ideal para juegos AAA en 4K, streaming profesional y edición de contenido sin restricciones**. Si buscas lo mejor, este es el equipo para ti.",
       "price_range": {
         "min": 3500,
         "max": 5000
@@ -678,16 +612,7 @@
               "LGA1700"
             ],
             "memory_type": "DDR5"
-          },
-          "alternatives": [
-            {
-              "name": "AMD Ryzen 9 7950X3D",
-              "brand": "AMD",
-              "price": 699,
-              "performance_score": 98,
-              "form_factor": "AM5"
-            }
-          ]
+          }
         },
         "GPU": {
           "name": "NVIDIA RTX 4090",
@@ -700,15 +625,7 @@
               "PCIe x16"
             ],
             "psu_requirement": 1200
-          },
-          "alternatives": [
-            {
-              "name": "Quadro RTX 6000 Ada",
-              "price": 4500,
-              "performance_score": 100,
-              "interface": "PCIe x16"
-            }
-          ]
+          }
         },
         "Motherboard": {
           "name": "ASUS ROG Maximus Z790 Hero",
@@ -723,14 +640,7 @@
             "expansion_slots": [
               "PCIe x16"
             ]
-          },
-          "alternatives": [
-            {
-              "name": "MSI MEG Z790 ACE",
-              "price": 799,
-              "form_factor": "E-ATX"
-            }
-          ]
+          }
         },
         "RAM": {
           "name": "G.Skill Trident Z5 RGB 64GB DDR5 6600MHz CL32",
@@ -744,11 +654,12 @@
               "Z790"
             ]
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "G.Skill Trident Z5 RGB 128GB DDR5 6000MHz CL30",
               "price": 849,
-              "performance_score": 98
+              "performance_score": 98,
+              "form_factor": "DIMM"
             }
           ]
         },
@@ -765,16 +676,13 @@
             ],
             "pcie_version": "Gen4"
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "WD Black SN850X 4TB NVMe",
               "price": 499,
-              "performance_score": 94
-            },
-            {
-              "name": "Seagate FireCuda 530 8TB NVMe",
-              "price": 1099,
-              "performance_score": 96
+              "performance_score": 94,
+              "form_factor": "M.2",
+              "interface": "NVMe"
             }
           ]
         },
@@ -794,12 +702,8 @@
             {
               "name": "Corsair HX1000i 1000W 80+ Platinum",
               "price": 259,
-              "performance_score": 90
-            },
-            {
-              "name": "Corsair AX1600i 1600W 80+ Titanium",
-              "price": 499,
-              "performance_score": 100
+              "performance_score": 90,
+              "form_factor": "ATX"
             }
           ]
         },
@@ -815,11 +719,12 @@
               "AM5"
             ]
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "EKWB Quantum Vector² Custom Loop Cooling",
               "price": 699,
-              "performance_score": 99
+              "performance_score": 99,
+              "form_factor": "Custom Liquid Cooling"
             }
           ]
         },
@@ -835,14 +740,7 @@
               "MicroATX"
             ],
             "gpu_clearance": "450mm"
-          },
-          "alternatives": [
-            {
-              "name": "Fractal Design Torrent",
-              "price": 199,
-              "performance_score": 90
-            }
-          ]
+          }
         }
       },
       "compatible_games": [
@@ -854,9 +752,26 @@
         "Forza Horizon 5",
         "Hogwarts Legacy"
       ],
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4090",
+          "price": 1849,
+          "note": "Para gaming 4K extremo y renderizado avanzado con IA."
+        },
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para profesionales que también usan su PC para edición de video y modelado 3D."
+        },
+        {
+          "name": "Custom Liquid Cooling",
+          "price": 1299,
+          "note": "Optimiza la temperatura en sesiones largas de gaming o trabajo intensivo."
+        }
+      ],
       "imageKeys": [
-        "titan-dominator-i9-1.png",
-        "titan-dominator-i9-2.png"
+        "titan-dominator-(i9)-1.png",
+        "titan-dominator-(i9)-2.png"
       ]
     },
     "G005": {
@@ -864,7 +779,6 @@
       "name": "Titan Fury (AMD)",
       "description": "Máxima potencia con AMD. Ideal para juegos en 4K y alto rendimiento con menor consumo.",
       "short_description": "Rendimiento 4K con AMD",
-      "long_description": "El **Titan Fury (AMD)** es la mejor opción para los entusiastas de **AMD** que buscan un rendimiento extremo en **4K Ultra con trazado de rayos**, combinando **eficiencia energética, temperaturas optimizadas y alto poder de procesamiento**. Diseñado para gamers que exigen **altas tasas de FPS en los juegos más demandantes**, este equipo es la respuesta definitiva para quienes buscan lo mejor en la plataforma AMD.\n\nEste monstruo está alimentado por el **AMD Ryzen 9 7950X3D**, un procesador de **16 núcleos y 32 hilos** con tecnología **3D V-Cache**, optimizado para juegos AAA y cargas multitarea exigentes como **streaming, edición de video y modelado 3D**. Su gran eficiencia le permite **mantener temperaturas más bajas** sin sacrificar rendimiento, superando incluso a la competencia en ciertos títulos optimizados para AMD.\n\nLa **Radeon RX 7900 XTX** ofrece una experiencia visual impresionante con **24GB de VRAM GDDR6**, capaz de manejar **Cyberpunk 2077 con RT Overdrive**, **Forza Horizon 5 en 4K ultra**, y **Baldur’s Gate 3 a 120 FPS** sin despeinarse. Con compatibilidad con **FSR 3**, esta GPU ofrece **mejor escalabilidad y rendimiento fluido** en monitores de **144Hz y 240Hz**.\n\nCon **32GB de RAM DDR5 a 6000MHz**, este equipo garantiza **cargas ultra rápidas y multitarea sin interrupciones**. Para almacenamiento, incorpora un **Samsung 990 PRO de 4TB NVMe con disipador**, asegurando velocidades de lectura y escritura de hasta **7450 MB/s**, reduciendo tiempos de carga en juegos y software pesado.\n\nEl sistema de refrigeración **NZXT Kraken Z73 RGB de 360mm** mantiene la CPU en temperaturas óptimas, asegurando estabilidad incluso en sesiones de juego maratónicas. Y si buscas una personalización extrema, puedes optar por **un sistema custom de refrigeración líquida**.\n\nEl **Titan Fury (AMD)** es la elección definitiva para jugadores y creadores de contenido que buscan **máxima potencia en la plataforma AMD, eficiencia térmica y un sistema preparado para el futuro**. Ideal para **gaming en 4K, streaming profesional y edición de contenido** sin limitaciones.",
       "price_range": {
         "min": 2900,
         "max": 4000
@@ -957,11 +871,12 @@
               "X670E"
             ]
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "G.Skill Trident Z5 RGB 64GB DDR5 6000MHz CL30",
               "price": 479,
-              "performance_score": 97
+              "performance_score": 97,
+              "form_factor": "DIMM"
             }
           ]
         },
@@ -978,16 +893,13 @@
             ],
             "pcie_version": "Gen4"
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "WD Black SN850X 4TB NVMe",
               "price": 499,
-              "performance_score": 94
-            },
-            {
-              "name": "Seagate FireCuda 530 8TB NVMe",
-              "price": 1099,
-              "performance_score": 96
+              "performance_score": 94,
+              "form_factor": "M.2",
+              "interface": "NVMe"
             }
           ]
         },
@@ -1016,14 +928,7 @@
               "AM5",
               "LGA1700"
             ]
-          },
-          "upgrades": [
-            {
-              "name": "EKWB Quantum Vector² Custom Loop Cooling",
-              "price": 699,
-              "performance_score": 99
-            }
-          ]
+          }
         },
         "Case": {
           "name": "Fractal Design Torrent",
@@ -1059,9 +964,26 @@
         "Forza Horizon 5",
         "Elden Ring"
       ],
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4080 Super",
+          "price": 1099,
+          "note": "Opción alternativa si prefieres NVIDIA sobre AMD."
+        },
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para mejorar la fluidez en juegos y aplicaciones pesadas."
+        },
+        {
+          "name": "Seagate IronWolf Pro 8TB HDD",
+          "price": 279,
+          "note": "Ideal para almacenar grandes bibliotecas de juegos y mods."
+        }
+      ],
       "imageKeys": [
-        "titan-fury-amd-1.png",
-        "titan-fury-amd-2.png"
+        "titan-fury-(amd)-1.png",
+        "titan-fury-(amd)-2.png"
       ]
     },
     "G006": {
@@ -1069,7 +991,6 @@
       "name": "Virtual Voyager (VR)",
       "description": "Experiencia inmersiva en VR con un rendimiento fluido y sin mareos. Diseñado para títulos exigentes como Half-Life: Alyx y simuladores de vuelo.",
       "short_description": "VR fluido y envolvente",
-      "long_description": "El **Virtual Voyager (VR)** es la máquina definitiva para **realidad virtual de alto rendimiento**, ofreciendo una experiencia **fluida y sin latencia** en los juegos más exigentes. Equipado con componentes de última generación, este equipo elimina los problemas de **mareos y caídas de FPS**, garantizando una inmersión total en títulos **AAA VR y simuladores avanzados**.\n\nSu potente **Intel Core i7-14700K** con **20 núcleos y 28 hilos** ofrece un **equilibrio perfecto entre velocidad monohilo y multitarea**, asegurando tiempos de carga reducidos y una **respuesta ultra rápida** para experiencias **VR fluidas**. Como alternativa, puedes optar por el **AMD Ryzen 7 7800X3D**, que destaca por su rendimiento en juegos optimizados para AMD.\n\nEn el apartado gráfico, la **NVIDIA RTX 4080 Super** con **DLSS 3 y 16GB de VRAM GDDR6X** proporciona una experiencia impecable en juegos como **Half-Life: Alyx, Asgard’s Wrath 2** y **Microsoft Flight Simulator en VR**, asegurando **alta fidelidad gráfica sin caídas de rendimiento**. Alternativamente, puedes elegir la **AMD Radeon RX 7900 XTX**, que ofrece un rendimiento similar con **FSR 3** y un mejor aprovechamiento en cargas pesadas de computación.\n\nEste equipo incorpora **32GB de RAM DDR5 a 6000MHz**, proporcionando **cargas instantáneas** y la fluidez necesaria para mantener una experiencia VR sin interrupciones. Para almacenamiento, el **Samsung 990 PRO de 2TB NVMe** garantiza **velocidades de hasta 7450 MB/s**, eliminando cualquier retraso en la carga de texturas y entornos detallados.\n\nLa refrigeración es clave en VR, por lo que el **NZXT Kraken Elite RGB 360mm** mantiene el procesador en temperaturas óptimas durante largas sesiones de juego. Para quienes buscan la máxima personalización y disipación térmica, **el sistema de refrigeración líquida custom es una opción ideal**.\n\nEl **Virtual Voyager (VR)** es la elección definitiva para jugadores y entusiastas de la realidad virtual que buscan **máximo rendimiento, estabilidad y una experiencia inmersiva sin concesiones**.",
       "price_range": {
         "min": 2900,
         "max": 4000
@@ -1144,11 +1065,12 @@
               "Z790"
             ]
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "Corsair Vengeance RGB 64GB DDR5 6000MHz",
               "price": 479,
-              "performance_score": 96
+              "performance_score": 96,
+              "form_factor": "DIMM"
             }
           ]
         },
@@ -1164,14 +1086,7 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          },
-          "upgrades": [
-            {
-              "name": "Samsung 990 PRO 4TB NVMe",
-              "price": 549,
-              "performance_score": 95
-            }
-          ]
+          }
         },
         "PowerSupply": {
           "name": "Corsair RM1000x 1000W",
@@ -1185,14 +1100,7 @@
               "RTX 4080 Super",
               "RX 7900 XTX"
             ]
-          },
-          "upgrades": [
-            {
-              "name": "Corsair HX1200i 1200W 80+ Platinum",
-              "price": 319,
-              "performance_score": 96
-            }
-          ]
+          }
         },
         "Cooling": {
           "name": "NZXT Kraken Elite RGB 360mm AIO",
@@ -1205,14 +1113,7 @@
               "LGA1700",
               "AM5"
             ]
-          },
-          "upgrades": [
-            {
-              "name": "EKWB Quantum Vector² Custom Loop Cooling",
-              "price": 699,
-              "performance_score": 99
-            }
-          ]
+          }
         },
         "Case": {
           "name": "Lian Li Lancool III RGB",
@@ -1248,14 +1149,26 @@
         "Microsoft Flight Simulator",
         "Asgard’s Wrath 2"
       ],
-      "optional_upgrades": [
-        "64GB RAM",
-        "Higher wattage PSU",
-        "Custom liquid cooling"
+      "optionalUpgrades": [
+        {
+          "name": "AMD Radeon RX 7900 XTX",
+          "price": 999,
+          "note": "Alternativa a NVIDIA para usuarios que prefieren AMD en VR."
+        },
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para trabajar con múltiples simulaciones y entornos VR sin interrupciones."
+        },
+        {
+          "name": "Custom Liquid Cooling",
+          "price": 1299,
+          "note": "Mantiene temperaturas bajas en sesiones prolongadas de VR."
+        }
       ],
       "imageKeys": [
-        "virtual-voyager-vr-1.png",
-        "virtual-voyager-vr-2.png"
+        "virtual-voyager-(vr)-1.png",
+        "virtual-voyager-(vr)-2.png"
       ]
     },
     "G007": {
@@ -1263,7 +1176,6 @@
       "name": "PowerStack",
       "description": "Rendimiento extremo para juegos AAA y tareas avanzadas. Diseñado para jugadores con grandes bibliotecas de mods y multitarea intensiva.",
       "short_description": "Juegos, mods y trabajo",
-      "long_description": "El **PowerStack** es un ordenador de alto rendimiento diseñado para jugadores y creadores que necesitan **potencia extrema y multitarea avanzada**. Diseñado para manejar juegos **AAA en ultra calidad**, grandes bibliotecas de **mods** y tareas exigentes como **streaming, edición de video y simulaciones**, este PC no solo es potente, sino que está optimizado para **procesos pesados simultáneos sin pérdida de rendimiento**.\n\nEn el núcleo de esta máquina está el **AMD Ryzen 9 7900X**, un procesador con **12 núcleos y 24 hilos**, ideal para **cargas de trabajo intensivas**, permitiendo jugar, grabar y ejecutar múltiples aplicaciones a la vez sin ralentizaciones. Como alternativa, se ofrece el **Intel Core i9-13900K**, con una arquitectura híbrida que maximiza el rendimiento en cargas de trabajo multihilo y juegos exigentes.\n\nA nivel gráfico, la **NVIDIA RTX 4080 Super** con **DLSS 3 y 16GB de VRAM GDDR6X** ofrece **ray tracing en tiempo real** y un rendimiento sobresaliente en **4K y VR**. Para los que prefieren AMD, la **Radeon RX 7900 XT** es una excelente alternativa con alto rendimiento y menor consumo energético.\n\nEl **PowerStack** incorpora **64GB de RAM DDR5 a 6000MHz**, asegurando que no haya **cuellos de botella en multitarea avanzada o carga de mods pesados**. Además, el almacenamiento **NVMe de 2TB Samsung 990 PRO** garantiza **cargas ultrarrápidas** y tiempos de acceso reducidos en juegos y aplicaciones exigentes. Para los que necesitan más espacio, se ofrece una opción de **4TB con disipador térmico**.\n\nLa refrigeración es clave para mantener el rendimiento máximo sin **throttling térmico**. Por eso, el **NZXT Kraken Elite RGB 360mm AIO** asegura temperaturas óptimas incluso en largas sesiones de juego y carga extrema. Para quienes prefieren refrigeración por aire, el **Noctua NH-D15 Chromax Black** es una alternativa de gran eficiencia térmica y silenciosa.\n\nEste equipo está alojado en el **Lian Li Lancool III**, un **chasis premium** con **excelente flujo de aire y diseño modular**. También se ofrece el **Fractal Design Torrent**, un **full tower con mayor espacio para GPUs y soluciones de refrigeración personalizadas**.\n\nEl **PowerStack** es la solución definitiva para **jugadores hardcore, creadores de contenido y profesionales** que necesitan **potencia bruta, velocidad y una plataforma confiable para gaming y trabajo simultáneo**.",
       "price_range": {
         "min": 2900,
         "max": 4000
@@ -1337,14 +1249,7 @@
             "motherboard_compatibility": [
               "X670E"
             ]
-          },
-          "upgrades": [
-            {
-              "name": "G.Skill Trident Z5 RGB 128GB DDR5 6000MHz",
-              "price": 849,
-              "performance_score": 98
-            }
-          ]
+          }
         },
         "Storage": {
           "name": "Samsung 990 PRO 2TB NVMe",
@@ -1359,11 +1264,19 @@
             ],
             "pcie_version": "Gen4"
           },
-          "upgrades": [
+          "optional_upgrades": [
             {
               "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
               "price": 449,
-              "performance_score": 95
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe",
+              "compatibility": {
+                "motherboard_slots": [
+                  "M.2"
+                ],
+                "pcie_version": "Gen4"
+              }
             }
           ]
         },
@@ -1397,7 +1310,8 @@
             {
               "name": "Noctua NH-D15 Chromax Black",
               "price": 129,
-              "performance_score": 92
+              "performance_score": 92,
+              "form_factor": "Air Cooling"
             }
           ]
         },
@@ -1436,10 +1350,22 @@
         "Elden Ring",
         "Modded Skyrim / Fallout 4"
       ],
-      "optional_upgrades": [
-        "4TB NVMe SSD with heatsink",
-        "128GB RAM",
-        "Custom water cooling"
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4090",
+          "price": 1849,
+          "note": "Para rendimiento gráfico extremo en gaming y creación de contenido."
+        },
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para edición de video 8K, diseño 3D y simulaciones pesadas."
+        },
+        {
+          "name": "8TB NVMe SSD",
+          "price": 1299,
+          "note": "Almacena proyectos de gran tamaño sin comprometer la velocidad."
+        }
       ],
       "imageKeys": [
         "powerstack-1.png",
@@ -1457,7 +1383,6 @@
       },
       "description": "La estación de trabajo definitiva para edición 8K, renderizado 3D y producción de contenido de alto nivel.",
       "short_description": "Potencia sin límites para creadores",
-      "long_description": "El **CINEFORGE** es el pináculo de la computación profesional, una estación de trabajo creada para **los creadores más exigentes**. Diseñado específicamente para **producción de contenido de ultra-alta definición, renderizado 3D fotorrealista, efectos visuales complejos y simulaciones avanzadas**, este monstruo de rendimiento **redefine los límites del hardware de producción**.\n\nEn el corazón de este sistema se encuentra el **AMD Ryzen Threadripper 7995WX**, el **procesador más potente del mercado**, con **96 núcleos y 192 hilos de procesamiento**. Este **titan de la edición y el cálculo pesado** permite manejar **proyectos de renderizado a gran escala**, **modelado 3D avanzado** y **simulaciones complejas**, reduciendo drásticamente los tiempos de procesamiento.\n\nPara acompañar esta potencia bruta, **cuatro NVIDIA RTX 6000 Ada** proporcionan **un rendimiento gráfico sin rival**. Estas tarjetas están diseñadas para **estudios de animación, VFX y producción cinematográfica**, con **IA avanzada para renderizado en tiempo real** y **memoria VRAM masiva de 48GB por unidad**. Con un **total de 192GB VRAM y CUDA Core mejorados**, esta máquina **destruye cualquier tarea de renderizado en Blender, Cinema 4D, Maya o Unreal Engine**.\n\nLa **memoria RAM de 512GB DDR5 6400MHz** permite **trabajar con escenas masivas en 3D, simulaciones científicas y edición de video en 8K** sin comprometer rendimiento. Con almacenamiento **Samsung PM1733 de 30TB NVMe**, obtienes **acceso ultrarrápido** a tus archivos más grandes, permitiendo **edición en tiempo real** sin necesidad de proxies o almacenamiento externo.\n\nLa **refrigeración líquida personalizada de EKWB Quantum** mantiene **las temperaturas en óptimos niveles**, asegurando estabilidad incluso bajo las cargas más extremas. Para alimentar esta bestia, la **Corsair AX1600i 1600W Titanium** ofrece **eficiencia extrema y estabilidad absoluta**.\n\nEl **CINEFORGE** es **la elección definitiva** para profesionales del **cine, animación, efectos visuales, desarrollo de videojuegos y producción de contenido avanzado**. Si tu trabajo **demanda lo mejor de lo mejor**, este es el sistema **que llevará tu creatividad al siguiente nivel**.",
       "price_range": {
         "min": 15000,
         "max": 25000
@@ -1512,10 +1437,27 @@
         "Autodesk Maya",
         "Cinema 4D"
       ],
-      "optional_upgrades": [
-        "More Storage",
-        "Additional GPUs",
-        "Higher RAM"
+      "optionalUpgrades": [
+        {
+          "name": "Additional NVIDIA RTX 6000 Ada",
+          "price": 4500,
+          "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real."
+        },
+        {
+          "name": "Storage Expansion - 60TB NVMe RAID",
+          "price": 9999,
+          "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción."
+        },
+        {
+          "name": "512GB DDR5 ECC RAM",
+          "price": 4999,
+          "note": "Expande la memoria para proyectos de postproducción y simulaciones que requieren alta estabilidad."
+        },
+        {
+          "name": "Custom Dual Loop Liquid Cooling",
+          "price": 2999,
+          "note": "Sistema de refrigeración de circuito doble para CPU y GPU, optimizando la disipación térmica en cargas extremas."
+        }
       ],
       "imageKeys": [
         "cineforge-1.png",
@@ -1527,7 +1469,6 @@
       "name": "Workstation I",
       "description": "Una estación de trabajo versátil, equilibrada y silenciosa para profesionales exigentes que necesitan potencia, estabilidad y eficiencia.",
       "short_description": "Productividad sin límites",
-      "long_description": "La **Workstation I** es una solución ideal para profesionales que requieren **potencia de cómputo sin sacrificar estabilidad, eficiencia energética y silencio operativo**. Diseñada para creadores de contenido, diseñadores, programadores y profesionales que trabajan con **software de diseño, modelado y producción digital**, esta estación de trabajo proporciona **rendimiento premium a un precio competitivo**.\n\nCon el **Intel Core i7-14700K** de última generación, esta máquina ofrece **20 núcleos y 28 hilos**, lo que la hace perfecta para **cargas de trabajo multitarea exigentes**. En su versión alternativa, el **AMD Ryzen 9 7900** proporciona una alternativa sólida con menor consumo energético y un rendimiento equilibrado en tareas de edición y modelado en 3D.\n\nPara garantizar gráficos fluidos y aceleración por hardware, la **NVIDIA RTX 4060 Ti** permite trabajar con **Adobe Photoshop, AutoCAD, DaVinci Resolve y suites de programación** sin problemas. Si el usuario necesita una GPU más enfocada en productividad y entornos CAD/CAM, la **AMD Radeon Pro W6600** es una opción ideal con certificaciones profesionales.\n\nEl almacenamiento **Samsung 990 PRO 1TB NVMe SSD** proporciona **velocidades ultrarrápidas de lectura y escritura**, esenciales para el **acceso inmediato a grandes archivos y tiempos de carga reducidos**. Se pueden ampliar las opciones de almacenamiento con **2TB NVMe de alto rendimiento o un HDD de 4TB para almacenamiento masivo**, dependiendo de las necesidades del usuario.\n\nPara la estabilidad del sistema, la **ASUS ProArt Z790 Creator WiFi** garantiza **alta compatibilidad con memoria DDR5 y soporte para múltiples dispositivos PCIe x16**, permitiendo futuras ampliaciones. La memoria **Corsair Vengeance DDR5 32GB a 5600MHz** es suficiente para **flujos de trabajo exigentes**, pero se puede aumentar a **64GB para escenarios de trabajo con simulaciones y edición avanzada**.\n\nLa **refrigeración Noctua NH-U12A** mantiene temperaturas óptimas con un **mínimo nivel de ruido**, ideal para oficinas y entornos de trabajo donde el silencio es clave. Todo esto se encuentra alojado en el **Fractal Design Define 7**, una de las cajas más reconocidas por su **acústica mejorada y diseño profesional**.\n\nLa **Workstation I** está pensada para **diseñadores gráficos, programadores, arquitectos, analistas de datos y creadores de contenido** que buscan **un equilibrio perfecto entre potencia y eficiencia**, con **capacidad de actualización para el futuro**.",
       "price_range": {
         "min": 2000,
         "max": 2800
@@ -1690,10 +1631,22 @@
         "Visual Studio Code",
         "DaVinci Resolve (light use)"
       ],
-      "optional_upgrades": [
-        "64GB RAM Upgrade",
-        "2TB NVMe SSD",
-        "4TB HDD for Storage"
+      "optionalUpgrades": [
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para cargas de trabajo más pesadas como edición de video o diseño CAD."
+        },
+        {
+          "name": "4TB NVMe SSD",
+          "price": 549,
+          "note": "Para almacenar archivos de gran tamaño y proyectos profesionales."
+        },
+        {
+          "name": "Silent Cooling System",
+          "price": 299,
+          "note": "Refrigeración mejorada para un entorno de trabajo sin ruido."
+        }
       ],
       "imageKeys": [
         "workstation-i-1.png",
@@ -1705,7 +1658,6 @@
       "name": "Studio Forge",
       "description": "Diseñado para creadores y streamers. Potente, equilibrado y optimizado para multitarea, gaming y edición de contenido.",
       "short_description": "Streaming y creación sin límites",
-      "long_description": "La **Studio Forge** es una estación de trabajo **optimizada para streamers, editores de vídeo y creadores de contenido** que necesitan **alta potencia multitarea sin comprometer el rendimiento gráfico o la estabilidad del sistema**. Este equipo combina **una CPU de alto rendimiento, una GPU potente y almacenamiento ultrarrápido** para una experiencia fluida en **edición de vídeo 4K, transmisión en vivo en 1080p/4K y renderizado en tiempo real**.\n\nEl **AMD Ryzen 9 7900X** ofrece **12 núcleos y 24 hilos**, proporcionando una gran capacidad para **codificación en tiempo real, edición de contenido y gaming simultáneo**. Para usuarios que buscan aún más potencia, el **Intel Core i9-14900K** es una alternativa de mayor rendimiento en cargas de trabajo monohilo y multitarea extrema.\n\nPara **transmisiones fluidas y edición acelerada por GPU**, la **NVIDIA RTX 4070 Ti Super** es una elección equilibrada, brindando **DLSS 3, codificación AV1 y un excelente rendimiento en software como Adobe Premiere y DaVinci Resolve**. Alternativamente, la **AMD Radeon RX 7900 XT** proporciona una opción robusta con **VRAM extra para trabajos de texturizado y edición de alta resolución**.\n\nEl almacenamiento **Samsung 990 PRO 2TB NVMe SSD** garantiza **cargas instantáneas de proyectos de gran tamaño**, y se puede expandir con una **unidad NVMe de 4TB o un HDD Seagate IronWolf de 8TB** para aquellos que almacenan grandes cantidades de archivos de vídeo o proyectos RAW.\n\nPara mantener el sistema estable bajo largas sesiones de uso, la **NZXT Kraken Elite RGB 360mm AIO** disipa eficientemente el calor, reduciendo el estrangulamiento térmico y permitiendo **desempeño constante en renderizado y streaming**.\n\nLa **carcasa Lian Li O11 Dynamic** proporciona **un flujo de aire optimizado y amplio espacio para futuras actualizaciones**, con la alternativa del **Fractal Design Torrent** si se prefiere mayor enfriamiento natural sin necesidad de refrigeración líquida.\n\nEsta build es ideal para **streamers en Twitch y YouTube, editores de vídeo profesionales, diseñadores gráficos y creadores de contenido digital**, ofreciendo **un equilibrio perfecto entre potencia y eficiencia** para todas sus necesidades de trabajo y gaming.",
       "price_range": {
         "min": 2700,
         "max": 3800
@@ -1889,11 +1841,17 @@
         "Streamlabs",
         "Blender (light use)"
       ],
-      "optional_upgrades": [
-        "64GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "8TB HDD for content storage",
-        "Custom RGB Cooling"
+      "optionalUpgrades": [
+        {
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para edición de video y multitarea más intensiva."
+        },
+        {
+          "name": "8TB HDD Storage",
+          "price": 279,
+          "note": "Para almacenamiento masivo de archivos de video y proyectos multimedia."
+        }
       ],
       "imageKeys": [
         "studio-forge-1.png",
@@ -1905,7 +1863,6 @@
       "name": "CineStorm",
       "description": "Estación de trabajo para edición de video y VFX de alto nivel. Diseñada para editores, coloristas y motion designers.",
       "short_description": "Edición y VFX sin límites",
-      "long_description": "La **CineStorm** es una estación de trabajo optimizada para **edición de video profesional, efectos visuales y postproducción avanzada**. Diseñada para soportar cargas intensivas en **Premiere Pro, DaVinci Resolve, After Effects y Final Cut Pro**, este PC está equipado con **hardware de última generación** para manejar archivos de gran tamaño, renderizados complejos y multitarea extrema.\n\nEl **AMD Ryzen 9 7950X** con **16 núcleos y 32 hilos** garantiza un rendimiento sin cuellos de botella en edición y renderizado de video 4K/8K. Para aquellos que buscan una alternativa de alto rendimiento en tareas monohilo y multitarea intensiva, el **Intel Core i9-14900K** es una excelente opción con velocidades turbo superiores y capacidad excepcional en software de creación de contenido.\n\nLa **NVIDIA RTX 4080 Super** con **DLSS 3, codificación AV1 y un rendimiento sin precedentes en aceleración por GPU** permite renderizados más rápidos y efectos visuales en tiempo real sin latencias. Para quienes buscan una opción más asequible sin comprometer mucho rendimiento, la **RTX 4070 Ti Super** es una alternativa sólida.\n\nPara el almacenamiento de grandes volúmenes de material, el **Samsung 990 PRO 2TB NVMe SSD** ofrece velocidades ultra rápidas en edición de video. Si necesitas mayor capacidad, puedes expandirlo con una **unidad NVMe de 4TB** o un **HDD Seagate IronWolf Pro de 8TB** para almacenamiento de archivos brutos y material en curso.\n\nEl **NZXT Kraken X73 RGB 360mm AIO** garantiza una **refrigeración silenciosa y eficiente**, manteniendo temperaturas óptimas durante largas sesiones de renderizado.\n\nEl chasis **Lian Li PC-O11 Dynamic EVO** ofrece un diseño optimizado para flujo de aire y máxima organización de cables, con espacio para futuras actualizaciones y una excelente estética profesional.\n\nEsta build está enfocada en **editores de video, artistas de VFX, coloristas y creadores de contenido que trabajan con material en 4K/8K**, asegurando **máxima eficiencia, velocidad de procesamiento y estabilidad en proyectos de alto nivel**.",
       "price_range": {
         "min": 3500,
         "max": 4800
@@ -2065,10 +2022,17 @@
         "Final Cut Pro",
         "Autodesk Flame"
       ],
-      "optional_upgrades": [
-        "128GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "8TB HDD Storage"
+      "optionalUpgrades": [
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para edición de video 8K y proyectos de VFX complejos."
+        },
+        {
+          "name": "Seagate Exos X18 16TB HDD",
+          "price": 699,
+          "note": "Para almacenamiento de grandes volúmenes de contenido en alta calidad."
+        }
       ],
       "imageKeys": [
         "cinestorm-1.png",
@@ -2080,7 +2044,6 @@
       "name": "Vertex Forge",
       "description": "Potente estación de trabajo para modelado 3D, animación y renderizado en tiempo real. Diseñada para artistas y estudios profesionales.",
       "short_description": "Máximo rendimiento en 3D",
-      "long_description": "La **Vertex Forge** es una estación de trabajo optimizada para **modelado 3D, animación y renderizado en tiempo real**. Diseñada para **artistas, estudios de VFX y diseñadores de entornos virtuales**, esta máquina combina un **procesamiento extremo con gráficos de última generación**, asegurando un flujo de trabajo eficiente en programas exigentes como **Blender, Maya, Cinema 4D, ZBrush y Unreal Engine**.\n\nEl **AMD Ryzen Threadripper 7960X** con **24 núcleos y 48 hilos** es la opción ideal para software de renderizado como **Arnold, Redshift y Octane**, brindando una capacidad excepcional en procesos de cálculo multihilo. Para aquellos que buscan una opción más asequible con un alto rendimiento en single-core y tareas híbridas, el **Intel Core i9-14900K** es una excelente alternativa.\n\nLa **NVIDIA RTX 4090**, con su **capacidad masiva de VRAM, aceleración por IA y trazado de rayos en tiempo real**, ofrece un desempeño sin igual en **renders GPU, simulaciones físicas y desarrollo de contenido en motores como Unreal Engine y Unity**. Si buscas una opción más económica con gran potencia, la **NVIDIA RTX 4080 Super** es una excelente alternativa para flujos de trabajo menos demandantes.\n\nPara almacenamiento, el **Samsung 990 PRO 2TB NVMe** garantiza **velocidades ultrarrápidas en la carga y gestión de proyectos pesados**. Aquellos que necesiten más capacidad pueden optar por la actualización a un **NVMe de 4TB** o un **HDD Seagate Exos X18 de 8TB** para almacenamiento en frío de activos 3D y proyectos renderizados.\n\nEl **Corsair iCUE H170i ELITE LCD XT de 420mm** mantiene temperaturas óptimas, asegurando estabilidad incluso en procesos de renderizado prolongados. Además, el **chasis Fractal Design Torrent XL** ofrece una solución térmica avanzada con amplio espacio para futuras actualizaciones.\n\nEsta build está **pensada para profesionales de la industria del 3D y la animación**, permitiendo trabajar en proyectos de **alto nivel con estabilidad, velocidad y eficiencia**.",
       "price_range": {
         "min": 5000,
         "max": 7000
@@ -2232,10 +2195,17 @@
         "ZBrush",
         "Unreal Engine"
       ],
-      "optional_upgrades": [
-        "256GB RAM Upgrade",
-        "8TB HDD Storage",
-        "Custom Water Cooling"
+      "optionalUpgrades": [
+        {
+          "name": "256GB RAM Upgrade",
+          "price": 1499,
+          "note": "Para renderizado en tiempo real y simulaciones 3D pesadas."
+        },
+        {
+          "name": "Dual NVIDIA RTX 4090",
+          "price": 3598,
+          "note": "Para cargas de trabajo ultra exigentes en diseño y modelado 3D."
+        }
       ],
       "imageKeys": [
         "vertex-forge-1.png",
@@ -2247,7 +2217,6 @@
       "name": "Resonance",
       "description": "Estación de trabajo para producción musical profesional. Diseñada para compositores, productores y estudios de grabación.",
       "short_description": "Sonido claro y sin latencia",
-      "long_description": "La **Resonance** es una estación de trabajo diseñada para productores, compositores y estudios de grabación que requieren **baja latencia, alto rendimiento y estabilidad extrema**. Este sistema ofrece la potencia necesaria para manejar proyectos de audio de gran escala, **procesamiento de efectos en tiempo real** y **mezcla de múltiples pistas simultáneamente**, asegurando que cada sonido sea puro y sin interrupciones.\n\nEl **Intel Core i7-14700K**, con su excelente desempeño en **single-core y multi-threading**, es la opción ideal para **DAWs** (Digital Audio Workstations) como **Ableton Live, FL Studio, Pro Tools, Cubase y Logic Pro**. Su alto rendimiento permite manejar múltiples instancias de sintetizadores virtuales, efectos VST y grandes proyectos con facilidad. Para aquellos que prefieren la arquitectura AMD, el **Ryzen 9 7900** es una alternativa de gran capacidad.\n\nDado que las estaciones de trabajo de producción musical **no requieren una GPU potente**, la **NVIDIA GTX 1650** es más que suficiente para manejar gráficos básicos sin afectar la estabilidad del sistema. Para quienes buscan minimizar el consumo energético y la interferencia electromagnética, la opción de **gráficos integrados Intel UHD 770** ofrece una alternativa eficiente y silenciosa.\n\nLa **RAM Corsair Vengeance DDR5 64GB a 5600MHz** permite manejar grandes librerías de samples y múltiples pistas sin comprometer la estabilidad del sistema. Para aquellos que trabajan con **orquestaciones complejas, plugins avanzados y renderizado de audio de alta calidad**, la actualización a **128GB** es altamente recomendable.\n\nEl **almacenamiento ultrarrápido** es esencial en producción musical. El **Samsung 990 PRO 2TB NVMe** proporciona velocidades extremas para cargar proyectos y samples en milisegundos. Para quienes manejan **grandes librerías de audio**, se recomienda la expansión con un **SSD de 4TB NVMe** o un **HDD Seagate IronWolf Pro de 4TB** para almacenamiento en frío de grabaciones y proyectos terminados.\n\nLa **fuente de poder Seasonic PRIME TX-750 de 750W Titanium** asegura estabilidad y eficiencia energética, garantizando un sistema libre de interferencias eléctricas, crucial para el procesamiento de audio sin ruidos ni distorsiones. Además, el **Noctua NH-U12A Chromax Black** proporciona **enfriamiento silencioso**, evitando el ruido de ventiladores que pueda afectar la grabación en entornos de estudio.\n\nEl **Fractal Design Define 7** ha sido seleccionado por su **diseño optimizado para acústica**, con materiales que reducen la vibración y el ruido, ideal para entornos donde el sonido limpio es prioritario. Su interior espacioso permite **futuras expansiones sin problemas**.\n\nLa **Resonance** es el **PC definitivo para estudios de grabación, productores y compositores**, garantizando **rendimiento extremo, estabilidad absoluta y operación silenciosa**.",
       "price_range": {
         "min": 2500,
         "max": 3500
@@ -2410,10 +2379,17 @@
         "Cubase",
         "Studio One"
       ],
-      "optional_upgrades": [
-        "128GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "8TB HDD for Sample Storage"
+      "optionalUpgrades": [
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 749,
+          "note": "Para trabajar con DAWs y VSTs pesados sin latencia."
+        },
+        {
+          "name": "8TB HDD for Sample Storage",
+          "price": 279,
+          "note": "Para almacenar librerías de audio y proyectos extensos."
+        }
       ],
       "imageKeys": [
         "resonance-1.png",
@@ -2431,7 +2407,6 @@
       },
       "description": "Supercomputadora para IA, entrenamiento de modelos y simulaciones avanzadas.",
       "short_description": "Rendimiento cuántico para IA",
-      "long_description": "OMNIBRAIN es una supercomputadora diseñada para **investigadores de IA, centros de datos y laboratorios que requieren el máximo rendimiento** para el entrenamiento de modelos de Machine Learning, procesamiento masivo de datos y simulaciones avanzadas. Con un diseño **enfocado en escalabilidad, confiabilidad y eficiencia térmica**, este sistema permite ejecutar **modelos LLM (Large Language Models), procesamiento de imágenes generativas, redes neuronales profundas y simulaciones científicas** con la máxima velocidad y estabilidad.\n\nEn el corazón de OMNIBRAIN se encuentra el **AMD EPYC 9654**, un procesador de **96 núcleos y 192 hilos**, diseñado para cargas de trabajo paralelas extremas. Gracias a su arquitectura **Zen 4** y su soporte para **PCIe 5.0 y DDR5 ECC**, este chip maneja **múltiples procesos de inferencia y entrenamiento en paralelo sin cuellos de botella**.\n\nPara el procesamiento de IA, OMNIBRAIN incluye **dos NVIDIA H100 en configuración PCIe x8**, proporcionando **80GB de VRAM por unidad con el ancho de banda y las capacidades tensoriales más avanzadas** del mercado. Esta combinación permite **entrenamiento acelerado de modelos Transformer, redes convolucionales (CNNs) y deep learning** en aplicaciones como **GPT, Stable Diffusion y modelos de predicción financiera**.\n\nLa memoria es un factor clave en cargas de trabajo de AI. OMNIBRAIN incorpora **1TB de DDR5 ECC** (16x64GB), asegurando **alta estabilidad y corrección de errores** para procesos de entrenamiento prolongados. Este sistema es **ampliable hasta 2TB de RAM**, ideal para modelos que requieren grandes volúmenes de datos en memoria.\n\nEn términos de almacenamiento, OMNIBRAIN incorpora un **Micron 9400 PRO de 15.36TB NVMe**, diseñado para **altas velocidades de lectura y escritura en entornos de AI y Big Data**. Como opción, se pueden añadir más unidades para alcanzar **50TB+ de almacenamiento NVMe en RAID**.\n\nPara garantizar estabilidad y eficiencia energética, la fuente de alimentación **Supermicro Dual Redundant 3000W** permite **operación continua en centros de datos y entornos de alta disponibilidad**. El sistema está refrigerado por **Asetek Liquid Cooling Server Rack**, que **reduce la temperatura operativa y prolonga la vida útil de los componentes**.\n\nEl chasis **Supermicro 4U Rackmount** permite la instalación en racks de servidores de **data centers** y admite configuraciones personalizadas de expansión.\n\nCon OMNIBRAIN, investigadores, científicos y desarrolladores obtienen **una infraestructura de inteligencia artificial de última generación**, diseñada para resolver **problemas complejos, entrenar modelos de vanguardia y optimizar procesos empresariales con machine learning**.",
       "price_range": {
         "min": 35000,
         "max": 50000
@@ -2487,10 +2462,17 @@
         "CUDA",
         "Stable Diffusion"
       ],
-      "optional_upgrades": [
-        "Additional GPUs",
-        "Extra RAM (2TB Max)",
-        "Higher Capacity Storage"
+      "optionalUpgrades": [
+        {
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para entrenamientos de IA más grandes y procesamiento de datos intensivo."
+        },
+        {
+          "name": "10Gb Ethernet Networking",
+          "price": 349,
+          "note": "Conectividad ultra rápida para grandes transferencias de datos."
+        }
       ],
       "imageKeys": [
         "omnibrain-1.png",
@@ -2502,7 +2484,6 @@
       "name": "Neural Nexus",
       "description": "Estación de trabajo optimizada para inferencia de IA, aprendizaje automático y ciencia de datos.",
       "short_description": "Inferencia de IA y Big Data",
-      "long_description": "Neural Nexus es una estación de trabajo **de alto rendimiento optimizada para el desarrollo de inteligencia artificial, machine learning e investigación en big data**. Con una combinación equilibrada de potencia bruta y eficiencia, este sistema está diseñado para científicos de datos, desarrolladores de modelos y profesionales de la IA que buscan **una infraestructura fiable para inferencia, entrenamiento ligero y simulaciones avanzadas**.\n\nEn su núcleo, Neural Nexus integra el **AMD Ryzen 9 7950X**, un procesador de **16 núcleos y 32 hilos**, que ofrece **excelente rendimiento en cargas de trabajo paralelas y gran eficiencia en procesamiento de modelos pequeños a medianos**. Su compatibilidad con **PCIe 5.0 y DDR5** permite **velocidades de memoria y almacenamiento optimizadas**, esenciales para la manipulación de grandes conjuntos de datos y modelos en tiempo real.\n\nPara el procesamiento de IA y cálculos intensivos en GPU, esta estación cuenta con la **NVIDIA RTX 4090**, con **24GB de VRAM y un rendimiento excepcional en inferencia de modelos de deep learning**. Su capacidad para aceleración CUDA y Tensor Cores permite **optimizar el entrenamiento de redes neuronales, procesamiento de imágenes generativas y simulaciones científicas**.\n\nLa memoria **G.Skill Trident Z5 RGB 64GB DDR5 6000MHz** garantiza **rápidos tiempos de acceso a datos y estabilidad en procesamiento paralelo**. Para tareas más intensivas, se ofrece una opción de **actualización a 128GB**.\n\nEn términos de almacenamiento, el sistema incluye un **Samsung 990 PRO 2TB NVMe**, asegurando **altas velocidades de lectura y escritura para cargas de trabajo intensivas en datos**. Se pueden añadir **almacenamientos adicionales de 4TB NVMe o HDDs de 8TB** para **backup y almacenamiento masivo**.\n\nNeural Nexus está alimentado por una **fuente de poder Corsair RM1000x de 1000W**, que proporciona **suministro energético estable para operaciones prolongadas**. Además, el **sistema de refrigeración NZXT Kraken Z73 RGB 360mm AIO** mantiene **bajas temperaturas incluso en sesiones de entrenamiento prolongadas**.\n\nLa carcasa **Fractal Design Torrent XL** ofrece **excelente flujo de aire y gran compatibilidad con configuraciones avanzadas**. Este chasis soporta **expansión modular, con espacio para más unidades de almacenamiento, tarjetas de red de 10Gb y módulos de RAM adicionales**.\n\nNeural Nexus está optimizado para **software de IA como TensorFlow, PyTorch y Scikit-Learn**, permitiendo un flujo de trabajo optimizado para **desarrollo, inferencia y experimentación en inteligencia artificial**.",
       "price_range": {
         "min": 4500,
         "max": 6500
@@ -2638,10 +2619,19 @@
         "Scikit-Learn",
         "CUDA"
       ],
-      "optional_upgrades": [
-        "128GB RAM Upgrade",
-        "4TB NVMe SSD",
-        "10Gb Ethernet Networking"
+      "optionalUpgrades": [
+        {
+          "name": "RAM Upgrade - 128GB DDR5",
+          "price": 899
+        },
+        {
+          "name": "Storage Upgrade - 4TB NVMe SSD",
+          "price": 599
+        },
+        {
+          "name": "Networking Upgrade - 10Gb Ethernet",
+          "price": 299
+        }
       ],
       "imageKeys": [
         "neural-nexus-1.png",
@@ -2653,7 +2643,6 @@
       "name": "TensorForge",
       "description": "Estación de trabajo extrema para entrenamiento de IA, redes neuronales profundas y cómputo científico.",
       "short_description": "Máxima potencia para IA",
-      "long_description": "TensorForge es la solución definitiva para **entrenamiento de inteligencia artificial, desarrollo de redes neuronales profundas y simulaciones científicas avanzadas**. Diseñada para **instituciones de investigación, centros de datos y profesionales de IA**, esta estación de trabajo maximiza el rendimiento con una configuración de hardware que **supera los límites del cómputo convencional**.\n\nEn su núcleo, TensorForge cuenta con el **AMD Ryzen Threadripper 7995WX**, un **procesador de 96 núcleos y 192 hilos**, optimizado para cargas de trabajo de computación masiva. Este chip ofrece un rendimiento excepcional en **entrenamiento de modelos de machine learning, cálculos científicos y simulaciones complejas**.\n\nPara procesamiento gráfico y aceleración de IA, esta estación está equipada con **doble NVIDIA RTX 4090**, proporcionando **48GB de VRAM en total** y una capacidad de cómputo que **potencia el entrenamiento de modelos de deep learning en TensorFlow y PyTorch**. La combinación de **CUDA Cores y Tensor Cores** optimiza **simulaciones en tiempo real, modelos de visión artificial y procesamiento de datos de alto volumen**.\n\nCon **256GB de RAM DDR5 6000MHz**, TensorForge maneja sin esfuerzo **modelos complejos con grandes volúmenes de datos en memoria**. La capacidad de **actualización hasta 512GB** permite escalar la máquina para **cargas de trabajo aún más exigentes**.\n\nEn almacenamiento, la unidad **Samsung 990 PRO 4TB NVMe** garantiza **altas velocidades de lectura y escritura, esenciales para el manejo de datasets masivos**. Se puede ampliar con **almacenamiento adicional NVMe o HDD de gran capacidad** para **almacenamiento de modelos, backups y datos de entrenamiento**.\n\nPara garantizar **fiabilidad energética**, se ha integrado la **fuente Corsair AX1600i 1600W Titanium**, que provee **alimentación estable y eficiente** para configuraciones de GPU dual o futuras expansiones.\n\nEl sistema de refrigeración es **un Custom Loop de EKWB**, diseñado para mantener temperaturas óptimas incluso en **procesos de entrenamiento de IA de larga duración**. Esta solución de enfriamiento líquido es **esencial para la estabilidad térmica y longevidad del hardware**.\n\nEl chasis **Supermicro 4U Rackmount** convierte a TensorForge en una **solución de nivel empresarial**, con **opciones de escalabilidad y capacidad de integración en infraestructuras de IA y HPC**.\n\nTensorForge es compatible con **frameworks y librerías de IA como TensorFlow, PyTorch, CUDA y Scikit-Learn**, haciendo de esta estación la mejor opción para **entrenamiento avanzado de redes neuronales, modelado generativo y cómputo paralelo extremo**.",
       "price_range": {
         "min": 9000,
         "max": 15000
@@ -2759,17 +2748,17 @@
           }
         }
       },
-      "compatible_software": [
-        "TensorFlow",
-        "PyTorch",
-        "Jupyter Notebook",
-        "Scikit-Learn",
-        "CUDA"
-      ],
-      "optional_upgrades": [
-        "512GB RAM Upgrade",
-        "8TB NVMe SSD",
-        "Dual Power Supply"
+      "optionalUpgrades": [
+        {
+          "name": "Additional RTX 4090 GPUs",
+          "price": 1849,
+          "note": "Aumenta la potencia de cómputo para IA y redes neuronales profundas."
+        },
+        {
+          "name": "512GB RAM Upgrade",
+          "price": 2999,
+          "note": "Para manejar modelos de aprendizaje automático de gran tamaño."
+        }
       ],
       "imageKeys": [
         "tensorforge-1.png",

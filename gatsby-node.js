@@ -57,9 +57,9 @@ exports.onPostBuild = async () => {
     </url>
 </urlset>`;
 
- // ✅ Write the `sitemap.xml` inside `public/` directory
- fs.writeFileSync(sitemapPath, sitemapContent);
- console.log("✅ Custom Sitemap Generated Successfully in `public/sitemap.xml`!");
+  // ✅ Write the `sitemap.xml` inside `public/` directory
+  fs.writeFileSync(sitemapPath, sitemapContent);
+  console.log("✅ Custom Sitemap Generated Successfully in `public/sitemap.xml`!");
 };
 
 
@@ -84,6 +84,7 @@ exports.createPages = async ({ actions }) => {
         productName: product.name,
         description: product.description || "",
         shortDescription: product.short_description || "",
+        longDescription: product.long_description || "", // ✅ Added long description
         compatibleSoftware: Array.isArray(product.compatible_software) ? product.compatible_software : [],
         compatibleGames: Array.isArray(product.compatible_games) ? product.compatible_games : [],
         optionalUpgrades: Array.isArray(product.optional_upgrades) ? product.optional_upgrades : [],
@@ -91,19 +92,24 @@ exports.createPages = async ({ actions }) => {
         imageKeys: product.imageKeys || [],
         category: categorySlug,
         slug,
+
+        // ✅ Ensure alternatives are passed correctly
         alternatives: Object.entries(product.base_components || {}).reduce((acc, [key, component]) => {
           if (Array.isArray(component.alternatives) && component.alternatives.length > 0) {
             acc[key] = component.alternatives;
           }
           return acc;
         }, {}),
+
+        // ✅ Ensure upgrades are properly passed
         upgrades: Object.entries(product.base_components || {}).reduce((acc, [key, component]) => {
           if (Array.isArray(component.optional_upgrades) && component.optional_upgrades.length > 0) {
             acc[key] = component.optional_upgrades;
           }
           return acc;
-        }, {}),
+        }, {})
       },
     });
+
   });
 };
