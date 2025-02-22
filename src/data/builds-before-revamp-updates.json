@@ -10,7 +10,6 @@
         "image": "extreme-build-sticker.png"
       },
       "description": "PC de gaming definitivo. 8K, Ray Tracing, 4K 240Hz, VR y mods extremos sin límites.",
-      "long_description": "La bestia definitiva para los gamers más exigentes. Equipado con componentes de gama ultra-alta, este sistema ofrece un rendimiento sin precedentes para gaming 8K, realidad virtual, simulaciones avanzadas y tareas de creación de contenido de alta carga. Perfecto para entusiastas de los mods, streamers y profesionales de los videojuegos.",
       "short_description": "El sueño gamer hecho realidad",
       "price_range": {
         "min": 9500,
@@ -28,7 +27,15 @@
               "LGA1700"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 9 7950X3D",
+              "price": 699,
+              "performance_score": 98,
+              "form_factor": "AM5"
+            }
+          ]
         },
         "GPU": {
           "name": "Dual NVIDIA RTX 4090",
@@ -62,13 +69,7 @@
           "name": "G.Skill Trident Z5 RGB 128GB DDR5 8000MHz",
           "brand": "G.Skill",
           "price": 999,
-          "performance_score": 100,
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790"
-            ]
-          }
+          "performance_score": 100
         },
         "Storage": {
           "name": "Samsung 990 PRO 4TB NVMe",
@@ -76,45 +77,25 @@
           "price": 599,
           "performance_score": 100,
           "form_factor": "M.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "interface": "NVMe"
         },
         "PowerSupply": {
           "name": "Corsair AX1600i 1600W 80+ Titanium",
           "brand": "Corsair",
           "price": 529,
-          "performance_score": 100,
-          "compatibility": {
-            "max_wattage": 1600
-          }
+          "performance_score": 100
         },
         "Cooling": {
           "name": "Custom Liquid Cooling Loop (EKWB)",
           "brand": "EKWB",
           "price": 1499,
-          "performance_score": 100,
-          "compatibility": {
-            "supported_cases": [
-              "Lian Li V3000 PLUS"
-            ]
-          }
+          "performance_score": 100
         },
         "Case": {
           "name": "Lian Li V3000 PLUS",
           "brand": "Lian Li",
           "price": 569,
-          "performance_score": 100,
-          "compatibility": {
-            "motherboard_sizes": [
-              "E-ATX"
-            ],
-            "gpu_clearance": "400mm"
-          }
+          "performance_score": 100
         }
       },
       "compatible_games": [
@@ -124,70 +105,26 @@
         "Baldur’s Gate 3",
         "Elden Ring"
       ],
-      "personalize": [
-        {
-          "name": "AMD Ryzen 9 7950X3D",
-          "price": 699,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Rendimiento optimizado para cargas multihilo y gaming de alto rendimiento.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "Quad NVIDIA RTX 4090 (4-Way SLI)",
           "price": 7200,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "4 tarjetas RTX 4090 en paralelo, ideal para gaming 8K y simulaciones avanzadas.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 2000
-          }
+          "note": "Máximo rendimiento gráfico con 4 tarjetas RTX 4090 en paralelo, ideal para gaming 8K, modelado 3D extremo y simulaciones avanzadas."
         },
         {
           "name": "Storage Upgrade - 8TB NVMe SSD",
           "price": 1299,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Reduce drásticamente los tiempos de carga en juegos y software profesional.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "note": "Reduce drásticamente los tiempos de carga en juegos y software profesional. Ideal para creadores con grandes archivos de video y proyectos."
         },
         {
           "name": "RAM Upgrade - 256GB DDR5 8000MHz",
           "price": 2999,
-          "category": "RAM",
-          "type": "replacement",
-          "note": "Más memoria para multitarea extrema y cargas pesadas de software.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790"
-            ]
-          }
+          "note": "Más memoria para modding, multitarea y cargas extremas de software. Perfecto para streamers con configuraciones de alto rendimiento."
         },
         {
-          "name": "Custom Liquid Cooling Loop (Upgrade)",
+          "name": "Custom Liquid Cooling Loop",
           "price": 1999,
-          "category": "Cooling",
-          "type": "replacement",
-          "note": "Refrigeración personalizada para mantener temperaturas óptimas.",
-          "compatibility": {
-            "supported_cases": [
-              "Lian Li V3000 PLUS"
-            ]
-          }
+          "note": "Solución de refrigeración personalizada para mantener temperaturas óptimas incluso en cargas extremas, asegurando estabilidad a largo plazo."
         }
       ],
       "imageKeys": [
@@ -199,8 +136,8 @@
       "category": "gaming",
       "name": "Casual Cruiser",
       "description": "Perfecto para juegos ligeros, el cole y medios. Maneja Minecraft, Roblox, Los Sims y esports casuales.",
-      "long_description": "El Casual Cruiser es el ordenador ideal para jugadores que buscan una experiencia fluida en juegos ligeros como Minecraft, Roblox, Los Sims y títulos de esports casuales como League of Legends y Fortnite. Diseñado para ofrecer un equilibrio entre rendimiento, eficiencia energética y precio, este PC cuenta con un procesador AMD Ryzen 5 7600 y gráficos integrados Radeon 760M. Para quienes buscan un nivel de detalle superior, se pueden añadir tarjetas gráficas dedicadas como la AMD Radeon RX 7600 o la NVIDIA RTX 4060.\n\nCon 16GB de RAM DDR5 y un SSD NVMe ultrarrápido de 1TB, este equipo garantiza tiempos de carga mínimos y multitarea eficiente, ideal para jugadores que también usan su PC para estudios, multimedia o navegación intensiva. La refrigeración silenciosa y eficiente mantiene el sistema estable, y su fuente de alimentación de 650W asegura compatibilidad con futuras mejoras de hardware.\n\nEste PC es perfecto para estudiantes, jugadores ocasionales y creadores de contenido emergentes que buscan una máquina confiable sin gastar una fortuna.",
       "short_description": "Juegos básicos y multimedia",
+      "long_description": "El Casual Cruiser es el ordenador ideal para jugadores que buscan una experiencia fluida en juegos ligeros como Minecraft, Roblox, Los Sims y títulos de esports casuales como League of Legends y Fortnite. Diseñado para ofrecer un equilibrio entre rendimiento, eficiencia energética y precio, este PC cuenta con un procesador AMD Ryzen 5 7600 y gráficos integrados Radeon 760M. Para quienes buscan un nivel de detalle superior, se pueden añadir tarjetas gráficas dedicadas como la AMD Radeon RX 7600 o la NVIDIA RTX 4060.\n\nCon 16GB de RAM DDR5 y un SSD NVMe ultrarrápido de 1TB, este equipo garantiza tiempos de carga mínimos y multitarea eficiente, ideal para jugadores que también usan su PC para estudios, multimedia o navegación intensiva. La refrigeración silenciosa y eficiente mantiene el sistema estable, y su fuente de alimentación de 650W asegura compatibilidad con futuras mejoras de hardware.\n\nEste PC es perfecto para estudiantes, jugadores ocasionales y creadores de contenido emergentes que buscan una máquina confiable sin gastar una fortuna.",
       "price_range": {
         "min": 846,
         "max": 1200
@@ -217,13 +154,36 @@
               "AM5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i5-12400F",
+              "brand": "Intel",
+              "price": 189,
+              "performance_score": 72,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "Radeon 760M Integrado",
           "brand": "AMD",
           "price": 0,
-          "performance_score": 60
+          "performance_score": 60,
+          "optional_upgrades": [
+            {
+              "name": "AMD Radeon RX 7600",
+              "price": 279,
+              "performance_score": 72,
+              "interface": "PCIe x16"
+            },
+            {
+              "name": "NVIDIA RTX 4060",
+              "price": 644,
+              "performance_score": 75,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "MSI MAG B650 Tomahawk",
@@ -238,42 +198,39 @@
             "expansion_slots": [
               "PCIe x16"
             ]
-          }
+          },
+          "alternatives": [
+            {
+              "name": "MSI PRO B660M-A WiFi",
+              "brand": "MSI",
+              "price": 143,
+              "form_factor": "Micro-ATX",
+              "compatibility": {
+                "cpu_sockets": [
+                  "LGA1700"
+                ],
+                "memory_type": "DDR4"
+              }
+            }
+          ]
         },
         "RAM": {
           "name": "Corsair Vengeance LPX 16GB DDR5",
           "brand": "Corsair",
           "price": 80,
-          "performance_score": 75,
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "B650"
-            ]
-          }
+          "performance_score": 75
         },
         "Storage": {
           "name": "Samsung 990 PRO 1TB NVMe",
           "brand": "Samsung",
           "price": 149,
-          "performance_score": 85,
-          "form_factor": "M.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "performance_score": 85
         },
         "PowerSupply": {
           "name": "EVGA 650W 80+ Bronze",
           "brand": "EVGA",
           "price": 75,
-          "performance_score": 70,
-          "compatibility": {
-            "max_wattage": 650
-          }
+          "performance_score": 70
         },
         "Cooling": {
           "name": "Disipador AMD Wraith de serie",
@@ -285,15 +242,7 @@
           "name": "NZXT H5 Flow",
           "brand": "NZXT",
           "price": 120,
-          "performance_score": 80,
-          "compatibility": {
-            "motherboard_sizes": [
-              "ATX",
-              "MicroATX",
-              "Mini-ITX"
-            ],
-            "gpu_clearance": "400mm"
-          }
+          "performance_score": 80
         }
       },
       "compatible_games": [
@@ -303,71 +252,21 @@
         "Los Sims 4",
         "League of Legends"
       ],
-      "personalize": [
-        {
-          "name": "Intel Core i5-12400F",
-          "price": 189,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Alternativa eficiente para usuarios que prefieren Intel sin comprometer el rendimiento en juegos casuales.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "AMD Radeon RX 7600",
           "price": 279,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Añade una GPU dedicada para mejorar el rendimiento en juegos como Fortnite y Valorant a 1080p con mayores FPS.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 550
-          }
+          "note": "Añade una GPU dedicada para mejorar el rendimiento en juegos como Fortnite y Valorant a 1080p con mayores FPS."
         },
         {
           "name": "NVIDIA RTX 4060",
           "price": 644,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Para jugadores que buscan Ray Tracing y rendimiento superior en juegos modernos.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 650
-          }
-        },
-        {
-          "name": "MSI PRO B660M-A WiFi",
-          "price": 143,
-          "category": "Motherboard",
-          "type": "replacement",
-          "note": "Placa base compacta con conectividad Wi-Fi, perfecta para configuraciones más pequeñas.",
-          "compatibility": {
-            "cpu_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
+          "note": "Para jugadores que buscan Ray Tracing y rendimiento superior en juegos modernos."
         },
         {
           "name": "32GB RAM Upgrade",
           "price": 149,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Doble de memoria para manejar múltiples aplicaciones y juegos sin ralentizaciones.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "B650"
-            ]
-          }
+          "note": "Doble de memoria para manejar múltiples aplicaciones y juegos sin ralentizaciones."
         }
       ],
       "imageKeys": [
@@ -379,7 +278,6 @@
       "category": "gaming",
       "name": "eSports Edge",
       "description": "Optimizado para eSports competitivos con altas tasas de FPS en 1080p y monitores de 144Hz o más.",
-      "long_description": "Diseñado para los entusiastas de los eSports, el eSports Edge ofrece un rendimiento superior en juegos competitivos con tasas de FPS estables y ultra rápidas en 1080p. Con componentes de última generación, este PC está optimizado para monitores de 144Hz o superiores, brindando la ventaja que necesitas en juegos de alta velocidad. Ideal para streamers y jugadores serios que buscan una plataforma de alto rendimiento sin compromisos.",
       "short_description": "Máxima fluidez en competición",
       "price_range": {
         "min": 1300,
@@ -397,20 +295,29 @@
               "LGA1700"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 7 7800X3D",
+              "brand": "AMD",
+              "price": 520,
+              "performance_score": 92,
+              "form_factor": "AM5"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4060 Ti",
           "brand": "NVIDIA",
           "price": 450,
           "performance_score": 85,
-          "interface": "PCIe x16",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 600
-          }
+          "compatible_games": [
+            "CS:GO",
+            "Valorant",
+            "Overwatch",
+            "Fortnite",
+            "Apex Legends"
+          ]
         },
         "Motherboard": {
           "name": "MSI PRO Z690-A WiFi",
@@ -425,67 +332,51 @@
             "expansion_slots": [
               "PCIe x16"
             ]
-          }
+          },
+          "alternatives": [
+            {
+              "name": "MSI MAG B650 TOMAHAWK WiFi",
+              "brand": "MSI",
+              "price": 220,
+              "form_factor": "ATX",
+              "compatibility": {
+                "cpu_sockets": [
+                  "AM5"
+                ],
+                "memory_type": "DDR5"
+              }
+            }
+          ]
         },
         "RAM": {
           "name": "Kingston Fury Beast 16GB DDR5 6000MHz",
           "brand": "Kingston",
           "price": 110,
-          "performance_score": 80,
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z690"
-            ]
-          }
+          "performance_score": 80
         },
         "Storage": {
           "name": "WD Black SN850X 1TB NVMe",
           "brand": "Western Digital",
           "price": 120,
-          "performance_score": 85,
-          "form_factor": "M.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "performance_score": 85
         },
         "PowerSupply": {
           "name": "Corsair RM650e 650W 80+ Gold",
           "brand": "Corsair",
           "price": 99,
-          "performance_score": 75,
-          "compatibility": {
-            "max_wattage": 650
-          }
+          "performance_score": 75
         },
         "Cooling": {
           "name": "Noctua NH-U12S Redux",
           "brand": "Noctua",
           "price": 79,
-          "performance_score": 80,
-          "compatibility": {
-            "cpu_sockets": [
-              "LGA1700"
-            ]
-          }
+          "performance_score": 80
         },
         "Case": {
           "name": "Lian Li Lancool 215",
           "brand": "Lian Li",
           "price": 115,
-          "performance_score": 80,
-          "compatibility": {
-            "motherboard_sizes": [
-              "ATX",
-              "MicroATX",
-              "Mini-ITX"
-            ],
-            "gpu_clearance": "380mm"
-          }
+          "performance_score": 80
         }
       },
       "compatible_games": [
@@ -495,55 +386,21 @@
         "Fortnite",
         "Apex Legends"
       ],
-      "personalize": [
-        {
-          "name": "AMD Ryzen 7 7800X3D",
-          "price": 520,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Mejora el rendimiento en juegos multihilo y tareas exigentes.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "NVIDIA RTX 4070 Ti",
           "price": 899,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Para jugadores competitivos que buscan FPS extremos en 1440p.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 750
-          }
+          "note": "Para jugadores competitivos que buscan FPS extremos en 1440p con monitores de alta tasa de refresco."
         },
         {
           "name": "32GB RAM Upgrade",
           "price": 179,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Ideal para transmitir y ejecutar múltiples aplicaciones en segundo plano.",
-          "compatibility": {
-            "memory_type": "DDR5"
-          }
+          "note": "Para multitarea extrema mientras juegas y transmites en vivo."
         },
         {
           "name": "2TB NVMe SSD",
           "price": 249,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Más almacenamiento para juegos y tiempos de carga reducidos.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "note": "Espacio adicional para almacenar juegos, evitando tiempos de carga largos."
         }
       ],
       "imageKeys": [
@@ -555,7 +412,6 @@
       "category": "gaming",
       "name": "AAA Avenger",
       "description": "Diseñado para juegos AAA modernos en 1080p Ultra o 1440p High con 60-100 FPS.",
-      "long_description": "El AAA Avenger es la estación de batalla definitiva para los jugadores que buscan disfrutar de los últimos juegos AAA con un rendimiento sin compromisos en configuraciones ultra. Diseñado específicamente para juegos exigentes como Cyberpunk 2077, Assassin’s Creed Valhalla y Red Dead Redemption 2, este PC ofrece una experiencia de juego fluida con gráficos espectaculares en resoluciones de 1080p Ultra o 1440p High. Gracias a su procesador AMD Ryzen 7 7800X3D y a la potencia de la NVIDIA RTX 4070 Ti, obtendrás la combinación perfecta de velocidad y calidad gráfica para disfrutar de cualquier título AAA moderno.",
       "short_description": "Gráficos espectaculares sin cortes",
       "price_range": {
         "min": 1700,
@@ -573,7 +429,15 @@
               "AM5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i7-13700K",
+              "price": 441,
+              "performance_score": 88,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4070 Ti",
@@ -586,7 +450,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 750
-          }
+          },
+          "alternatives": [
+            {
+              "name": "NVIDIA RTX 4080",
+              "price": 1199,
+              "performance_score": 98,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS ROG Strix B650-A Gaming",
@@ -608,13 +480,22 @@
           "brand": "G.Skill",
           "price": 200,
           "performance_score": 90,
+          "form_factor": "DIMM",
           "compatibility": {
             "memory_type": "DDR5",
             "motherboard_compatibility": [
               "B650",
               "X670"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "G.Skill Trident Z5 RGB 64GB (2x32GB) DDR5 6000MHz",
+              "price": 399,
+              "performance_score": 95,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "WD Black SN850X 2TB NVMe",
@@ -628,13 +509,23 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe",
+              "price": 360,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM850x 850W 80+ Gold",
           "brand": "Corsair",
           "price": 179,
           "performance_score": 85,
+          "form_factor": "ATX",
           "compatibility": {
             "max_wattage": 850,
             "gpu_compatibility": [
@@ -648,6 +539,7 @@
           "brand": "Noctua",
           "price": 119,
           "performance_score": 90,
+          "form_factor": "Air Cooling",
           "compatibility": {
             "cpu_sockets": [
               "AM5",
@@ -678,46 +570,21 @@
         "Starfield",
         "Red Dead Redemption 2"
       ],
-      "personalize": [
+      "optionalUpgrades": [
         {
           "name": "NVIDIA RTX 4080",
           "price": 1199,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Mejor rendimiento en 4K y gaming ultra con trazado de rayos avanzado.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 850
-          }
+          "note": "Mejor rendimiento en 4K y gaming ultra con trazado de rayos avanzado."
         },
         {
           "name": "64GB RAM Upgrade",
           "price": 349,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Para edición de video, gaming extremo y creación de contenido.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "B650",
-              "X670"
-            ]
-          }
+          "note": "Para edición de video, gaming extremo y creación de contenido."
         },
         {
           "name": "4TB NVMe SSD",
           "price": 499,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Almacena más juegos AAA con tiempos de carga ultra rápidos.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "note": "Almacena más juegos AAA con tiempos de carga ultra rápidos."
         }
       ],
       "imageKeys": [
@@ -729,7 +596,6 @@
       "category": "gaming",
       "name": "Titan Dominator (i9)",
       "description": "Máquina definitiva para gaming 4K Ultra, streaming simultáneo y mods pesados. Potencia extrema y componentes de última generación.",
-      "long_description": "Una máquina diseñada para jugadores exigentes y creadores de contenido que buscan la mejor experiencia en gaming 4K Ultra en Valencia. Equipada con un procesador de última generación y una GPU RTX 4090, esta bestia maneja sin esfuerzo el streaming en vivo, la edición de video 8K y los mods más pesados. La refrigeración avanzada y la amplia capacidad de RAM convierten al Titan Dominator en una solución inquebrantable para cualquier tarea intensiva, ideal para quienes requieren un ordenador de alta gama de máxima fiabilidad.",
       "short_description": "Gaming extremo y streaming",
       "price_range": {
         "min": 3500,
@@ -782,12 +648,21 @@
           "brand": "G.Skill",
           "price": 449,
           "performance_score": 96,
+          "form_factor": "DIMM",
           "compatibility": {
             "memory_type": "DDR5",
             "motherboard_compatibility": [
               "Z790"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "G.Skill Trident Z5 RGB 128GB DDR5 6000MHz CL30",
+              "price": 849,
+              "performance_score": 98,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 4TB NVMe",
@@ -801,37 +676,64 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "WD Black SN850X 4TB NVMe",
+              "price": 499,
+              "performance_score": 94,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair HX1200i 1200W 80+ Platinum",
           "brand": "Corsair",
           "price": 319,
           "performance_score": 96,
+          "form_factor": "ATX",
           "compatibility": {
             "max_wattage": 1200,
             "gpu_compatibility": [
               "RTX 4090"
             ]
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Corsair HX1000i 1000W 80+ Platinum",
+              "price": 259,
+              "performance_score": 90,
+              "form_factor": "ATX"
+            }
+          ]
         },
         "Cooling": {
           "name": "Corsair iCUE H170i Elite Capellix XT 420mm",
           "brand": "Corsair",
           "price": 299,
           "performance_score": 95,
+          "form_factor": "AIO Liquid Cooling",
           "compatibility": {
             "cpu_sockets": [
               "LGA1700",
               "AM5"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "EKWB Quantum Vector² Custom Loop Cooling",
+              "price": 699,
+              "performance_score": 99,
+              "form_factor": "Custom Liquid Cooling"
+            }
+          ]
         },
         "Case": {
           "name": "Lian Li O11 Dynamic EVO XL",
           "brand": "Lian Li",
           "price": 219,
-          "performance_score": 90,
+          "form_factor": "ATX Full-Tower",
           "compatibility": {
             "motherboard_sizes": [
               "E-ATX",
@@ -851,43 +753,32 @@
         "Forza Horizon 5",
         "Hogwarts Legacy"
       ],
-      "personalize": [
+      "optionalUpgrades": [
+        {
+          "name": "NVIDIA RTX 4090",
+          "price": 1849,
+          "note": "Para gaming 4K extremo y renderizado avanzado con IA."
+        },
         {
           "name": "128GB RAM Upgrade",
           "price": 849,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Para profesionales que usan su PC para edición de video, simulaciones y modelado 3D.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790"
-            ]
-          }
+          "note": "Para profesionales que también usan su PC para edición de video y modelado 3D."
         },
         {
           "name": "Custom Liquid Cooling",
           "price": 1299,
-          "category": "Cooling",
-          "type": "replacement",
-          "note": "Optimiza la temperatura durante largas sesiones de gaming o trabajo intensivo.",
-          "compatibility": {
-            "supported_cases": [
-              "Lian Li O11 Dynamic EVO XL"
-            ]
-          }
+          "note": "Optimiza la temperatura en sesiones largas de gaming o trabajo intensivo."
         }
       ],
       "imageKeys": [
-        "titan-dominator-i9-1.png",
-        "titan-dominator-i9-2.png"
+        "titan-dominator-(i9)-1.png",
+        "titan-dominator-(i9)-2.png"
       ]
     },
     "G005": {
       "category": "gaming",
       "name": "Titan Fury (AMD)",
       "description": "Máxima potencia con AMD. Ideal para juegos en 4K y alto rendimiento con menor consumo.",
-      "long_description": "El Titan Fury es la máquina definitiva para los entusiastas del gaming que buscan un rendimiento de élite en cada aspecto. Ideal para jugadores en Valencia que requieren la mejor combinación entre potencia y eficiencia de la plataforma AMD. Con el procesador Ryzen 9 7950X3D y la Radeon RX 7900 XTX, disfrutarás de juegos fluidos en 4K y sesiones prolongadas sin excesivo consumo energético. Este equipo está diseñado para durar, con refrigeración líquida AIO de primera línea y opciones de expansión para RAM y almacenamiento masivo.",
       "short_description": "Rendimiento 4K con AMD",
       "price_range": {
         "min": 2900,
@@ -905,7 +796,21 @@
               "AM5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 9 7950X",
+              "price": 599,
+              "performance_score": 95,
+              "form_factor": "AM5"
+            },
+            {
+              "name": "Intel Core i9-14900K",
+              "price": 649,
+              "performance_score": 95,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "AMD Radeon RX 7900 XTX",
@@ -918,7 +823,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 850
-          }
+          },
+          "alternatives": [
+            {
+              "name": "NVIDIA RTX 4080 Super",
+              "price": 1099,
+              "performance_score": 96,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS ROG Strix X670E",
@@ -933,7 +846,19 @@
             "expansion_slots": [
               "PCIe x16"
             ]
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Gigabyte X670E AORUS Master",
+              "price": 449,
+              "form_factor": "ATX"
+            },
+            {
+              "name": "ASUS Crosshair X670E Hero",
+              "price": 599,
+              "form_factor": "E-ATX"
+            }
+          ]
         },
         "RAM": {
           "name": "G.Skill Trident Z5 RGB 32GB DDR5 6000MHz CL30",
@@ -946,7 +871,15 @@
             "motherboard_compatibility": [
               "X670E"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "G.Skill Trident Z5 RGB 64GB DDR5 6000MHz CL30",
+              "price": 479,
+              "performance_score": 97,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
@@ -960,7 +893,16 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "WD Black SN850X 4TB NVMe",
+              "price": 499,
+              "performance_score": 94,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM1000x 1000W",
@@ -1000,7 +942,21 @@
               "E-ATX"
             ],
             "gpu_clearance": "400mm"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Lian Li Lancool III RGB",
+              "price": 169,
+              "form_factor": "Mid Tower",
+              "compatibility": {
+                "motherboard_sizes": [
+                  "ATX",
+                  "E-ATX"
+                ],
+                "gpu_clearance": "420mm"
+              }
+            }
+          ]
         }
       },
       "compatible_games": [
@@ -1009,71 +965,21 @@
         "Forza Horizon 5",
         "Elden Ring"
       ],
-      "personalize": [
-        {
-          "name": "AMD Ryzen 9 7950X",
-          "price": 599,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Rendimiento casi igual, pero más económico para usuarios avanzados.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "Intel Core i9-14900K",
-          "price": 649,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Alternativa Intel de alto rendimiento para cargas intensivas.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "NVIDIA RTX 4080 Super",
           "price": 1099,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Opción alternativa si prefieres NVIDIA sobre AMD.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 850
-          }
+          "note": "Opción alternativa si prefieres NVIDIA sobre AMD."
         },
         {
           "name": "64GB RAM Upgrade",
-          "price": 479,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Mejora la fluidez en juegos exigentes y aplicaciones pesadas.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "X670E"
-            ]
-          }
+          "price": 349,
+          "note": "Para mejorar la fluidez en juegos y aplicaciones pesadas."
         },
         {
           "name": "Seagate IronWolf Pro 8TB HDD",
           "price": 279,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Ideal para almacenar grandes bibliotecas de juegos y mods.",
-          "compatibility": {
-            "interface": "SATA",
-            "motherboard_slots": [
-              "SATA"
-            ]
-          }
+          "note": "Ideal para almacenar grandes bibliotecas de juegos y mods."
         }
       ],
       "imageKeys": [
@@ -1085,7 +991,6 @@
       "category": "gaming",
       "name": "Virtual Voyager (VR)",
       "description": "Experiencia inmersiva en VR con un rendimiento fluido y sin mareos. Diseñado para títulos exigentes como Half-Life: Alyx y simuladores de vuelo.",
-      "long_description": "Si buscas vivir la Realidad Virtual en su máxima expresión en Valencia, el Virtual Voyager (VR) es tu puerta de entrada a mundos digitales asombrosos. Diseñado con potentes componentes como el Intel Core i7-14700K y la NVIDIA RTX 4080 Super, este ordenador de alta gama brinda fluidez y máxima inmersión en títulos como Half-Life: Alyx y simuladores de vuelo complejos. Su chasis Lian Li con refrigeración AIO NZXT Kraken Elite RGB asegura estabilidad térmica, para que disfrutes de experiencias VR prolongadas sin mareos ni interrupciones.",
       "short_description": "VR fluido y envolvente",
       "price_range": {
         "min": 2900,
@@ -1103,7 +1008,15 @@
               "LGA1700"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 7 7800X3D",
+              "price": 449,
+              "performance_score": 92,
+              "form_factor": "AM5"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4080 Super",
@@ -1116,7 +1029,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 750
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Radeon RX 7900 XTX",
+              "price": 999,
+              "performance_score": 97,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS ROG Strix Z790-E Gaming WiFi",
@@ -1144,7 +1065,15 @@
             "motherboard_compatibility": [
               "Z790"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Corsair Vengeance RGB 64GB DDR5 6000MHz",
+              "price": 479,
+              "performance_score": 96,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 2TB NVMe",
@@ -1198,7 +1127,21 @@
               "E-ATX"
             ],
             "gpu_clearance": "420mm"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Fractal Design Torrent",
+              "price": 199,
+              "form_factor": "Full Tower",
+              "compatibility": {
+                "motherboard_sizes": [
+                  "ATX",
+                  "E-ATX"
+                ],
+                "gpu_clearance": "400mm"
+              }
+            }
+          ]
         }
       },
       "compatible_games": [
@@ -1207,69 +1150,32 @@
         "Microsoft Flight Simulator",
         "Asgard’s Wrath 2"
       ],
-      "personalize": [
-        {
-          "name": "AMD Ryzen 7 7800X3D",
-          "price": 449,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Alternativa AMD de alto rendimiento para VR y multitarea intensiva.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "AMD Radeon RX 7900 XTX",
           "price": 999,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Alternativa a NVIDIA para usuarios que prefieren AMD en VR.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 850
-          }
+          "note": "Alternativa a NVIDIA para usuarios que prefieren AMD en VR."
         },
         {
           "name": "128GB RAM Upgrade",
           "price": 849,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Para ejecutar múltiples simulaciones VR de forma simultánea.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790"
-            ]
-          }
+          "note": "Para trabajar con múltiples simulaciones y entornos VR sin interrupciones."
         },
         {
           "name": "Custom Liquid Cooling",
           "price": 1299,
-          "category": "Cooling",
-          "type": "replacement",
-          "note": "Mantiene temperaturas estables en largas sesiones de VR.",
-          "compatibility": {
-            "supported_cases": [
-              "Lian Li Lancool III RGB"
-            ]
-          }
+          "note": "Mantiene temperaturas bajas en sesiones prolongadas de VR."
         }
       ],
       "imageKeys": [
-        "virtual-voyager-vr-1.png",
-        "virtual-voyager-vr-2.png"
+        "virtual-voyager-(vr)-1.png",
+        "virtual-voyager-(vr)-2.png"
       ]
     },
     "G007": {
       "category": "gaming",
       "name": "PowerStack",
       "description": "Rendimiento extremo para juegos AAA y tareas avanzadas. Diseñado para jugadores con grandes bibliotecas de mods y multitarea intensiva.",
-      "long_description": "El PowerStack es un ordenador de alta gama en Valencia creado para gamers que exigen lo máximo en rendimiento, modding y capacidad multitarea. Diseñado sobre la plataforma AMD Ryzen 9 7900X y una GPU NVIDIA RTX 4080 Super, este equipo maneja con facilidad juegos AAA con mods intensivos y flujos de trabajo pesados, como edición de vídeo o diseño 3D. Con 64GB de RAM DDR5 y opciones de expansión para almacenamiento masivo, el PowerStack garantiza tiempos de carga rápidos y una experiencia de juego y trabajo sin cuellos de botella.",
       "short_description": "Juegos, mods y trabajo",
       "price_range": {
         "min": 2900,
@@ -1287,7 +1193,15 @@
               "AM5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i9-13900K",
+              "price": 579,
+              "performance_score": 96,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4080 Super",
@@ -1300,7 +1214,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 750
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Radeon RX 7900 XT",
+              "price": 849,
+              "performance_score": 96,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "MSI MAG X670E TOMAHAWK",
@@ -1342,7 +1264,22 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
+              "price": 449,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe",
+              "compatibility": {
+                "motherboard_slots": [
+                  "M.2"
+                ],
+                "pcie_version": "Gen4"
+              }
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM1000x 1000W",
@@ -1369,7 +1306,15 @@
               "AM5",
               "LGA1700"
             ]
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Noctua NH-D15 Chromax Black",
+              "price": 129,
+              "performance_score": 92,
+              "form_factor": "Air Cooling"
+            }
+          ]
         },
         "Case": {
           "name": "Lian Li Lancool III",
@@ -1382,7 +1327,21 @@
               "E-ATX"
             ],
             "gpu_clearance": "400mm"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Fractal Design Torrent",
+              "price": 199,
+              "form_factor": "Full Tower",
+              "compatibility": {
+                "motherboard_sizes": [
+                  "ATX",
+                  "E-ATX"
+                ],
+                "gpu_clearance": "400mm"
+              }
+            }
+          ]
         }
       },
       "compatible_games": [
@@ -1392,71 +1351,21 @@
         "Elden Ring",
         "Modded Skyrim / Fallout 4"
       ],
-      "personalize": [
-        {
-          "name": "Intel Core i9-13900K",
-          "price": 579,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Para quienes prefieren Intel con un rendimiento excepcional en gaming.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "AMD Radeon RX 7900 XT",
-          "price": 849,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Alternativa AMD con excelente eficiencia energética y rendimiento 4K.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 750
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "NVIDIA RTX 4090",
           "price": 1849,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Rendimiento gráfico extremo para gaming, creación de contenido y simulaciones avanzadas.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 1200
-          }
+          "note": "Para rendimiento gráfico extremo en gaming y creación de contenido."
         },
         {
           "name": "128GB RAM Upgrade",
           "price": 849,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Ideal para edición de video 8K, modelado 3D y multitarea intensiva.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "X670E"
-            ]
-          }
+          "note": "Para edición de video 8K, diseño 3D y simulaciones pesadas."
         },
         {
           "name": "8TB NVMe SSD",
           "price": 1299,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Almacena proyectos de gran tamaño y bibliotecas de mods sin comprometer la velocidad.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "note": "Almacena proyectos de gran tamaño sin comprometer la velocidad."
         }
       ],
       "imageKeys": [
@@ -1474,7 +1383,6 @@
         "image": "extreme-build-sticker.png"
       },
       "description": "La estación de trabajo definitiva para edición 8K, renderizado 3D y producción de contenido de alto nivel.",
-      "long_description": "CINEFORGE es la elección definitiva para producciones cinematográficas y proyectos de edición 8K en Valencia. Gracias a su procesador AMD Ryzen Threadripper 7995WX y configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofrece un rendimiento excepcional en tareas de renderizado 3D, animación y postproducción. Ideal para estudios y creadores que buscan un equipo de máxima potencia, estabilidad y capacidad de ampliación, respaldado por una refrigeración líquida EKWB Quantum de alto nivel.",
       "short_description": "Potencia sin límites para creadores",
       "price_range": {
         "min": 15000,
@@ -1485,103 +1393,43 @@
           "name": "AMD Ryzen Threadripper 7995WX",
           "brand": "AMD",
           "price": 6499,
-          "performance_score": 100,
-          "form_factor": "sWRX8",
-          "compatibility": {
-            "motherboard_sockets": [
-              "sWRX8"
-            ],
-            "memory_type": "DDR5 ECC"
-          }
+          "performance_score": 100
         },
         "GPU": {
           "name": "Quad NVIDIA RTX 6000 Ada",
           "brand": "NVIDIA",
           "price": 18000,
-          "performance_score": 100,
-          "interface": "PCIe x16",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 1600
-          }
+          "performance_score": 100
         },
         "Motherboard": {
           "name": "ASUS Pro WS WRX90E-SAGE SE",
           "brand": "ASUS",
-          "price": 999,
-          "form_factor": "E-ATX",
-          "compatibility": {
-            "cpu_sockets": [
-              "sWRX8"
-            ],
-            "memory_type": "DDR5 ECC",
-            "expansion_slots": [
-              "PCIe x16"
-            ]
-          }
+          "price": 999
         },
         "RAM": {
           "name": "G.Skill Trident Z5 RGB 512GB DDR5 6400MHz",
           "brand": "G.Skill",
-          "price": 3999,
-          "performance_score": 100,
-          "compatibility": {
-            "memory_type": "DDR5 ECC",
-            "motherboard_compatibility": [
-              "WRX90E"
-            ]
-          }
+          "price": 3999
         },
         "Storage": {
           "name": "Samsung PM1733 30TB NVMe",
           "brand": "Samsung",
-          "price": 7999,
-          "performance_score": 100,
-          "form_factor": "U.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "U.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "price": 7999
         },
         "PowerSupply": {
           "name": "Corsair AX1600i 1600W Titanium",
           "brand": "Corsair",
-          "price": 549,
-          "performance_score": 100,
-          "compatibility": {
-            "max_wattage": 1600,
-            "gpu_compatibility": [
-              "RTX 6000 Ada"
-            ]
-          }
+          "price": 549
         },
         "Cooling": {
           "name": "EKWB Quantum Liquid Cooling",
           "brand": "EKWB",
-          "price": 2999,
-          "performance_score": 100,
-          "compatibility": {
-            "supported_cases": [
-              "Fractal Design Define 7 XL"
-            ]
-          }
+          "price": 2999
         },
         "Case": {
           "name": "Fractal Design Define 7 XL",
           "brand": "Fractal Design",
-          "price": 249,
-          "performance_score": 90,
-          "compatibility": {
-            "motherboard_sizes": [
-              "E-ATX"
-            ],
-            "gpu_clearance": "500mm"
-          }
+          "price": 249
         }
       },
       "compatible_software": [
@@ -1590,57 +1438,26 @@
         "Autodesk Maya",
         "Cinema 4D"
       ],
-      "personalize": [
+      "optionalUpgrades": [
         {
           "name": "Additional NVIDIA RTX 6000 Ada",
           "price": 4500,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 2000
-          }
+          "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real."
         },
         {
           "name": "Storage Expansion - 60TB NVMe RAID",
           "price": 9999,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción.",
-          "compatibility": {
-            "motherboard_slots": [
-              "U.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción."
         },
         {
           "name": "512GB DDR5 ECC RAM",
           "price": 4999,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Expande la memoria para proyectos de postproducción y simulaciones que requieren alta estabilidad.",
-          "compatibility": {
-            "memory_type": "DDR5 ECC",
-            "motherboard_compatibility": [
-              "WRX90E"
-            ]
-          }
+          "note": "Expande la memoria para proyectos de postproducción y simulaciones que requieren alta estabilidad."
         },
         {
           "name": "Custom Dual Loop Liquid Cooling",
           "price": 2999,
-          "category": "Cooling",
-          "type": "upgrade",
-          "note": "Sistema de refrigeración de circuito doble para CPU y GPU, optimizando la disipación térmica en cargas extremas.",
-          "compatibility": {
-            "supported_cases": [
-              "Fractal Design Define 7 XL"
-            ]
-          }
+          "note": "Sistema de refrigeración de circuito doble para CPU y GPU, optimizando la disipación térmica en cargas extremas."
         }
       ],
       "imageKeys": [
@@ -1652,7 +1469,6 @@
       "category": "production",
       "name": "Workstation I",
       "description": "Una estación de trabajo versátil, equilibrada y silenciosa para profesionales exigentes que necesitan potencia, estabilidad y eficiencia.",
-      "long_description": "Workstation I está pensada para quienes requieren un ordenador de sobremesa premium en Valencia, equilibrando potencia y eficiencia. Equipada con un Intel Core i7-14700K y la NVIDIA RTX 4060 Ti, ofrece una experiencia fluida para diseño gráfico, edición de vídeo ligera y software de productividad. Su sistema de refrigeración Noctua mantiene bajos niveles de ruido, mientras que la compatibilidad con memorias DDR5 y almacenamiento NVMe Gen4 garantiza un rendimiento fiable para el día a día y proyectos profesionales.",
       "short_description": "Productividad sin límites",
       "price_range": {
         "min": 2000,
@@ -1670,7 +1486,15 @@
               "LGA1700"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 9 7900",
+              "price": 419,
+              "performance_score": 89,
+              "form_factor": "AM5"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4060 Ti",
@@ -1683,7 +1507,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 600
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Radeon Pro W6600",
+              "price": 549,
+              "performance_score": 87,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS ProArt Z790 Creator WiFi",
@@ -1712,7 +1544,15 @@
               "Z790",
               "AM5"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Corsair Vengeance DDR5 64GB (2x32GB) 6000MHz",
+              "price": 349,
+              "performance_score": 92,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 1TB NVMe SSD",
@@ -1726,7 +1566,23 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 2TB NVMe with Heatsink",
+              "price": 299,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            },
+            {
+              "name": "Western Digital Black 4TB HDD",
+              "price": 179,
+              "performance_score": 70,
+              "form_factor": "3.5 inch",
+              "interface": "SATA"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM650x 650W",
@@ -1776,68 +1632,21 @@
         "Visual Studio Code",
         "DaVinci Resolve (light use)"
       ],
-      "personalize": [
+      "optionalUpgrades": [
         {
-          "name": "AMD Ryzen 9 7900",
-          "price": 419,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Para usuarios que prefieren la arquitectura AMD sin comprometer el rendimiento en tareas de producción.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "AMD Radeon Pro W6600",
-          "price": 549,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Para cargas de trabajo con gráficos profesionales y renderizado más eficiente.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ]
-          }
-        },
-        {
-          "name": "Corsair Vengeance DDR5 64GB (2x32GB) 6000MHz",
+          "name": "64GB RAM Upgrade",
           "price": 349,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Ideal para multitarea intensiva y manejo de proyectos más grandes.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790",
-              "AM5"
-            ]
-          }
+          "note": "Para cargas de trabajo más pesadas como edición de video o diseño CAD."
         },
         {
-          "name": "Samsung 990 PRO 2TB NVMe with Heatsink",
+          "name": "4TB NVMe SSD",
+          "price": 549,
+          "note": "Para almacenar archivos de gran tamaño y proyectos profesionales."
+        },
+        {
+          "name": "Silent Cooling System",
           "price": 299,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Almacenamiento ultrarrápido para acelerar el flujo de trabajo.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
-        },
-        {
-          "name": "Western Digital Black 4TB HDD",
-          "price": 179,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Espacio adicional para archivos grandes o copias de seguridad.",
-          "compatibility": {
-            "interface": "SATA"
-          }
+          "note": "Refrigeración mejorada para un entorno de trabajo sin ruido."
         }
       ],
       "imageKeys": [
@@ -1849,7 +1658,6 @@
       "category": "production",
       "name": "Studio Forge",
       "description": "Diseñado para creadores y streamers. Potente, equilibrado y optimizado para multitarea, gaming y edición de contenido.",
-      "long_description": "Studio Forge es la herramienta perfecta para streamers y creadores de contenido en Valencia que buscan un ordenador de alta gama y gran versatilidad. Impulsado por un AMD Ryzen 9 7900X y una GPU NVIDIA RTX 4070 Ti Super, este equipo maneja fácilmente la captura de vídeo, la edición y la transmisión simultánea. Sus opciones de personalización permiten ampliar la memoria RAM, la capacidad de almacenamiento y hasta cambiar a CPUs Intel de alto rendimiento, asegurando que tu flujo de trabajo y sesiones de streaming sean ágiles y sin interrupciones.",
       "short_description": "Streaming y creación sin límites",
       "price_range": {
         "min": 2700,
@@ -1867,7 +1675,15 @@
               "AM5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i9-14900K",
+              "price": 649,
+              "performance_score": 98,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4070 Ti Super",
@@ -1880,7 +1696,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 750
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Radeon RX 7900 XT",
+              "price": 849,
+              "performance_score": 96,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS ROG Strix X670E",
@@ -1908,7 +1732,15 @@
             "motherboard_compatibility": [
               "X670E"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "G.Skill Trident Z5 RGB 64GB DDR5 6000MHz",
+              "price": 449,
+              "performance_score": 95,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 2TB NVMe",
@@ -1922,7 +1754,30 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
+              "price": 449,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            },
+            {
+              "name": "Seagate IronWolf Pro 8TB HDD",
+              "price": 279,
+              "performance_score": 80,
+              "form_factor": "3.5 inch",
+              "interface": "SATA"
+            },
+            {
+              "name": "WD Black SN850X 4TB NVMe",
+              "price": 499,
+              "performance_score": 96,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM850x 850W",
@@ -1962,7 +1817,21 @@
               "E-ATX"
             ],
             "gpu_clearance": "400mm"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Fractal Design Torrent",
+              "price": 199,
+              "form_factor": "Full Tower",
+              "compatibility": {
+                "motherboard_sizes": [
+                  "ATX",
+                  "E-ATX"
+                ],
+                "gpu_clearance": "400mm"
+              }
+            }
+          ]
         }
       },
       "compatible_software": [
@@ -1973,67 +1842,16 @@
         "Streamlabs",
         "Blender (light use)"
       ],
-      "personalize": [
+      "optionalUpgrades": [
         {
-          "name": "Intel Core i9-14900K",
-          "price": 649,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Para quienes prefieren Intel con un rendimiento máximo en tareas de edición intensiva.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
+          "name": "64GB RAM Upgrade",
+          "price": 349,
+          "note": "Para edición de video y multitarea más intensiva."
         },
         {
-          "name": "AMD Radeon RX 7900 XT",
-          "price": 849,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Una alternativa de alto rendimiento para renderizado de video y edición 3D.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ]
-          }
-        },
-        {
-          "name": "G.Skill Trident Z5 RGB 64GB DDR5 6000MHz",
-          "price": 449,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Ideal para proyectos de edición y multitarea de gran escala.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "X670E"
-            ]
-          }
-        },
-        {
-          "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
-          "price": 449,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Amplía la capacidad de almacenamiento sin perder velocidad.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
-        },
-        {
-          "name": "Seagate IronWolf Pro 8TB HDD",
+          "name": "8TB HDD Storage",
           "price": 279,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Perfecto para grandes bibliotecas de archivos multimedia.",
-          "compatibility": {
-            "interface": "SATA"
-          }
+          "note": "Para almacenamiento masivo de archivos de video y proyectos multimedia."
         }
       ],
       "imageKeys": [
@@ -2045,7 +1863,6 @@
       "category": "production",
       "name": "CineStorm",
       "description": "Estación de trabajo para edición de video y VFX de alto nivel. Diseñada para editores, coloristas y motion designers.",
-      "long_description": "CineStorm está diseñado para los profesionales de la edición de vídeo y VFX en Valencia que buscan exprimir al máximo su flujo de trabajo. Con un AMD Ryzen 9 7950X y una GPU NVIDIA RTX 4080 Super, ofrece un rendimiento excepcional para manejar múltiples capas, efectos y resoluciones 4K o 8K. Su amplio soporte de software especializado y la posibilidad de ampliar la RAM hasta 128GB lo convierten en la herramienta ideal para estudios y editores avanzados que necesitan una solución de alto nivel.",
       "short_description": "Edición y VFX sin límites",
       "price_range": {
         "min": 3500,
@@ -2063,7 +1880,15 @@
               "AM5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i9-14900K",
+              "price": 649,
+              "performance_score": 98,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4080 Super",
@@ -2076,7 +1901,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 850
-          }
+          },
+          "alternatives": [
+            {
+              "name": "NVIDIA RTX 4070 Ti Super",
+              "price": 799,
+              "performance_score": 95,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS ProArt X670E-Creator WiFi",
@@ -2104,7 +1937,15 @@
             "motherboard_compatibility": [
               "X670E"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "G.Skill Trident Z5 RGB 128GB DDR5 6000MHz",
+              "price": 899,
+              "performance_score": 98,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 2TB NVMe",
@@ -2118,7 +1959,23 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe with Heatsink",
+              "price": 549,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            },
+            {
+              "name": "Seagate IronWolf Pro 8TB HDD",
+              "price": 279,
+              "performance_score": 75,
+              "form_factor": "3.5 inch",
+              "interface": "SATA"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM1000x 1000W",
@@ -2166,54 +2023,16 @@
         "Final Cut Pro",
         "Autodesk Flame"
       ],
-      "personalize": [
-        {
-          "name": "Intel Core i9-14900K",
-          "price": 649,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Alternativa de Intel para editores que requieren altos niveles de rendimiento multitarea.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "NVIDIA RTX 4070 Ti Super",
-          "price": 799,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Opción para usuarios que buscan eficiencia energética con buen rendimiento en VFX.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ]
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "128GB RAM Upgrade",
           "price": 849,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Ideal para edición de video 8K y proyectos de efectos visuales complejos.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "X670E"
-            ]
-          }
+          "note": "Para edición de video 8K y proyectos de VFX complejos."
         },
         {
           "name": "Seagate Exos X18 16TB HDD",
           "price": 699,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Almacenamiento masivo para grandes volúmenes de contenido multimedia en 4K y 8K.",
-          "compatibility": {
-            "interface": "SATA"
-          }
+          "note": "Para almacenamiento de grandes volúmenes de contenido en alta calidad."
         }
       ],
       "imageKeys": [
@@ -2225,7 +2044,6 @@
       "category": "production",
       "name": "Vertex Forge",
       "description": "Potente estación de trabajo para modelado 3D, animación y renderizado en tiempo real. Diseñada para artistas y estudios profesionales.",
-      "long_description": "Vertex Forge es la estación de trabajo definitiva para modelado 3D, animación y renderizado en Valencia. Basada en la plataforma AMD Ryzen Threadripper 7960X, proporciona la potencia necesaria para flujos de trabajo intensivos en aplicaciones como Blender, Autodesk Maya y Unreal Engine. Con su GPU NVIDIA RTX 4090 y hasta 128GB de RAM DDR5, ofrece un rendimiento sin precedentes en tareas de simulación y cálculo. Además, la refrigeración líquida de Corsair garantiza estabilidad y baja temperatura en jornadas de trabajo prolongadas.",
       "short_description": "Máximo rendimiento en 3D",
       "price_range": {
         "min": 5000,
@@ -2243,7 +2061,15 @@
               "sTR5"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Intel Core i9-14900K",
+              "price": 649,
+              "performance_score": 97,
+              "form_factor": "LGA1700"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA RTX 4090",
@@ -2256,7 +2082,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 1000
-          }
+          },
+          "alternatives": [
+            {
+              "name": "NVIDIA RTX 4080 Super",
+              "price": 1099,
+              "performance_score": 98,
+              "interface": "PCIe x16"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS Pro WS WRX90E-SAGE SE",
@@ -2298,7 +2132,23 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe",
+              "price": 599,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            },
+            {
+              "name": "Seagate Exos X18 8TB HDD",
+              "price": 329,
+              "performance_score": 80,
+              "form_factor": "3.5 inch",
+              "interface": "SATA"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair AX1600i 1600W Titanium",
@@ -2346,57 +2196,16 @@
         "ZBrush",
         "Unreal Engine"
       ],
-      "personalize": [
-        {
-          "name": "Intel Core i9-14900K",
-          "price": 649,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Alternativa con buen rendimiento en tareas de modelado 3D.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "NVIDIA RTX 4080 Super",
-          "price": 1099,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Opción más económica para tareas de renderizado en tiempo real.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ]
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "256GB RAM Upgrade",
           "price": 1499,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Para simulaciones complejas y renderizado intensivo.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "sTR5"
-            ]
-          }
+          "note": "Para renderizado en tiempo real y simulaciones 3D pesadas."
         },
         {
           "name": "Dual NVIDIA RTX 4090",
           "price": 3598,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Configuración de doble GPU para cargas de trabajo de modelado y renderizado ultra exigentes.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 1600
-          }
+          "note": "Para cargas de trabajo ultra exigentes en diseño y modelado 3D."
         }
       ],
       "imageKeys": [
@@ -2408,7 +2217,6 @@
       "category": "production",
       "name": "Resonance",
       "description": "Estación de trabajo para producción musical profesional. Diseñada para compositores, productores y estudios de grabación.",
-      "long_description": "Resonance es un ordenador de gama alta enfocado en la producción musical profesional en Valencia, ofreciendo rendimiento y estabilidad para compositores, productores y estudios. Con un Intel Core i7-14700K y hasta 64GB de RAM DDR5, maneja sin esfuerzo múltiples DAWs y VSTs complejos. Su diseño silencioso y la integración de SSD NVMe garantizan la baja latencia y la velocidad que exigen los flujos de trabajo de audio más exigentes, permitiéndote centrarte en la creatividad sin distracciones.",
       "short_description": "Sonido claro y sin latencia",
       "price_range": {
         "min": 2500,
@@ -2426,7 +2234,15 @@
               "LGA1700"
             ],
             "memory_type": "DDR5"
-          }
+          },
+          "alternatives": [
+            {
+              "name": "AMD Ryzen 9 7900",
+              "price": 419,
+              "performance_score": 89,
+              "form_factor": "AM5"
+            }
+          ]
         },
         "GPU": {
           "name": "NVIDIA GTX 1650",
@@ -2439,7 +2255,15 @@
               "PCIe x16"
             ],
             "psu_requirement": 450
-          }
+          },
+          "alternatives": [
+            {
+              "name": "Integrated Graphics (Intel UHD 770)",
+              "price": 0,
+              "performance_score": 65,
+              "interface": "Integrated"
+            }
+          ]
         },
         "Motherboard": {
           "name": "ASUS Prime Z790-P",
@@ -2468,7 +2292,15 @@
               "Z790",
               "AM5"
             ]
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Corsair Vengeance DDR5 128GB (4x32GB) 6000MHz",
+              "price": 749,
+              "performance_score": 95,
+              "form_factor": "DIMM"
+            }
+          ]
         },
         "Storage": {
           "name": "Samsung 990 PRO 2TB NVMe",
@@ -2482,7 +2314,23 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe",
+              "price": 549,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            },
+            {
+              "name": "Seagate IronWolf Pro 4TB HDD",
+              "price": 199,
+              "performance_score": 80,
+              "form_factor": "3.5 inch",
+              "interface": "SATA"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Seasonic PRIME TX-750 750W Titanium",
@@ -2532,44 +2380,16 @@
         "Cubase",
         "Studio One"
       ],
-      "personalize": [
-        {
-          "name": "AMD Ryzen 9 7900",
-          "price": 419,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Alternativa con excelente rendimiento en multitarea y compatibilidad con plataformas AM5.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "Integrated Graphics (Intel UHD 770)",
-          "price": 0,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "Ideal para producción musical sin necesidad de GPU dedicada."
-        },
+      "optionalUpgrades": [
         {
           "name": "128GB RAM Upgrade",
           "price": 749,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Mejora la capacidad de manejar DAWs y VSTs complejos sin latencia."
+          "note": "Para trabajar con DAWs y VSTs pesados sin latencia."
         },
         {
           "name": "8TB HDD for Sample Storage",
           "price": 279,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Espacio adicional para librerías de audio y proyectos extensos.",
-          "compatibility": {
-            "form_factor": "3.5 inch",
-            "interface": "SATA"
-          }
+          "note": "Para almacenar librerías de audio y proyectos extensos."
         }
       ],
       "imageKeys": [
@@ -2587,7 +2407,6 @@
         "image": "extreme-build-sticker.png"
       },
       "description": "Supercomputadora para IA, entrenamiento de modelos y simulaciones avanzadas.",
-      "long_description": "OMNIBRAIN es la supercomputadora de VLCExtreme ideal para proyectos de Inteligencia Artificial en Valencia que requieren una potencia de cálculo sin precedentes. Con un AMD EPYC 9654 de 96 núcleos y doble GPU NVIDIA H100, es capaz de entrenar modelos de Deep Learning de última generación y procesar enormes volúmenes de datos a gran velocidad. Diseñada para centros de datos y laboratorios de I+D, su configuración incluye refrigeración líquida de grado servidor y fuentes de alimentación redundantes para asegurar una alta disponibilidad.",
       "short_description": "Rendimiento cuántico para IA",
       "price_range": {
         "min": 35000,
@@ -2598,102 +2417,43 @@
           "name": "AMD EPYC 9654 96-Core",
           "brand": "AMD",
           "price": 12000,
-          "performance_score": 100,
-          "compatibility": {
-            "motherboard_sockets": [
-              "SP5"
-            ],
-            "memory_type": "DDR5 ECC"
-          }
+          "performance_score": 100
         },
         "GPU": {
           "name": "NVIDIA H100 PCIe x8 (Dual)",
           "brand": "NVIDIA",
           "price": 28000,
-          "performance_score": 100,
-          "interface": "PCIe x16",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 2000
-          }
+          "performance_score": 100
         },
         "Motherboard": {
           "name": "Supermicro H13SSL-N",
           "brand": "Supermicro",
-          "price": 899,
-          "form_factor": "E-ATX",
-          "compatibility": {
-            "cpu_sockets": [
-              "SP5"
-            ],
-            "memory_type": "DDR5 ECC",
-            "expansion_slots": [
-              "PCIe x16"
-            ]
-          }
+          "price": 899
         },
         "RAM": {
           "name": "Crucial DDR5 ECC 1TB (16x64GB)",
           "brand": "Crucial",
-          "price": 6999,
-          "performance_score": 98,
-          "compatibility": {
-            "memory_type": "DDR5 ECC",
-            "motherboard_compatibility": [
-              "Supermicro H13SSL-N"
-            ]
-          }
+          "price": 6999
         },
         "Storage": {
           "name": "Micron 9400 PRO 15.36TB NVMe",
           "brand": "Micron",
-          "price": 4999,
-          "performance_score": 95,
-          "form_factor": "M.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "price": 4999
         },
         "PowerSupply": {
           "name": "Dual Redundant 3000W PSU",
           "brand": "Supermicro",
-          "price": 899,
-          "performance_score": 100,
-          "compatibility": {
-            "max_wattage": 3000,
-            "gpu_compatibility": [
-              "NVIDIA H100 PCIe x8"
-            ]
-          }
+          "price": 899
         },
         "Cooling": {
           "name": "Liquid Cooled Server Rack",
           "brand": "Asetek",
-          "price": 3999,
-          "performance_score": 100,
-          "compatibility": {
-            "supported_cases": [
-              "Supermicro 4U Rackmount"
-            ]
-          }
+          "price": 3999
         },
         "Case": {
           "name": "Supermicro 4U Rackmount",
           "brand": "Supermicro",
-          "price": 1999,
-          "form_factor": "4U Rackmount",
-          "compatibility": {
-            "motherboard_sizes": [
-              "E-ATX"
-            ],
-            "gpu_clearance": "Full GPU-length support"
-          }
+          "price": 1999
         }
       },
       "compatible_software": [
@@ -2703,52 +2463,16 @@
         "CUDA",
         "Stable Diffusion"
       ],
-      "personalize": [
+      "optionalUpgrades": [
         {
-          "name": "Intel Xeon Platinum 8490H",
-          "price": 11000,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Ideal para cargas de trabajo que requieren un alto rendimiento en entornos empresariales.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA4677"
-            ],
-            "memory_type": "DDR5 ECC"
-          }
+          "name": "128GB RAM Upgrade",
+          "price": 849,
+          "note": "Para entrenamientos de IA más grandes y procesamiento de datos intensivo."
         },
         {
-          "name": "Quad NVIDIA H100 PCIe x8",
-          "price": 56000,
-          "category": "GPU",
-          "type": "upgrade",
-          "note": "Duplicación de potencia gráfica para entrenar modelos de IA a gran escala.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 4000
-          }
-        },
-        {
-          "name": "2TB RAM Upgrade",
-          "price": 13999,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Para manejar simultáneamente múltiples modelos de IA y simulaciones.",
-          "compatibility": {
-            "memory_type": "DDR5 ECC",
-            "motherboard_compatibility": [
-              "Supermicro H13SSL-N"
-            ]
-          }
-        },
-        {
-          "name": "20Gb Ethernet Networking",
-          "price": 999,
-          "category": "Networking",
-          "type": "upgrade",
-          "note": "Conexión de red de ultra alta velocidad para transferencia de datos pesada."
+          "name": "10Gb Ethernet Networking",
+          "price": 349,
+          "note": "Conectividad ultra rápida para grandes transferencias de datos."
         }
       ],
       "imageKeys": [
@@ -2760,7 +2484,6 @@
       "category": "ai",
       "name": "Neural Nexus",
       "description": "Estación de trabajo optimizada para inferencia de IA, aprendizaje automático y ciencia de datos.",
-      "long_description": "Neural Nexus es la solución perfecta para proyectos de aprendizaje automático, Big Data y ciencia de datos en Valencia. Con un AMD Ryzen 9 7950X y una NVIDIA RTX 4090, ofrece la potencia necesaria para entrenar modelos con grandes conjuntos de datos y ejecutar simulaciones complejas. Su chasis Fractal Design Torrent XL brinda excelente flujo de aire, y la refrigeración AIO garantiza temperaturas estables, incluso bajo cargas prolongadas. Diseñado para entusiastas de la IA y profesionales que buscan una plataforma confiable y escalable.",
       "short_description": "Inferencia de IA y Big Data",
       "price_range": {
         "min": 4500,
@@ -2833,7 +2556,23 @@
               "M.2"
             ],
             "pcie_version": "Gen4"
-          }
+          },
+          "optional_upgrades": [
+            {
+              "name": "Samsung 990 PRO 4TB NVMe",
+              "price": 599,
+              "performance_score": 95,
+              "form_factor": "M.2",
+              "interface": "NVMe"
+            },
+            {
+              "name": "Seagate Exos X18 8TB HDD",
+              "price": 329,
+              "performance_score": 80,
+              "form_factor": "3.5 inch",
+              "interface": "SATA"
+            }
+          ]
         },
         "PowerSupply": {
           "name": "Corsair RM1000x 1000W",
@@ -2881,52 +2620,18 @@
         "Scikit-Learn",
         "CUDA"
       ],
-      "personalize": [
-        {
-          "name": "Intel Core i9-14900K",
-          "price": 649,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Ideal para tareas de procesamiento intensivo con excelente rendimiento en hilos simples y múltiples.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
+      "optionalUpgrades": [
         {
           "name": "RAM Upgrade - 128GB DDR5",
-          "price": 899,
-          "category": "RAM",
-          "type": "upgrade",
-          "note": "Permite manejar conjuntos de datos masivos y procesos de IA complejos.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "X670E"
-            ]
-          }
+          "price": 899
         },
         {
           "name": "Storage Upgrade - 4TB NVMe SSD",
-          "price": 599,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Almacenamiento ultrarrápido para grandes conjuntos de datos y proyectos de aprendizaje profundo.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "price": 599
         },
         {
           "name": "Networking Upgrade - 10Gb Ethernet",
-          "price": 299,
-          "category": "Networking",
-          "type": "upgrade",
-          "note": "Mejora la velocidad de transferencia de datos en redes de alto rendimiento."
+          "price": 299
         }
       ],
       "imageKeys": [
@@ -2938,7 +2643,6 @@
       "category": "ai",
       "name": "TensorForge",
       "description": "Estación de trabajo extrema para entrenamiento de IA, redes neuronales profundas y cómputo científico.",
-      "long_description": "TensorForge es la apuesta suprema en Valencia para quienes necesitan un potente sistema de entrenamiento de redes neuronales profundas, investigación en IA y cómputo científico de vanguardia. Con un AMD Ryzen Threadripper 7995WX y dos GPUs NVIDIA RTX 4090, este equipo logra niveles excepcionales de rendimiento para tareas de machine learning y simulaciones complejas. Su diseño de refrigeración personalizada y capacidad de hasta 512GB de RAM hacen que TensorForge sea una herramienta robusta, preparada para impulsar proyectos de IA con gran demanda de recursos.",
       "short_description": "Máxima potencia para IA",
       "price_range": {
         "min": 9000,
@@ -3005,13 +2709,7 @@
           "price": 599,
           "performance_score": 95,
           "form_factor": "M.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
+          "interface": "NVMe"
         },
         "PowerSupply": {
           "name": "Corsair AX1600i 1600W Titanium",
@@ -3051,14 +2749,7 @@
           }
         }
       },
-      "compatible_software": [
-        "TensorFlow",
-        "PyTorch",
-        "CUDA",
-        "Jupyter Notebook",
-        "Hugging Face Transformers"
-      ],
-      "personalize": [
+      "optionalUpgrades": [
         {
           "name": "Additional RTX 4090 GPUs",
           "price": 1849,

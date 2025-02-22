@@ -84,32 +84,15 @@ exports.createPages = async ({ actions }) => {
         productName: product.name,
         description: product.description || "",
         shortDescription: product.short_description || "",
-        longDescription: product.long_description || "", // ✅ Added long description
+        longDescription: product.long_description || "",
         compatibleSoftware: Array.isArray(product.compatible_software) ? product.compatible_software : [],
         compatibleGames: Array.isArray(product.compatible_games) ? product.compatible_games : [],
-        optionalUpgrades: Array.isArray(product.optional_upgrades) ? product.optional_upgrades : [],
+        personalize: product.personalize || [],
         baseComponents: product.base_components || {},
         imageKeys: product.imageKeys || [],
         category: categorySlug,
         slug,
-
-        // ✅ Ensure alternatives are passed correctly
-        alternatives: Object.entries(product.base_components || {}).reduce((acc, [key, component]) => {
-          if (Array.isArray(component.alternatives) && component.alternatives.length > 0) {
-            acc[key] = component.alternatives;
-          }
-          return acc;
-        }, {}),
-
-        // ✅ Ensure upgrades are properly passed
-        upgrades: Object.entries(product.base_components || {}).reduce((acc, [key, component]) => {
-          if (Array.isArray(component.optional_upgrades) && component.optional_upgrades.length > 0) {
-            acc[key] = component.optional_upgrades;
-          }
-          return acc;
-        }, {})
       },
     });
-
   });
 };
