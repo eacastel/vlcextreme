@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       // Enviar correo a tu equipo
       try {
         await enviarCorreoConZoho({
-          para: "equipo@vlcextreme.com", // o tu ZOHO_USER
+          para: "emilio@vlcextreme.com", // o tu ZOHO_USER
           asunto: "Nuevo Pedido VLCExtreme",
           texto: `Pedido final:\n\n${finalBuild}\n\nEmail del cliente: ${customerEmail}`,
         });
