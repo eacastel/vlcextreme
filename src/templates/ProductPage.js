@@ -11,7 +11,27 @@ export function Head({ pageContext }) {
     description,
     longDescription,
     slug,
+    baseComponents,
+    imageKeys,
   } = pageContext;
+
+  // Helper function to calculate the default price from base components
+  const calcularPrecioBase = (baseComponents) => {
+    let total = 0;
+    for (const key in baseComponents) {
+      total += baseComponents[key].price;
+    }
+    return Math.ceil(total * 1.4);
+  };
+
+  const defaultPrice = calcularPrecioBase(baseComponents);
+
+  // Construct the full URL for the first image
+  let imageUrl = "";
+  if (imageKeys && imageKeys.length > 0) {
+    // Adjust the path if necessary
+    imageUrl = `https://vlcextreme.com/builds/${imageKeys[0]}`;
+  }
 
   const productSchema = {
     "@context": "https://schema.org/",
@@ -21,10 +41,11 @@ export function Head({ pageContext }) {
     "brand": "VLCExtreme",
     "url": `https://vlcextreme.com${slug}`,
     "sku": slug.replace(/[^a-zA-Z0-9-]/g, ""),
+    "image": imageUrl,
     "offers": {
       "@type": "Offer",
       "priceCurrency": "EUR",
-      "price": "9999",
+      "price": defaultPrice.toString(),
       "availability": "https://schema.org/InStock"
     }
   };
@@ -33,10 +54,12 @@ export function Head({ pageContext }) {
     <>
       <title>{`${productName} - VLCExtreme`}</title>
       <meta name="description" content={description || longDescription} />
-      <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(productSchema)}
+      </script>
     </>
   );
-}
+};
 
 const ProductPage = ({ pageContext }) => {
   const {
@@ -50,7 +73,7 @@ const ProductPage = ({ pageContext }) => {
     slug
   } = pageContext;
 
-  // Consulta para imágenes
+  // Query for images
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "builds" } }) {
@@ -82,7 +105,7 @@ const ProductPage = ({ pageContext }) => {
     }
   `);
 
-  // Obtener imagen principal o placeholder
+  // Find image function
   const findImage = (key) => {
     if (!key) return getImage(data.noImage.childImageSharp);
     const normalizedKey = key
@@ -99,12 +122,12 @@ const ProductPage = ({ pageContext }) => {
     ? findImage(imageKeys[0])
     : getImage(data.noImage.childImageSharp);
 
-  // Estados
+  // Component state
   const [selectedUpgrades, setSelectedUpgrades] = useState({});
   const [selectedOS, setSelectedOS] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Opciones de sistema operativo
+  // OS options
   const osOptions = [
     { label: "Ninguno (sin sistema operativo)", value: "", price: 0 },
     { label: "Windows 11 Home", value: "win11home", price: 119 },
@@ -112,7 +135,7 @@ const ProductPage = ({ pageContext }) => {
     { label: "Ubuntu 22.04 LTS", value: "ubuntu", price: 0 },
   ];
 
-  // Manejadores
+  // Handlers for upgrades and OS selection
   const handleUpgradeChange = (upgrade) => {
     setSelectedUpgrades((prev) => ({
       ...prev,
@@ -123,14 +146,13 @@ const ProductPage = ({ pageContext }) => {
     setSelectedOS(e.target.value);
   };
 
-  // Construir la build final
+  // Build final configuration based on baseComponents plus selected upgrades and OS
   const getFinalConfiguration = () => {
     const finalConfig = { ...baseComponents };
     Object.values(selectedUpgrades).forEach((upgrade) => {
       if (!upgrade) return;
       const cat = upgrade.category;
       if (cat && finalConfig[cat]) {
-        // Sustitución
         finalConfig[cat] = {
           name: upgrade.name,
           price: upgrade.price,
@@ -138,7 +160,6 @@ const ProductPage = ({ pageContext }) => {
           isSubstitution: true
         };
       } else if (cat) {
-        // Nuevo
         finalConfig[cat] = {
           name: upgrade.name,
           price: upgrade.price,
@@ -147,7 +168,6 @@ const ProductPage = ({ pageContext }) => {
         };
       }
     });
-
     if (selectedOS) {
       const chosenOS = osOptions.find(o => o.value === selectedOS);
       if (chosenOS) {
@@ -161,26 +181,26 @@ const ProductPage = ({ pageContext }) => {
     return finalConfig;
   };
 
-  // Cálculo de precio
+  // Calculate final price (number)
   const calculateFinalPriceNumber = () => {
     const config = getFinalConfiguration();
     let total = 0;
     Object.values(config).forEach((comp) => {
       total += comp.price;
     });
-    return Math.ceil(total * 1.4); // 40% markup
+    return Math.ceil(total * 1.4);
   };
   const calculateFinalPriceDisplay = () =>
     calculateFinalPriceNumber().toLocaleString("es-ES", { useGrouping: true });
 
-  // Determinar si es personalizado
+  // Determine table title based on personalization
   const isCustomized =
     Object.values(selectedUpgrades).some((val) => val !== null) || !!selectedOS;
   const table1Title = isCustomized
     ? "Build Personalizado"
     : "Componentes Preconfigurados";
 
-  // Array para tabla 1
+  // Array for Table 1 (final configuration)
   const finalConfigObj = getFinalConfiguration();
   const finalConfigArray = Object.entries(finalConfigObj).map(([cat, c]) => ({
     category: cat,
@@ -190,24 +210,21 @@ const ProductPage = ({ pageContext }) => {
     isSubstitution: c.isSubstitution || false
   }));
 
-  // Checkout
+  // Checkout function
   const handlePurchase = async () => {
     setLoading(true);
     try {
-      // Construir descripción con precios
       const lines = finalConfigArray.map((item) => {
         if (item.isSubstitution) {
           return `- [${item.category}] **${item.name}** (Sustitución) => ${item.price} €`;
         }
         return `- [${item.category}] ${item.name} => ${item.price} €`;
       });
-
       const desc = 
         `${table1Title}: ${productName}\n\n` +
         lines.join("\n") +
         `\n\nPrecio Total: ${calculateFinalPriceNumber()} €`;
 
-      // Llamada a /api/checkout
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -238,11 +255,8 @@ const ProductPage = ({ pageContext }) => {
   return (
     <Layout>
       <div className="container mx-auto px-6 py-12">
-        <div
-          className="bg-gray-800 text-light-gray rounded-lg shadow-lg p-6 
-                     md:flex md:items-start md:gap-6 md:min-h-[400px]"
-        >
-          {/* Columna Izquierda */}
+        <div className="bg-gray-800 text-light-gray rounded-lg shadow-lg p-6 md:flex md:items-start md:gap-6 md:min-h-[400px]">
+          {/* Left Column: Product info */}
           <div className="md:w-1/2 flex flex-col">
             <h1 className="text-3xl font-bold text-neon-cyan">{productName}</h1>
             <p className="text-md text-gray-300 mt-2">
@@ -257,16 +271,13 @@ const ProductPage = ({ pageContext }) => {
                 />
               </div>
             )}
-            {/* Manejo de \n\n */}
             <p className="text-md text-gray-400 mt-4 whitespace-pre-line">
               {longDescription}
             </p>
           </div>
-
-          {/* Columna Derecha */}
+          {/* Right Column: Tables and total price */}
           <div className="md:w-1/2 flex flex-col space-y-8">
-
-            {/* TABLA 1 => Build Final / Preconfigurado */}
+            {/* Table 1: Final Build */}
             <div>
               <h2 className="text-xl font-bold text-neon-cyan mb-2">
                 {table1Title}
@@ -296,8 +307,7 @@ const ProductPage = ({ pageContext }) => {
                 </table>
               </div>
             </div>
-
-            {/* TABLA 2 => Personalizaciones (4 columnas) */}
+            {/* Table 2: Personalizations */}
             {personalize.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold text-neon-cyan mb-2">
@@ -316,7 +326,6 @@ const ProductPage = ({ pageContext }) => {
                     <tbody>
                       {personalize.map((upgrade) => {
                         const checked = !!selectedUpgrades[upgrade.name];
-                        // Generar un ID para accesibilidad
                         const inputId = `upgrade-${upgrade.category}-${upgrade.name}`;
                         return (
                           <tr key={upgrade.name} className="border-b border-gray-700">
@@ -327,7 +336,6 @@ const ProductPage = ({ pageContext }) => {
                                 checked={checked}
                                 onChange={() => handleUpgradeChange(upgrade)}
                               />
-                              {/* Etiqueta oculta para SR */}
                               <label htmlFor={inputId} className="sr-only">
                                 Activar {upgrade.name}
                               </label>
@@ -343,8 +351,7 @@ const ProductPage = ({ pageContext }) => {
                 </div>
               </div>
             )}
-
-            {/* TABLA 3 => Sistema Operativo (radio) */}
+            {/* Table 3: OS (radio) */}
             <div>
               <h3 className="text-xl font-bold text-neon-cyan mb-2">
                 Sistema Operativo
@@ -365,7 +372,6 @@ const ProductPage = ({ pageContext }) => {
                               checked={selectedOS === os.value}
                               onChange={handleOSChange}
                             />
-                            {/* Etiqueta oculta para SR */}
                             <label htmlFor={inputId} className="sr-only">
                               Seleccionar {os.label}
                             </label>
@@ -378,8 +384,7 @@ const ProductPage = ({ pageContext }) => {
                 </table>
               </div>
             </div>
-
-            {/* Precio Total + Botón */}
+            {/* Total Price and Purchase Button */}
             <div className="flex justify-end items-center">
               <div className="text-right mr-8">
                 <h3 className="text-xl font-bold text-neon-cyan">
@@ -400,7 +405,6 @@ const ProductPage = ({ pageContext }) => {
                 </Button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
