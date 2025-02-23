@@ -205,7 +205,7 @@ const ProductPage = ({ pageContext }) => {
       const desc = 
         `${table1Title}: ${productName}\n\n` +
         lines.join("\n") +
-        `\n\nPrecio Final (markup 40%): ${calculateFinalPriceNumber()} €`;
+        `\n\nPrecio Total: ${calculateFinalPriceNumber()} €`;
 
       // Llamada a /api/checkout
       const response = await fetch("/api/checkout", {
