@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
+import Button from "../Button";
 
 const ProductionBuildCard = ({ build }) => {
+
+  const getCategorySlug = (category) => {
+    if (category === "gaming") return "ordenadores-gaming";
+    if (category === "production") return "ordenadores-creadores-streamers";
+    if (category === "ai") return "ordenadores-inteligencia-artificial";
+    return "otros";
+  };
+
+  // ✅ Generate the slug dynamically
+  const slug = `/ordenador/${getCategorySlug(build.category)}/${build.name.toLowerCase().replace(/\s+/g, "-")}/`;
+
+
+
   // Fetch all images from "builds" folder + sticker + fallback image
   const data = useStaticQuery(graphql`
     query {
@@ -62,39 +76,8 @@ const ProductionBuildCard = ({ build }) => {
   ).toLocaleString('es-ES', { useGrouping: true });
 
   const [showDetails, setShowDetails] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  // **Handle Purchase Process**
-  const handlePurchase = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          products: [
-            { 
-              name: build.name, 
-              price: Math.ceil(
-                Object.values(build.base_components).reduce((sum, component) => sum + component.price, 0) * 1.4
-              )
-            }
-          ]
-        }),
-      });
 
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url; // Redirect to Stripe Checkout
-      } else {
-        console.error("Checkout error:", data.error);
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#00A4C4] text-center">
@@ -165,13 +148,9 @@ const ProductionBuildCard = ({ build }) => {
         </div>
 
         <div className="mt-4">
-          <button
-            onClick={handlePurchase}
-            className={`bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base transition-all duration-200 ease-in-out hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4] ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
-            disabled={loading}
-          >
-            {loading ? "Procesando..." : "Comprar Ahora"}
-          </button>
+          <Button to={slug} color="neoncyan" variant="solid" className="mt-4">
+            Seleccionar
+          </Button>
         </div>
       </div>
     </div>

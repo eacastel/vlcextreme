@@ -75,39 +75,8 @@ const AIBuildCard = ({ build }) => {
   ).toLocaleString('es-ES', { useGrouping: true });
 
   const [showDetails, setShowDetails] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  // **Handle Checkout Process**
-  const handlePurchase = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          products: [
-            {
-              name: build.name,
-              price: Math.ceil(
-                Object.values(build.base_components).reduce((sum, component) => sum + component.price, 0) * 1.4
-              )
-            }
-          ]
-        }),
-      });
 
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url; // Redirect to Stripe Checkout
-      } else {
-        console.error("Checkout error:", data.error);
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#00A4C4] text-center">
@@ -181,13 +150,6 @@ const AIBuildCard = ({ build }) => {
           <Button to={slug} color="neoncyan" variant="solid" className="mt-4">
             Seleccionar
           </Button>
-        </div>
-        <div className="mt-4">
-
-          <Button onClick={handlePurchase} color="neoncyan" variant="outline" disabled={loading}>
-            {loading ? "Procesando..." : "Comprar"}
-          </Button>
-
         </div>
       </div>
     </div>
