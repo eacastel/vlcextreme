@@ -66,7 +66,7 @@ module.exports = {
         background_color: `#0D0D0D`, 
         theme_color: `#00B4D8`, 
         display: `minimal-ui`,
-        icon: `vlcextreme-logo-512.png`, 
+        icon: `/vlcextreme-logo-512.png`, 
       },
     },
     {

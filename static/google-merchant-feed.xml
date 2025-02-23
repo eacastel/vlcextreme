@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>VLCExtreme Product Feed</title>
+    <link>https://vlcextreme.com/</link>
+    <description>Catálogo de productos de VLCExtreme</description>
+    <item>
+      <g:id>UG001</g:id>
+      <g:title><![CDATA[GODMODE GAMER]]></g:title>
+      <g:description><![CDATA[La bestia definitiva para los gamers más exigentes. Equipado con componentes de gama ultra-alta, este sistema ofrece un rendimiento sin precedentes para gaming 8K, realidad virtual, simulaciones avanzadas y tareas de creación de contenido de alta carga. Perfecto para entusiastas de los mods, streamers y profesionales de los videojuegos.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/godmode-gamer/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/godmode-gamer-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>9591.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G001</g:id>
+      <g:title><![CDATA[Casual Cruiser]]></g:title>
+      <g:description><![CDATA[El Casual Cruiser es el ordenador ideal para jugadores que buscan una experiencia fluida en juegos ligeros como Minecraft, Roblox, Los Sims y títulos de esports casuales como League of Legends y Fortnite. Diseñado para ofrecer un equilibrio entre rendimiento, eficiencia energética y precio, este PC cuenta con un procesador AMD Ryzen 5 7600 y gráficos integrados Radeon 760M. Para quienes buscan un nivel de detalle superior, se pueden añadir tarjetas gráficas dedicadas como la AMD Radeon RX 7600 o la NVIDIA RTX 4060.
+
+Con 16GB de RAM DDR5 y un SSD NVMe ultrarrápido de 1TB, este equipo garantiza tiempos de carga mínimos y multitarea eficiente, ideal para jugadores que también usan su PC para estudios, multimedia o navegación intensiva. La refrigeración silenciosa y eficiente mantiene el sistema estable, y su fuente de alimentación de 650W asegura compatibilidad con futuras mejoras de hardware.
+
+Este PC es perfecto para estudiantes, jugadores ocasionales y creadores de contenido emergentes que buscan una máquina confiable sin gastar una fortuna.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/casual-cruiser/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/casual-cruiser-1.jpeg.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>879.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G002</g:id>
+      <g:title><![CDATA[eSports Edge]]></g:title>
+      <g:description><![CDATA[Diseñado para los entusiastas de los eSports, el eSports Edge ofrece un rendimiento superior en juegos competitivos con tasas de FPS estables y ultra rápidas en 1080p. Con componentes de última generación, este PC está optimizado para monitores de 144Hz o superiores, brindando la ventaja que necesitas en juegos de alta velocidad. Ideal para streamers y jugadores serios que buscan una plataforma de alto rendimiento sin compromisos.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/esports-edge/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/esports-edge-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>1513.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G003</g:id>
+      <g:title><![CDATA[AAA Avenger]]></g:title>
+      <g:description><![CDATA[El AAA Avenger es la estación de batalla definitiva para los jugadores que buscan disfrutar de los últimos juegos AAA con un rendimiento sin compromisos en configuraciones ultra. Diseñado específicamente para juegos exigentes como Cyberpunk 2077, Assassin’s Creed Valhalla y Red Dead Redemption 2, este PC ofrece una experiencia de juego fluida con gráficos espectaculares en resoluciones de 1080p Ultra o 1440p High. Gracias a su procesador AMD Ryzen 7 7800X3D y a la potencia de la NVIDIA RTX 4070 Ti, obtendrás la combinación perfecta de velocidad y calidad gráfica para disfrutar de cualquier título AAA moderno.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/aaa-avenger/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/aaa-avenger-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>2662.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G004</g:id>
+      <g:title><![CDATA[Titan Dominator (i9)]]></g:title>
+      <g:description><![CDATA[Una máquina diseñada para jugadores exigentes y creadores de contenido que buscan la mejor experiencia en gaming 4K Ultra en Valencia. Equipada con un procesador de última generación y una GPU RTX 4090, esta bestia maneja sin esfuerzo el streaming en vivo, la edición de video 8K y los mods más pesados. La refrigeración avanzada y la amplia capacidad de RAM convierten al Titan Dominator en una solución inquebrantable para cualquier tarea intensiva, ideal para quienes requieren un ordenador de alta gama de máxima fiabilidad.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/titan-dominator-(i9)/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/titan-dominator-i9-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>4983.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G005</g:id>
+      <g:title><![CDATA[Titan Fury (AMD)]]></g:title>
+      <g:description><![CDATA[El Titan Fury es la máquina definitiva para los entusiastas del gaming que buscan un rendimiento de élite en cada aspecto. Ideal para jugadores en Valencia que requieren la mejor combinación entre potencia y eficiencia de la plataforma AMD. Con el procesador Ryzen 9 7950X3D y la Radeon RX 7900 XTX, disfrutarás de juegos fluidos en 4K y sesiones prolongadas sin excesivo consumo energético. Este equipo está diseñado para durar, con refrigeración líquida AIO de primera línea y opciones de expansión para RAM y almacenamiento masivo.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/titan-fury-(amd)/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/titan-fury-(amd)-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>3642.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G006</g:id>
+      <g:title><![CDATA[Virtual Voyager (VR)]]></g:title>
+      <g:description><![CDATA[Si buscas vivir la Realidad Virtual en su máxima expresión en Valencia, el Virtual Voyager (VR) es tu puerta de entrada a mundos digitales asombrosos. Diseñado con potentes componentes como el Intel Core i7-14700K y la NVIDIA RTX 4080 Super, este ordenador de alta gama brinda fluidez y máxima inmersión en títulos como Half-Life: Alyx y simuladores de vuelo complejos. Su chasis Lian Li con refrigeración AIO NZXT Kraken Elite RGB asegura estabilidad térmica, para que disfrutes de experiencias VR prolongadas sin mareos ni interrupciones.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/virtual-voyager-(vr)/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/virtual-voyager-vr-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>3042.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>G007</g:id>
+      <g:title><![CDATA[PowerStack]]></g:title>
+      <g:description><![CDATA[El PowerStack es un ordenador de alta gama en Valencia creado para gamers que exigen lo máximo en rendimiento, modding y capacidad multitarea. Diseñado sobre la plataforma AMD Ryzen 9 7900X y una GPU NVIDIA RTX 4080 Super, este equipo maneja con facilidad juegos AAA con mods intensivos y flujos de trabajo pesados, como edición de vídeo o diseño 3D. Con 64GB de RAM DDR5 y opciones de expansión para almacenamiento masivo, el PowerStack garantiza tiempos de carga rápidos y una experiencia de juego y trabajo sin cuellos de botella.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-gaming/powerstack/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/powerstack-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>3202.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores Gaming</g:product_type>
+    </item>
+    <item>
+      <g:id>UP001</g:id>
+      <g:title><![CDATA[CINEFORGE]]></g:title>
+      <g:description><![CDATA[CINEFORGE es la elección definitiva para producciones cinematográficas y proyectos de edición 8K en Valencia. Gracias a su procesador AMD Ryzen Threadripper 7995WX y configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofrece un rendimiento excepcional en tareas de renderizado 3D, animación y postproducción. Ideal para estudios y creadores que buscan un equipo de máxima potencia, estabilidad y capacidad de ampliación, respaldado por una refrigeración líquida EKWB Quantum de alto nivel.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-para-creadores-y-streamers/cineforge/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/cineforge-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>41293.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores para Creadores y Streamers</g:product_type>
+    </item>
+    <item>
+      <g:id>P001</g:id>
+      <g:title><![CDATA[Workstation I]]></g:title>
+      <g:description><![CDATA[Workstation I está pensada para quienes requieren un ordenador de sobremesa premium en Valencia, equilibrando potencia y eficiencia. Equipada con un Intel Core i7-14700K y la NVIDIA RTX 4060 Ti, ofrece una experiencia fluida para diseño gráfico, edición de vídeo ligera y software de productividad. Su sistema de refrigeración Noctua mantiene bajos niveles de ruido, mientras que la compatibilidad con memorias DDR5 y almacenamiento NVMe Gen4 garantiza un rendimiento fiable para el día a día y proyectos profesionales.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-para-creadores-y-streamers/workstation-i/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/workstation-i-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>2012.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores para Creadores y Streamers</g:product_type>
+    </item>
+    <item>
+      <g:id>P002</g:id>
+      <g:title><![CDATA[Studio Forge]]></g:title>
+      <g:description><![CDATA[Studio Forge es la herramienta perfecta para streamers y creadores de contenido en Valencia que buscan un ordenador de alta gama y gran versatilidad. Impulsado por un AMD Ryzen 9 7900X y una GPU NVIDIA RTX 4070 Ti Super, este equipo maneja fácilmente la captura de vídeo, la edición y la transmisión simultánea. Sus opciones de personalización permiten ampliar la memoria RAM, la capacidad de almacenamiento y hasta cambiar a CPUs Intel de alto rendimiento, asegurando que tu flujo de trabajo y sesiones de streaming sean ágiles y sin interrupciones.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-para-creadores-y-streamers/studio-forge/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/studio-forge-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>2902.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores para Creadores y Streamers</g:product_type>
+    </item>
+    <item>
+      <g:id>P003</g:id>
+      <g:title><![CDATA[CineStorm]]></g:title>
+      <g:description><![CDATA[CineStorm está diseñado para los profesionales de la edición de vídeo y VFX en Valencia que buscan exprimir al máximo su flujo de trabajo. Con un AMD Ryzen 9 7950X y una GPU NVIDIA RTX 4080 Super, ofrece un rendimiento excepcional para manejar múltiples capas, efectos y resoluciones 4K o 8K. Su amplio soporte de software especializado y la posibilidad de ampliar la RAM hasta 128GB lo convierten en la herramienta ideal para estudios y editores avanzados que necesitan una solución de alto nivel.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-para-creadores-y-streamers/cinestorm/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/cinestorm-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>3692.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores para Creadores y Streamers</g:product_type>
+    </item>
+    <item>
+      <g:id>P004</g:id>
+      <g:title><![CDATA[Vertex Forge]]></g:title>
+      <g:description><![CDATA[Vertex Forge es la estación de trabajo definitiva para modelado 3D, animación y renderizado en Valencia. Basada en la plataforma AMD Ryzen Threadripper 7960X, proporciona la potencia necesaria para flujos de trabajo intensivos en aplicaciones como Blender, Autodesk Maya y Unreal Engine. Con su GPU NVIDIA RTX 4090 y hasta 128GB de RAM DDR5, ofrece un rendimiento sin precedentes en tareas de simulación y cálculo. Además, la refrigeración líquida de Corsair garantiza estabilidad y baja temperatura en jornadas de trabajo prolongadas.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-para-creadores-y-streamers/vertex-forge/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/vertex-forge-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>6472.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores para Creadores y Streamers</g:product_type>
+    </item>
+    <item>
+      <g:id>P005</g:id>
+      <g:title><![CDATA[Resonance]]></g:title>
+      <g:description><![CDATA[Resonance es un ordenador de gama alta enfocado en la producción musical profesional en Valencia, ofreciendo rendimiento y estabilidad para compositores, productores y estudios. Con un Intel Core i7-14700K y hasta 64GB de RAM DDR5, maneja sin esfuerzo múltiples DAWs y VSTs complejos. Su diseño silencioso y la integración de SSD NVMe garantizan la baja latencia y la velocidad que exigen los flujos de trabajo de audio más exigentes, permitiéndote centrarte en la creatividad sin distracciones.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-para-creadores-y-streamers/resonance/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/resonance-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>2082.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores para Creadores y Streamers</g:product_type>
+    </item>
+    <item>
+      <g:id>UA001</g:id>
+      <g:title><![CDATA[OMNIBRAIN]]></g:title>
+      <g:description><![CDATA[OMNIBRAIN es la supercomputadora de VLCExtreme ideal para proyectos de Inteligencia Artificial en Valencia que requieren una potencia de cálculo sin precedentes. Con un AMD EPYC 9654 de 96 núcleos y doble GPU NVIDIA H100, es capaz de entrenar modelos de Deep Learning de última generación y procesar enormes volúmenes de datos a gran velocidad. Diseñada para centros de datos y laboratorios de I+D, su configuración incluye refrigeración líquida de grado servidor y fuentes de alimentación redundantes para asegurar una alta disponibilidad.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-ia/omnibrain/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/omnibrain-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>59794.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores IA</g:product_type>
+    </item>
+    <item>
+      <g:id>AI001</g:id>
+      <g:title><![CDATA[Neural Nexus]]></g:title>
+      <g:description><![CDATA[Neural Nexus es la solución perfecta para proyectos de aprendizaje automático, Big Data y ciencia de datos en Valencia. Con un AMD Ryzen 9 7950X y una NVIDIA RTX 4090, ofrece la potencia necesaria para entrenar modelos con grandes conjuntos de datos y ejecutar simulaciones complejas. Su chasis Fractal Design Torrent XL brinda excelente flujo de aire, y la refrigeración AIO garantiza temperaturas estables, incluso bajo cargas prolongadas. Diseñado para entusiastas de la IA y profesionales que buscan una plataforma confiable y escalable.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-ia/neural-nexus/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/neural-nexus-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>4492.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores IA</g:product_type>
+    </item>
+    <item>
+      <g:id>AI002</g:id>
+      <g:title><![CDATA[TensorForge]]></g:title>
+      <g:description><![CDATA[TensorForge es la apuesta suprema en Valencia para quienes necesitan un potente sistema de entrenamiento de redes neuronales profundas, investigación en IA y cómputo científico de vanguardia. Con un AMD Ryzen Threadripper 7995WX y dos GPUs NVIDIA RTX 4090, este equipo logra niveles excepcionales de rendimiento para tareas de machine learning y simulaciones complejas. Su diseño de refrigeración personalizada y capacidad de hasta 512GB de RAM hacen que TensorForge sea una herramienta robusta, preparada para impulsar proyectos de IA con gran demanda de recursos.]]></g:description>
+      <g:link>https://vlcextreme.com/ordenador/ordenadores-ia/tensorforge/</g:link>
+      <g:image_link>https://vlcextreme.com/images/products/tensorforge-1.png.jpg</g:image_link>
+      <g:brand>VLCExtreme</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>15091.00 EUR</g:price>
+      <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
+      <g:product_type>Ordenadores IA</g:product_type>
+    </item>
+  </channel>
+</rss>
