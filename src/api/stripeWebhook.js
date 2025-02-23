@@ -17,19 +17,18 @@ export default async function handler(req, res) {
 
   // 1) Leer la firma del header
   const signature = req.headers["stripe-signature"];
-
   try {
-    // 2) Verificar la firma y construir el evento seguro
     const stripeEvent = stripe.webhooks.constructEvent(
-      req.body, // raw body (string), gracias a type="raw"
+      req.body, // as raw text
       signature,
       process.env.STRIPE_WEBHOOK_SECRET
     );
 
+
     // 3) Revisar si el tipo de evento es 'checkout.session.completed'
     if (stripeEvent.type === "checkout.session.completed") {
+    console.log("Evento verificado:", stripeEvent.type);
       const session = stripeEvent.data.object;
-      console.log("✅ Evento con firma verificada: checkout.session.completed");
 
       // 4) Extraer metadata y correo del cliente
       const finalBuild = session.metadata?.finalBuild || "(No hay build)";
@@ -94,7 +93,8 @@ export default async function handler(req, res) {
       return res.status(200).json({ received: true });
     }
   } catch (error) {
-    console.error("❌ Error al verificar firma o procesar evento:", error);
-    return res.status(400).json({ error: "Firma no válida o Error interno" });
+    // Log exact error
+    console.error("Error de firma Stripe:", error.message || error);
+    return res.status(400).json({ error: "Firma no válida" });
   }
 }
