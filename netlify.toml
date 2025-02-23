@@ -6,5 +6,5 @@
   [[plugins]]
 package = "@netlify/plugin-gatsby"
 
-[functions."stripeWebhook"] 
+[functions.stripeWebhook] 
   type = "raw"
