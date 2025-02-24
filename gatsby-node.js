@@ -31,12 +31,12 @@ exports.onPostBuild = async () => {
       <priority>1</priority>
     </url>
     <url>
-      <loc>https://vlcextreme.com/ordenadores-para-gaming/</loc>
+      <loc>https://vlcextreme.com/ordenadores-gaming/</loc>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
     </url>
     <url>
-      <loc>https://vlcextreme.com/ordenadores-para-creadores-y-streamers/</loc>
+      <loc>https://vlcextreme.com/ordenadores-creadores-streamers/</loc>
       <changefreq>weekly</changefreq>
       <priority>0.9</priority>
     </url>

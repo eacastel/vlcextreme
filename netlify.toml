@@ -4,10 +4,17 @@
   status = 200
 
 [[redirects]]
+  from = "/ordenadores-para-creadores-y-streamers/"
+  to = "/ordenadores-creadores-streamers/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/ordenadores-para-creadores-streamers/"
   to = "/ordenadores-creadores-streamers/"
   status = 301
   force = true
+
 
 [[redirects]]
   from = "/ordenadores-para-gaming/"

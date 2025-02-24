@@ -22,9 +22,9 @@ export default function Header() {
   `)
 
   const navItems = [
-    { name: "Gaming Élite", path: "/ordenadores-para-gaming" },
-    { name: "Creadores Extrem", path: "/ordenadores-para-creadores-y-streamers" },
-    { name: "Workstations IA", path: "/ordenadores-ia" },
+    { name: "Gaming Élite", path: "/ordenadores-gaming" },
+    { name: "Creadores Extrem", path: "/ordenadores-creadores-streamers" },
+    { name: "Workstations IA", path: "/ordenadores-inteligencia-artificial" },
     { name: "Quiénes somos", path: "/about" },
     { name: "Contacto", path: "/contact" },
   ];
