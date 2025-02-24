@@ -75,18 +75,23 @@ export default function Header() {
 
           {/* Mobile Hamburger */}
           <div className="lg:hidden">
-            <Hamburger
-              toggled={isOpen}
-              toggle={setOpen}
-              size={24}
-              color="#EAEAEA"
-              rounded
+            <button
+              onClick={() => setOpen(!isOpen)}
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={isOpen}
-              role="button"
+              className="hamburger-react"
               tabIndex="0"
-            />
+            >
+              <Hamburger
+                toggled={isOpen}
+                toggle={setOpen}
+                size={24}
+                color="#EAEAEA"
+                rounded
+              />
+            </button>
           </div>
+
 
           {/* Mobile Navigation */}
           <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden absolute top-full left-0 right-0 bg-carbon-black z-40`}>
