@@ -13,7 +13,7 @@ const ProductionBuildCard = ({ build }) => {
   };
 
   // ✅ Generate the slug dynamically
-  const slug = `/ordenador/${getCategorySlug(build.category)}/${build.name.toLowerCase().replace(/\s+/g, "-")}/`;
+  const slug = `/${getCategorySlug(build.category)}/${build.name.toLowerCase().replace(/\s+/g, "-")}/`;
 
 
 

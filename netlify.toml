@@ -3,6 +3,25 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
+[[redirects]]
+  from = "/ordenadores-para-creadores-streamers/"
+  to = "/ordenadores-creadores-streamers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ordenadores-para-gaming/"
+  to = "/ordenadores-gaming/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ordenador/:slug"
+  to = "/:slug"
+  status = 301
+  force = true
+
+
   [[plugins]]
 package = "@netlify/plugin-gatsby"
 

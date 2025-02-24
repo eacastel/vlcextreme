@@ -61,87 +61,87 @@ exports.onPostBuild = async () => {
       <priority>0.7</priority>
     </url>
     <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/godmode-gamer/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/godmode-gamer/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/casual-cruiser/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/casual-cruiser/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/esports-edge/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/esports-edge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/aaa-avenger/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/aaa-avenger/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/titan-dominator-(i9)/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/titan-dominator-(i9)/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/titan-fury-(amd)/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/titan-fury-(amd)/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/virtual-voyager-(vr)/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/virtual-voyager-(vr)/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-gaming/powerstack/</loc>
+    <loc>https://vlcextreme.com/ordenadores-gaming/powerstack/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-creadores-streamers/cineforge/</loc>
+    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/cineforge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-creadores-streamers/workstation-i/</loc>
+    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/workstation-i/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-creadores-streamers/studio-forge/</loc>
+    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/studio-forge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-creadores-streamers/cinestorm/</loc>
+    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/cinestorm/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-creadores-streamers/vertex-forge/</loc>
+    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/vertex-forge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-creadores-streamers/resonance/</loc>
+    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/resonance/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-inteligencia-artificial/omnibrain/</loc>
+    <loc>https://vlcextreme.com/ordenadores-inteligencia-artificial/omnibrain/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-inteligencia-artificial/neural-nexus/</loc>
+    <loc>https://vlcextreme.com/ordenadores-inteligencia-artificial/neural-nexus/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vlcextreme.com/ordenador/ordenadores-inteligencia-artificial/tensorforge/</loc>
+    <loc>https://vlcextreme.com/ordenadores-inteligencia-artificial/tensorforge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -165,7 +165,7 @@ exports.createPages = async ({ actions }) => {
     else if (product.category === "production") categorySlug = "ordenadores-creadores-streamers";
     else if (product.category === "ai") categorySlug = "ordenadores-inteligencia-artificial";
 
-    const slug = `/ordenador/${categorySlug}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
+    const slug = `/${categorySlug}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
 
     createPage({
       path: slug,
