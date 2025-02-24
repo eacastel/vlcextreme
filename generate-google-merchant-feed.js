@@ -5,7 +5,7 @@ const path = require("path");
 const builds = require("./src/data/builds.json").builds;
 
 // Define the output path for the Google Merchant feed in the `static` folder
-const feedPath = path.join(__dirname, "static", "google-merchant-feed.xml");
+const feedPath = path.join(__dirname, "public", "google-merchant-feed.xml");
 
 // Helper: Truncate description safely
 function truncateDescription(description, maxLength = 5000) {
@@ -82,6 +82,20 @@ feedContent += `
   </channel>
 </rss>`;
 
+// Ensure the feed file can be overwritten by deleting it first (if it exists)
+if (fs.existsSync(feedPath)) {
+  try {
+    fs.unlinkSync(feedPath);
+    console.log(`🗑️ Existing feed file removed.`);
+  } catch (err) {
+    console.error(`❌ Failed to delete existing feed file:`, err);
+  }
+}
+
 // Write the feed to a file
-fs.writeFileSync(feedPath, feedContent);
-console.log(`✅ Google Merchant Center feed generated at ${feedPath}`);
+try {
+  fs.writeFileSync(feedPath, feedContent, { flag: 'w' }); // 'w' explicitly forces overwriting
+  console.log(`✅ Google Merchant Center feed generated at ${feedPath}`);
+} catch (err) {
+  console.error(`❌ Failed to write the feed file:`, err);
+}

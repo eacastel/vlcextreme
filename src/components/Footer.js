@@ -12,10 +12,10 @@ const slugify = (text) => {
 
 export default function Footer() {
   const quickLinks = [
-    "Configurador",
+    "Configuraciones",
+    "Condiciones de Venta y Garantía",
     "Privacidad",
-    "Condiciones de Uso",
-    "Política de Garantía",
+    "Términos y Condiciones",
   ];
 
   const socialLinks = {

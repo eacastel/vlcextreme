@@ -10,6 +10,12 @@
   force = true
 
 [[redirects]]
+  from = "/politica-de-garantia/"
+  to = "/condiciones-de-venta-y-garantia/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/ordenadores-ia/"
   to = "/ordenadores-inteligencia-artificial/"
   status = 301
