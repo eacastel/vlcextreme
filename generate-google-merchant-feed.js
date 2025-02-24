@@ -36,11 +36,11 @@ let feedContent = `<?xml version="1.0" encoding="UTF-8"?>
 // Generate each product entry
 Object.entries(builds).forEach(([id, product]) => {
   let categorySlug = "otros";
-  if (product.category === "gaming") categorySlug = "Ordenadores Gaming";
-  else if (product.category === "production") categorySlug = "Ordenadores para Creadores y Streamers";
-  else if (product.category === "ai") categorySlug = "Ordenadores IA";
+  if (product.category === "gaming") categorySlug = "ordenadores-gaming";
+  else if (product.category === "production") categorySlug = "ordenadores-creadores-streamers";
+  else if (product.category === "ai") categorySlug = "ordenadores-inteligencia-artificial";
 
-  const slug = `/ordenador/${categorySlug.toLowerCase().replace(/\s+/g, "-")}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
+  const slug = `/ordenador/${categorySlug}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
 
   // Use first image
   const imageUrl = product.imageKeys && product.imageKeys.length > 0

@@ -130,9 +130,10 @@ const ProductPage = ({ pageContext }) => {
   // OS options
   const osOptions = [
     { label: "Ninguno (sin sistema operativo)", value: "", price: 0 },
-    { label: "Windows 11 Home", value: "win11home", price: 119 },
-    { label: "Windows 11 Pro", value: "win11pro", price: 159 },
+    { label: "Windows 11 Home", value: "win11home", price: 120 },
+    { label: "Windows 11 Pro", value: "win11pro", price: 170 },
     { label: "Ubuntu 22.04 LTS", value: "ubuntu", price: 0 },
+    { label: "Rocky Linux 9", value: "rockylinux", price: 0 },
   ];
 
   // Handlers for upgrades and OS selection
@@ -197,8 +198,8 @@ const ProductPage = ({ pageContext }) => {
   const isCustomized =
     Object.values(selectedUpgrades).some((val) => val !== null) || !!selectedOS;
   const table1Title = isCustomized
-    ? "Build Personalizado"
-    : "Componentes Preconfigurados";
+    ? "Build Personalizado *"
+    : "Componentes Preconfigurados **";
 
   // Array for Table 1 (final configuration)
   const finalConfigObj = getFinalConfiguration();
@@ -259,7 +260,7 @@ const ProductPage = ({ pageContext }) => {
           {/* Left Column: Product info */}
           <div className="md:w-1/2 flex flex-col">
             <h1 className="text-3xl font-bold text-neon-cyan">{productName}</h1>
-            <p className="text-md text-gray-300 mt-2">
+            <p className="text-md text-light-gray mt-2">
               {shortDescription}: {description}
             </p>
             {buildImage && (
@@ -271,9 +272,10 @@ const ProductPage = ({ pageContext }) => {
                 />
               </div>
             )}
-            <p className="text-md text-gray-400 mt-4 whitespace-pre-line">
+            <p className="text-md text-light-gray mt-4 whitespace-pre-line">
               {longDescription}
             </p>
+
           </div>
           {/* Right Column: Tables and total price */}
           <div className="md:w-1/2 flex flex-col space-y-8">
@@ -283,7 +285,7 @@ const ProductPage = ({ pageContext }) => {
                 {table1Title}
               </h2>
               <div className="bg-carbon-black p-4 rounded-lg shadow-md">
-                <table className="w-full text-sm text-gray-300">
+                <table className="w-full text-sm text-light-gray">
                   <tbody>
                     {finalConfigArray.map((item) => {
                       let displayName = item.name;
@@ -294,7 +296,7 @@ const ProductPage = ({ pageContext }) => {
                       }
                       return (
                         <tr key={item.category} className="border-b border-gray-700">
-                          <td className="py-1 text-gray-400 uppercase pr-2">
+                          <td className="py-1 text-light-gray uppercase pr-2">
                             {item.category}
                           </td>
                           <td className={nameClasses}>
@@ -306,15 +308,18 @@ const ProductPage = ({ pageContext }) => {
                   </tbody>
                 </table>
               </div>
+              <p className="text-sm italic text-light-gray pt-1">
+              * En caso de que de algún componente no estuviese disponible, o por fluctuación de precios, tras acuerdo previo, éste se sustituirá por otro de rendimiento, marca y calidad equivalente.
+            </p>
             </div>
             {/* Table 2: Personalizations */}
             {personalize.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold text-neon-cyan mb-2">
-                  Opciones Disponibles
+                  Opciones Disponibles * **
                 </h3>
                 <div className="bg-carbon-black p-4 rounded-lg shadow-md">
-                  <table className="w-full text-sm text-gray-300">
+                  <table className="w-full text-sm text-light-gray">
                     <thead>
                       <tr className="border-b border-gray-700">
                         <th className="py-1 text-left"></th>
@@ -342,13 +347,17 @@ const ProductPage = ({ pageContext }) => {
                             </td>
                             <td className="py-1 uppercase">{upgrade.category}</td>
                             <td className="py-1 font-semibold">{upgrade.name}</td>
-                            <td className="py-1 text-gray-400">{upgrade.note}</td>
+                            <td className="py-1 text-light-gray">{upgrade.note}</td>
                           </tr>
                         );
                       })}
                     </tbody>
                   </table>
                 </div>
+
+            <p className="text-sm italic text-light-gray pt-1">
+              ** Nos pondremos en contacto contigo para confirmar la instalación de los componentes finales.
+            </p>
               </div>
             )}
             {/* Table 3: OS (radio) */}
@@ -357,7 +366,7 @@ const ProductPage = ({ pageContext }) => {
                 Sistema Operativo
               </h3>
               <div className="bg-carbon-black p-4 rounded-lg shadow-md">
-                <table className="w-full text-sm text-gray-300">
+                <table className="w-full text-sm text-light-gray">
                   <tbody>
                     {osOptions.map((os) => {
                       const inputId = `os-${os.value || "none"}`;
