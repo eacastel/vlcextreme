@@ -199,7 +199,7 @@ const ProductPage = ({ pageContext }) => {
     Object.values(selectedUpgrades).some((val) => val !== null) || !!selectedOS;
   const table1Title = isCustomized
     ? "Build Personalizado *"
-    : "Componentes Preconfigurados **";
+    : "Componentes Preconfigurados *";
 
   // Array for Table 1 (final configuration)
   const finalConfigObj = getFinalConfiguration();
@@ -316,7 +316,7 @@ const ProductPage = ({ pageContext }) => {
             {personalize.length > 0 && (
               <div>
                 <h3 className="text-xl font-bold text-neon-cyan mb-2">
-                  Opciones Disponibles * **
+                  Opciones Disponibles **
                 </h3>
                 <div className="bg-carbon-black p-4 rounded-lg shadow-md">
                   <table className="w-full text-sm text-light-gray">
