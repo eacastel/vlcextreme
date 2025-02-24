@@ -13,9 +13,9 @@ const slugify = (text) => {
 export default function Footer() {
   const quickLinks = [
     "Configuraciones",
+    "Términos y Condiciones",
     "Condiciones de Venta y Garantía",
     "Privacidad",
-    "Términos y Condiciones",
   ];
 
   const socialLinks = {
