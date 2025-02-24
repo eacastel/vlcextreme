@@ -44,8 +44,9 @@ Object.entries(builds).forEach(([id, product]) => {
 
   // Use first image
   const imageUrl = product.imageKeys && product.imageKeys.length > 0
-  ? `https://vlcextreme.com/images/products-png/${product.imageKeys[0]}`
+  ? `https://vlcextreme.com/images/products-png/${path.basename(product.imageKeys[0], path.extname(product.imageKeys[0]))}.png`
   : `https://vlcextreme.com/images/default-product.png`;
+
 
   // Calculate price dynamically from components
   const totalPrice = calculateTotalPrice(product.base_components);
