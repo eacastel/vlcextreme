@@ -34,7 +34,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="z-50 flex-shrink-0" style={{ width: '160px' }}>
+          <Link to="/" className="z-50 flex-shrink-0" aria-label="Inicio" style={{ width: '160px' }}>
             <GatsbyImage
               image={data.logo.childImageSharp.gatsbyImageData}
               alt="VLCExtreme Logo"
@@ -53,6 +53,7 @@ export default function Header() {
                 <Link
                   key={item.path}
                   to={item.path}
+                  aria-label={`Navegar a ${item.name}`}
                   className="text-light-gray hover:text-neon-cyan transition-colors font-bold text-sm xl:text-base whitespace-nowrap"
                   activeClassName="text-neon-cyan"
                 >
@@ -63,6 +64,7 @@ export default function Header() {
             <div className="ml-4">
               <Link
                 to="/configuraciones"
+                aria-label="Configuraciones personalizadas"
                 className="bg-neon-cyan text-carbon-black px-5 py-2 rounded-md font-bold text-sm xl:text-base whitespace-nowrap
                 transition-all duration-200 ease-in-out hover:bg-[#00A4C4] hover:shadow-[0_0_10px_#00A4C4]"
               >
@@ -79,6 +81,10 @@ export default function Header() {
               size={24}
               color="#EAEAEA"
               rounded
+              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isOpen}
+              role="button"
+              tabIndex="0"
             />
           </div>
 
@@ -89,6 +95,7 @@ export default function Header() {
                 <li key={item.path} className="w-full text-center">
                   <Link
                     to={item.path}
+                    aria-label={`Navegar a ${item.name}`}
                     className="block text-light-gray hover:text-neon-cyan py-2 px-4 transition-colors font-medium"
                     activeClassName="text-neon-cyan"
                   >
