@@ -1,12 +1,17 @@
 /**
- * Implement Gatsby's Node APIs in this file.
- *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+
+// For sitemap
 const fs = require("fs");
+
+// For sitemap, build, and feed
 const path = require("path");
+
+// For google feed
+const { execSync } = require("child_process");
+
 
 exports.onPostBuild = async () => {
   const outputPath = path.join(__dirname, "public");
@@ -142,7 +147,7 @@ exports.onPostBuild = async () => {
   </url>
 </urlset>`;
 
-  // ✅ Write the `sitemap.xml` inside `public/` directory
+  // Write the `sitemap.xml` inside `public/` directory
   fs.writeFileSync(sitemapPath, sitemapContent);
   console.log("✅ Custom Sitemap Generated Successfully in `public/sitemap.xml`!");
 };
@@ -180,4 +185,22 @@ exports.createPages = async ({ actions }) => {
       },
     });
   });
+};
+
+
+// CREATE GOOGLE MERCHANT FEED
+
+
+
+exports.onPostBuild = async () => {
+  console.log("Running post-build tasks...");
+
+  // Run the feed generation script automatically
+  try {
+    const scriptPath = path.join(__dirname, "generate-google-merchant-feed.js");
+    execSync(`node ${scriptPath}`, { stdio: "inherit" });
+    console.log("✅ Google Merchant Feed generated automatically.");
+  } catch (err) {
+    console.error("❌ Failed to generate Google Merchant Feed:", err);
+  }
 };

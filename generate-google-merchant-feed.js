@@ -4,8 +4,8 @@ const path = require("path");
 // Load product data
 const builds = require("./src/data/builds.json").builds;
 
-// Define the output path for the Google Merchant feed
-const feedPath = path.join(__dirname, "google-merchant-feed.xml");
+// Define the output path for the Google Merchant feed in the `static` folder
+const feedPath = path.join(__dirname, "static", "google-merchant-feed.xml");
 
 // Helper: Truncate description safely
 function truncateDescription(description, maxLength = 5000) {
@@ -25,7 +25,7 @@ function calculateTotalPrice(components) {
   }, 0);
 }
 
-// Initialize XML content
+// Generate XML content
 let feedContent = `<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
   <channel>
@@ -42,16 +42,16 @@ Object.entries(builds).forEach(([id, product]) => {
 
   const slug = `/ordenador/${categorySlug.toLowerCase().replace(/\s+/g, "-")}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
 
-  // Assuming image URLs follow a consistent pattern
+  // Use first image
   const imageUrl = product.imageKeys && product.imageKeys.length > 0
-    ? `https://vlcextreme.com/images/products/${product.imageKeys[0]}.jpg`
-    : `https://vlcextreme.com/images/default-product.jpg`;
+  ? `https://vlcextreme.com/images/products-png/${product.imageKeys[0]}`
+  : `https://vlcextreme.com/images/default-product.png`;
 
-  // Calculate the price from the components
+  // Calculate price dynamically from components
   const totalPrice = calculateTotalPrice(product.base_components);
   if (!totalPrice || totalPrice <= 0) {
     console.warn(`⚠️ Skipping product "${product.name}" due to missing or invalid component prices.`);
-    return; // Skip this product
+    return; // Skip if price is missing or zero
   }
 
   // Use long description, truncated if necessary
@@ -59,7 +59,7 @@ Object.entries(builds).forEach(([id, product]) => {
     ? truncateDescription(product.long_description)
     : "Ordenador de alto rendimiento de VLCExtreme.";
 
-  // Create product entry
+  // Add product entry
   feedContent += `
     <item>
       <g:id>${id}</g:id>

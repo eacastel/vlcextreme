@@ -1,2 +1,5 @@
 /email-decode.min.js
   Cache-Control: public, max-age=31536000, immutable
+
+/google-merchant-feed.xml
+  X-Robots-Tag: noindex, nofollow
