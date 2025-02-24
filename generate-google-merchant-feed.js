@@ -40,7 +40,7 @@ Object.entries(builds).forEach(([id, product]) => {
   else if (product.category === "production") categorySlug = "ordenadores-creadores-streamers";
   else if (product.category === "ai") categorySlug = "ordenadores-inteligencia-artificial";
 
-  const slug = `/ordenador/${categorySlug}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
+  const slug = `/${categorySlug}/${product.name.toLowerCase().replace(/\s+/g, "-")}/`;
 
   // Use first image
   const imageUrl = product.imageKeys && product.imageKeys.length > 0
