@@ -1474,7 +1474,7 @@
         "image": "extreme-build-sticker.png"
       },
       "description": "La estación de trabajo definitiva para edición 8K, renderizado 3D y producción de contenido de alto nivel.",
-      "long_description": "CINEFORGE es la elección definitiva para producciones cinematográficas y proyectos de edición 8K en Valencia. Gracias a su procesador AMD Ryzen Threadripper 7995WX y configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofrece un rendimiento excepcional en tareas de renderizado 3D, animación y postproducción. Ideal para estudios y creadores que buscan un equipo de máxima potencia, estabilidad y capacidad de ampliación, respaldado por una refrigeración líquida EKWB Quantum de alto nivel.",
+      "long_description": "CINEFORGE es la estación de trabajo definitiva para producciones cinematográficas, edición 8K, renderizado 3D y producción de contenido de alto nivel en Valencia. Diseñado para creadores y estudios profesionales, este PC para edición 8K combina la potencia inigualable del procesador AMD Ryzen Threadripper 7995WX –ideal para flujos de trabajo intensivos y procesamiento en paralelo– con las configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofreciendo gráficos de calidad cinematográfica y una velocidad de renderizado excepcional.\n\nCada componente de CINEFORGE ha sido seleccionado meticulosamente para garantizar la máxima estabilidad, escalabilidad y rendimiento. La placa base ASUS Pro WS WRX90E-SAGE SE, junto con 512GB de memoria DDR5 ECC de alta velocidad, permite ejecutar software de postproducción y animación (como Adobe Premiere Pro, DaVinci Resolve, Autodesk Maya y Cinema 4D) sin cuellos de botella. Además, el almacenamiento Samsung PM1733 de 30TB NVMe asegura tiempos de carga ultrarrápidos y capacidad para gestionar grandes volúmenes de datos, esenciales en proyectos de edición 8K y producción de contenido audiovisual.\n\nEl sistema está respaldado por una fuente de alimentación Corsair AX1600i Titanium de 1600W, que garantiza una entrega de energía estable y segura, incluso en condiciones de máxima demanda. La refrigeración líquida EKWB Quantum de alto nivel asegura que el sistema se mantenga fresco y silencioso, permitiendo jornadas de trabajo prolongadas sin preocupaciones de sobrecalentamiento.\n\nEn resumen, CINEFORGE es el ordenador de alta gama en Valencia que redefine los límites de la producción audiovisual. Perfecto para profesionales que buscan calidad, fiabilidad y un rendimiento extraordinario en cada proyecto, este equipo es la solución integral para llevar la edición de video, animación y renderizado 3D a un nuevo nivel.",
       "short_description": "Potencia sin límites para creadores",
       "price_range": {
         "min": 15000,
@@ -1484,7 +1484,7 @@
         "CPU": {
           "name": "AMD Ryzen Threadripper 7995WX",
           "brand": "AMD",
-          "price": 6499,
+          "price": 10000,
           "performance_score": 100,
           "form_factor": "sWRX8",
           "compatibility": {
@@ -1495,9 +1495,9 @@
           }
         },
         "GPU": {
-          "name": "Quad NVIDIA RTX 6000 Ada",
+          "name": "NVIDIA RTX 6000 Ada",
           "brand": "NVIDIA",
-          "price": 18000,
+          "price": 8750,
           "performance_score": 100,
           "interface": "PCIe x16",
           "compatibility": {
@@ -1510,7 +1510,7 @@
         "Motherboard": {
           "name": "ASUS Pro WS WRX90E-SAGE SE",
           "brand": "ASUS",
-          "price": 999,
+          "price": 1200,
           "form_factor": "E-ATX",
           "compatibility": {
             "cpu_sockets": [
@@ -1574,7 +1574,7 @@
         "Case": {
           "name": "Fractal Design Define 7 XL",
           "brand": "Fractal Design",
-          "price": 249,
+          "price": 300,
           "performance_score": 90,
           "compatibility": {
             "motherboard_sizes": [
@@ -1593,8 +1593,8 @@
       "personalize": [
         {
           "name": "Additional NVIDIA RTX 6000 Ada",
-          "price": 4500,
-          "category": "GPU",
+          "price": 8750,
+          "category": "Extra",
           "type": "upgrade",
           "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real.",
           "compatibility": {
@@ -1607,7 +1607,7 @@
         {
           "name": "Storage Expansion - 60TB NVMe RAID",
           "price": 9999,
-          "category": "Storage",
+          "category": "Extra",
           "type": "upgrade",
           "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción.",
           "compatibility": {
