@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Button from "../Button";
 
 const ProductionBuildCard = ({ build }) => {
+ 
 
   const getCategorySlug = (category) => {
     if (category === "gaming") return "ordenadores-gaming";

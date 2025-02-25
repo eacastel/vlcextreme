@@ -70,7 +70,6 @@ const ProductPage = ({ pageContext }) => {
     imageKeys = [],
     baseComponents = {},
     personalize = [],
-    slug
   } = pageContext;
 
   // Query for images
@@ -320,14 +319,7 @@ const ProductPage = ({ pageContext }) => {
                 </h3>
                 <div className="bg-carbon-black p-4 rounded-lg shadow-md">
                   <table className="w-full text-sm text-light-gray">
-                    <thead>
-                      <tr className="border-b border-gray-700">
-                        <th className="py-1 text-left"></th>
-                        <th className="py-1 text-left">Categoría</th>
-                        <th className="py-1 text-left">Componente</th>
-                        <th className="py-1 text-left">Notas</th>
-                      </tr>
-                    </thead>
+
                     <tbody>
                       {personalize.map((upgrade) => {
                         const checked = !!selectedUpgrades[upgrade.name];

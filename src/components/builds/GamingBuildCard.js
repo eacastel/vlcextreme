@@ -7,6 +7,7 @@ const GamingBuildCard = ({ build }) => {
 
 
 
+
   const getCategorySlug = (category) => {
     if (category === "gaming") return "ordenadores-gaming";
     if (category === "production") return "ordenadores-creadores-streamers";

@@ -13,16 +13,20 @@ function truncateDescription(description, maxLength = 5000) {
   return description.substring(0, maxLength - 3) + "...";
 }
 
-// Helper: Calculate price from base components
+// Helper: Calculate price from base components with 40% markup
 function calculateTotalPrice(components) {
   if (!components || typeof components !== "object") return 0;
 
-  return Object.values(components).reduce((total, component) => {
+  const basePrice = Object.values(components).reduce((total, component) => {
     if (component.price && !isNaN(component.price)) {
       return total + parseFloat(component.price);
     }
     return total;
   }, 0);
+
+  // Apply 40% markup
+  const markup = basePrice * 0.4;
+  return basePrice + markup;
 }
 
 // Generate XML content
