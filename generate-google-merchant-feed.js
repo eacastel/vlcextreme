@@ -4,7 +4,7 @@ const path = require("path");
 // Load product data
 const builds = require("./src/data/builds.json").builds;
 
-// Define the output path for the Google Merchant feed in the `static` folder
+// Define the output path for the Google Merchant feed in the `public` folder
 const feedPath = path.join(__dirname, "public", "google-merchant-feed.xml");
 
 // Helper: Truncate description safely
@@ -14,6 +14,7 @@ function truncateDescription(description, maxLength = 5000) {
 }
 
 // Helper: Calculate price from base components with 40% markup
+// and round up to the nearest whole number (no cents)
 function calculateTotalPrice(components) {
   if (!components || typeof components !== "object") return 0;
 
@@ -26,7 +27,10 @@ function calculateTotalPrice(components) {
 
   // Apply 40% markup
   const markup = basePrice * 0.4;
-  return basePrice + markup;
+  const totalPrice = basePrice + markup;
+
+  // Round up to the next whole number (no cents)
+  return Math.ceil(totalPrice);
 }
 
 // Generate XML content
@@ -48,9 +52,8 @@ Object.entries(builds).forEach(([id, product]) => {
 
   // Use first image
   const imageUrl = product.imageKeys && product.imageKeys.length > 0
-  ? `https://vlcextreme.com/images/products-png/${path.basename(product.imageKeys[0], path.extname(product.imageKeys[0]))}.png`
-  : `https://vlcextreme.com/images/default-product.png`;
-
+    ? `https://vlcextreme.com/images/products-png/${path.basename(product.imageKeys[0], path.extname(product.imageKeys[0]))}.png`
+    : `https://vlcextreme.com/images/default-product.png`;
 
   // Calculate price dynamically from components
   const totalPrice = calculateTotalPrice(product.base_components);
@@ -75,7 +78,7 @@ Object.entries(builds).forEach(([id, product]) => {
       <g:brand>VLCExtreme</g:brand>
       <g:condition>new</g:condition>
       <g:availability>in stock</g:availability>
-      <g:price>${totalPrice.toFixed(2)} EUR</g:price>
+      <g:price>${totalPrice} EUR</g:price>
       <g:google_product_category>Electrónica > Computadoras > Computadoras de escritorio</g:google_product_category>
       <g:product_type>${categorySlug}</g:product_type>
     </item>`;
@@ -98,7 +101,7 @@ if (fs.existsSync(feedPath)) {
 
 // Write the feed to a file
 try {
-  fs.writeFileSync(feedPath, feedContent, { flag: 'w' }); // 'w' explicitly forces overwriting
+  fs.writeFileSync(feedPath, feedContent, { flag: 'w' }); // 'w' forces overwriting
   console.log(`✅ Google Merchant Center feed generated at ${feedPath}`);
 } catch (err) {
   console.error(`❌ Failed to write the feed file:`, err);
