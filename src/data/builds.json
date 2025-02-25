@@ -1474,11 +1474,11 @@
         "image": "extreme-build-sticker.png"
       },
       "description": "La estación de trabajo definitiva para edición 8K, renderizado 3D y producción de contenido de alto nivel.",
-      "long_description": "CINEFORGE es la estación de trabajo definitiva para producciones cinematográficas, edición 8K, renderizado 3D y producción de contenido de alto nivel en Valencia. Diseñado para creadores y estudios profesionales, este PC para edición 8K combina la potencia inigualable del procesador AMD Ryzen Threadripper 7995WX –ideal para flujos de trabajo intensivos y procesamiento en paralelo– con las configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofreciendo gráficos de calidad cinematográfica y una velocidad de renderizado excepcional.\n\nCada componente de CINEFORGE ha sido seleccionado meticulosamente para garantizar la máxima estabilidad, escalabilidad y rendimiento. La placa base ASUS Pro WS WRX90E-SAGE SE, junto con 512GB de memoria DDR5 ECC de alta velocidad, permite ejecutar software de postproducción y animación (como Adobe Premiere Pro, DaVinci Resolve, Autodesk Maya y Cinema 4D) sin cuellos de botella. Además, el almacenamiento Samsung PM1733 de 30TB NVMe asegura tiempos de carga ultrarrápidos y capacidad para gestionar grandes volúmenes de datos, esenciales en proyectos de edición 8K y producción de contenido audiovisual.\n\nEl sistema está respaldado por una fuente de alimentación Corsair AX1600i Titanium de 1600W, que garantiza una entrega de energía estable y segura, incluso en condiciones de máxima demanda. La refrigeración líquida EKWB Quantum de alto nivel asegura que el sistema se mantenga fresco y silencioso, permitiendo jornadas de trabajo prolongadas sin preocupaciones de sobrecalentamiento.\n\nEn resumen, CINEFORGE es el ordenador de alta gama en Valencia que redefine los límites de la producción audiovisual. Perfecto para profesionales que buscan calidad, fiabilidad y un rendimiento extraordinario en cada proyecto, este equipo es la solución integral para llevar la edición de video, animación y renderizado 3D a un nuevo nivel.",
-      "short_description": "Potencia sin límites para creadores",
+      "long_description": "CINEFORGE es la estación de trabajo definitiva para producciones cinematográficas, edición 8K, renderizado 3D y producción de contenido de alto nivel en Valencia. Diseñado para creadores y estudios profesionales, este PC para edición 8K combina la potencia inigualable del procesador AMD Ryzen Threadripper 7995WX –ideal para flujos de trabajo intensivos y procesamiento en paralelo– con las configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofreciendo gráficos de calidad cinematográfica y una velocidad de renderizado excepcional.\n\nCada componente de CINEFORGE ha sido seleccionado meticulosamente para garantizar la máxima estabilidad, escalabilidad y rendimiento. La placa base ASUS Pro WS WRX90E-SAGE SE, junto con 512GB de memoria DDR5 ECC de alta velocidad, permite ejecutar software de postproducción y animación (como Adobe Premiere Pro, DaVinci Resolve, Autodesk Maya y Cinema 4D) sin cuellos de botella. Además, el almacenamiento Samsung PM1733 de 30TB NVMe asegura tiempos de carga ultrarrápidos y capacidad para gestionar grandes volúmenes de datos, esenciales en proyectos de edición 8K y producción de contenido audiovisual.\n\nEl sistema está respaldado por una fuente de alimentación redundante Supermicro 2200W, que garantiza una entrega de energía estable y segura, incluso en condiciones de máxima demanda. La refrigeración líquida EKWB Quantum de alto nivel asegura que el sistema se mantenga fresco y silencioso, permitiendo jornadas de trabajo prolongadas sin preocupaciones de sobrecalentamiento.\n\nEn resumen, CINEFORGE es el ordenador de alta gama en Valencia que redefine los límites de la producción audiovisual. Perfecto para profesionales que buscan calidad, fiabilidad y un rendimiento extraordinario en cada proyecto, este equipo es la solución integral para llevar la edición de video, animación y renderizado 3D a un nuevo nivel.",
+      "short_description": "Potencia definitiva para producciones de alto nivel",
       "price_range": {
-        "min": 15000,
-        "max": 25000
+        "min": 18000,
+        "max": 30000
       },
       "base_components": {
         "CPU": {
@@ -1504,7 +1504,7 @@
             "motherboard_slots": [
               "PCIe x16"
             ],
-            "psu_requirement": 1600
+            "psu_requirement": 2000
           }
         },
         "Motherboard": {
@@ -1523,10 +1523,10 @@
           }
         },
         "RAM": {
-          "name": "G.Skill Trident Z5 RGB 512GB DDR5 6400MHz",
-          "brand": "G.Skill",
-          "price": 3999,
-          "performance_score": 100,
+          "name": "Samsung DDR5 ECC Registered 512GB (8 x 64GB) 4800MHz",
+          "brand": "Samsung",
+          "price": 4800,
+          "performance_score": 95,
           "compatibility": {
             "memory_type": "DDR5 ECC",
             "motherboard_compatibility": [
@@ -1549,19 +1549,19 @@
           }
         },
         "PowerSupply": {
-          "name": "Corsair AX1600i 1600W Titanium",
-          "brand": "Corsair",
-          "price": 549,
+          "name": "Supermicro Redundant 2200W PSU",
+          "brand": "Supermicro",
+          "price": 1200,
           "performance_score": 100,
           "compatibility": {
-            "max_wattage": 1600,
+            "max_wattage": 2200,
             "gpu_compatibility": [
               "RTX 6000 Ada"
             ]
           }
         },
         "Cooling": {
-          "name": "EKWB Quantum Liquid Cooling",
+          "name": "EKWB Quantum Custom Loop",
           "brand": "EKWB",
           "price": 2999,
           "performance_score": 100,
@@ -1601,7 +1601,7 @@
             "motherboard_slots": [
               "PCIe x16"
             ],
-            "psu_requirement": 2000
+            "psu_requirement": 2200
           }
         },
         {
@@ -1618,11 +1618,11 @@
           }
         },
         {
-          "name": "512GB DDR5 ECC RAM",
-          "price": 4999,
+          "name": "1TB DDR5 ECC RAM Upgrade",
+          "price": 9999,
           "category": "RAM",
           "type": "upgrade",
-          "note": "Expande la memoria para proyectos de postproducción y simulaciones que requieren alta estabilidad.",
+          "note": "Expande la memoria hasta 1TB con módulos DDR5 ECC registrados de Samsung.",
           "compatibility": {
             "memory_type": "DDR5 ECC",
             "motherboard_compatibility": [
