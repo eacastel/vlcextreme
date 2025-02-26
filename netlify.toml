@@ -1,3 +1,15 @@
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[functions.stripeWebhook] 
+  type = "raw"
+
+[build]
+  functions = "src/api"
+
+[functions]
+  node_bundler = "esbuild"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
@@ -39,10 +51,3 @@
   to = "/:slug"
   status = 301
   force = true
-
-
-  [[plugins]]
-package = "@netlify/plugin-gatsby"
-
-[functions.stripeWebhook] 
-  type = "raw"
