@@ -1,105 +1,56 @@
 import Stripe from "stripe";
 import nodemailer from "nodemailer";
-import { buffer } from "micro";
-
-/**
- * Netlify requires you to export this config
- * so it doesn't parse the request body automatically.
- */
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-// In case micro's buffer fails, we manually read the raw body
-async function getRawBodyFallback(req) {
-  console.log("2.1️⃣ Using fallback raw body reading");
-  return new Promise((resolve, reject) => {
-    let data = "";
-    req.on("data", (chunk) => (data += chunk));
-    req.on("end", () => resolve(Buffer.from(data)));
-    req.on("error", (err) => reject(err));
-  });
-}
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req) {
-  console.log("1️⃣ Webhook function started, method:", req.method);
+  console.log("[1/8] Webhook iniciado. Método:", req.method);
 
-  // Global try/catch to ensure logs if we have unexpected errors
+  // Validar método HTTP
+  if (req.method !== "POST") {
+    console.error("[1/8] Error: Método no permitido");
+    return { statusCode: 405, body: JSON.stringify({ error: "Método no permitido" }) };
+  }
+
+  // Obtener cuerpo raw (Netlify ya lo provee como Buffer)
+  const rawBody = req.body;
+  console.log("[2/8] Longitud del cuerpo raw:", rawBody?.length);
+
+  // Verificar firma Stripe
+  const signature = req.headers["stripe-signature"];
+  if (!signature) {
+    console.error("[2/8] Error: Falta header stripe-signature");
+    return { statusCode: 400, body: JSON.stringify({ error: "Firma no presente" }) };
+  }
+
   try {
-    // Only accept POST requests
-    if (req.method !== "POST") {
-      console.log("2️⃣ Method not allowed:", req.method);
-      return {
-        statusCode: 405,
-        body: JSON.stringify({ error: "Método no permitido. Usa POST." }),
-      };
-    }
+    // Construir evento de Stripe
+    console.log("[3/8] Verificando firma Stripe...");
+    const stripeEvent = stripe.webhooks.constructEvent(
+      rawBody,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
+    console.log(`[3/8] Evento verificado: ${stripeEvent.type}`);
 
-    let rawBody;
-    try {
-      console.log("2️⃣ Attempting to read raw body with micro v10");
-      rawBody = await buffer(req);
-      console.log("2️⃣ micro raw body length:", rawBody?.length);
-    } catch (err) {
-      // If micro fails for any reason, use fallback approach
-      console.error("2️⃣ Error using micro buffer:", err);
-      rawBody = await getRawBodyFallback(req);
-      console.log("2️⃣ Fallback raw body length:", rawBody?.length);
-    }
-
-    // Retrieve Stripe signature from headers
-    const signature = req.headers["stripe-signature"];
-    console.log("3️⃣ Stripe signature:", signature);
-
-    // If no signature, can't verify
-    if (!signature) {
-      console.log("3️⃣ No stripe-signature found. Returning 400.");
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "Falta la firma de Stripe (stripe-signature)" }),
-      };
-    }
-
-    let stripeEvent;
-    try {
-      console.log("4️⃣ Verifying Stripe signature...");
-      stripeEvent = stripe.webhooks.constructEvent(
-        rawBody,
-        signature,
-        process.env.STRIPE_WEBHOOK_SECRET
-      );
-      console.log("4️⃣ Signature valid, event type:", stripeEvent.type);
-    } catch (err) {
-      console.error("4️⃣ Error verifying signature:", err.message);
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: `Firma de Stripe no válida: ${err.message}` }),
-      };
-    }
-
-    // Handle only checkout.session.completed
+    // Solo manejar checkout.session.completed
     if (stripeEvent.type !== "checkout.session.completed") {
-      console.log("5️⃣ Unhandled event type:", stripeEvent.type);
+      console.log(`[4/8] Evento no manejado: ${stripeEvent.type}`);
       return { statusCode: 200, body: JSON.stringify({ received: true }) };
     }
 
-    console.log("5️⃣ Handling checkout.session.completed");
+    // Procesar sesión de checkout
+    console.log("[4/8] Procesando checkout.session.completed...");
     const session = stripeEvent.data.object;
+    const metadata = {
+      finalBuild: session.metadata?.finalBuild || "Sin configuración",
+      customerEmail: session.customer_details?.email || "desconocido@vlcextreme.com",
+      promoConsent: session.metadata?.promoConsent || "No especificado"
+    };
+    console.log("[4/8] Metadata:", JSON.stringify(metadata, null, 2));
 
-    // Extract metadata
-    const finalBuild = session.metadata?.finalBuild || "(No hay build)";
-    const customerEmail = session.customer_details?.email || "desconocido@vlcextreme.com";
-    const promoConsent = session.metadata?.promoConsent || "No especificado";
-
-    console.log("5️⃣ finalBuild:", finalBuild);
-    console.log("5️⃣ customerEmail:", customerEmail);
-    console.log("5️⃣ promoConsent:", promoConsent);
-
-    // Configure Nodemailer (Zoho SMTP)
+    // Configurar transporte SMTP con verificación robusta
+    console.log("[5/8] Configurando transporte SMTP...");
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.eu",
       port: 465,
@@ -108,59 +59,56 @@ export default async function handler(req) {
         user: process.env.ZOHO_USER,
         pass: process.env.ZOHO_PASS,
       },
+      logger: true,
     });
 
-    // Optional verify
     try {
-      console.log("6️⃣ Verifying SMTP...");
+      console.log("[5/8] Verificando conexión SMTP...");
       await transporter.verify();
-      console.log("6️⃣ SMTP is ready!");
-    } catch (smtpErr) {
-      console.error("6️⃣ SMTP verify error:", smtpErr);
+      console.log("[5/8] Conexión SMTP verificada");
+    } catch (smtpError) {
+      console.error("[5/8] Error de conexión SMTP:", smtpError);
+      return { statusCode: 500, body: JSON.stringify({ error: "Error SMTP" }) };
     }
 
-    // Send internal email
+    // Enviar email interno
     try {
-      console.log("7️⃣ Sending internal email...");
+      console.log("[6/8] Enviando email interno...");
       await transporter.sendMail({
         from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
         to: process.env.ZOHO_USER,
         subject: "Nuevo pedido en VLCExtreme",
-        text: `Se ha completado un pedido con firma verificada.\n\nBuild:\n${finalBuild}\n\nEmail del cliente: ${customerEmail}\n\nConsentimiento promociones: ${promoConsent}`,
+        text: `Nuevo pedido verificado:\n\n${metadata.finalBuild}\n\nEmail: ${metadata.customerEmail}\nPromociones: ${metadata.promoConsent}`,
       });
-      console.log("7️⃣ Internal email sent!");
-    } catch (errorInterno) {
-      console.error("7️⃣ Error al enviar correo interno:", errorInterno);
+      console.log("[6/8] Email interno enviado");
+    } catch (emailError) {
+      console.error("[6/8] Error enviando email interno:", emailError);
     }
 
-    // Send email to customer (if we have one)
-    if (customerEmail !== "desconocido@vlcextreme.com") {
+    // Enviar email al cliente si hay dirección válida
+    if (metadata.customerEmail !== "desconocido@vlcextreme.com") {
       try {
-        console.log("8️⃣ Sending customer email...");
+        console.log("[7/8] Enviando email al cliente...");
         await transporter.sendMail({
           from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
-          to: customerEmail,
+          to: metadata.customerEmail,
           subject: "Resumen de tu pedido en VLCExtreme",
-          text: `¡Gracias por tu compra!\n\nTu configuración:\n${finalBuild}\n\nEn breve nos pondremos en contacto.\n\nNota: Consentimiento promociones: ${promoConsent}`,
+          text: `¡Gracias por tu compra!\n\nConfiguración:\n${metadata.finalBuild}\n\nContactaremos pronto.\nConsentimiento promociones: ${metadata.promoConsent}`,
         });
-        console.log("8️⃣ Customer email sent!");
-      } catch (errorCliente) {
-        console.error("8️⃣ Error al enviar correo al cliente:", errorCliente);
+        console.log("[7/8] Email al cliente enviado");
+      } catch (emailError) {
+        console.error("[7/8] Error enviando email al cliente:", emailError);
       }
     }
 
-    console.log("9️⃣ All done. Returning 200 OK.");
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ received: true }),
-    };
+    console.log("[8/8] Proceso completado con éxito");
+    return { statusCode: 200, body: JSON.stringify({ received: true }) };
 
-  } catch (topLevelErr) {
-    // Catch any unexpected error outside the sub-try
-    console.error("🔴 Top-level error in webhook function:", topLevelErr);
+  } catch (error) {
+    console.error("[ERROR] Error crítico en webhook:", error);
     return {
-      statusCode: 500,
-      body: JSON.stringify({ error: `Unhandled error: ${topLevelErr.message}` }),
+      statusCode: 400,
+      body: JSON.stringify({ error: `Error de procesamiento: ${error.message}` }),
     };
   }
 }
