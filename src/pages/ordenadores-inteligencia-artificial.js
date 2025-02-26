@@ -14,10 +14,10 @@ const WorkstationsPage = ({ data }) => {
     <Layout>
       {/* ✅ Optimized SEO */}
       <Seo
-        title="Workstations IA para Machine Learning y Deep Learning | VLCExtreme"
-        description="Descubre nuestras Workstations IA con GPUs NVIDIA H100 y AMD Threadripper. Diseñadas para Machine Learning, Data Science y entrenamiento de modelos de inteligencia artificial."
+        title="Ordenadores IA para Machine Learning y Deep Learning | VLCExtreme"
+        description="Descubre nuestras Ordenadores pare Inteligencia Artificial con GPUs NVIDIA H100 y AMD Threadripper. Diseñadas para Machine Learning, Data Science y entrenamiento de modelos de IA."
         image="/og-pc-ia.png"
-        pathname="/ordenadores-ia"
+        pathname="/ordenadores-inteligencia-artificial"
       />
 
       {/* 🔹 Hero Section */}
@@ -26,7 +26,7 @@ const WorkstationsPage = ({ data }) => {
           <div className="absolute inset-0 w-full h-full">
             <GatsbyImage
               image={heroImage}
-              alt="Workstation IA de alto rendimiento con múltiples GPUs NVIDIA y refrigeración líquida avanzada"
+              alt="Ordenador IA de alto rendimiento con múltiples GPUs NVIDIA y refrigeración líquida avanzada"
               className="w-full h-full object-cover"
             />
           </div>
@@ -35,13 +35,13 @@ const WorkstationsPage = ({ data }) => {
 
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 id="ai-workstations-hero-title" className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            Workstations IA para Machine Learning y Deep Learning
+            Ordenadores IA para Machine Learning y Deep Learning
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
             <span className='font-bold'>Ordenadores de alto rendimiento diseñados para IA, Data Science y simulaciones avanzadas</span>.  GPUs de última generación, refrigeración extrema y estabilidad garantizada.
           </p>
           <Button to="/configuraciones?category=ai" color="neoncyan">
-            Encuentra tu Workstation IA
+            Encuentra tu Ordenador IA
           </Button>
         </div>
       </section>
@@ -57,13 +57,13 @@ const WorkstationsPage = ({ data }) => {
             <div>
               <GatsbyImage 
                 image={comparisonImage} 
-                alt="Comparación entre workstation IA personalizada y workstation preensamblada" 
+                alt="Centro de Investigación y ciencia de modelaje de Inteligencia Artificial" 
                 className="rounded-lg"
               />
             </div>
             <div className="space-y-6">
               <p className="text-medium-gray text-lg">
-                En <span className='font-bold'>VLCExtreme</span>, fabricamos <span className='font-bold'>workstations IA personalizadas</span> para proyectos de Machine Learning, Data Science y entrenamiento de modelos de inteligencia artificial.
+                En <span className='font-bold'>VLCExtreme</span>, fabricamos <span className='font-bold'>ordenadores para IA personalizadas</span> para proyectos de Machine Learning, Data Science y entrenamiento de modelos de inteligencia artificial.
               </p>
               <ul className="list-disc pl-6 text-medium-gray space-y-2">
                 <li><span className='font-bold'>GPUs NVIDIA H100 y RTX 6000</span> para entrenamiento acelerado.</li>
@@ -80,7 +80,7 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-carbon-black" aria-labelledby="ai-workstation-builds">
         <div className="container mx-auto px-4">
           <h2 id="ai-workstation-builds" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Elige tu Workstation IA
+            Elige tu Ordenador IA
           </h2>
           <SelectConfigureCarouselSections category="ai" />
         </div>

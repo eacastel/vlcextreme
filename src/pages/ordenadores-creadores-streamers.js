@@ -14,10 +14,10 @@ const ProductionWorkstationsPage = ({ data }) => {
     <Layout>
       {/* ✅ Optimized SEO */}
       <Seo 
-        title="PC Workstations para Creadores y Streamers | VLCExtreme"
-        description="Descubre las estaciones de trabajo para edición de vídeo 4K/8K, renderizado 3D y producción audiovisual. Máximo rendimiento y estabilidad para creadores de contenido."
+        title="Ordenadores Extremos para Creadores y Streamers | VLCExtreme"
+        description="Descubre las estaciones de trabajo y ordenadores especializados en la edición de vídeo 4K/8K, renderizado 3D y producción audiovisual. Máximo rendimiento y estabilidad para cine, musica y creadores de contenido."
         image="/og-pc-creadores.png"
-        pathname="/ordenadores-para-creadores-y-streamers"
+        pathname="/ordenadores-creadores-streamers"
       />
 
       {/* 🔹 Hero Section */}
@@ -26,7 +26,7 @@ const ProductionWorkstationsPage = ({ data }) => {
           <div className="absolute inset-0 w-full h-full">
             <GatsbyImage
               image={heroImage}
-              alt="Workstation de alta gama para edición de vídeo y renderizado 3D, con monitores 4K y sistema de refrigeración avanzada"
+              alt="Ordenador de alta gama para edición de vídeo y renderizado 3D, con monitores 4K y sistema de refrigeración avanzada"
               className="w-full h-full object-cover"
             />
           </div>
@@ -35,13 +35,13 @@ const ProductionWorkstationsPage = ({ data }) => {
         
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 id="workstations-hero-title" className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            Workstations para Creadores y Productores Audiovisuales
+            Ordenadores para Creadores y Productores Audiovisuales
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-            PCs de alto rendimiento diseñados para <span className='font-bold'>edición de vídeo, modelado 3D y efectos visuales</span> con el mejor hardware del mercado.
+            Ordenadores de alto rendimiento diseñados para la <span className='font-bold'>edición de vídeo, modelado 3D y efectos visuales</span> con el mejor hardware del mercado.
           </p>
           <Button to="/configuraciones?category=production" color="neoncyan">
-            Encuentra tu Workstation
+            Encuentra tu Ordenador
           </Button>
         </div>
       </section>
@@ -50,20 +50,20 @@ const ProductionWorkstationsPage = ({ data }) => {
       <section className="py-20 bg-dark-gray" aria-labelledby="why-custom-workstations">
         <div className="container mx-auto px-4">
           <h2 id="why-custom-workstations" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Tu Creatividad Sin Esperas: Máquinas de Producción de Alto Nivel
+            Tu Creatividad Sin Esperas: Ordenadores de Producción de Alto Nivel
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <GatsbyImage 
                 image={comparisonImage} 
-                alt="Comparación entre workstation personalizada y workstation preensamblada" 
+                alt="Ordenador extremo y personalizado para la edición de video y audio producción" 
                 className="rounded-lg"
               />
             </div>
             <div className="space-y-6">
               <p className="text-medium-gray text-lg">
-                En <strong>VLCExtreme</strong>, entendemos que cada proyecto creativo tiene necesidades únicas. Nuestras Workstations están diseñadas y optimizadas para <strong>edición de vídeo 4K/8K, efectos visuales y renderizado 3D</strong> con el mejor hardware disponible.
+                En <strong>VLCExtreme</strong>, entendemos que cada proyecto creativo tiene necesidades únicas. Nuestror Ordenadores están diseñadas y optimizadas para la eficiente <strong>edición de vídeo 4K/8K, efectos visuales y renderizado 3D</strong> con el mejor hardware disponible.
               </p>
               <ul className="list-disc pl-6 text-medium-gray space-y-2">
                 <li><strong>Procesadores de última generación</strong> Intel y AMD Threadripper PRO.</li>
@@ -81,7 +81,7 @@ const ProductionWorkstationsPage = ({ data }) => {
       <section className="py-20 bg-carbon-black" aria-labelledby="workstation-builds">
         <div className="container mx-auto px-4">
           <h2 id="workstation-builds" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Elige tu Workstation: Producción Audiovisual y Renderizado 3D
+            Elige tu Ordenador: Producción Audiovisual y Renderizado 3D
           </h2>
           <SelectConfigureCarouselSections category="production" />
         </div>
