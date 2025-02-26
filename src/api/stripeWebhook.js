@@ -1,121 +1,109 @@
 import Stripe from "stripe";
 import nodemailer from "nodemailer";
-import { buffer } from "micro"; // npm install micro
+import { buffer } from "micro";
 
-// Initialize Stripe with your secret key
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// Disable automatic parsing so we get the raw body for signature verification
 export const config = {
   api: { bodyParser: false },
 };
 
 export default async function handler(req) {
-  // 1) Validate HTTP method
+  console.log("1️⃣ Webhook function started, method:", req.method);
+
   if (req.method !== "POST") {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: "Método no permitido (usa POST)" }),
-    };
+    console.log("2️⃣ Method not allowed:", req.method);
+    return { statusCode: 405, body: JSON.stringify({ error: "Use POST" }) };
   }
 
-  // 2) Read the raw request body
   let rawBody;
   try {
     rawBody = await buffer(req);
+    console.log("3️⃣ Raw body read successfully. Length:", rawBody.length);
   } catch (err) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "No se pudo leer el cuerpo de la solicitud" }),
-    };
+    console.error("3️⃣ Error reading raw body:", err);
+    return { statusCode: 400, body: JSON.stringify({ error: "Could not read raw body" }) };
   }
 
-  // 3) Check for Stripe signature
   const signature = req.headers["stripe-signature"];
+  console.log("4️⃣ Stripe signature received:", signature);
+
   if (!signature) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Falta la firma de Stripe (stripe-signature)" }),
-    };
+    console.log("4️⃣ No Stripe signature found, returning 400.");
+    return { statusCode: 400, body: JSON.stringify({ error: "Missing stripe-signature" }) };
   }
 
-  // 4) Construct and verify the Stripe event
   let stripeEvent;
   try {
-    stripeEvent = stripe.webhooks.constructEvent(
-      rawBody,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET
-    );
+    stripeEvent = stripe.webhooks.constructEvent(rawBody, signature, process.env.STRIPE_WEBHOOK_SECRET);
+    console.log("5️⃣ Constructed stripeEvent successfully:", stripeEvent.type);
   } catch (err) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: `Firma no válida: ${err.message}` }),
-    };
+    console.error("5️⃣ Error verifying Stripe signature:", err.message);
+    return { statusCode: 400, body: JSON.stringify({ error: "Invalid Stripe signature" }) };
   }
 
-  // 5) Handle checkout.session.completed
-  if (stripeEvent.type === "checkout.session.completed") {
-    const session = stripeEvent.data.object;
+  // Only handle 'checkout.session.completed'
+  if (stripeEvent.type !== "checkout.session.completed") {
+    console.log("6️⃣ Unhandled event type:", stripeEvent.type, "Returning 200.");
+    return { statusCode: 200, body: JSON.stringify({ received: true }) };
+  }
 
-    // Extract metadata & email
-    const finalBuild = session.metadata?.finalBuild || "(No hay build)";
-    const customerEmail = session.customer_details?.email || "desconocido@vlcextreme.com";
-    const promoConsent = session.metadata?.promoConsent || "No especificado";
+  // 7️⃣ Send Emails
+  console.log("7️⃣ Handling 'checkout.session.completed' event. Attempting to send emails.");
+  const session = stripeEvent.data.object;
 
-    // Configure Nodemailer (Zoho SMTP)
-    const transporter = nodemailer.createTransport({
-      host: "smtp.zoho.eu",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.ZOHO_USER,
-        pass: process.env.ZOHO_PASS,
-      },
+  const finalBuild = session.metadata?.finalBuild || "(No build)";
+  const customerEmail = session.customer_details?.email || "desconocido@vlcextreme.com";
+
+  console.log("7️⃣ finalBuild:", finalBuild);
+  console.log("7️⃣ customerEmail:", customerEmail);
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.zoho.eu",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.ZOHO_USER,
+      pass: process.env.ZOHO_PASS,
+    },
+  });
+
+  try {
+    console.log("8️⃣ Verifying SMTP...");
+    await transporter.verify();
+    console.log("8️⃣ SMTP verification successful!");
+  } catch (verifyError) {
+    console.error("8️⃣ SMTP verification error:", verifyError);
+  }
+
+  console.log("9️⃣ Sending internal email...");
+  try {
+    await transporter.sendMail({
+      from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
+      to: process.env.ZOHO_USER,
+      subject: "Nuevo pedido en VLCExtreme",
+      text: `Se ha completado un pedido.\n\nBuild:\n${finalBuild}\n\nEmail del cliente: ${customerEmail}`,
     });
+    console.log("9️⃣ Internal email sent!");
+  } catch (errorInterno) {
+    console.error("9️⃣ Error sending internal email:", errorInterno);
+  }
 
-    // (Optional) Verify the transporter before sending
-    try {
-      await transporter.verify();
-    } catch (error) {
-      console.error("Error en verificación SMTP:", error);
-    }
-
-    // 5a) Send internal email (to your Zoho address)
+  if (customerEmail !== "desconocido@vlcextreme.com") {
+    console.log("9️⃣ Sending customer email...");
     try {
       await transporter.sendMail({
         from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
-        to: process.env.ZOHO_USER, // Internal notifications
-        subject: "Nuevo pedido en VLCExtreme",
-        text: `Se ha completado un pedido con firma verificada.\n\nBuild:\n${finalBuild}\n\nEmail cliente: ${customerEmail}\n\nConsentimiento promociones: ${promoConsent}`,
+        to: customerEmail,
+        subject: "Resumen de tu pedido en VLCExtreme",
+        text: `¡Gracias por tu compra!\n\nTu configuración:\n${finalBuild}`,
       });
-    } catch (errorInterno) {
-      console.error("Error al enviar correo interno:", errorInterno);
+      console.log("9️⃣ Customer email sent!");
+    } catch (errorCliente) {
+      console.error("9️⃣ Error sending customer email:", errorCliente);
     }
-
-    // 5b) Send email to customer (if email isn’t unknown)
-    if (customerEmail !== "desconocido@vlcextreme.com") {
-      try {
-        await transporter.sendMail({
-          from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
-          to: customerEmail,
-          subject: "Resumen de tu pedido en VLCExtreme",
-          text: `¡Gracias por tu compra!\n\nTu configuración:\n${finalBuild}\n\nEn breve nos pondremos en contacto.\n\nNota: Consentimiento promociones: ${promoConsent}`,
-        });
-      } catch (errorCliente) {
-        console.error("Error al enviar correo al cliente:", errorCliente);
-      }
-    }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ received: true }),
-    };
   }
 
-  // 6) For other event types, respond with 200 so Stripe stops retrying
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ received: true }),
-  };
+  console.log("🔟 Webhook processing finished. Returning 200.");
+  return { statusCode: 200, body: JSON.stringify({ received: true }) };
 }
