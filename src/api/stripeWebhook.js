@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import nodemailer from "nodemailer";
+import { buffer } from "micro"; 
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -12,9 +13,9 @@ export default async function handler(req) {
     return { statusCode: 405, body: JSON.stringify({ error: "Método no permitido" }) };
   }
 
-  // Obtener cuerpo raw (Netlify ya lo provee como Buffer)
-  const rawBody = req.body;
-  console.log("[2/8] Longitud del cuerpo raw:", rawBody?.length);
+  // Obtener cuerpo raw CORRECTAMENTE
+  const rawBody = await buffer(req);
+  console.log("[2/8] Longitud del cuerpo raw:", rawBody.length);
 
   // Verificar firma Stripe
   const signature = req.headers["stripe-signature"];
@@ -49,7 +50,7 @@ export default async function handler(req) {
     };
     console.log("[4/8] Metadata:", JSON.stringify(metadata, null, 2));
 
-    // Configurar transporte SMTP con verificación robusta
+    // Configurar transporte SMTP
     console.log("[5/8] Configurando transporte SMTP...");
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.eu",
@@ -75,7 +76,7 @@ export default async function handler(req) {
     try {
       console.log("[6/8] Enviando email interno...");
       await transporter.sendMail({
-        from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
+        from: `"VLCExtreme" <${process.env.ZOHO_USER}>`, // Comillas corregidas
         to: process.env.ZOHO_USER,
         subject: "Nuevo pedido en VLCExtreme",
         text: `Nuevo pedido verificado:\n\n${metadata.finalBuild}\n\nEmail: ${metadata.customerEmail}\nPromociones: ${metadata.promoConsent}`,
@@ -85,12 +86,12 @@ export default async function handler(req) {
       console.error("[6/8] Error enviando email interno:", emailError);
     }
 
-    // Enviar email al cliente si hay dirección válida
+    // Enviar email al cliente
     if (metadata.customerEmail !== "desconocido@vlcextreme.com") {
       try {
         console.log("[7/8] Enviando email al cliente...");
         await transporter.sendMail({
-          from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
+          from: `"VLCExtreme" <${process.env.ZOHO_USER}>`, // Comillas corregidas
           to: metadata.customerEmail,
           subject: "Resumen de tu pedido en VLCExtreme",
           text: `¡Gracias por tu compra!\n\nConfiguración:\n${metadata.finalBuild}\n\nContactaremos pronto.\nConsentimiento promociones: ${metadata.promoConsent}`,
