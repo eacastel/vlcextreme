@@ -1,7 +1,7 @@
 [[plugins]]
   package = "@netlify/plugin-gatsby"
 
-[functions.stripeWebhook]
+[functions.stripe-webhook-js]
   type = "raw"
 
 [[redirects]]
