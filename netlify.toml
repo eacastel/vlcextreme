@@ -1,9 +1,12 @@
 
+[build]
+  functions = "src/api"
+  
 [[plugins]]
   package = "@netlify/plugin-gatsby"
 
-[functions.stripeWebhook]
-  type = "raw"
+[functions]
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "/api/*"
