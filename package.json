@@ -3,7 +3,7 @@
   "private": true,
   "description": "VLCExtreme",
   "version": "1.0.0",
-  "author": "Horchata Labs <info@horchatalabs.com>",
+  "author": "VLCExtreme <info@vlcextreme.com>",
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
