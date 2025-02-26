@@ -1,8 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-console.log("ZOHO_USER:", process.env.ZOHO_USER);
-console.log("ZOHO_PASS:", process.env.ZOHO_PASS);
-
 import Stripe from "stripe";
 import nodemailer from "nodemailer";
 
@@ -53,7 +48,6 @@ export default async function handler(req, res) {
       });
 
       console.log("Verificando conexión SMTP...");
-      // Verifica la conexión SMTP y registra cualquier error sin bloquear la ejecución
       await new Promise((resolve) => {
         transporter.verify((error, success) => {
           if (error) {
@@ -86,7 +80,7 @@ Consentimiento promociones: ${promoConsent}`,
         console.error("Error al enviar correo interno:", errorInterno);
       }
 
-      // Enviar correo al cliente (si se dispone de email), sin bloquear el webhook si falla
+      // Enviar correo al cliente (si se dispone de email)
       if (customerEmail !== "desconocido@vlcextreme.com") {
         try {
           console.log("Enviando correo al cliente...");
