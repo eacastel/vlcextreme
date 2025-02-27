@@ -1,15 +1,28 @@
 import Stripe from "stripe";
 import nodemailer from "nodemailer";
-import { buffer } from "micro";
 
 // Initialize Stripe with your secret key
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// Netlify calls this function for every request to /.netlify/functions/stripeWebhook
+// Custom function to read raw body from the request
+async function getRawBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on("data", (chunk) => {
+      chunks.push(chunk);
+    });
+    req.on("end", () => {
+      resolve(Buffer.concat(chunks));
+    });
+    req.on("error", (err) => {
+      reject(err);
+    });
+  });
+}
+
 export default async function handler(req) {
   console.log("[1/8] Webhook function started, method:", req.method);
 
-  // 1) Allow only POST
   if (req.method !== "POST") {
     console.error("[1/8] Error: Método no permitido");
     return {
@@ -18,11 +31,18 @@ export default async function handler(req) {
     };
   }
 
-  // 2) Capture the raw request body using micro’s buffer
-  const rawBody = await buffer(req);
+  let rawBody;
+  try {
+    rawBody = await getRawBody(req);
+  } catch (err) {
+    console.error("Error reading raw body:", err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "Error leyendo el cuerpo sin procesar" }),
+    };
+  }
   console.log("[2/8] Length of raw body:", rawBody.length);
 
-  // 3) Retrieve Stripe signature from headers
   const signature = req.headers["stripe-signature"];
   if (!signature) {
     console.error("[2/8] Error: Falta header stripe-signature");
@@ -34,7 +54,6 @@ export default async function handler(req) {
 
   let stripeEvent;
   try {
-    // 4) Verify the Stripe signature using the raw body
     console.log("[3/8] Verificando firma Stripe...");
     stripeEvent = stripe.webhooks.constructEvent(
       rawBody,
@@ -52,7 +71,6 @@ export default async function handler(req) {
     };
   }
 
-  // 5) Handle only checkout.session.completed
   if (stripeEvent.type !== "checkout.session.completed") {
     console.log(`[4/8] Evento no manejado: ${stripeEvent.type}`);
     return { statusCode: 200, body: JSON.stringify({ received: true }) };
@@ -69,7 +87,6 @@ export default async function handler(req) {
   console.log("[4/8] customerEmail:", customerEmail);
   console.log("[4/8] promoConsent:", promoConsent);
 
-  // 6) Configure Nodemailer (Zoho)
   console.log("[5/8] Configurando transporte SMTP...");
   const transporter = nodemailer.createTransport({
     host: "smtp.zoho.eu",
@@ -81,7 +98,6 @@ export default async function handler(req) {
     },
   });
 
-  // Optional verify SMTP connection
   try {
     console.log("[5/8] Verificando conexión SMTP...");
     await transporter.verify();
@@ -94,12 +110,11 @@ export default async function handler(req) {
     };
   }
 
-  // 7) Send Internal Email
   try {
     console.log("[6/8] Enviando email interno...");
     await transporter.sendMail({
       from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
-      to: process.env.ZOHO_USER, // internal notification
+      to: process.env.ZOHO_USER,
       subject: "Nuevo pedido en VLCExtreme",
       text: `Nuevo pedido verificado:\n\n${finalBuild}\n\nEmail: ${customerEmail}\nPromociones: ${promoConsent}`,
     });
@@ -108,7 +123,6 @@ export default async function handler(req) {
     console.error("[6/8] Error enviando email interno:", errorInterno);
   }
 
-  // 8) Send Customer Email if available
   if (customerEmail !== "desconocido@vlcextreme.com") {
     try {
       console.log("[7/8] Enviando email al cliente...");
@@ -130,10 +144,3 @@ export default async function handler(req) {
     body: JSON.stringify({ received: true }),
   };
 }
-
-// If your environment supports disabling the built-in body parser, export the following config:
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
