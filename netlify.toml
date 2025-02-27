@@ -1,5 +1,8 @@
+[[plugins]]
+package = "@netlify/plugin-gatsby"
+
 [functions.stripeWebhook]
-  body_encoding = "text"
+  type = "raw"
 
 [[redirects]]
   from = "/ordenadores-para-creadores-y-streamers/"

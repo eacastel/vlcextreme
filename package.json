@@ -34,6 +34,7 @@
     "stripe": "^17.6.0"
   },
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^3.8.2",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.32",
