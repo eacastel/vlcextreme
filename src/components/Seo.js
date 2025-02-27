@@ -4,7 +4,7 @@ const Seo = ({ title, description, image, pathname, children }) => {
   const siteUrl = "https://vlcextreme.com";
   const defaultTitle = "VLCExtreme | Ordenadores Gaming y Workstations de Alta Gama";
   const defaultDescription = "Ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA.";
-  const defaultImage = "/og-vlcextreme-ensamblaje-ordenadores-sobremesa.png";
+  const defaultImage = "https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.png";
 
   const metaTitle = title || defaultTitle;
   const metaDescription = description || defaultDescription;
@@ -16,9 +16,9 @@ const Seo = ({ title, description, image, pathname, children }) => {
     "@type": "Store",
     "name": "VLCExtreme",
     "description": defaultDescription,
-    "url": siteUrl,
-    "logo": `${siteUrl}/vlc-square-for-manifest-w.png`,
-    "image": `${siteUrl}/og-vlcextreme-ensamblaje-ordenadores-sobremesa.png`,
+    "url": `https://vlcextreme.com/`,
+    "logo": `https://vlcextreme.com/favicon-512x512.png`,
+    "image": `https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.png`,
     "priceRange": "€€€",
     "areaServed": "ES",
     "availableDeliveryMethod": "OnlineShipping",

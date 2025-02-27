@@ -8,7 +8,7 @@ module.exports = {
     description: `Descubre VLCExtreme: especialistas en ordenadores de sobremesa gaming, estaciones de trabajo IA y PC personalizados de alta gama. Potencia máxima y rendimiento sin límites.`,
     author: `@vlcextreme`,
     siteUrl: `https://vlcextreme.com`,
-    image: `/og-vlcextreme-ensamblaje-ordenadores-sobremesa.webp`
+    image: `/og-vlcextreme-ordenadores-sobremesa-extremos.png`
   },
   plugins: [
     `gatsby-plugin-image`,
