@@ -1,5 +1,4 @@
-[[functions]]
-  name = "stripeWebhook"
+[functions.stripeWebhook]
   body_encoding = "text"
 
 [[redirects]]
