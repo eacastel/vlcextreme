@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `VLCExtreme | Ordenadores Gaming y Workstations de Alta Gama`,
+    title: `VLCExtreme | Ordenadores para Gaming, Producción e Inteligencia Artificial de Alta Gama`,
     description: `Descubre VLCExtreme: especialistas en ordenadores de sobremesa gaming, estaciones de trabajo IA y PC personalizados de alta gama. Potencia máxima y rendimiento sin límites.`,
     author: `@vlcextreme`,
     siteUrl: `https://vlcextreme.com`,
