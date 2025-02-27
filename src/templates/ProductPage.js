@@ -225,7 +225,7 @@ const ProductPage = ({ pageContext }) => {
         lines.join("\n") +
         `\n\nPrecio Total: ${calculateFinalPriceNumber()} €`;
 
-      const response = await fetch("/api/checkout", {
+      const response = await fetch("/netlify/functions/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
