@@ -99,7 +99,8 @@ exports.handler = async (event, context) => {
       \nEmail: ${customerEmail}
       \nTeléfono: ${customerPhone}
       \nDirección: ${customerAddress}
-      \n\nBuild: ${finalBuild}\nEmail: ${customerEmail}
+      \n\nBuild: 
+      \n${finalBuild}
       \n\nConsentimiento promociones: ${promoConsent}`,
     });
   } catch (errorInterno) {
@@ -107,13 +108,15 @@ exports.handler = async (event, context) => {
   }
 
   // I) Send Customer Email if we have a valid address
-  if (customerEmail !== "desconocido@vlcextreme.com") {
+  if (customerEmail !== "noreply@vlcextreme.com") {
     try {
       await transporter.sendMail({
         from: `"VLCExtreme" <${process.env.ZOHO_USER}>`,
         to: customerEmail,
         subject: "Resumen de tu pedido en VLCExtreme",
-        text: `¡Gracias por tu compra!
+        text: `
+        \n ${customerName},
+        \n\n¡Gracias por tu compra!
         \n\nTu configuración final:
         \n${finalBuild}
         
