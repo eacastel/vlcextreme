@@ -1,8 +1,8 @@
 [[plugins]]
 package = "@netlify/plugin-gatsby"
 
-[functions.stripeWebhook]
-  type = "raw"
+[functions]
+  directory = "src/api/"
 
 [[redirects]]
   from = "/ordenadores-para-creadores-y-streamers/"

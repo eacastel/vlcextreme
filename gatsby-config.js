@@ -1,13 +1,8 @@
-const adapter = require("gatsby-adapter-netlify").default
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
-  adapter: adapter({
-    excludeDatastoreFromEngineFunction: false,
-    imageCDN: false,
-  }),
   siteMetadata: {
     title: `VLCExtreme | Ordenadores Gaming y Workstations de Alta Gama`,
     description: `Descubre VLCExtreme: especialistas en ordenadores de sobremesa gaming, estaciones de trabajo IA y PC personalizados de alta gama. Potencia máxima y rendimiento sin límites.`,
