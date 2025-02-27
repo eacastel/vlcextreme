@@ -36,7 +36,7 @@ export const query = graphql`
   query {
     unplugged: file(relativePath: { eq: "pagina-no-existe.png" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: [AUTO, WEBP])
       }
     }
   }
