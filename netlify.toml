@@ -4,6 +4,18 @@ package = "@netlify/plugin-gatsby"
 [functions]
   directory = "src/api/"
 
+[functions."stripeWebhook"]
+  type = "raw"
+
+[functions.stripeWebhook]
+  type = "raw"
+
+[functions."stripe-webhook-js"]
+  type = "raw"
+
+[functions.stripe-webhook-js]
+  type = "raw"
+
 [[redirects]]
   from = "/ordenadores-para-creadores-y-streamers/"
   to = "/ordenadores-creadores-streamers/"
