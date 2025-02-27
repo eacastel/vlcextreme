@@ -60,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `VLCExtreme | Ordenadores Personalizados`,
+        name: `VLCExtreme | Ordenadores Personalizados de Alta Gama`,
         short_name: `VLCExtreme`,
         start_url: `/`,
         background_color: `#0D0D0D`, 
         theme_color: `#00B4D8`, 
         display: `minimal-ui`,
-        icon: `static/vlcextreme-logo-512.png`, 
+        icon: `static/favicon-512x512.png`, 
       },
     },
     {
