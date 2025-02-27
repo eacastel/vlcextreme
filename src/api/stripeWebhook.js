@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import nodemailer from "nodemailer";
+import { buffer } from "micro";
 
 // Initialize Stripe with your secret key
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -17,9 +18,9 @@ export default async function handler(req) {
     };
   }
 
-  // 2) Netlify provides the raw request body in req.body (Buffer/string)
-  const rawBody = req.body;
-  console.log("[2/8] Length of raw body:", rawBody?.length);
+  // 2) Capture the raw request body using micro’s buffer
+  const rawBody = await buffer(req);
+  console.log("[2/8] Length of raw body:", rawBody.length);
 
   // 3) Retrieve Stripe signature from headers
   const signature = req.headers["stripe-signature"];
@@ -80,7 +81,7 @@ export default async function handler(req) {
     },
   });
 
-  // Optional verify
+  // Optional verify SMTP connection
   try {
     console.log("[5/8] Verificando conexión SMTP...");
     await transporter.verify();
@@ -107,7 +108,7 @@ export default async function handler(req) {
     console.error("[6/8] Error enviando email interno:", errorInterno);
   }
 
-  // 8) Send Customer Email if we have an address
+  // 8) Send Customer Email if available
   if (customerEmail !== "desconocido@vlcextreme.com") {
     try {
       console.log("[7/8] Enviando email al cliente...");
@@ -129,3 +130,10 @@ export default async function handler(req) {
     body: JSON.stringify({ received: true }),
   };
 }
+
+// If your environment supports disabling the built-in body parser, export the following config:
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
