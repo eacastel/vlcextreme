@@ -2,7 +2,7 @@
 package = "@netlify/plugin-gatsby"
 
 [functions]
-  directory = "src/api/"
+  directory = "netlify/functions/"
 
 [functions."stripeWebhook"]
   type = "raw"
