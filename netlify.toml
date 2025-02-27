@@ -1,8 +1,7 @@
-[build]
-  functions = "netlify/functions"
-
-[functions.stripeWebhook]
-  type = "raw"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
 
 [[redirects]]
   from = "/ordenadores-para-creadores-y-streamers/"
