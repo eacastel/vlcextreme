@@ -13,12 +13,12 @@ const Seo = ({ title, description, image, pathname, children }) => {
 
   const globalSchema = {
     "@context": "https://schema.org",
-    "@type": "Store",
+    "@type": "OnlineStore",
     "name": "VLCExtreme",
     "description": defaultDescription,
-    "url": `https://vlcextreme.com/`,
-    "logo": `https://vlcextreme.com/favicon-512x512.png`,
-    "image": `https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.png`,
+    "url": "https://vlcextreme.com/",
+    "logo": "https://vlcextreme.com/favicon-512x512.png",
+    "image": "https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.png",
     "priceRange": "€€€",
     "areaServed": "ES",
     "availableDeliveryMethod": "OnlineShipping",
