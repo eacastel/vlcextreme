@@ -21,7 +21,7 @@ export default function Footer() {
   const socialLinks = {
     Twitter: "https://twitter.com/vlcextreme",
     Instagram: "https://instagram.com/vlcextreme",
-    YouTube: "https://youtube.com/vlcextreme",
+    YouTube: "https://youtube.com/@VLCExtreme",
   };
 
   return (

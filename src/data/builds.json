@@ -1,200 +1,5 @@
 {
   "builds": {
-    "UG001": {
-      "category": "gaming",
-      "name": "GODMODE GAMER",
-      "sticker": {
-        "text": "VLCExtreme Build",
-        "bg": "red-600",
-        "textColor": "white",
-        "image": "extreme-build-sticker.png"
-      },
-      "description": "PC de gaming definitivo. 8K, Ray Tracing, 4K 240Hz, VR y mods extremos sin límites.",
-      "long_description": "Godmode Gamer no es solo un ordenador, es la llave maestra para dominar cualquier escenario de juego. Diseñado para los jugadores más exigentes, este PC de alto rendimiento ofrece una combinación perfecta de potencia bruta, velocidad ultrarrápida y una estética que impone respeto.\n\nImpulsado por los últimos procesadores de múltiples núcleos y una GPU de gama alta, el Godmode Gamer garantiza una experiencia de juego fluida, con tasas de FPS que llevan cada partida al siguiente nivel, incluso en los títulos más exigentes en 4K o realidad virtual (VR). Su sistema de refrigeración líquida avanzada mantiene las temperaturas bajo control, permitiéndote jugar durante horas sin pérdida de rendimiento.\n\nAdemás, incorpora memoria RAM de última generación y almacenamiento SSD NVMe, que no solo ofrecen tiempos de carga casi instantáneos, sino también una multitarea sin interrupciones, ideal para streamers y creadores de contenido.\n\nCaracterísticas destacadas:\n * Gráficos de última generación con soporte para Ray Tracing y DLSS.\n * Procesador de alto rendimiento con overclocking optimizado.\n * Sistema de refrigeración líquida silenciosa y eficiente.\n * Almacenamiento SSD ultrarrápido para tiempos de carga reducidos.\n * Conectividad avanzada con WiFi 6 y puertos USB-C.\n\nYa sea que estés compitiendo en esports, transmitiendo en vivo o explorando mundos abiertos en su máxima configuración, el Godmode Gamer está diseñado para ofrecer una ventaja definitiva en cada partida. Prepárate para activar el modo dios y llevar tu experiencia de juego al límite.",
-      "short_description": "El sueño gamer hecho realidad",
-      "price_range": {
-        "min": 9500,
-        "max": 12000
-      },
-      "base_components": {
-        "CPU": {
-          "name": "Intel Core i9-14900KS",
-          "brand": "Intel",
-          "price": 799,
-          "performance_score": 100,
-          "form_factor": "LGA1700",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        "GPU": {
-          "name": "Dual NVIDIA RTX 4090",
-          "brand": "NVIDIA",
-          "price": 3598,
-          "performance_score": 100,
-          "interface": "PCIe x16",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 1600
-          }
-        },
-        "Motherboard": {
-          "name": "ASUS ROG MAXIMUS Z790 EXTREME",
-          "brand": "ASUS",
-          "price": 999,
-          "form_factor": "E-ATX",
-          "compatibility": {
-            "cpu_sockets": [
-              "LGA1700"
-            ],
-            "memory_type": "DDR5",
-            "expansion_slots": [
-              "PCIe x16"
-            ]
-          }
-        },
-        "RAM": {
-          "name": "G.Skill Trident Z5 RGB 128GB DDR5 8000MHz",
-          "brand": "G.Skill",
-          "price": 999,
-          "performance_score": 100,
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790"
-            ]
-          }
-        },
-        "Storage": {
-          "name": "Samsung 990 PRO 4TB NVMe",
-          "brand": "Samsung",
-          "price": 599,
-          "performance_score": 100,
-          "form_factor": "M.2",
-          "interface": "NVMe",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
-        },
-        "PowerSupply": {
-          "name": "Corsair AX1600i 1600W 80+ Titanium",
-          "brand": "Corsair",
-          "price": 529,
-          "performance_score": 100,
-          "compatibility": {
-            "max_wattage": 1600
-          }
-        },
-        "Cooling": {
-          "name": "Custom Liquid Cooling Loop (EKWB)",
-          "brand": "EKWB",
-          "price": 1499,
-          "performance_score": 100,
-          "compatibility": {
-            "supported_cases": [
-              "Lian Li V3000 PLUS"
-            ]
-          }
-        },
-        "Case": {
-          "name": "Lian Li V3000 PLUS",
-          "brand": "Lian Li",
-          "price": 569,
-          "performance_score": 100,
-          "compatibility": {
-            "motherboard_sizes": [
-              "E-ATX"
-            ],
-            "gpu_clearance": "400mm"
-          }
-        }
-      },
-      "compatible_games": [
-        "Cyberpunk 2077 (RT Overdrive)",
-        "Microsoft Flight Simulator",
-        "Star Citizen",
-        "Baldur’s Gate 3",
-        "Elden Ring"
-      ],
-      "personalize": [
-        {
-          "name": "AMD Ryzen 9 7950X3D",
-          "price": 699,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Rendimiento optimizado para cargas multihilo y gaming de alto rendimiento.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "AM5"
-            ],
-            "memory_type": "DDR5"
-          }
-        },
-        {
-          "name": "Quad NVIDIA RTX 4090 (4-Way SLI)",
-          "price": 7200,
-          "category": "GPU",
-          "type": "replacement",
-          "note": "4 tarjetas RTX 4090 en paralelo, ideal para gaming 8K y simulaciones avanzadas.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 2000
-          }
-        },
-        {
-          "name": "Storage Upgrade - 8TB NVMe SSD",
-          "price": 1299,
-          "category": "Storage",
-          "type": "upgrade",
-          "note": "Reduce drásticamente los tiempos de carga en juegos y software profesional.",
-          "compatibility": {
-            "motherboard_slots": [
-              "M.2"
-            ],
-            "pcie_version": "Gen4"
-          }
-        },
-        {
-          "name": "RAM Upgrade - 256GB DDR5 8000MHz",
-          "price": 2999,
-          "category": "RAM",
-          "type": "replacement",
-          "note": "Más memoria para multitarea extrema y cargas pesadas de software.",
-          "compatibility": {
-            "memory_type": "DDR5",
-            "motherboard_compatibility": [
-              "Z790"
-            ]
-          }
-        },
-        {
-          "name": "Custom Liquid Cooling Loop (Upgrade)",
-          "price": 1999,
-          "category": "Cooling",
-          "type": "replacement",
-          "note": "Refrigeración personalizada para mantener temperaturas óptimas.",
-          "compatibility": {
-            "supported_cases": [
-              "Lian Li V3000 PLUS"
-            ]
-          }
-        }
-      ],
-      "imageKeys": [
-        "godmode-gamer-1.png",
-        "godmode-gamer-2.png"
-      ]
-    },
     "G001": {
       "category": "gaming",
       "name": "Casual Cruiser",
@@ -1464,42 +1269,150 @@
         "powerstack-2.png"
       ]
     },
-    "UP001": {
-      "category": "production",
-      "name": "CINEFORGE",
+    "UG001": {
+      "category": "gaming",
+      "name": "GODMODE GAMER",
       "sticker": {
         "text": "VLCExtreme Build",
         "bg": "red-600",
         "textColor": "white",
         "image": "extreme-build-sticker.png"
       },
-      "description": "La estación de trabajo definitiva para edición 8K, renderizado 3D y producción de contenido de alto nivel.",
-      "long_description": "CINEFORGE es la estación de trabajo definitiva para producciones cinematográficas, edición 8K, renderizado 3D y producción de contenido de alto nivel en Valencia. Diseñado para creadores y estudios profesionales, este PC para edición 8K combina la potencia inigualable del procesador AMD Ryzen Threadripper 7995WX –ideal para flujos de trabajo intensivos y procesamiento en paralelo– con las configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofreciendo gráficos de calidad cinematográfica y una velocidad de renderizado excepcional.\n\nCada componente de CINEFORGE ha sido seleccionado meticulosamente para garantizar la máxima estabilidad, escalabilidad y rendimiento. La placa base ASUS Pro WS WRX90E-SAGE SE, junto con 512GB de memoria DDR5 ECC de alta velocidad, permite ejecutar software de postproducción y animación (como Adobe Premiere Pro, DaVinci Resolve, Autodesk Maya y Cinema 4D) sin cuellos de botella. Además, el almacenamiento Samsung PM1733 de 30TB NVMe asegura tiempos de carga ultrarrápidos y capacidad para gestionar grandes volúmenes de datos, esenciales en proyectos de edición 8K y producción de contenido audiovisual.\n\nEl sistema está respaldado por una fuente de alimentación redundante Supermicro 2200W, que garantiza una entrega de energía estable y segura, incluso en condiciones de máxima demanda. La refrigeración líquida EKWB Quantum de alto nivel asegura que el sistema se mantenga fresco y silencioso, permitiendo jornadas de trabajo prolongadas sin preocupaciones de sobrecalentamiento.\n\nEn resumen, CINEFORGE es el ordenador de alta gama en Valencia que redefine los límites de la producción audiovisual. Perfecto para profesionales que buscan calidad, fiabilidad y un rendimiento extraordinario en cada proyecto, este equipo es la solución integral para llevar la edición de video, animación y renderizado 3D a un nuevo nivel.",
-      "short_description": "Potencia definitiva para producciones de alto nivel",
+      "description": "PC de gaming definitivo. 8K, Ray Tracing, 4K 240Hz, VR y mods extremos sin límites.",
+      "long_description": "Godmode Gamer no es solo un ordenador, es la llave maestra para dominar cualquier escenario de juego. Diseñado para los jugadores más exigentes, este PC de alto rendimiento ofrece una combinación perfecta de potencia bruta, velocidad ultrarrápida y una estética que impone respeto.\n\nImpulsado por los últimos procesadores de múltiples núcleos y una GPU de gama alta, el Godmode Gamer garantiza una experiencia de juego fluida, con tasas de FPS que llevan cada partida al siguiente nivel, incluso en los títulos más exigentes en 4K o realidad virtual (VR). Su sistema de refrigeración líquida avanzada mantiene las temperaturas bajo control, permitiéndote jugar durante horas sin pérdida de rendimiento.\n\nAdemás, incorpora memoria RAM de última generación y almacenamiento SSD NVMe, que no solo ofrecen tiempos de carga casi instantáneos, sino también una multitarea sin interrupciones, ideal para streamers y creadores de contenido.\n\nCaracterísticas destacadas:\n * Gráficos de última generación con soporte para Ray Tracing y DLSS.\n * Procesador de alto rendimiento con overclocking optimizado.\n * Sistema de refrigeración líquida silenciosa y eficiente.\n * Almacenamiento SSD ultrarrápido para tiempos de carga reducidos.\n * Conectividad avanzada con WiFi 6 y puertos USB-C.\n\nYa sea que estés compitiendo en esports, transmitiendo en vivo o explorando mundos abiertos en su máxima configuración, el Godmode Gamer está diseñado para ofrecer una ventaja definitiva en cada partida. Prepárate para activar el modo dios y llevar tu experiencia de juego al límite.",
+      "short_description": "El sueño gamer hecho realidad",
       "price_range": {
-        "min": 18000,
-        "max": 30000
+        "min": 9500,
+        "max": 12000
       },
       "base_components": {
         "CPU": {
-          "name": "AMD Ryzen Threadripper 7995WX",
-          "brand": "AMD",
-          "price": 10000,
+          "name": "Intel Core i9-14900KS",
+          "brand": "Intel",
+          "price": 799,
           "performance_score": 100,
-          "form_factor": "sWRX8",
+          "form_factor": "LGA1700",
           "compatibility": {
             "motherboard_sockets": [
-              "sWRX8"
+              "LGA1700"
             ],
-            "memory_type": "DDR5 ECC"
+            "memory_type": "DDR5"
           }
         },
         "GPU": {
-          "name": "NVIDIA RTX 6000 Ada",
+          "name": "Dual NVIDIA RTX 4090",
           "brand": "NVIDIA",
-          "price": 8750,
+          "price": 3598,
           "performance_score": 100,
           "interface": "PCIe x16",
+          "compatibility": {
+            "motherboard_slots": [
+              "PCIe x16"
+            ],
+            "psu_requirement": 1600
+          }
+        },
+        "Motherboard": {
+          "name": "ASUS ROG MAXIMUS Z790 EXTREME",
+          "brand": "ASUS",
+          "price": 999,
+          "form_factor": "E-ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "LGA1700"
+            ],
+            "memory_type": "DDR5",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "G.Skill Trident Z5 RGB 128GB DDR5 8000MHz",
+          "brand": "G.Skill",
+          "price": 999,
+          "performance_score": 100,
+          "compatibility": {
+            "memory_type": "DDR5",
+            "motherboard_compatibility": [
+              "Z790"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Samsung 990 PRO 4TB NVMe",
+          "brand": "Samsung",
+          "price": 599,
+          "performance_score": 100,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Corsair AX1600i 1600W 80+ Titanium",
+          "brand": "Corsair",
+          "price": 529,
+          "performance_score": 100,
+          "compatibility": {
+            "max_wattage": 1600
+          }
+        },
+        "Cooling": {
+          "name": "Custom Liquid Cooling Loop (EKWB)",
+          "brand": "EKWB",
+          "price": 1499,
+          "performance_score": 100,
+          "compatibility": {
+            "supported_cases": [
+              "Lian Li V3000 PLUS"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Lian Li V3000 PLUS",
+          "brand": "Lian Li",
+          "price": 569,
+          "performance_score": 100,
+          "compatibility": {
+            "motherboard_sizes": [
+              "E-ATX"
+            ],
+            "gpu_clearance": "400mm"
+          }
+        }
+      },
+      "compatible_games": [
+        "Cyberpunk 2077 (RT Overdrive)",
+        "Microsoft Flight Simulator",
+        "Star Citizen",
+        "Baldur’s Gate 3",
+        "Elden Ring"
+      ],
+      "personalize": [
+        {
+          "name": "AMD Ryzen 9 7950X3D",
+          "price": 699,
+          "category": "CPU",
+          "type": "replacement",
+          "note": "Rendimiento optimizado para cargas multihilo y gaming de alto rendimiento.",
+          "compatibility": {
+            "motherboard_sockets": [
+              "AM5"
+            ],
+            "memory_type": "DDR5"
+          }
+        },
+        {
+          "name": "Quad NVIDIA RTX 4090 (4-Way SLI)",
+          "price": 7200,
+          "category": "GPU",
+          "type": "replacement",
+          "note": "4 tarjetas RTX 4090 en paralelo, ideal para gaming 8K y simulaciones avanzadas.",
           "compatibility": {
             "motherboard_slots": [
               "PCIe x16"
@@ -1507,145 +1420,48 @@
             "psu_requirement": 2000
           }
         },
-        "Motherboard": {
-          "name": "ASUS Pro WS WRX90E-SAGE SE",
-          "brand": "ASUS",
-          "price": 1200,
-          "form_factor": "E-ATX",
-          "compatibility": {
-            "cpu_sockets": [
-              "sWRX8"
-            ],
-            "memory_type": "DDR5 ECC",
-            "expansion_slots": [
-              "PCIe x16"
-            ]
-          }
-        },
-        "RAM": {
-          "name": "Samsung DDR5 ECC Registered 512GB (8 x 64GB) 4800MHz",
-          "brand": "Samsung",
-          "price": 4800,
-          "performance_score": 95,
-          "compatibility": {
-            "memory_type": "DDR5 ECC",
-            "motherboard_compatibility": [
-              "WRX90E"
-            ]
-          }
-        },
-        "Storage": {
-          "name": "Samsung PM1733 30TB NVMe",
-          "brand": "Samsung",
-          "price": 7999,
-          "performance_score": 100,
-          "form_factor": "U.2",
-          "interface": "NVMe",
+        {
+          "name": "Storage Upgrade - 8TB NVMe SSD",
+          "price": 1299,
+          "category": "Storage",
+          "type": "upgrade",
+          "note": "Reduce drásticamente los tiempos de carga en juegos y software profesional.",
           "compatibility": {
             "motherboard_slots": [
-              "U.2"
+              "M.2"
             ],
             "pcie_version": "Gen4"
           }
         },
-        "PowerSupply": {
-          "name": "Supermicro Redundant 2200W PSU",
-          "brand": "Supermicro",
-          "price": 1200,
-          "performance_score": 100,
-          "compatibility": {
-            "max_wattage": 2200,
-            "gpu_compatibility": [
-              "RTX 6000 Ada"
-            ]
-          }
-        },
-        "Cooling": {
-          "name": "EKWB Quantum Custom Loop",
-          "brand": "EKWB",
+        {
+          "name": "RAM Upgrade - 256GB DDR5 8000MHz",
           "price": 2999,
-          "performance_score": 100,
-          "compatibility": {
-            "supported_cases": [
-              "Fractal Design Define 7 XL"
-            ]
-          }
-        },
-        "Case": {
-          "name": "Fractal Design Define 7 XL",
-          "brand": "Fractal Design",
-          "price": 300,
-          "performance_score": 90,
-          "compatibility": {
-            "motherboard_sizes": [
-              "E-ATX"
-            ],
-            "gpu_clearance": "500mm"
-          }
-        }
-      },
-      "compatible_software": [
-        "Adobe Premiere Pro",
-        "DaVinci Resolve",
-        "Autodesk Maya",
-        "Cinema 4D"
-      ],
-      "personalize": [
-        {
-          "name": "Additional NVIDIA RTX 6000 Ada",
-          "price": 8750,
-          "category": "Extra",
-          "type": "upgrade",
-          "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real.",
-          "compatibility": {
-            "motherboard_slots": [
-              "PCIe x16"
-            ],
-            "psu_requirement": 2200
-          }
-        },
-        {
-          "name": "Storage Expansion - 60TB NVMe RAID",
-          "price": 9999,
-          "category": "Extra",
-          "type": "upgrade",
-          "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción.",
-          "compatibility": {
-            "motherboard_slots": [
-              "U.2"
-            ],
-            "pcie_version": "Gen4"
-          }
-        },
-        {
-          "name": "1TB DDR5 ECC RAM Upgrade",
-          "price": 9999,
           "category": "RAM",
-          "type": "upgrade",
-          "note": "Expande la memoria hasta 1TB con módulos DDR5 ECC registrados de Samsung.",
+          "type": "replacement",
+          "note": "Más memoria para multitarea extrema y cargas pesadas de software.",
           "compatibility": {
-            "memory_type": "DDR5 ECC",
+            "memory_type": "DDR5",
             "motherboard_compatibility": [
-              "WRX90E"
+              "Z790"
             ]
           }
         },
         {
-          "name": "Custom Dual Loop Liquid Cooling",
-          "price": 2999,
+          "name": "Custom Liquid Cooling Loop (Upgrade)",
+          "price": 1999,
           "category": "Cooling",
-          "type": "upgrade",
-          "note": "Sistema de refrigeración de circuito doble para CPU y GPU, optimizando la disipación térmica en cargas extremas.",
+          "type": "replacement",
+          "note": "Refrigeración personalizada para mantener temperaturas óptimas.",
           "compatibility": {
             "supported_cases": [
-              "Fractal Design Define 7 XL"
+              "Lian Li V3000 PLUS"
             ]
           }
         }
       ],
       "imageKeys": [
-        "cineforge-1.png",
-        "cineforge-2.png"
+        "godmode-gamer-1.png",
+        "godmode-gamer-2.png"
       ]
     },
     "P001": {
@@ -2577,39 +2393,40 @@
         "resonance-2.png"
       ]
     },
-    "UA001": {
-      "category": "ai",
-      "name": "OMNIBRAIN",
+    "UP001": {
+      "category": "production",
+      "name": "CINEFORGE",
       "sticker": {
         "text": "VLCExtreme Build",
         "bg": "red-600",
         "textColor": "white",
         "image": "extreme-build-sticker.png"
       },
-      "description": "Supercomputadora para IA, entrenamiento de modelos y simulaciones avanzadas.",
-      "long_description": "OMNIBRAIN es la supercomputadora definitiva de VLCExtreme, diseñada para llevar los proyectos de inteligencia artificial más ambiciosos a un nivel sin precedentes. Esta máquina de alto rendimiento está pensada para centros de datos, laboratorios de investigación y organizaciones que necesitan manejar cargas de trabajo masivas en aplicaciones avanzadas de IA, ciencia de datos y simulaciones complejas.\n\nCon un procesador AMD EPYC 9654 de 96 núcleos y doble GPU NVIDIA H100, OMNIBRAIN ofrece un rendimiento sobresaliente en el entrenamiento de modelos de aprendizaje profundo, el procesamiento de Big Data y las simulaciones científicas de gran escala. Su arquitectura está optimizada para frameworks líderes de inteligencia artificial como TensorFlow, PyTorch y JAX, lo que facilita el desarrollo y la implementación de modelos de redes neuronales profundas de próxima generación.\n\nEl sistema está construido con componentes de grado servidor, incluyendo refrigeración líquida personalizada de alta eficiencia y fuentes de alimentación redundantes que garantizan la máxima disponibilidad y estabilidad en entornos críticos.\n\nCaracterísticas destacadas:\n\n * Procesador AMD EPYC 9654 de 96 núcleos, ideal para procesamiento paralelo intensivo.\n * Doble GPU NVIDIA H100, diseñada para acelerar tareas de aprendizaje profundo y simulaciones avanzadas.\n * Compatibilidad total con frameworks de IA como TensorFlow, PyTorch, JAX y Keras.\n * Refrigeración líquida de grado servidor que mantiene un rendimiento térmico óptimo.\n * Capacidad de hasta 1 TB de memoria RAM DDR5 para manejar grandes conjuntos de datos simultáneamente.\n * Almacenamiento SSD NVMe de ultra alta velocidad para tiempos de carga y transferencia de datos rápidos.\n * Fuentes de alimentación redundantes para garantizar la continuidad del servicio.\n\n¿Quién debería elegir OMNIBRAIN?\n\n * Centros de investigación y universidades que desarrollan modelos complejos de inteligencia artificial.\n * Empresas de tecnología que ejecutan simulaciones científicas avanzadas y proyectos de Big Data.\n * Laboratorios de I+D que requieren un rendimiento informático masivo para innovación en inteligencia artificial.\n * Organizaciones que trabajan con redes neuronales profundas utilizando frameworks como TensorFlow, PyTorch o JAX.\n\nOMNIBRAIN redefine el estándar de las supercomputadoras de inteligencia artificial. Es la herramienta definitiva para quienes buscan superar los límites del cómputo moderno y alcanzar niveles sin precedentes en innovación tecnológica, ciencia de datos y desarrollo de IA avanzada.",
-      "short_description": "Rendimiento cuántico para IA",
+      "description": "La estación de trabajo definitiva para edición 8K, renderizado 3D y producción de contenido de alto nivel.",
+      "long_description": "CINEFORGE es la estación de trabajo definitiva para producciones cinematográficas, edición 8K, renderizado 3D y producción de contenido de alto nivel en Valencia. Diseñado para creadores y estudios profesionales, este PC para edición 8K combina la potencia inigualable del procesador AMD Ryzen Threadripper 7995WX –ideal para flujos de trabajo intensivos y procesamiento en paralelo– con las configuraciones de GPU profesionales NVIDIA RTX 6000 Ada, ofreciendo gráficos de calidad cinematográfica y una velocidad de renderizado excepcional.\n\nCada componente de CINEFORGE ha sido seleccionado meticulosamente para garantizar la máxima estabilidad, escalabilidad y rendimiento. La placa base ASUS Pro WS WRX90E-SAGE SE, junto con 512GB de memoria DDR5 ECC de alta velocidad, permite ejecutar software de postproducción y animación (como Adobe Premiere Pro, DaVinci Resolve, Autodesk Maya y Cinema 4D) sin cuellos de botella. Además, el almacenamiento Samsung PM1733 de 30TB NVMe asegura tiempos de carga ultrarrápidos y capacidad para gestionar grandes volúmenes de datos, esenciales en proyectos de edición 8K y producción de contenido audiovisual.\n\nEl sistema está respaldado por una fuente de alimentación redundante Supermicro 2200W, que garantiza una entrega de energía estable y segura, incluso en condiciones de máxima demanda. La refrigeración líquida EKWB Quantum de alto nivel asegura que el sistema se mantenga fresco y silencioso, permitiendo jornadas de trabajo prolongadas sin preocupaciones de sobrecalentamiento.\n\nEn resumen, CINEFORGE es el ordenador de alta gama en Valencia que redefine los límites de la producción audiovisual. Perfecto para profesionales que buscan calidad, fiabilidad y un rendimiento extraordinario en cada proyecto, este equipo es la solución integral para llevar la edición de video, animación y renderizado 3D a un nuevo nivel.",
+      "short_description": "Potencia definitiva para producciones de alto nivel",
       "price_range": {
-        "min": 35000,
-        "max": 50000
+        "min": 18000,
+        "max": 30000
       },
       "base_components": {
         "CPU": {
-          "name": "AMD EPYC 9654 96-Core",
+          "name": "AMD Ryzen Threadripper 7995WX",
           "brand": "AMD",
-          "price": 12000,
+          "price": 10000,
           "performance_score": 100,
+          "form_factor": "sWRX8",
           "compatibility": {
             "motherboard_sockets": [
-              "SP5"
+              "sWRX8"
             ],
             "memory_type": "DDR5 ECC"
           }
         },
         "GPU": {
-          "name": "NVIDIA H100 PCIe x8 (Dual)",
+          "name": "NVIDIA RTX 6000 Ada",
           "brand": "NVIDIA",
-          "price": 28000,
+          "price": 8750,
           "performance_score": 100,
           "interface": "PCIe x16",
           "compatibility": {
@@ -2620,13 +2437,13 @@
           }
         },
         "Motherboard": {
-          "name": "Supermicro H13SSL-N",
-          "brand": "Supermicro",
-          "price": 899,
+          "name": "ASUS Pro WS WRX90E-SAGE SE",
+          "brand": "ASUS",
+          "price": 1200,
           "form_factor": "E-ATX",
           "compatibility": {
             "cpu_sockets": [
-              "SP5"
+              "sWRX8"
             ],
             "memory_type": "DDR5 ECC",
             "expansion_slots": [
@@ -2635,125 +2452,129 @@
           }
         },
         "RAM": {
-          "name": "Crucial DDR5 ECC 1TB (16x64GB)",
-          "brand": "Crucial",
-          "price": 6999,
-          "performance_score": 98,
+          "name": "Samsung DDR5 ECC Registered 512GB (8 x 64GB) 4800MHz",
+          "brand": "Samsung",
+          "price": 4800,
+          "performance_score": 95,
           "compatibility": {
             "memory_type": "DDR5 ECC",
             "motherboard_compatibility": [
-              "Supermicro H13SSL-N"
+              "WRX90E"
             ]
           }
         },
         "Storage": {
-          "name": "Micron 9400 PRO 15.36TB NVMe",
-          "brand": "Micron",
-          "price": 4999,
-          "performance_score": 95,
-          "form_factor": "M.2",
+          "name": "Samsung PM1733 30TB NVMe",
+          "brand": "Samsung",
+          "price": 7999,
+          "performance_score": 100,
+          "form_factor": "U.2",
           "interface": "NVMe",
           "compatibility": {
             "motherboard_slots": [
-              "M.2"
+              "U.2"
             ],
             "pcie_version": "Gen4"
           }
         },
         "PowerSupply": {
-          "name": "Dual Redundant 3000W PSU",
+          "name": "Supermicro Redundant 2200W PSU",
           "brand": "Supermicro",
-          "price": 899,
+          "price": 1200,
           "performance_score": 100,
           "compatibility": {
-            "max_wattage": 3000,
+            "max_wattage": 2200,
             "gpu_compatibility": [
-              "NVIDIA H100 PCIe x8"
+              "RTX 6000 Ada"
             ]
           }
         },
         "Cooling": {
-          "name": "Liquid Cooled Server Rack",
-          "brand": "Asetek",
-          "price": 3999,
+          "name": "EKWB Quantum Custom Loop",
+          "brand": "EKWB",
+          "price": 2999,
           "performance_score": 100,
           "compatibility": {
             "supported_cases": [
-              "Supermicro 4U Rackmount"
+              "Fractal Design Define 7 XL"
             ]
           }
         },
         "Case": {
-          "name": "Supermicro 4U Rackmount",
-          "brand": "Supermicro",
-          "price": 1999,
-          "form_factor": "4U Rackmount",
+          "name": "Fractal Design Define 7 XL",
+          "brand": "Fractal Design",
+          "price": 300,
+          "performance_score": 90,
           "compatibility": {
             "motherboard_sizes": [
               "E-ATX"
             ],
-            "gpu_clearance": "Full GPU-length support"
+            "gpu_clearance": "500mm"
           }
         }
       },
       "compatible_software": [
-        "TensorFlow",
-        "PyTorch",
-        "Jupyter Notebook",
-        "CUDA",
-        "Stable Diffusion"
+        "Adobe Premiere Pro",
+        "DaVinci Resolve",
+        "Autodesk Maya",
+        "Cinema 4D"
       ],
       "personalize": [
         {
-          "name": "Intel Xeon Platinum 8490H",
-          "price": 11000,
-          "category": "CPU",
-          "type": "replacement",
-          "note": "Ideal para cargas de trabajo que requieren un alto rendimiento en entornos empresariales.",
-          "compatibility": {
-            "motherboard_sockets": [
-              "LGA4677"
-            ],
-            "memory_type": "DDR5 ECC"
-          }
-        },
-        {
-          "name": "Quad NVIDIA H100 PCIe x8",
-          "price": 56000,
-          "category": "GPU",
+          "name": "Additional NVIDIA RTX 6000 Ada",
+          "price": 8750,
+          "category": "Extra",
           "type": "upgrade",
-          "note": "Duplicación de potencia gráfica para entrenar modelos de IA a gran escala.",
+          "note": "Añadir otra GPU profesional para renderizado más rápido y procesamiento de IA en tiempo real.",
           "compatibility": {
             "motherboard_slots": [
               "PCIe x16"
             ],
-            "psu_requirement": 4000
+            "psu_requirement": 2200
           }
         },
         {
-          "name": "2TB RAM Upgrade",
-          "price": 13999,
+          "name": "Storage Expansion - 60TB NVMe RAID",
+          "price": 9999,
+          "category": "Extra",
+          "type": "upgrade",
+          "note": "Configuración RAID de alto rendimiento con 60TB para manejar archivos 8K y grandes proyectos de producción.",
+          "compatibility": {
+            "motherboard_slots": [
+              "U.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        {
+          "name": "1TB DDR5 ECC RAM Upgrade",
+          "price": 9999,
           "category": "RAM",
           "type": "upgrade",
-          "note": "Para manejar simultáneamente múltiples modelos de IA y simulaciones.",
+          "note": "Expande la memoria hasta 1TB con módulos DDR5 ECC registrados de Samsung.",
           "compatibility": {
             "memory_type": "DDR5 ECC",
             "motherboard_compatibility": [
-              "Supermicro H13SSL-N"
+              "WRX90E"
             ]
           }
         },
         {
-          "name": "20Gb Ethernet Networking",
-          "price": 999,
-          "category": "Networking",
+          "name": "Custom Dual Loop Liquid Cooling",
+          "price": 2999,
+          "category": "Cooling",
           "type": "upgrade",
-          "note": "Conexión de red de ultra alta velocidad para transferencia de datos pesada."
+          "note": "Sistema de refrigeración de circuito doble para CPU y GPU, optimizando la disipación térmica en cargas extremas.",
+          "compatibility": {
+            "supported_cases": [
+              "Fractal Design Define 7 XL"
+            ]
+          }
         }
       ],
       "imageKeys": [
-        "omnibrain-1.png",
-        "omnibrain-2.png"
+        "cineforge-1.png",
+        "cineforge-2.png"
       ]
     },
     "AI001": {
@@ -3073,6 +2894,185 @@
       "imageKeys": [
         "tensorforge-1.png",
         "tensorforge-2.png"
+      ]
+    },
+    "UA001": {
+      "category": "ai",
+      "name": "OMNIBRAIN",
+      "sticker": {
+        "text": "VLCExtreme Build",
+        "bg": "red-600",
+        "textColor": "white",
+        "image": "extreme-build-sticker.png"
+      },
+      "description": "Supercomputadora para IA, entrenamiento de modelos y simulaciones avanzadas.",
+      "long_description": "OMNIBRAIN es la supercomputadora definitiva de VLCExtreme, diseñada para llevar los proyectos de inteligencia artificial más ambiciosos a un nivel sin precedentes. Esta máquina de alto rendimiento está pensada para centros de datos, laboratorios de investigación y organizaciones que necesitan manejar cargas de trabajo masivas en aplicaciones avanzadas de IA, ciencia de datos y simulaciones complejas.\n\nCon un procesador AMD EPYC 9654 de 96 núcleos y doble GPU NVIDIA H100, OMNIBRAIN ofrece un rendimiento sobresaliente en el entrenamiento de modelos de aprendizaje profundo, el procesamiento de Big Data y las simulaciones científicas de gran escala. Su arquitectura está optimizada para frameworks líderes de inteligencia artificial como TensorFlow, PyTorch y JAX, lo que facilita el desarrollo y la implementación de modelos de redes neuronales profundas de próxima generación.\n\nEl sistema está construido con componentes de grado servidor, incluyendo refrigeración líquida personalizada de alta eficiencia y fuentes de alimentación redundantes que garantizan la máxima disponibilidad y estabilidad en entornos críticos.\n\nCaracterísticas destacadas:\n\n * Procesador AMD EPYC 9654 de 96 núcleos, ideal para procesamiento paralelo intensivo.\n * Doble GPU NVIDIA H100, diseñada para acelerar tareas de aprendizaje profundo y simulaciones avanzadas.\n * Compatibilidad total con frameworks de IA como TensorFlow, PyTorch, JAX y Keras.\n * Refrigeración líquida de grado servidor que mantiene un rendimiento térmico óptimo.\n * Capacidad de hasta 1 TB de memoria RAM DDR5 para manejar grandes conjuntos de datos simultáneamente.\n * Almacenamiento SSD NVMe de ultra alta velocidad para tiempos de carga y transferencia de datos rápidos.\n * Fuentes de alimentación redundantes para garantizar la continuidad del servicio.\n\n¿Quién debería elegir OMNIBRAIN?\n\n * Centros de investigación y universidades que desarrollan modelos complejos de inteligencia artificial.\n * Empresas de tecnología que ejecutan simulaciones científicas avanzadas y proyectos de Big Data.\n * Laboratorios de I+D que requieren un rendimiento informático masivo para innovación en inteligencia artificial.\n * Organizaciones que trabajan con redes neuronales profundas utilizando frameworks como TensorFlow, PyTorch o JAX.\n\nOMNIBRAIN redefine el estándar de las supercomputadoras de inteligencia artificial. Es la herramienta definitiva para quienes buscan superar los límites del cómputo moderno y alcanzar niveles sin precedentes en innovación tecnológica, ciencia de datos y desarrollo de IA avanzada.",
+      "short_description": "Rendimiento cuántico para IA",
+      "price_range": {
+        "min": 35000,
+        "max": 50000
+      },
+      "base_components": {
+        "CPU": {
+          "name": "AMD EPYC 9654 96-Core",
+          "brand": "AMD",
+          "price": 12000,
+          "performance_score": 100,
+          "compatibility": {
+            "motherboard_sockets": [
+              "SP5"
+            ],
+            "memory_type": "DDR5 ECC"
+          }
+        },
+        "GPU": {
+          "name": "NVIDIA H100 PCIe x8 (Dual)",
+          "brand": "NVIDIA",
+          "price": 28000,
+          "performance_score": 100,
+          "interface": "PCIe x16",
+          "compatibility": {
+            "motherboard_slots": [
+              "PCIe x16"
+            ],
+            "psu_requirement": 2000
+          }
+        },
+        "Motherboard": {
+          "name": "Supermicro H13SSL-N",
+          "brand": "Supermicro",
+          "price": 899,
+          "form_factor": "E-ATX",
+          "compatibility": {
+            "cpu_sockets": [
+              "SP5"
+            ],
+            "memory_type": "DDR5 ECC",
+            "expansion_slots": [
+              "PCIe x16"
+            ]
+          }
+        },
+        "RAM": {
+          "name": "Crucial DDR5 ECC 1TB (16x64GB)",
+          "brand": "Crucial",
+          "price": 6999,
+          "performance_score": 98,
+          "compatibility": {
+            "memory_type": "DDR5 ECC",
+            "motherboard_compatibility": [
+              "Supermicro H13SSL-N"
+            ]
+          }
+        },
+        "Storage": {
+          "name": "Micron 9400 PRO 15.36TB NVMe",
+          "brand": "Micron",
+          "price": 4999,
+          "performance_score": 95,
+          "form_factor": "M.2",
+          "interface": "NVMe",
+          "compatibility": {
+            "motherboard_slots": [
+              "M.2"
+            ],
+            "pcie_version": "Gen4"
+          }
+        },
+        "PowerSupply": {
+          "name": "Dual Redundant 3000W PSU",
+          "brand": "Supermicro",
+          "price": 899,
+          "performance_score": 100,
+          "compatibility": {
+            "max_wattage": 3000,
+            "gpu_compatibility": [
+              "NVIDIA H100 PCIe x8"
+            ]
+          }
+        },
+        "Cooling": {
+          "name": "Liquid Cooled Server Rack",
+          "brand": "Asetek",
+          "price": 3999,
+          "performance_score": 100,
+          "compatibility": {
+            "supported_cases": [
+              "Supermicro 4U Rackmount"
+            ]
+          }
+        },
+        "Case": {
+          "name": "Supermicro 4U Rackmount",
+          "brand": "Supermicro",
+          "price": 1999,
+          "form_factor": "4U Rackmount",
+          "compatibility": {
+            "motherboard_sizes": [
+              "E-ATX"
+            ],
+            "gpu_clearance": "Full GPU-length support"
+          }
+        }
+      },
+      "compatible_software": [
+        "TensorFlow",
+        "PyTorch",
+        "Jupyter Notebook",
+        "CUDA",
+        "Stable Diffusion"
+      ],
+      "personalize": [
+        {
+          "name": "Intel Xeon Platinum 8490H",
+          "price": 11000,
+          "category": "CPU",
+          "type": "replacement",
+          "note": "Ideal para cargas de trabajo que requieren un alto rendimiento en entornos empresariales.",
+          "compatibility": {
+            "motherboard_sockets": [
+              "LGA4677"
+            ],
+            "memory_type": "DDR5 ECC"
+          }
+        },
+        {
+          "name": "Quad NVIDIA H100 PCIe x8",
+          "price": 56000,
+          "category": "GPU",
+          "type": "upgrade",
+          "note": "Duplicación de potencia gráfica para entrenar modelos de IA a gran escala.",
+          "compatibility": {
+            "motherboard_slots": [
+              "PCIe x16"
+            ],
+            "psu_requirement": 4000
+          }
+        },
+        {
+          "name": "2TB RAM Upgrade",
+          "price": 13999,
+          "category": "RAM",
+          "type": "upgrade",
+          "note": "Para manejar simultáneamente múltiples modelos de IA y simulaciones.",
+          "compatibility": {
+            "memory_type": "DDR5 ECC",
+            "motherboard_compatibility": [
+              "Supermicro H13SSL-N"
+            ]
+          }
+        },
+        {
+          "name": "20Gb Ethernet Networking",
+          "price": 999,
+          "category": "Networking",
+          "type": "upgrade",
+          "note": "Conexión de red de ultra alta velocidad para transferencia de datos pesada."
+        }
+      ],
+      "imageKeys": [
+        "omnibrain-1.png",
+        "omnibrain-2.png"
       ]
     }
   }
