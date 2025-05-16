@@ -11,6 +11,8 @@ const PoliticaDePrivacidad = () => {
         pathname="/privacidad"
       />
       
+      <div className="mx-auto max-w-screen-lg px-4 md:px-8 lg:px-16">
+      <section className="container mx-auto px-6 py-16 text-light-gray">
       <div className="container mx-auto px-6 py-10 text-light-gray">
         <h1 className="text-3xl font-bold mb-6">Política de Privacidad</h1>
 
@@ -98,6 +100,8 @@ const PoliticaDePrivacidad = () => {
           Para cualquier consulta sobre esta Política de Privacidad, puede contactarnos en:<br />
           <a href="mailto:info@vlcextreme.com" className="underline">info@vlcextreme.com</a>.
         </p>
+      </div>
+      </section>
       </div>
     </Layout>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: 'es' });
   setHeadComponents([
-    // CookieYes Consent Banner
     <script
       key="cookieyes"
       id="cookieyes"

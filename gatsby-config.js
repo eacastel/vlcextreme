@@ -4,11 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `VLCExtreme | Ordenadores Gaming y Workstations de Alta Gama`,
+    title: `VLCExtreme | Ordenadores para Gaming, Producción e Inteligencia Artificial de Alta Gama`,
     description: `Descubre VLCExtreme: especialistas en ordenadores de sobremesa gaming, estaciones de trabajo IA y PC personalizados de alta gama. Potencia máxima y rendimiento sin límites.`,
     author: `@vlcextreme`,
     siteUrl: `https://vlcextreme.com`,
-    image: `/og-vlcextreme-ensamblaje-ordenadores-sobremesa.webp`
+    image: `/og-vlcextreme-ordenadores-sobremesa-extremos.png`
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -60,25 +60,27 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `VLCExtreme | Ordenadores Personalizados`,
+        name: `VLCExtreme | Ordenadores Personalizados de Alta Gama`,
         short_name: `VLCExtreme`,
         start_url: `/`,
+        lang: `es`,
         background_color: `#0D0D0D`, 
         theme_color: `#00B4D8`, 
         display: `minimal-ui`,
-        icon: `src/images/vlc-square-for-manifest-w.png`, 
+        icon: `src/images/favicon-512x512.png`, 
+        include_favicon: true,
       },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [process.env.GATSBY_GOOGLE_GTAG_ID], 
+        trackingIds: [process.env.GATSBY_GOOGLE_GTAG_ID,], 
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,
         },
         pluginConfig: {
-          head: false, 
+          head: false,
           respectDNT: true,
           exclude: [],
           delayOnRouteUpdate: 2000,

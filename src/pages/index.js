@@ -52,10 +52,10 @@ export const Head = () => {
   return (
     <>
       <Seo
-        title="VLCExtreme: Ordenadores de Gama Alta en Valencia | Gaming, Creadores y IA"
-        description="Ordenadores de alto rendimiento ensamblados por expertos en Valencia. PCs gaming de alta gama, estaciones de trabajo IA y soluciones para creadores de contenido."
+        title="VLCExtreme: Ordenadores de Alta Gama en Valencia | Gaming, Creadores e Inteligencia Artificial"
+        description="Ordenadores de alto rendimiento ensamblados por expertos en Valencia. PCs gaming de alta gama, estaciones de trabajo IA y equipos especializados para creadores de contenido."
         pathname="/"
-        image="/og-vlcextreme-ensamblaje-ordenadores-sobremesa.png"
+        image="/og-vlcextreme-ordenadores-sobremesa-extremos.png"
       />
     </>
   )

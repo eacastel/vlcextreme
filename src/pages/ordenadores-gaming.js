@@ -14,10 +14,10 @@ const GamingPage = ({ data }) => {
     <Layout>
       {/* ✅ Optimized SEO */}
       <Seo 
-        title="PC Gaming de Alta Gama en Valencia | Máximo Rendimiento y eSports"
-        description="Descubre ordenadores gaming de alto rendimiento en Valencia, diseñados para 8K, VR y eSports competitivos. Equipos con GPU RTX 4090 y refrigeración líquida para una experiencia extrema."
+        title="Ordenadores Gaming de Alta Gama en Valencia | Máximo Rendimiento y eSports"
+        description="Descubre ordenadores gaming de alto rendimiento en Valencia, diseñados para 8K, VR y eSports competitivos. Ordenadores con GPU RTX 4090 y refrigeración líquida para una experiencia extrema."
         image="/og-pc-gaming.png"
-        pathname="/ordenadores-para-gaming"
+        pathname="/ordenadores-gaming"
       />
 
       {/* 🔹 Hero Section */}
@@ -26,7 +26,7 @@ const GamingPage = ({ data }) => {
           <div className="absolute inset-0 w-full h-full">
             <GatsbyImage 
               image={heroImage} 
-              alt="PC gaming de alta gama con setup RGB y pantalla ultrapanorámica mostrando eSports en 4K" 
+              alt="Auto Formula 1 al estilo de un ordenador gaming de alta gama con setup RGB y pantalla ultrapanorámica mostrando eSports en 4K" 
               className="w-full h-full object-cover" 
             />
           </div>
@@ -34,13 +34,13 @@ const GamingPage = ({ data }) => {
         <div className="absolute inset-0 bg-carbon-black/80" />
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 id="gaming-hero-title" className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            PC Gaming de Alta Gama con Rendimiento Extremo
+            Ordenadores para Gaming de Alta Gama con Rendimiento Extremo
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
             Elige un <strong>ordenador gaming a medida</strong> con los mejores procesadores, tarjetas gráficas y sistemas de refrigeración avanzada. Optimizado para jugar sin límites.
           </p>
           <Button to="/configuraciones?category=gaming" color="neoncyan">
-            Encuentra tu PC Gaming
+            Encuentra tu Ordenador Gaming
           </Button>
         </div>
       </section>
@@ -61,7 +61,7 @@ const GamingPage = ({ data }) => {
             </div>
             <div className="space-y-6">
               <p className="text-medium-gray text-lg">
-                En <strong>VLCExtreme</strong>, sabemos que el hardware <strong>marca la diferencia</strong>. Por eso, construimos PCs con componentes de última generación para ofrecer el mejor rendimiento posible.
+                En <strong>VLCExtreme</strong>, sabemos que el hardware <strong>marca la diferencia</strong>. Por eso, construimos Ordenadores con componentes de última generación para ofrecer el mejor rendimiento posible.
               </p>
               <ul className="list-disc pl-6 text-medium-gray space-y-2">
                 <li>Componentes elegidos por su máxima calidad, compatibilidad y sinergia.</li>
@@ -79,7 +79,7 @@ const GamingPage = ({ data }) => {
       <section className="py-20 bg-carbon-black" aria-labelledby="gaming-builds">
         <div className="container mx-auto px-4">
           <h2 id="gaming-builds" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Encuentra tu PC Gaming Perfecto
+            Encuentra tu Ordenador Gaming Perfecto
           </h2>
           <SelectConfigureCarouselSections category="gaming" />
         </div>

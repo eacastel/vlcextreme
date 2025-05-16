@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
+import Button from "../Button";
 
 const GamingBuildCard = ({ build }) => {
+
+
+
+
+  const getCategorySlug = (category) => {
+    if (category === "gaming") return "ordenadores-gaming";
+    if (category === "production") return "ordenadores-creadores-streamers";
+    if (category === "ai") return "ordenadores-inteligencia-artificial";
+    return "otros";
+  };
+
+  // ✅ Generate the slug dynamically
+  const slug = `/${getCategorySlug(build.category)}/${build.name.toLowerCase().replace(/\s+/g, "-")}/`;
+
+  
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "builds" } }) {
@@ -10,14 +26,14 @@ const GamingBuildCard = ({ build }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90, transformOptions: { cropFocus: CENTER }), 
+              gatsbyImageData(width: 400, height: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90, transformOptions: { cropFocus: CENTER })
             }
           }
         }
       }
       noImage: file(relativePath: { eq: "builds/imagen-no-disponible.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, height:400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
+          gatsbyImageData(width: 400, height: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
         }
       }
       sticker: file(relativePath: { eq: "extreme-build-sticker.png" }) {
@@ -28,9 +44,10 @@ const GamingBuildCard = ({ build }) => {
     }
   `);
 
+  // **Find and return the correct image**
   const findImage = (imageKeys) => {
     if (!imageKeys || imageKeys.length === 0) {
-      return getImage(data.noImage.childImageSharp);
+      return data.noImage ? getImage(data.noImage.childImageSharp) : null;
     }
 
     const normalizedKeys = imageKeys.map(key =>
@@ -42,15 +59,17 @@ const GamingBuildCard = ({ build }) => {
     );
 
     if (foundImages.length === 0) {
-      return getImage(data.noImage.childImageSharp);
+      return data.noImage ? getImage(data.noImage.childImageSharp) : null;
     }
 
     foundImages.sort((a, b) => a.node.name.localeCompare(b.node.name, undefined, { numeric: true }));
-    return getImage(foundImages[0].node.childImageSharp);
+
+    return getImage(foundImages[0]?.node?.childImageSharp) || (data.noImage ? getImage(data.noImage.childImageSharp) : null);
   };
 
+  // **Assign Images Before Usage**
   const buildImage = findImage(build.imageKeys);
-  const stickerImage = build.sticker && data.sticker ? getImage(data.sticker.childImageSharp) : null;
+  const stickerImage = data.sticker ? getImage(data.sticker.childImageSharp) : null;
 
   const totalPrice = Math.ceil(
     Object.values(build.base_components)
@@ -58,40 +77,6 @@ const GamingBuildCard = ({ build }) => {
   ).toLocaleString('es-ES', { useGrouping: true });
 
   const [showDetails, setShowDetails] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handlePurchase = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          products: [
-            { 
-              name: build.name, 
-              price: Math.ceil(
-                Object.values(build.base_components)
-                  .reduce((sum, component) => sum + component.price, 0) * 1.4 // Apply 40% markup
-              )
-            }
-          ]
-        }),
-      });
-  
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url; // Redirect to Stripe Checkout
-      } else {
-        console.error("Checkout error:", data.error);
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setLoading(false);
-    }
-  };
-  
 
   return (
     <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#00A4C4] text-center">
@@ -113,7 +98,13 @@ const GamingBuildCard = ({ build }) => {
         <h3 className="text-2xl font-bold text-neon-cyan mt-2 mb-4">{build.name}</h3>
 
         <div className="mb-4 rounded-lg overflow-hidden">
-          <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
+          {buildImage ? (
+            <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
+          ) : (
+            <div className="w-full h-64 bg-gray-700 flex items-center justify-center">
+              <span className="text-light-gray">Imagen no disponible</span>
+            </div>
+          )}
         </div>
 
         <p className="mb-4 text-gray-300">{build.description}</p>
@@ -141,7 +132,7 @@ const GamingBuildCard = ({ build }) => {
                 <p className="text-md font-semibold">{component.name}</p>
               </div>
             ))}
-                        <p className="text-xs text-gray-300 pt-6">
+            <p className="text-xs text-gray-300 pt-6">
               **En caso de que no exista disponibilidad de algún componente, o por fluctuación de precios, éste se sustituirá por otro de rendimiento, marca y calidad similares.**
             </p>
             <p className="text-xs text-gray-300 pt-6">
@@ -156,13 +147,12 @@ const GamingBuildCard = ({ build }) => {
         </div>
 
         <div className="mt-4">
-          <button
-            onClick={handlePurchase}
-            className={`bg-neon-cyan text-carbon-black px-6 py-2 rounded-md font-bold text-sm xl:text-base transition-all duration-200 ease-in-out hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4] ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
-            disabled={loading}
-          >
-            {loading ? "Procesando..." : "Comprar Ahora"}
-          </button>
+          <Button to={slug} color="neoncyan" variant="solid" className="mt-4">
+            Seleccionar
+          </Button>
+        </div>
+        <div className="mt-4">
+
         </div>
       </div>
     </div>

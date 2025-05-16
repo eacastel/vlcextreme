@@ -1,136 +1,122 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Seo from '../components/Seo'
+import React from 'react';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 const TermsPage = () => {
   return (
     <Layout>
-      <section className="container mx-auto px-6 py-16">
-        <h1 className="text-4xl font-bold text-light-gray mb-8 text-center">
+      <div className="mx-auto max-w-screen-lg px-4 md:px-8 lg:px-16">
+        <section className="container mx-auto px-6 py-16 text-light-gray">
+        <section className="container mx-auto px-6 py-16 text-light-gray">
+        <h1 className="text-4xl font-bold mb-8 text-center">
           Términos y Condiciones Generales
         </h1>
 
-        <p className="text-lg text-light-gray mb-6 text-center">
-          Estos Términos y Condiciones regulan la venta, garantía y uso de servicios ofrecidos por <strong>VLCExtreme</strong>. Al realizar un pedido, el cliente acepta las siguientes condiciones.
+        <p className="text-lg mb-6 text-center">
+          Estos términos regulan la venta, garantía y condiciones generales de los servicios ofrecidos por <strong>VLCExtreme</strong>. Al realizar un pedido, el cliente acepta todas las condiciones aquí establecidas.
         </p>
 
-        {/* Presupuestos y Precios */}
+        {/* 1. Presupuestos y Precios */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Presupuestos y Precios</h2>
-          <ul className="list-disc list-inside text-light-gray">
-            <li>Todos los precios están en <strong>euros (€)</strong>.</li>
-            <li>El precio incluye los componentes detallados y el ensamblaje si procede.</li>
-            <li>El <strong>IVA (Impuesto sobre el Valor Añadido) del 21%</strong> se aplicará en todas las compras dentro de España.</li>
-          </ul>
-        </section>
-
-        {/* Reserva y Pago */}
-        <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Reserva y Pago</h2>
-          <ul className="list-disc list-inside text-light-gray">
-            <li>Para iniciar el pedido y ensamblaje, se requiere el <strong>pago completo</strong>.</li>
-            <li>Métodos de pago aceptados: <strong>Tarjeta de Crédito/Débito (Visa, MasterCard, Amex), Transferencia Bancaria (IBAN España), PayPal, ₿ Bitcoin (BTC), Ξ Ethereum (ETH)</strong>.</li>
-            <li>Los pedidos personalizados no pueden modificarse después de la confirmación de pago.</li>
-          </ul>
-        </section>
-
-        {/* Disponibilidad de Componentes y Fluctuaciones de Precios */}
-        <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Disponibilidad de Componentes y Fluctuaciones de Precios</h2>
-          <ul className="list-disc list-inside text-light-gray">
-            <li><strong>VLCExtreme no mantiene stock permanente</strong> de componentes; cada equipo se ensambla bajo pedido.</li>
-            <li>Los precios de los componentes pueden variar según la disponibilidad del mercado. Si, antes de su compra por parte de VLCExtreme, alguno sufre un <strong>aumento de precio</strong> o deja de estar disponible, nos pondremos en contacto con el cliente para evaluar las alternativas.</li>
+          <h2 className="text-2xl font-semibold mb-4">1. Presupuestos y Precios</h2>
+          <ul className="list-disc list-inside">
             <li>
-              En caso de <strong>no encontrar un componente</strong> o que su precio sea significativamente mayor al presupuestado:
-              <ul className="list-disc ml-6">
-                <li>Se ofrecerá un <strong>componente equivalente o superior</strong> para sustituirlo.</li>
-                <li>Si el precio final aumenta, el cliente puede <strong>aceptar la diferencia</strong> o <strong>rechazar la nueva propuesta</strong>.</li>
-                <li>En caso de no llegar a un acuerdo, se procederá al <strong>reembolso total o parcial</strong> (según corresponda) del pedido.</li>
-              </ul>
+              Todos los precios se expresan en <strong>euros (€)</strong> e incluyen el <strong>IVA del 21%</strong>.
             </li>
-            <li>VLCExtreme <strong>no se responsabiliza</strong> por las fluctuaciones de precios en el mercado de componentes, pero siempre informará al cliente y buscará la mejor solución para ambas partes.</li>
+            <li>
+              El precio final abarca los componentes, el ensamblaje, las pruebas de funcionamiento y los gastos de envío (con seguro incluido cuando corresponda).
+            </li>
           </ul>
         </section>
 
-        {/* Plazos de Entrega */}
+        {/* 2. Reserva y Pago */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Plazos de Entrega</h2>
-          <ul className="list-disc list-inside text-light-gray">
-            <li>El tiempo estimado de llegada de los componentes es de <strong>1 a 2 semanas</strong>, dependiendo del stock.</li>
-            <li>El ensamblaje y testeo del equipo requiere aproximadamente <strong>1 semana adicional</strong>.</li>
-            <li>Si hay retrasos, el cliente será notificado con la nueva fecha de entrega estimada.</li>
+          <h2 className="text-2xl font-semibold mb-4">2. Reserva y Pago</h2>
+          <ul className="list-disc list-inside">
+            <li>
+              El pago completo es necesario para iniciar el ensamblaje del equipo.
+            </li>
+            <li>
+              Métodos de pago aceptados: <strong>Tarjeta de Crédito/Débito, Transferencia Bancaria, PayPal, ₿ Bitcoin (BTC) y Ξ Ethereum (ETH)</strong>.
+            </li>
+            <li>
+              Una vez confirmado el pago, no se podrán realizar modificaciones en el pedido.
+            </li>
           </ul>
         </section>
 
-        {/* Envíos y Transportes */}
+        {/* 3. Disponibilidad y Fluctuación de Precios */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Envíos y Transportes</h2>
-          <ul className="list-disc list-inside text-light-gray">
-            <li>El <strong>envío es gratuito</strong> dentro de la <strong>Comunidad Valenciana</strong>.</li>
-            <li>Para otras regiones de España, los gastos de envío varían según el peso y la ubicación.</li>
-            <li>Se recomienda contratar <strong>seguro de transporte</strong> para proteger el equipo.</li>
-            <li>VLCExtreme <strong>no se hace responsable</strong> de daños ocurridos en tránsito si el cliente opta por envío sin seguro.</li>
+          <h2 className="text-2xl font-semibold mb-4">3. Disponibilidad y Fluctuación de Precios</h2>
+          <ul className="list-disc list-inside">
+            <li>
+              Los componentes se adquieren bajo pedido, sin stock permanente.
+            </li>
+            <li>
+              Los precios pueden variar según la disponibilidad del mercado. Si se produce un aumento de precio o se agota un componente antes del envío, se informará al cliente y se evaluarán alternativas.
+            </li>
+            <li>
+              En caso de no encontrar un componente o que su precio sea significativamente mayor, se ofrecerá un componente equivalente o superior. Si no se llega a un acuerdo, se procederá al reembolso total o parcial del pedido.
+            </li>
           </ul>
         </section>
 
-        {/* Garantías */}
+        {/* 4. Plazos de Entrega */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Garantías</h2>
-          
-          <h3 className="text-xl text-light-gray font-semibold mb-2">Garantía de Fabricante</h3>
-          <p className="text-light-gray mb-4">Cada componente tiene la garantía del fabricante (normalmente <strong>entre 2 y 5 años</strong>, según la marca). Esta garantía cubre defectos de fabricación pero no daños causados por mal uso.</p>
-
-          <h3 className="text-xl text-light-gray font-semibold mb-2">Garantía de Mano de Obra VLCExtreme (12 meses)</h3>
-          <p className="text-light-gray mb-4">Ofrecemos <strong>12 meses de garantía en la mano de obra</strong>, cubriendo cualquier intervención de reinstalación o ajuste por defectos de ensamblaje.</p>
-
-          <h3 className="text-xl text-light-gray font-semibold mb-2">Exclusiones de Garantía</h3>
-          <ul className="list-disc list-inside text-light-gray">
-            <li>Daños físicos por accidentes, golpes, líquidos o manipulación incorrecta.</li>
-            <li>Overclocking o modificaciones extremas en BIOS/firmware realizadas por el cliente.</li>
-            <li>Instalación de software malicioso o uso en condiciones ambientales inadecuadas.</li>
+          <h2 className="text-2xl font-semibold mb-4">4. Plazos de Entrega</h2>
+          <ul className="list-disc list-inside">
+            <li>
+              El tiempo estimado para la llegada de los componentes es de 1 a 2 semanas, dependiendo de la disponibilidad.
+            </li>
+            <li>
+              El ensamblaje y testeo del equipo requieren aproximadamente 1 semana adicional.
+            </li>
+            <li>
+              En caso de retrasos, se notificará al cliente oportunamente.
+            </li>
           </ul>
         </section>
 
-        {/* Derecho de Desistimiento */}
+        {/* 5. Condiciones Finales de Compra */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Derecho de Desistimiento</h2>
-          <p className="text-light-gray">
-            Dado que los equipos son ensamblados <strong>a medida</strong>, no se aplican las mismas condiciones de devolución que en productos estándar.
-            Cualquier cancelación antes del envío puede incurrir en <strong>costes de gestión y tasas de reposición</strong>.
+          <h2 className="text-2xl font-semibold mb-4">5. Condiciones Finales de Compra</h2>
+          <p className="mb-4">
+            Todas las compras son <strong>finales</strong>. Dado que cada equipo se ensambla a medida y se somete a rigurosas pruebas de funcionamiento, <strong>no se aceptan devoluciones ni cambios</strong> una vez confirmado el pago. Cualquier cancelación previa al envío podrá generar costes administrativos y de reposición de componentes.
           </p>
         </section>
 
-        {/* Protección de Datos */}
+        {/* 6. Protección de Datos */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Protección de Datos</h2>
-          <p className="text-light-gray">
-            VLCExtreme cumple con la legislación vigente en <strong>protección de datos (GDPR y LOPD)</strong>. Garantizamos la confidencialidad y el uso responsable de la información proporcionada por el cliente.
+          <h2 className="text-2xl font-semibold mb-4">6. Protección de Datos</h2>
+          <p className="mb-4">
+            VLCExtreme cumple con la normativa de protección de datos (GDPR y LOPD). Se garantiza la confidencialidad y el uso responsable de los datos del cliente.
           </p>
         </section>
 
-        {/* Legislación Aplicable */}
+        {/* 7. Legislación Aplicable */}
         <section className="mb-10">
-          <h2 className="text-2xl text-light-gray font-semibold mb-4">Jurisdicción y Legislación Aplicable</h2>
-          <p className="text-light-gray">
-            Para cualquier controversia legal, se aplicará la legislación española y se someterá a los juzgados y tribunales de la provincia de <strong>Valencia</strong>, salvo que la ley disponga lo contrario.
+          <h2 className="text-2xl font-semibold mb-4">7. Legislación Aplicable</h2>
+          <p className="mb-4">
+            Para cualquier controversia, se aplicará la legislación española y se someterá a los juzgados de la provincia de Valencia, salvo que la ley disponga lo contrario.
           </p>
         </section>
 
-        <p className="text-sm text-light-gray-400 text-center mt-8">
-          VLCExtreme se reserva el derecho a actualizar estos términos en cualquier momento.<br />
-          Última actualización: <strong>12 de Febrero de 2025</strong>.
+        <p className="text-sm text-center mt-8">
+          VLCExtreme se reserva el derecho a actualizar estos términos en cualquier momento. Última actualización: 1 de Enero de 2025.
         </p>
       </section>
+        </section>
+      </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default TermsPage
+export default TermsPage;
 
 export const Head = () => (
-  <Seo 
+  <Seo
     title="Términos y Condiciones | VLCExtreme - PCs Personalizados en Valencia"
-    description="Consulta los términos y condiciones de VLCExtreme: compra segura, garantía, envíos gratis en la Comunidad Valenciana y servicio postventa."
+    description="Consulta los términos y condiciones de VLCExtreme: compra segura, garantía, envíos gratuitos en la Comunidad Valenciana y servicio postventa."
     pathname="/terminos-y-condiciones"
   />
-)
+);

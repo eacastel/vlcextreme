@@ -12,16 +12,16 @@ const slugify = (text) => {
 
 export default function Footer() {
   const quickLinks = [
-    "Configurador",
+    "Configuraciones",
+    "Términos y Condiciones",
+    "Condiciones de Venta y Garantía",
     "Privacidad",
-    "Condiciones de Uso",
-    "Política de Garantía",
   ];
 
   const socialLinks = {
     Twitter: "https://twitter.com/vlcextreme",
     Instagram: "https://instagram.com/vlcextreme",
-    YouTube: "https://youtube.com/vlcextreme",
+    YouTube: "https://youtube.com/@VLCExtreme",
   };
 
   return (

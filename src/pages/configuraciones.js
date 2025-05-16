@@ -13,7 +13,7 @@ const ConfigurePage = ({ data }) => {
     <Layout>
       {/* ✅ Optimized SEO */}
       <Seo
-        title="Encuentra tu PC de Alto Rendimiento | VLCExtreme"
+        title="Encuentra tu Ordenador de Alto Rendimiento | VLCExtreme"
         description="Explora las configuraciones recomendadas de ordenadores de alto rendimiento para gaming, producción y trabajo con IA. Contáctanos para opciones personalizadas."
         image="/og-configuraciones.png"
         pathname="/configuraciones"
@@ -35,10 +35,10 @@ const ConfigurePage = ({ data }) => {
         
         <div className="container mx-auto px-4 relative z-10 py-16 text-center">
           <h1 id="config-page-title" className="text-4xl md:text-5xl font-bold text-light-gray mb-4">
-            Encuentra tu PC de Alto Rendimiento
+            Encuentra tu Ordenador de Alto Rendimiento
           </h1>
           <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            Explora nuestras configuraciones recomendadas o <Link to="/contact" className="text-neon-cyan underline">contáctanos para personalizar tu equipo</Link> según tus necesidades.
+            Explora nuestras configuraciones recomendadas o <Link to="/contact" className="text-neon-cyan underline">contáctanos para personalizar tu ordenador</Link> según tus necesidades.
           </p>
 
           {/* 🔹 Integrated Multi-Step Form */}

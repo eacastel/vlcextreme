@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Slider from "react-slick"; // Import carousel
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -98,6 +98,13 @@ const ManufacturerLogos = () => {
     { name: "Lian Li", image: getImage(data.lianli), url: "https://www.lian-li.com" }
   ];
 
+  // **Log missing images for debugging**
+  manufacturers.forEach(manufacturer => {
+    if (!manufacturer.image) {
+      console.warn(`⚠️ Missing image for: ${manufacturer.name}`);
+    }
+  });
+
   const settings = {
     dots: false,
     infinite: true,
@@ -116,38 +123,41 @@ const ManufacturerLogos = () => {
   return (
     <section className="py-12 bg-dark-gray">
       <div className="container mx-auto px-4">
-      <h2 id="vlcextreme-process-title" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
+        <h2 id="vlcextreme-process-title" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
           Trabajamos con los mejores fabricantes
         </h2>
         
-        {/* Desktop: Stacked Grid */}
-        <div className="hidden md:flex flex-wrap justify-center items-center gap-6" >
+        {/* Desktop Grid */}
+        <div className="hidden md:flex flex-wrap justify-center items-center gap-6">
           {manufacturers.map((brand, index) => (
-            <a key={index} href={brand.url} target="_blank" rel="noopener noreferrer" 
-               className="flex justify-center items-center max-w-[130px] h-auto transition-opacity hover:opacity-80">
-              <GatsbyImage
-                image={brand.image}
-                alt={`Logo de ${brand.name}`}
-                className="object-scale-down w-full h-auto"
-              />
-            </a>
+            brand.image ? (
+              <a key={index} href={brand.url} target="_blank" rel="noopener noreferrer" 
+                 className="flex justify-center items-center max-w-[130px] h-auto transition-opacity hover:opacity-80">
+                <GatsbyImage
+                  image={brand.image}
+                  alt={`Logo de ${brand.name}`}
+                  className="object-scale-down w-full h-auto"
+                />
+              </a>
+            ) : null
           ))}
         </div>
 
-        {/* Mobile: Carousel */}
+        {/* Mobile Carousel */}
         <div className="md:hidden container mx-auto px-[5%]">
           <Slider {...settings}>
             {manufacturers.map((brand, index) => (
-
-              <div key={index} className="flex flex-col justify-center items-center p-2">
-                <a href={brand.url} target="_blank" rel="noopener noreferrer" className="flex flex-col justify-center items-center">
-                  <GatsbyImage
-                    image={brand.image}
-                    alt={`Logo de ${brand.name}`}
-                    className="object-scale-down w-[110px] h-auto mx-auto"
-                  />
-                </a>
-              </div>
+              brand.image ? (
+                <div key={index} className="flex flex-col justify-center items-center p-2">
+                  <a href={brand.url} target="_blank" rel="noopener noreferrer" className="flex flex-col justify-center items-center">
+                    <GatsbyImage
+                      image={brand.image}
+                      alt={`Logo de ${brand.name}`}
+                      className="object-scale-down w-[110px] h-auto mx-auto"
+                    />
+                  </a>
+                </div>
+              ) : null
             ))}
           </Slider>
         </div>

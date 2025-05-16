@@ -8,14 +8,17 @@ const ContactForm = () => {
     event.preventDefault();
     setIsSubmitting(true);
 
+    // Create a FormData object from the form
     const formData = new FormData(event.target);
-    const encodedData = new URLSearchParams(formData).toString(); 
+    // Convert the FormData to URL encoded string
+    const encodedData = new URLSearchParams(formData).toString();
 
     try {
+      // Send the form data to the Netlify form handler ("/")
       const response = await fetch("/", {
         method: "POST",
         body: encodedData,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
       });
 
       if (response.ok) {
@@ -25,10 +28,9 @@ const ContactForm = () => {
         alert("Error al enviar el mensaje. Inténtalo de nuevo.");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error enviando el formulario:", error);
       alert("Hubo un problema con el envío.");
     }
-
     setIsSubmitting(false);
   };
 
@@ -46,7 +48,7 @@ const ContactForm = () => {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-
+         
           <div className="mb-6">
             <label htmlFor="name" className="block text-neon-cyan font-semibold mb-2">
               Nombre Completo
@@ -106,7 +108,6 @@ const ContactForm = () => {
               className="w-full p-3 border border-gray-500 rounded bg-carbon-black text-light-gray placeholder-medium-gray focus:ring-2 focus:ring-neon-cyan"
             ></textarea>
           </div>
-
 
           <button
             type="submit"
