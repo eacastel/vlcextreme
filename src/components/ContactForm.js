@@ -45,10 +45,12 @@ const ContactForm = () => {
           name="contact"
           method="POST"
           data-netlify="true"
+          ata-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-         
+          <input type="text" name="bot-field" className="hidden" />
+
           <div className="mb-6">
             <label htmlFor="name" className="block text-neon-cyan font-semibold mb-2">
               Nombre Completo
@@ -112,11 +114,10 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full px-6 py-3 rounded-md font-bold transition-all duration-200 text-carbon-black ${
-              isSubmitting
+            className={`w-full px-6 py-3 rounded-md font-bold transition-all duration-200 text-carbon-black ${isSubmitting
                 ? "bg-medium-gray cursor-not-allowed"
                 : "bg-neon-cyan hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4]"
-            }`}
+              }`}
           >
             {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
           </button>

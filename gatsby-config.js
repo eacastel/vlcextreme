@@ -72,6 +72,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [process.env.GATSBY_GOOGLE_GTAG_ID,], 
