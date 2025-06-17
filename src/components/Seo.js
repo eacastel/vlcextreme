@@ -4,7 +4,7 @@ const Seo = ({ title, description, image, pathname, children }) => {
   const siteUrl = "https://vlcextreme.com";
   const defaultTitle = "VLCExtreme | Ordenadores Gaming y Workstations de Alta Gama";
   const defaultDescription = "Ordenadores de alto rendimiento hechos a medida en Valencia. Soluciones premium para Gamers, Creadores de Contenido y Profesionales de IA.";
-  const defaultImage = "https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.png";
+  const defaultImage = "https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.jpg";
 
   const metaTitle = title || defaultTitle;
   const metaDescription = description || defaultDescription;

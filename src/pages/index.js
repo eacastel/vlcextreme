@@ -55,7 +55,7 @@ export const Head = () => {
         title="VLCExtreme: Ordenadores de Alta Gama en Valencia | Gaming, Creadores e Inteligencia Artificial"
         description="Ordenadores de alto rendimiento ensamblados por expertos en Valencia. PCs gaming de alta gama, estaciones de trabajo IA y equipos especializados para creadores de contenido."
         pathname="/"
-        image="/og-vlcextreme-ordenadores-sobremesa-extremos.png"
+        image="/og-vlcextreme-ordenadores-sobremesa-extremos.jpg"
       />
     </>
   )
