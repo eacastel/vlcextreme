@@ -20,7 +20,7 @@ const Seo = ({ title, description, image, pathname, children }) => {
     "description": defaultDescription,
     "url": "https://vlcextreme.com/",
     "logo": "https://vlcextreme.com/favicon-512x512.png",
-    "image": "https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.png",
+    "image": "https://vlcextreme.com/og-vlcextreme-ordenadores-sobremesa-extremos.jpg",
     "priceRange": "€€€",
     "areaServed": "ES",
     "availableDeliveryMethod": "OnlineShipping",
