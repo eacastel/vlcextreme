@@ -8,7 +8,9 @@ const Seo = ({ title, description, image, pathname, children }) => {
 
   const metaTitle = title || defaultTitle;
   const metaDescription = description || defaultDescription;
-  const metaImage = image ? `${siteUrl}${image}` : `${siteUrl}${defaultImage}`;
+  const metaImage = image?.startsWith("http")
+  ? image
+  : `${siteUrl}${image || defaultImage}`;
   const url = `${siteUrl}${pathname || "/"}`;
 
   const globalSchema = {
