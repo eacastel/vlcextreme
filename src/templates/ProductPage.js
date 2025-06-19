@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, PaymentElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
@@ -142,30 +141,37 @@ const ProductPage = ({ pageContext }) => {
   const [intentLoading, setIntentLoading] = useState(true);
 
   useEffect(() => {
-    const price = calculateFinalPriceNumber();
-    const desc = Object.entries(baseComponents)
-      .map(([cat, comp]) => `- [${cat}] ${comp.name} => ${comp.price} €`)
-      .join("\n");
+  const price = (() => {
+    let total = 0;
+    Object.values(baseComponents).forEach((comp) => {
+      total += comp.price;
+    });
+    return Math.ceil(total * 1.4);
+  })();
+  
+  const desc = Object.entries(baseComponents)
+    .map(([cat, comp]) => `- [${cat}] ${comp.name} => ${comp.price} €`)
+    .join("\n");
 
-    fetch("/api/create-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: productName,
-        price,
-        description: desc,
-      }),
+  fetch("/api/create-payment-intent", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: productName,
+      price,
+      description: desc,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setClientSecret(data.clientSecret);
+      setIntentLoading(false);
     })
-      .then((res) => res.json())
-      .then((data) => {
-        setClientSecret(data.clientSecret);
-        setIntentLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error creating payment intent:", err);
-        setIntentLoading(false);
-      });
-  }, []);
+    .catch((err) => {
+      console.error("Error creating payment intent:", err);
+      setIntentLoading(false);
+    });
+}, [baseComponents, productName]);
 
   const calculateFinalPriceNumber = () => {
     let total = 0;

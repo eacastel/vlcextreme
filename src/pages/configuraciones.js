@@ -15,7 +15,7 @@ const ConfigurePage = ({ data }) => {
       <Seo
         title="Encuentra tu Ordenador de Alto Rendimiento | VLCExtreme"
         description="Explora las configuraciones recomendadas de ordenadores de alto rendimiento para gaming, producción y trabajo con IA. Contáctanos para opciones personalizadas."
-        image="/og-configuraciones.png"
+        image="/og-configuraciones.jpg"
         pathname="/configuraciones"
       />
 

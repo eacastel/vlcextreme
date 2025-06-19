@@ -47,22 +47,32 @@ const Hero = ({ backgroundImage }) => {
           </Button>*/}
         </div>
         
-        {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16 px-4">
-          {[
-            { icon: '⚡', text: 'Potencia extrema y optimización personalizada' },
-            { icon: '🛠', text: 'Componentes más recientes' },
-            { icon: '✅', text: 'Testeado para máximo rendimiento' },
-          ].map((feature, index) => (
-            <div 
-              key={index} 
-              className="flex items-center gap-4 p-6 border border-white/30 rounded-lg bg-carbon-black/40 backdrop-blur-md"
-            >
-              <span className="text-4xl text-neon-cyan">{feature.icon}</span>
-              <p className="text-lg font-medium text-light-gray">{feature.text}</p>
-            </div>
-          ))}
+        {/* Feature Grid CTA Section - visible from md up */}
+<div className="mt-16 mb-8 px-4">
+  <h3 className="text-center text-medium-gray text-md uppercase tracking-wider mb-6">
+    La diferencia de un PC VLCExtreme
+  </h3>
+
+  <div className="grid md:grid-cols-3 gap-8">
+    {[
+      { icon: '⚡', text: 'Potencia extrema y optimización personalizada', to: '/configuraciones?focus=cpu-gpu' },
+      { icon: '🛠', text: 'Componentes más recientes elegidos a medida', to: '/configuraciones?focus=components' },
+      { icon: '✅', text: 'Testeado: máximo rendimiento y estabilidad', to: '/configuraciones?focus=benchmarking' },
+    ].map((feature, index) => (
+      <a
+        key={index}
+        href={feature.to}
+        aria-label={feature.text} 
+        className="block p-6 border border-white/30 rounded-lg bg-carbon-black/40 backdrop-blur-md hover:bg-carbon-black/60 transition-colors"
+      >
+        <div className="flex items-center gap-4">
+          <span className="text-4xl text-neon-cyan">{feature.icon}</span>
+          <p className="text-lg font-medium text-light-gray">{feature.text}</p>
         </div>
+      </a>
+    ))}
+  </div>
+</div>
       </div>
     </section>
   )

@@ -13,5 +13,21 @@ a {
   @apply text-blue-600;
 }
 
+/* styles/global.css or a layout css file */
+.slick-prev,
+.slick-next {
+  z-index: 20;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  left: 0.5rem !important; /* just inside padding */
+}
+
+.slick-next {
+  right: 0.5rem !important;
+}
+
 @tailwind components;
 @tailwind utilities;

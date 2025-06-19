@@ -27,6 +27,28 @@ const SelectConfigureCarousel = () => {
   // State for selected category
   const [selectedCategory, setSelectedCategory] = useState("gaming");
 
+const PrevArrow = ({ onClick }) => (
+  <button
+    className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-5xl text-white hover:text-neon-cyan transition"
+    onClick={onClick}
+    aria-label="Anterior"
+  >
+    ‹
+  </button>
+);
+
+const NextArrow = ({ onClick }) => (
+  <button
+    className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-5xl text-white hover:text-neon-cyan transition"
+    onClick={onClick}
+    aria-label="Siguiente"
+  >
+    ›
+  </button>
+);
+
+
+
   // Define categories in Spanish
   const categories = {
     gaming: "Ordenadores Gaming Extremos",
@@ -53,20 +75,39 @@ const SelectConfigureCarousel = () => {
 
   // **Carousel Settings**
   const sliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 2000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,            
-    autoplaySpeed: 3000, 
-    arrows: true,
-    rows: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } }
-    ]
-  };
+  dots: false,
+  infinite: false,
+  speed: 600,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  arrows: true,
+  swipeToSlide: true,
+  touchThreshold: 15,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  mobileFirst: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        arrows: true
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        arrows: true,
+        swipeToSlide: true,
+        speed: 500,
+        touchThreshold: 20
+      }
+    }
+  ]
+};
+
 
   return (
     <div className="w-full max-w-7xl mx-auto mt-10 px-4">
@@ -74,26 +115,28 @@ const SelectConfigureCarousel = () => {
       <div className="flex flex-wrap justify-center mb-6 space-x-4">
         {Object.keys(categories).map(categoryKey => (
           <CategoryButton
-          key={categoryKey}
-          categoryKey={categoryKey}
-          label={categories[categoryKey]}
-          isActive={selectedCategory === categoryKey}
-          onClick={setSelectedCategory}
-          variant="outline" // Ensure background color is applied instead of outline
-          color="neoncyan" // Make all buttons use neon cyan color
-          activeClass="bg-neon-cyan !text-carbon-black shadow-[0_0_15px_#00A4C4] !font-bold hover:!bg-neon-cyan hover:!text-carbon-black hover:!shadow-[0_0_15px_#00A4C4]" 
-        />
+            key={categoryKey}
+            categoryKey={categoryKey}
+            label={categories[categoryKey]}
+            isActive={selectedCategory === categoryKey}
+            onClick={setSelectedCategory}
+            variant="outline" // Ensure background color is applied instead of outline
+            color="neoncyan" // Make all buttons use neon cyan color
+            activeClass="bg-neon-cyan !text-carbon-black shadow-[0_0_15px_#00A4C4] !font-bold hover:!bg-neon-cyan hover:!text-carbon-black hover:!shadow-[0_0_15px_#00A4C4]"
+          />
         ))}
       </div>
 
       {/* **Slick Carousel** */}
-      <Slider {...sliderSettings} className="mt-6">
-        {builds.map(build => (
-          <div key={build.id} className="p-4">
-            {renderBuildCard(build)}
-          </div>
-        ))}
-      </Slider>
+      <div className="relative w-full overflow-visible">
+        <Slider {...sliderSettings} className="mt-6">
+          {builds.map(build => (
+            <div key={build.id} className="p-4">
+              {renderBuildCard(build)}
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

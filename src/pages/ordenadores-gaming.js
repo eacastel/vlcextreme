@@ -15,8 +15,8 @@ const GamingPage = ({ data }) => {
       {/* ✅ Optimized SEO */}
       <Seo 
         title="Ordenadores Gaming de Alta Gama en Valencia | Máximo Rendimiento y eSports"
-        description="Descubre ordenadores gaming de alto rendimiento en Valencia, diseñados para 8K, VR y eSports competitivos. Ordenadores con GPU RTX 4090 y refrigeración líquida para una experiencia extrema."
-        image="/og-pc-gaming.png"
+        description="Ordenadores Gaming de alta gama en Valencia con GPU NVIDIA RTX 5090. Diseñados para juegos en 4K/8K, VR y eSports competitivos con refrigeración líquida extrema y rendimiento de nueva generación."
+        image="/og-pc-gaming.jpg"
         pathname="/ordenadores-gaming"
       />
 
@@ -34,11 +34,11 @@ const GamingPage = ({ data }) => {
         <div className="absolute inset-0 bg-carbon-black/80" />
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 id="gaming-hero-title" className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            Ordenadores para Gaming de Alta Gama con Rendimiento Extremo
+            Ordenadores Gaming de Alta Gama en Valencia con GPU RTX 5090
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
-            Elige un <strong>ordenador gaming a medida</strong> con los mejores procesadores, tarjetas gráficas y sistemas de refrigeración avanzada. Optimizado para jugar sin límites.
-          </p>
+            Elige un <strong>ordenador gaming a medida</strong> con procesadores de última generación, GPU RTX 5090 y refrigeración líquida avanzada. Potencia extrema para 4K, VR y eSports.
+</p>
           <Button to="/configuraciones?category=gaming" color="neoncyan">
             Encuentra tu Ordenador Gaming
           </Button>
@@ -49,13 +49,13 @@ const GamingPage = ({ data }) => {
       <section className="py-20 bg-dark-gray" aria-labelledby="why-custom-gaming">
         <div className="container mx-auto px-4">
           <h2 id="why-custom-gaming" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            ¿Por qué elegir un VLCExtreme Gaming?
+            Máximo Rendimiento para 4K, VR y eSports con Diseño Personalizado
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <GatsbyImage 
                 image={comparisonImage} 
-                alt="Comparación entre PC gaming personalizado y PC preensamblado" 
+                alt="Comparativa entre ordenador gaming personalizado con GPU RTX 5090 y PC preensamblado estándar" 
                 className="rounded-lg"
               />
             </div>
@@ -66,7 +66,7 @@ const GamingPage = ({ data }) => {
               <ul className="list-disc pl-6 text-medium-gray space-y-2">
                 <li>Componentes elegidos por su máxima calidad, compatibilidad y sinergia.</li>
                 <li>Procesadores de última generación Intel y AMD Ryzen.</li>
-                <li>Tarjetas gráficas NVIDIA RTX 4090 para máxima calidad en juegos AAA.</li>
+                <li>Tarjetas gráficas NVIDIA RTX 5090 para máxima calidad en juegos AAA y realidad virtual.</li>
                 <li>Refrigeración líquida y overclocking optimizado para estabilidad extrema.</li>
                 <li>Garantía de rendimiento con compatibilidad 100% asegurada.</li>
               </ul>
@@ -81,6 +81,8 @@ const GamingPage = ({ data }) => {
           <h2 id="gaming-builds" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
             Encuentra tu Ordenador Gaming Perfecto
           </h2>
+          </div>
+           <div className="w-full">
           <SelectConfigureCarouselSections category="gaming" />
         </div>
       </section>

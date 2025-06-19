@@ -14,9 +14,9 @@ const WorkstationsPage = ({ data }) => {
     <Layout>
       {/* ✅ Optimized SEO */}
       <Seo
-        title="Ordenadores IA para Machine Learning y Deep Learning | VLCExtreme"
-        description="Descubre nuestras Ordenadores pare Inteligencia Artificial con GPUs NVIDIA H100 y AMD Threadripper. Diseñadas para Machine Learning, Data Science y entrenamiento de modelos de IA."
-        image="/og-pc-ia.png"
+        title="Estaciones de Trabajo IA con GPU H100 y Threadripper | VLCExtreme"
+        description="PCs para Inteligencia Artificial en Valencia con GPUs NVIDIA H100 y AMD Threadripper. Diseñados para Machine Learning, Deep Learning, Data Science y entrenamiento de modelos LLM a gran escala."
+        image="/og-pc-ia.jpg"
         pathname="/ordenadores-inteligencia-artificial"
       />
 
@@ -35,7 +35,7 @@ const WorkstationsPage = ({ data }) => {
 
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 id="ai-workstations-hero-title" className="text-4xl md:text-6xl font-bold text-light-gray mb-6">
-            Ordenadores IA para Machine Learning y Deep Learning
+            Estaciones de Trabajo para Inteligencia Artificial y Deep Learning en Valencia
           </h1>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto mb-8">
             <span className='font-bold'>Ordenadores de alto rendimiento diseñados para IA, Data Science y simulaciones avanzadas</span>.  GPUs de última generación, refrigeración extrema y estabilidad garantizada.
@@ -50,14 +50,15 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-dark-gray" aria-labelledby="why-ai-workstations">
         <div className="container mx-auto px-4">
           <h2 id="why-ai-workstations" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-            Máximo Poder para Inteligencia Artificial y Ciencia de Datos
+            Diseñadas para Machine Learning, Deep Learning y entrenamiento de modelos LLM con GPU NVIDIA H100 y CPUs AMD Threadripper.
+
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <GatsbyImage 
-                image={comparisonImage} 
-                alt="Centro de Investigación y ciencia de modelaje de Inteligencia Artificial" 
+              <GatsbyImage
+                image={comparisonImage}
+                alt="Centro de Investigación y ciencia de modelaje de Inteligencia Artificial"
                 className="rounded-lg"
               />
             </div>
@@ -82,6 +83,8 @@ const WorkstationsPage = ({ data }) => {
           <h2 id="ai-workstation-builds" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
             Elige tu Ordenador IA
           </h2>
+          </div>
+           <div className="w-full">
           <SelectConfigureCarouselSections category="ai" />
         </div>
       </section>
