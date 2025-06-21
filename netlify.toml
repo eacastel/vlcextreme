@@ -1,6 +1,9 @@
 [[plugins]]
 package = "@netlify/plugin-gatsby"
 
+[build.environment]
+SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
+
 [functions]
   directory = "netlify/functions/"
 
