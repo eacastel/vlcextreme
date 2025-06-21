@@ -25,6 +25,7 @@ export default function Header() {
     { name: "Gaming Élite", path: "/ordenadores-gaming" },
     { name: "Creadores Extrem", path: "/ordenadores-creadores-streamers" },
     { name: "Workstations IA", path: "/ordenadores-inteligencia-artificial" },
+    { name: "Blog", path: "/blog" },
     { name: "Quiénes somos", path: "/about" },
     { name: "Contacto", path: "/contact" },
   ];

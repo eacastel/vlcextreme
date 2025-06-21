@@ -2,160 +2,11 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-
-// For sitemap
 const fs = require("fs");
-
-// For sitemap, build, and feed
 const path = require("path");
-
-// For google feed
 const { execSync } = require("child_process");
 
-
-exports.onPostBuild = async () => {
-  const outputPath = path.join(__dirname, "public");
-
-  // ✅ Ensure `public/` directory exists before writing the file
-  if (!fs.existsSync(outputPath)) {
-    fs.mkdirSync(outputPath, { recursive: true });
-  }
-
-  const sitemapPath = path.join(outputPath, "sitemap.xml");
-
-  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-      <loc>https://vlcextreme.com/</loc>
-      <changefreq>daily</changefreq>
-      <priority>1</priority>
-    </url>
-    <url>
-      <loc>https://vlcextreme.com/ordenadores-gaming/</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>https://vlcextreme.com/ordenadores-creadores-streamers/</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>https://vlcextreme.com/ordenadores-ia/</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.9</priority>
-    </url>
-    <url>
-      <loc>https://vlcextreme.com/configuraciones/</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-    <url>
-      <loc>https://vlcextreme.com/contact/</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://vlcextreme.com/about/</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/godmode-gamer/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/casual-cruiser/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/esports-edge/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/aaa-avenger/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/titan-dominator-(i9)/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/titan-fury-(amd)/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/virtual-voyager-(vr)/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-gaming/powerstack/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/cineforge/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/workstation-i/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/studio-forge/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/cinestorm/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/vertex-forge/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-creadores-streamers/resonance/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-inteligencia-artificial/omnibrain/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-inteligencia-artificial/neural-nexus/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vlcextreme.com/ordenadores-inteligencia-artificial/tensorforge/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>`;
-
-  // Write the `sitemap.xml` inside `public/` directory
-  fs.writeFileSync(sitemapPath, sitemapContent);
-  console.log("✅ Custom Sitemap Generated Successfully in `public/sitemap.xml`!");
-};
-
-
-// CREATE PAGES
-
-exports.createPages = async ({ actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const builds = require("./src/data/builds.json").builds;
 
@@ -185,17 +36,39 @@ exports.createPages = async ({ actions }) => {
       },
     });
   });
+
+  // Create blog post pages
+  const result = await graphql(`
+    {
+      allContentfulBlogPost {
+        nodes {
+          slug
+          category {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  result.data.allContentfulBlogPost.nodes.forEach(post => {
+  createPage({
+    path: `/blog/${post.category.slug}/${post.slug}`,
+    component: path.resolve("./src/templates/BlogPost.js"),
+    context: {
+      slug: post.slug,
+      categorySlug: post.category.slug,
+    },
+  });
+});
 };
 
-
-// CREATE GOOGLE MERCHANT FEED
-
-
-
-exports.onPostBuild = async () => {
+exports.onPostBuild = async ({ graphql }) => {
   console.log("Running post-build tasks...");
 
-  // Run the feed generation script automatically
+  // Run Google Merchant Feed script
   try {
     const scriptPath = path.join(__dirname, "generate-google-merchant-feed.js");
     execSync(`node ${scriptPath}`, { stdio: "inherit" });
@@ -203,4 +76,68 @@ exports.onPostBuild = async () => {
   } catch (err) {
     console.error("❌ Failed to generate Google Merchant Feed:", err);
   }
+
+  // Sitemap generation
+  const outputPath = path.join(__dirname, "public");
+  if (!fs.existsSync(outputPath)) {
+    fs.mkdirSync(outputPath, { recursive: true });
+  }
+
+  const result = await graphql(`
+    {
+      allContentfulBlogPost {
+        nodes {
+          slug
+          category {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  const sitemapPath = path.join(outputPath, "sitemap.xml");
+
+  let urls = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n`;
+
+  // Hardcoded static pages and product URLs with manual priority settings
+  const staticUrls = [
+    { path: "/", priority: "1.0" },
+    { path: "/ordenadores-gaming/", priority: "0.9" },
+    { path: "/ordenadores-creadores-streamers/", priority: "0.9" },
+    { path: "/ordenadores-ia/", priority: "0.9" },
+    { path: "/configuraciones/", priority: "0.8" },
+    { path: "/contact/", priority: "0.7" },
+    { path: "/about/", priority: "0.7" },
+    { path: "/ordenadores-gaming/godmode-gamer/", priority: "0.8" },
+    { path: "/ordenadores-gaming/casual-cruiser/", priority: "0.8" },
+    { path: "/ordenadores-gaming/esports-edge/", priority: "0.8" },
+    { path: "/ordenadores-gaming/aaa-avenger/", priority: "0.8" },
+    { path: "/ordenadores-gaming/titan-dominator-(i9)/", priority: "0.8" },
+    { path: "/ordenadores-gaming/titan-fury-(amd)/", priority: "0.8" },
+    { path: "/ordenadores-gaming/virtual-voyager-(vr)/", priority: "0.8" },
+    { path: "/ordenadores-gaming/powerstack/", priority: "0.8" },
+    { path: "/ordenadores-creadores-streamers/cineforge/", priority: "0.8" },
+    { path: "/ordenadores-creadores-streamers/workstation-i/", priority: "0.8" },
+    { path: "/ordenadores-creadores-streamers/studio-forge/", priority: "0.8" },
+    { path: "/ordenadores-creadores-streamers/cinestorm/", priority: "0.8" },
+    { path: "/ordenadores-creadores-streamers/vertex-forge/", priority: "0.8" },
+    { path: "/ordenadores-creadores-streamers/resonance/", priority: "0.8" },
+    { path: "/ordenadores-inteligencia-artificial/omnibrain/", priority: "0.8" },
+    { path: "/ordenadores-inteligencia-artificial/neural-nexus/", priority: "0.8" },
+    { path: "/ordenadores-inteligencia-artificial/tensorforge/", priority: "0.8" },
+  ];
+
+  staticUrls.forEach(entry => {
+    urls += `  <url><loc>https://vlcextreme.com${entry.path}</loc><changefreq>weekly</changefreq><priority>${entry.priority}</priority></url>\n`;
+  });
+
+  result.data.allContentfulBlogPost.nodes.forEach(post => {
+    urls += `  <url><loc>https://vlcextreme.com/blog/${post.category.slug}/${post.slug}</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>\n`;
+  });
+
+  urls += "</urlset>";
+
+  fs.writeFileSync(sitemapPath, urls);
+  console.log("✅ Sitemap with blog posts and static/manual pages generated successfully.");
 };

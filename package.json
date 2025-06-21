@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "VLCExtreme <info@vlcextreme.com>",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.2",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@stripe/react-stripe-js": "^3.7.0",
@@ -20,6 +21,7 @@
     "gatsby-plugin-postcss": "^6.0.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-source-contentful": "^8.15.0",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "hamburger-react": "^2.5.2",
