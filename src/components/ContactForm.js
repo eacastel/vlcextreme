@@ -15,7 +15,7 @@ const ContactForm = () => {
 
     try {
       // Send the form data to the Netlify form handler ("/")
-      const response = await fetch("/", {
+      const response = await fetch(`${window.location.pathname}?no-cache=1`, {
         method: "POST",
         body: encodedData,
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -25,11 +25,15 @@ const ContactForm = () => {
         setSubmitted(true);
         event.target.reset();
       } else {
-        alert("Error al enviar el mensaje. Inténtalo de nuevo.");
+        // Fallback: force native submit if AJAX is blocked
+        HTMLFormElement.prototype.submit.call(event.target);
+        return;
       }
     } catch (error) {
       console.error("Error enviando el formulario:", error);
-      alert("Hubo un problema con el envío.");
+      // Fallback also on network/extension errors
+      HTMLFormElement.prototype.submit.call(event.target);
+      return;
     }
     setIsSubmitting(false);
   };
@@ -45,10 +49,15 @@ const ContactForm = () => {
           name="contact"
           method="POST"
           data-netlify="true"
+          netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-         
+
+          <p hidden aria-hidden="true">
+            <label>No rellenar: <input name="bot-field" /></label>
+          </p>
+
           <div className="mb-6">
             <label htmlFor="name" className="block text-neon-cyan font-semibold mb-2">
               Nombre Completo
@@ -112,11 +121,10 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full px-6 py-3 rounded-md font-bold transition-all duration-200 text-carbon-black ${
-              isSubmitting
+            className={`w-full px-6 py-3 rounded-md font-bold transition-all duration-200 text-carbon-black ${isSubmitting
                 ? "bg-medium-gray cursor-not-allowed"
                 : "bg-neon-cyan hover:bg-neon-cyan hover:shadow-[0_0_15px_#00A4C4]"
-            }`}
+              }`}
           >
             {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
           </button>

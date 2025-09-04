@@ -1,6 +1,22 @@
 {
   "builds": {
     "G001": {
+      "seo": {
+        "title": "Casual Cruiser – Ordenador para Juegos Ligeros y Multimedia | VLCExtreme",
+        "description": "El PC ideal para estudiantes y gamers casuales en Valencia: rápido, silencioso y preparado para Minecraft, Roblox, Sims 4 y más.",
+        "image": "/builds/casual-cruiser-1.jpeg"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador moderno tipo AMD con excelente rendimiento en multitarea y eficiencia energética",
+        "Gráfica": "Gráficos integrados optimizados para juegos ligeros, multimedia y navegación fluida",
+        "Memoria RAM": "16GB DDR5 de nueva generación, ideal para combinar juegos, estudios y contenido",
+        "Almacenamiento": "SSD NVMe ultrarrápido con espacio amplio para juegos, documentos y medios",
+        "Caja": "Chasis compacto y ventilado con diseño limpio y funcionamiento silencioso",
+        "Refrigeración": "Sistema térmico eficiente que mantiene el rendimiento estable sin ruido excesivo",
+        "Fuente de alimentación": "Fuente fiable y preparada para futuras ampliaciones o gráficas dedicadas"
+      },
+      "sales_pitch": "Rápido, silencioso y preparado para los juegos más populares. Ideal para estudiantes y gamers casuales que quieren hacerlo todo con un solo equipo.",
+      "sales_description": "El Casual Cruiser es un ordenador equilibrado y fiable, diseñado para quienes quieren jugar a títulos populares como Minecraft, Roblox o Los Sims 4 sin complicaciones técnicas ni sobrecostes.\n\nCon un procesador moderno tipo AMD, gráficos integrados eficientes y almacenamiento SSD NVMe, este equipo ofrece fluidez en multitarea, tiempos de carga mínimos y una experiencia sin interrupciones para ocio, estudios o creación básica de contenido.\n\nGracias a su diseño compacto, refrigeración silenciosa y fuente de alimentación versátil, también es una excelente base para quienes desean ampliarlo más adelante con una tarjeta gráfica dedicada tipo RTX 4060. Ensamblado en Valencia para durar, funcionar desde el primer día y crecer contigo.",
       "category": "gaming",
       "name": "Casual Cruiser",
       "description": "Perfecto para juegos ligeros, el cole y medios. Maneja Minecraft, Roblox, Los Sims y esports casuales.",
@@ -181,6 +197,17 @@
       ]
     },
     "G002": {
+      "publicSpecs": {
+        "Procesador": "Procesador de última generación como un Intel de alto rendimiento para juegos competitivos con baja latencia",
+        "Gráfica": "Tarjeta gráfica dedicada tipo RTX ideal para juegos eSports exigentes en 1080p con tasas de FPS constantes",
+        "Memoria RAM": "16GB DDR5 de alta velocidad para multitarea fluida y respuesta inmediata",
+        "Almacenamiento": "SSD NVMe de alto rendimiento para cargas instantáneas y sistema ultra responsivo",
+        "Caja": "Chasis con ventilación optimizada y diseño profesional pensado para setups competitivos",
+        "Refrigeración": "Sistema térmico silencioso y eficiente que garantiza estabilidad en sesiones largas",
+        "Fuente de alimentación": "Fuente robusta y silenciosa con margen para futuras actualizaciones de GPU"
+      },
+      "sales_pitch": "Rendimiento competitivo sin distracciones. Pensado para quienes juegan en serio y exigen fluidez total.",
+      "sales_description": "El eSports Edge está diseñado para gamers competitivos que buscan la máxima fluidez en títulos como CS:GO, Valorant o Fortnite. Gracias a un procesador como un Intel de última generación, una GPU dedicada tipo RTX y memoria DDR5, este equipo proporciona una experiencia ultra rápida con tasas de FPS constantes en 1080p.\n\nOptimizado para monitores de 144Hz o más, permite aprovechar cada milisegundo en situaciones de alta velocidad. Ideal tanto para jugar como para transmitir, su sistema de refrigeración mantiene un rendimiento estable sin ruido excesivo, incluso en sesiones prolongadas.\n\nCon un diseño elegante, almacenamiento NVMe ultrarrápido y capacidad de personalización, el eSports Edge es perfecto para quienes buscan competir al más alto nivel sin complicaciones técnicas.",
       "category": "gaming",
       "name": "eSports Edge",
       "description": "Optimizado para eSports competitivos con altas tasas de FPS en 1080p y monitores de 144Hz o más.",
@@ -357,6 +384,22 @@
       ]
     },
     "G003": {
+      "seo": {
+        "title": "AAA Avenger – PC Gaming para Juegos AAA en Ultra y 1440p | VLCExtreme",
+        "description": "Diseñado para juegos exigentes como Cyberpunk 2077 y Red Dead Redemption 2. Rendimiento extremo en 1080p Ultra y 1440p High.",
+        "image": "/builds/aaa-avenger-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador avanzado tipo Ryzen optimizado para juegos AAA y tareas exigentes",
+        "Gráfica": "Tarjeta gráfica como una RTX de gama alta para 1080p Ultra y 1440p con gran detalle",
+        "Memoria RAM": "32GB DDR5 de alta frecuencia para multitarea fluida y carga rápida de escenarios complejos",
+        "Almacenamiento": "SSD NVMe de gran capacidad para juegos AAA y software profesional con cargas instantáneas",
+        "Caja": "Torre robusta con excelente flujo de aire y espacio para futuras mejoras",
+        "Refrigeración": "Refrigeración silenciosa y potente para mantener el rendimiento durante sesiones intensas",
+        "Fuente de alimentación": "Fuente estable y sobredimensionada para garantizar fiabilidad incluso tras upgrades"
+      },
+      "sales_pitch": "Tu acceso al universo AAA en su máximo esplendor. Diseñado para quienes exigen potencia gráfica real.",
+      "sales_description": "El AAA Avenger está creado para quienes quieren jugarlo todo en ultra. Perfecto para títulos como Cyberpunk 2077, Starfield o Red Dead Redemption 2, este PC combina un procesador potente como un Ryzen 7 y una tarjeta gráfica tipo RTX 4070 Ti para ofrecer una experiencia envolvente en 1080p Ultra y 1440p High.\n\nCon 32GB de RAM DDR5 y almacenamiento NVMe veloz, cada partida se carga con rapidez y fluidez. Su sistema de refrigeración silenciosa y su chasis optimizado garantizan sesiones largas sin caídas de rendimiento.\n\nIdeal para jugadores que disfrutan de mundos abiertos, narrativa cinematográfica o contenido visual exigente. Ensamblado en Valencia, el AAA Avenger es tu mejor aliado para disfrutar de lo mejor del gaming moderno con estilo y potencia real.",
       "category": "gaming",
       "name": "AAA Avenger",
       "description": "Diseñado para juegos AAA modernos en 1080p Ultra o 1440p High con 60-100 FPS.",
@@ -531,6 +574,22 @@
       ]
     },
     "G004": {
+      "seo": {
+        "title": "Titan Dominator – PC Gaming Extremo con RTX y Intel i9 | VLCExtreme",
+        "description": "Una bestia para gaming 4K Ultra, streaming y creación. Potenciado por tecnología tipo Intel i9 y GPU RTX de gama ultra. Ensamblado en Valencia.",
+        "image": "/builds/titan-dominator-i9-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Arquitectura tipo Intel i9 de alto rendimiento para cargas extremas y multitarea avanzada",
+        "Gráfica": "GPU RTX de gama ultra preparada para Ray Tracing, mods complejos y juegos en 4K",
+        "Memoria RAM": "64GB DDR5 de alto rendimiento para edición, creación y gaming simultáneo",
+        "Almacenamiento": "SSD de gran capacidad con velocidades profesionales para proyectos, juegos y contenido pesado",
+        "Caja": "Chasis premium de gran formato con diseño avanzado de flujo de aire",
+        "Refrigeración": "Sistema AIO de refrigeración líquida de triple ventilador para máxima estabilidad térmica",
+        "Fuente de alimentación": "Fuente modular silenciosa y eficiente preparada para componentes de alto consumo"
+      },
+      "sales_pitch": "Potencia sin concesiones para los que juegan, crean y transmiten al más alto nivel.",
+      "sales_description": "El Titan Dominator ha sido creado para quienes no aceptan límites. Basado en procesadores tipo Intel i9 y gráficas RTX de gama ultra, este equipo ofrece un rendimiento 4K extremo, ideal para gaming con mods, streaming simultáneo y edición de video 8K. Sus 64GB de RAM DDR5, almacenamiento de gran capacidad y refrigeración líquida avanzada aseguran estabilidad, fluidez y velocidad incluso bajo las cargas más intensas. Ensamblado en Valencia para jugadores profesionales, creadores exigentes y entusiastas que buscan lo mejor.",
       "category": "gaming",
       "name": "Titan Dominator (i9)",
       "description": "Máquina definitiva para gaming 4K Ultra, streaming simultáneo y mods pesados. Potencia extrema y componentes de última generación.",
@@ -689,6 +748,22 @@
       ]
     },
     "G005": {
+      "seo": {
+        "title": "Titan Fury – PC Gaming 4K con AMD Ryzen y Radeon | VLCExtreme",
+        "description": "Una bestia de alto rendimiento para juegos en 4K, con eficiencia energética y potencia tipo Ryzen 9 y GPU Radeon. Ensamblado en Valencia.",
+        "image": "/builds/titan-fury-amd-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Arquitectura tipo Ryzen 9 de alto rendimiento con eficiencia energética optimizada para sesiones largas",
+        "Gráfica": "GPU Radeon de gama alta con capacidades 4K y diseño orientado a rendimiento gráfico avanzado",
+        "Memoria RAM": "32GB DDR5 de alta velocidad para gaming exigente, edición y simulaciones",
+        "Almacenamiento": "SSD de gran capacidad y velocidad extrema para juegos pesados y trabajo creativo",
+        "Caja": "Torre con flujo de aire superior y diseño sobrio orientado a rendimiento térmico",
+        "Refrigeración": "Sistema AIO líquido avanzado para mantener temperaturas estables bajo cargas sostenidas",
+        "Fuente de alimentación": "Fuente modular robusta con eficiencia energética y soporte para gráficas de gama ultra"
+      },
+      "sales_pitch": "Domina el 4K con potencia AMD. Ideal para gamers exigentes y creadores que buscan rendimiento y eficiencia sin compromisos.",
+      "sales_description": "El Titan Fury combina la potencia de la arquitectura AMD con componentes de gama alta para ofrecer una experiencia de juego fluida y silenciosa en 4K. Con un procesador tipo Ryzen 9 y una tarjeta gráfica tipo Radeon 7900 XTX, este equipo está preparado para manejar cualquier título moderno y sesiones prolongadas de uso intensivo. La refrigeración líquida avanzada, el almacenamiento ultrarrápido de 4TB y una fuente estable garantizan estabilidad y velocidad. Ensamblado en Valencia para usuarios que buscan el equilibrio perfecto entre potencia bruta y eficiencia real.",
       "category": "gaming",
       "name": "Titan Fury (AMD)",
       "description": "Máxima potencia con AMD. Ideal para juegos en 4K y alto rendimiento con menor consumo.",
@@ -887,6 +962,22 @@
       ]
     },
     "G006": {
+      "seo": {
+        "title": "Virtual Voyager – PC VR de Alto Rendimiento para Realidad Virtual | VLCExtreme",
+        "description": "Ordenador diseñado para experiencias VR envolventes con tecnologías tipo i7 y GPU RTX. Ideal para simuladores y realidad virtual en Valencia.",
+        "image": "/builds/virtual-voyager-vr-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador tipo Intel i7 de alto rendimiento para VR fluida y multitarea exigente",
+        "Gráfica": "GPU RTX optimizada para VR, con capacidad para gráficos envolventes y experiencias inmersivas",
+        "Memoria RAM": "32GB DDR5 de baja latencia ideal para simuladores complejos y carga rápida de mundos virtuales",
+        "Almacenamiento": "SSD profesional con capacidad y velocidad para proyectos creativos y juegos VR",
+        "Caja": "Chasis con diseño térmico optimizado y estética moderna RGB",
+        "Refrigeración": "Refrigeración líquida AIO silenciosa que mantiene la estabilidad durante sesiones prolongadas",
+        "Fuente de alimentación": "Fuente eficiente y silenciosa compatible con gráficas de gama alta"
+      },
+      "sales_pitch": "Realidad Virtual sin límites: fluidez, inmersión y potencia en un equipo premium.",
+      "sales_description": "El Virtual Voyager (VR) está diseñado para ofrecer una experiencia de realidad virtual de alto nivel. Equipado con procesador tipo Intel i7 y GPU tipo RTX 4080 Super, este equipo brinda fluidez visual y baja latencia en juegos como Half-Life: Alyx y simuladores de vuelo. Su sistema de refrigeración líquida, almacenamiento veloz y diseño térmico avanzado lo hacen ideal para sesiones largas sin interrupciones ni sobrecalentamiento. Ensamblado en Valencia para quienes buscan explorar mundos virtuales con el máximo detalle y rendimiento.",
       "category": "gaming",
       "name": "Virtual Voyager (VR)",
       "description": "Experiencia inmersiva en VR con un rendimiento fluido y sin mareos. Diseñado para títulos exigentes como Half-Life: Alyx y simuladores de vuelo.",
@@ -1071,6 +1162,22 @@
       ]
     },
     "G007": {
+      "seo": {
+        "title": "PowerStack – PC Gaming de Alto Rendimiento para Mods y Multitarea | VLCExtreme",
+        "description": "Ordenador premium para gaming intensivo con componentes tipo Ryzen 9, GPU RTX y 64GB RAM DDR5. Ideal para mods y edición. Ensamblado en Valencia.",
+        "image": "/builds/powerstack-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Arquitectura tipo Ryzen 9 diseñada para cargas multitarea exigentes y gaming con mods avanzados",
+        "Gráfica": "GPU tipo RTX 4080 Super ideal para juegos AAA con Ray Tracing y escenarios complejos",
+        "Memoria RAM": "64GB DDR5 de alto rendimiento para edición de vídeo, diseño 3D y flujos intensivos",
+        "Almacenamiento": "SSD NVMe de nivel profesional para tiempos de carga ultrarrápidos y grandes proyectos",
+        "Caja": "Torre optimizada para ventilación y expansión futura con diseño sobrio y robusto",
+        "Refrigeración": "Sistema líquido AIO con control térmico inteligente y operación silenciosa",
+        "Fuente de alimentación": "Fuente modular de alta eficiencia con soporte para gráficas de gama extrema"
+      },
+      "sales_pitch": "Modding extremo y trabajo creativo sin límites. Ideal para creadores que también son gamers.",
+      "sales_description": "El PowerStack es una solución de alto rendimiento para usuarios que combinan gaming intensivo con tareas creativas exigentes. Gracias a componentes como un procesador tipo Ryzen 9, gráfica tipo RTX 4080 Super y 64GB de RAM DDR5, este equipo maneja juegos con mods pesados, edición 4K, diseño 3D y multitarea sin cuellos de botella. Su sistema de refrigeración líquida, almacenamiento NVMe profesional y chasis preparado para expansión lo convierten en una opción versátil para quienes exigen rendimiento sin concesiones. Ensamblado en Valencia con atención al detalle y calidad premium.",
       "category": "gaming",
       "name": "PowerStack",
       "description": "Rendimiento extremo para juegos AAA y tareas avanzadas. Diseñado para jugadores con grandes bibliotecas de mods y multitarea intensiva.",
@@ -1270,6 +1377,22 @@
       ]
     },
     "UG001": {
+      "seo": {
+        "title": "GODMODE GAMER – PC Gaming Definitivo 8K y VR Extremo | VLCExtreme",
+        "description": "Máximo rendimiento sin límites: 8K, VR, Ray Tracing, refrigeración líquida personalizada y potencia extrema. El sueño gamer fabricado en Valencia.",
+        "image": "/builds/godmode-gamer-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Arquitectura de alto rendimiento tipo i9 o Ryzen 9 con capacidad de overclocking extremo",
+        "Gráfica": "Configuración gráfica dual o cuádruple de gama ultra, compatible con 8K, Ray Tracing y DLSS",
+        "Memoria RAM": "Hasta 256GB DDR5 de alto ancho de banda para gaming, streaming y edición simultánea",
+        "Almacenamiento": "SSD NVMe profesional con hasta 8TB para cargas instantáneas y bibliotecas masivas",
+        "Caja": "Torre E-ATX de gama ultra con capacidad para refrigeración líquida custom y tarjetas gráficas múltiples",
+        "Refrigeración": "Sistema de refrigeración líquida personalizada para mantener temperaturas óptimas sin ruido",
+        "Fuente de alimentación": "Fuente de alto rendimiento 80+ Titanium lista para configuraciones extremas"
+      },
+      "sales_pitch": "Un arsenal digital sin límites. Godmode Gamer representa el máximo nivel en potencia, estética y control absoluto.",
+      "sales_description": "Diseñado para quienes exigen lo inalcanzable, el GODMODE GAMER ofrece una experiencia 8K real, sin caídas de rendimiento, incluso con Ray Tracing, mods pesados y sesiones de realidad virtual extendidas.\n\nEste monstruo integra una plataforma tipo i9 con múltiples GPUs de gama ultra, memoria de última generación y una refrigeración líquida personalizada de precisión. Está preparado para las cargas más extremas en gaming, edición de vídeo 8K, simuladores complejos y entornos multitarea profesionales.\n\nCon hasta 256GB de RAM DDR5, almacenamiento de nivel profesional y chasis de alta capacidad, este equipo transforma cualquier setup en un santuario gamer sin concesiones.\n\nFabricado y probado a mano en Valencia, este PC es una declaración de poder, diseño y ambición.",
       "category": "gaming",
       "name": "GODMODE GAMER",
       "sticker": {
@@ -1465,6 +1588,22 @@
       ]
     },
     "P001": {
+      "seo": {
+        "title": "Workstation I – Ordenador Profesional para Creadores y Productividad | VLCExtreme",
+        "description": "Estación de trabajo silenciosa y potente para edición, diseño gráfico y multitarea intensiva. Optimizada para software profesional y alto rendimiento diario.",
+        "image": "/builds/workstation-i-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Arquitectura avanzada tipo Intel Core i7 diseñada para productividad y multitarea sin esfuerzo",
+        "Gráfica": "Gráfica dedicada tipo RTX optimizada para edición de vídeo ligera, diseño gráfico y visualización fluida",
+        "Memoria RAM": "32GB DDR5 de alta eficiencia para trabajar con múltiples aplicaciones profesionales simultáneamente",
+        "Almacenamiento": "SSD NVMe de última generación para cargas instantáneas y almacenamiento fluido de proyectos",
+        "Caja": "Chasis profesional insonorizado con flujo de aire optimizado y estética minimalista",
+        "Refrigeración": "Sistema térmico de alto rendimiento con ventiladores silenciosos para sesiones prolongadas",
+        "Fuente de alimentación": "Fuente eficiente y silenciosa con capacidad para futuras expansiones"
+      },
+      "sales_pitch": "Una estación de trabajo premium, silenciosa y fluida. Ideal para profesionales creativos que buscan fiabilidad sin sacrificar rendimiento.",
+      "sales_description": "La Workstation I está diseñada para creadores que valoran la estabilidad, el silencio y la eficiencia en su flujo de trabajo. Ideal para tareas de diseño gráfico, edición de vídeo ligera, desarrollo y productividad multitarea, esta estación de trabajo ofrece la potencia necesaria para rendir durante todo el día.\n\nGracias a su arquitectura moderna tipo Intel Core i7 y gráficos dedicados tipo RTX, es capaz de gestionar múltiples aplicaciones creativas y profesionales con fluidez. La refrigeración avanzada mantiene el sistema en temperaturas óptimas incluso bajo presión, mientras que su chasis silencioso permite trabajar con máxima concentración.\n\nMontada y optimizada en Valencia, esta estación es perfecta para quienes buscan un ordenador profesional versátil, rápido y elegante.",
       "category": "production",
       "name": "Workstation I",
       "description": "Una estación de trabajo versátil, equilibrada y silenciosa para profesionales exigentes que necesitan potencia, estabilidad y eficiencia.",
@@ -1662,6 +1801,22 @@
       ]
     },
     "P002": {
+      "seo": {
+        "title": "Studio Forge – Ordenador Profesional para Streaming y Edición 4K | VLCExtreme",
+        "description": "Un PC de alto rendimiento diseñado para streamers, creadores y edición de contenido multimedia en 4K. Silencioso, potente y con gran capacidad de ampliación.",
+        "image": "/builds/studio-forge-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "CPU de alto rendimiento tipo Ryzen 9 con múltiples núcleos para multitarea y edición simultánea",
+        "Gráfica": "GPU de gama alta con aceleración hardware para renderizado y streaming en tiempo real",
+        "Memoria RAM": "32GB DDR5 de alta frecuencia para un flujo de trabajo fluido y sin interrupciones",
+        "Almacenamiento": "SSD NVMe profesional con gran capacidad y velocidades extremas para proyectos pesados",
+        "Caja": "Chasis con diseño premium y ventilación optimizada para mantener temperaturas estables",
+        "Refrigeración": "Sistema líquido AIO silencioso y eficiente para largas sesiones de trabajo",
+        "Fuente de alimentación": "Fuente modular de alta eficiencia con potencia estable para componentes exigentes"
+      },
+      "sales_pitch": "El equilibrio perfecto entre potencia y versatilidad para creadores y streamers profesionales.",
+      "sales_description": "Studio Forge ofrece un rendimiento excepcional para streaming y edición 4K, con componentes de gama alta cuidadosamente seleccionados para garantizar estabilidad y velocidad. Ideal para creadores que demandan fiabilidad y capacidad de expansión, este PC asegura sesiones de trabajo fluidas y sin interrupciones. Ensamblado en Valencia, combina potencia y silencio para que te centres en lo importante: tu contenido.",
       "category": "production",
       "name": "Studio Forge",
       "description": "Diseñado para creadores y streamers. Potente, equilibrado y optimizado para multitarea, gaming y edición de contenido.",
@@ -1858,6 +2013,22 @@
       ]
     },
     "P003": {
+      "seo": {
+        "title": "CineStorm – Estación de Trabajo para Edición y VFX Profesional | VLCExtreme",
+        "description": "Potente estación de trabajo diseñada para edición 4K/8K, VFX y efectos visuales complejos. Rendimiento y estabilidad para creadores avanzados en Valencia.",
+        "image": "/builds/cinestorm-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "CPU de alta gama tipo Ryzen 9 optimizada para multitarea intensa y renderizado rápido",
+        "Gráfica": "GPU profesional de gama alta para efectos visuales y renderizado en tiempo real",
+        "Memoria RAM": "64GB DDR5 de alta velocidad para manejar proyectos pesados y múltiples aplicaciones",
+        "Almacenamiento": "SSD NVMe de gran capacidad con velocidades extremas para edición fluida y almacenamiento rápido",
+        "Caja": "Chasis premium con ventilación avanzada y espacio para configuraciones ampliadas",
+        "Refrigeración": "Refrigeración líquida AIO eficiente para mantener temperaturas óptimas bajo carga intensa",
+        "Fuente de alimentación": "Fuente modular potente y estable diseñada para cargas exigentes de hardware profesional"
+      },
+      "sales_pitch": "La estación ideal para editores y especialistas en VFX que necesitan potencia, estabilidad y capacidad de expansión.",
+      "sales_description": "CineStorm está pensado para profesionales que demandan lo máximo en edición de vídeo 4K/8K y efectos visuales avanzados. Con una arquitectura de última generación y una GPU diseñada para tareas creativas intensivas, este equipo asegura fluidez, rapidez y estabilidad en cada proyecto.\n\nCon 64GB de RAM y almacenamiento SSD ultrarrápido, podrás trabajar con múltiples capas y proyectos complejos sin interrupciones. Fabricado en Valencia, CineStorm combina diseño premium y refrigeración avanzada para ofrecer un entorno de trabajo silencioso y eficiente, ideal para estudios y creadores exigentes.",
       "category": "production",
       "name": "CineStorm",
       "description": "Estación de trabajo para edición de video y VFX de alto nivel. Diseñada para editores, coloristas y motion designers.",
@@ -2038,6 +2209,22 @@
       ]
     },
     "P004": {
+      "seo": {
+        "title": "Vertex Forge – Estación de Trabajo Profesional para Modelado 3D y Renderizado | VLCExtreme",
+        "description": "Potente workstation para artistas 3D y estudios profesionales en Valencia. Rendimiento extremo con AMD Threadripper y NVIDIA RTX 4090.",
+        "image": "/builds/vertex-forge-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "CPU de alta gama tipo Threadripper para cargas de trabajo intensivas y multitarea avanzada",
+        "Gráfica": "GPU de gama ultra alta para renderizado en tiempo real y simulaciones complejas",
+        "Memoria RAM": "128GB DDR5 ultrarrápida para proyectos 3D, animación y multitarea sin interrupciones",
+        "Almacenamiento": "SSD NVMe rápido y fiable para acceder y guardar grandes archivos y proyectos sin retrasos",
+        "Caja": "Chasis full tower premium con ventilación optimizada y espacio para componentes avanzados",
+        "Refrigeración": "Refrigeración líquida AIO de alto rendimiento que mantiene la estabilidad en cargas extremas",
+        "Fuente de alimentación": "Fuente modular Titanium preparada para el máximo consumo y estabilidad continua"
+      },
+      "sales_pitch": "La workstation definitiva para profesionales del 3D que necesitan potencia bruta y fiabilidad sin compromisos.",
+      "sales_description": "Vertex Forge está diseñada para artistas digitales y estudios profesionales en Valencia que demandan el máximo rendimiento en modelado 3D, animación y renderizado en tiempo real. Equipado con la potente arquitectura AMD Threadripper y una GPU NVIDIA RTX 4090, este equipo maneja sin esfuerzo simulaciones complejas, multitarea avanzada y procesos intensivos de cálculo.\n\nCon hasta 128GB de memoria DDR5 y almacenamiento NVMe ultrarrápido, Vertex Forge ofrece fluidez y rapidez en flujos de trabajo exigentes, ideales para Blender, Maya, Cinema 4D y Unreal Engine. Su sistema de refrigeración líquida avanzado y chasis premium aseguran estabilidad térmica y silencio incluso en jornadas prolongadas.\n\nFabricado y ensamblado en Valencia, Vertex Forge es la elección para quienes buscan fiabilidad, escalabilidad y tecnología de vanguardia, optimizando la productividad en cualquier estudio profesional o proyecto creativo de alta demanda.",
       "category": "production",
       "name": "Vertex Forge",
       "description": "Potente estación de trabajo para modelado 3D, animación y renderizado en tiempo real. Diseñada para artistas y estudios profesionales.",
@@ -2221,6 +2408,22 @@
       ]
     },
     "P005": {
+      "seo": {
+        "title": "Resonance – Estación de Trabajo para Producción Musical Profesional en Valencia | VLCExtreme",
+        "description": "Workstation optimizada para producción musical y estudios de grabación en Valencia. Rendimiento estable con hardware silencioso y alta capacidad.",
+        "image": "/builds/resonance-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "CPU potente y eficiente que garantiza baja latencia y manejo fluido de múltiples DAWs y plugins",
+        "Gráfica": "Gráficos discretos o integrados para un rendimiento estable sin interferir en el audio",
+        "Memoria RAM": "64GB DDR5 rápida para soportar proyectos complejos y multitarea sin interrupciones",
+        "Almacenamiento": "SSD NVMe ultrarrápido para tiempos de carga instantáneos y transferencia eficiente de archivos de audio",
+        "Caja": "Chasis silencioso y bien aislado para evitar interferencias acústicas",
+        "Refrigeración": "Sistema de refrigeración eficiente y silencioso que mantiene la estabilidad en sesiones largas",
+        "Fuente de alimentación": "Fuente premium de alta eficiencia para asegurar la estabilidad y fiabilidad continuas"
+      },
+      "sales_pitch": "Potencia y estabilidad para productores musicales y estudios que exigen precisión y silencio absoluto.",
+      "sales_description": "Resonance es la estación de trabajo creada para profesionales de la producción musical y estudios en Valencia que buscan un PC robusto, fiable y silencioso. Con un procesador eficiente y hasta 64GB de RAM DDR5, maneja con soltura múltiples DAWs y plugins complejos, reduciendo la latencia para que la creatividad fluya sin interrupciones.\n\nEl diseño silencioso y el sistema de refrigeración avanzado garantizan un entorno de trabajo óptimo para grabación y mezcla. El almacenamiento NVMe ultrarrápido acelera la gestión de librerías y proyectos grandes, mientras que la opción de gráficos integrados o discretos mantiene un equilibrio perfecto entre rendimiento y eficiencia.\n\nFabricado y ensamblado en Valencia, Resonance ofrece la combinación ideal de potencia, estabilidad y silencio para compositores, productores y estudios profesionales que buscan un rendimiento premium en cada nota.",
       "category": "production",
       "name": "Resonance",
       "description": "Estación de trabajo para producción musical profesional. Diseñada para compositores, productores y estudios de grabación.",
@@ -2394,6 +2597,22 @@
       ]
     },
     "UP001": {
+      "seo": {
+        "title": "CINEFORGE – Estación de Trabajo 8K y Renderizado Profesional en Valencia | VLCExtreme",
+        "description": "Estación de trabajo premium para edición 8K, renderizado 3D y producción audiovisual avanzada en Valencia. Potencia y estabilidad para proyectos cinematográficos.",
+        "image": "/builds/cineforge-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador AMD Threadripper de alto rendimiento con arquitectura avanzada para cargas paralelas extremas",
+        "Gráfica": "GPU profesional NVIDIA RTX 6000 Ada para gráficos y renderizado cinematográfico de calidad superior",
+        "Memoria RAM": "512GB DDR5 ECC para máxima estabilidad y manejo eficiente de proyectos de gran escala",
+        "Almacenamiento": "Unidad NVMe Samsung de 30TB ultrarrápida para flujos de trabajo 8K y gestión masiva de datos",
+        "Caja": "Chasis robusto y espacioso con excelente refrigeración y soporte para configuraciones de alta demanda",
+        "Refrigeración": "Sistema de refrigeración líquida EKWB Quantum personalizado para mantener temperaturas óptimas y bajo ruido",
+        "Fuente de alimentación": "Fuente redundante de 2200W para garantizar alimentación estable y segura en cargas extremas"
+      },
+      "sales_pitch": "La estación definitiva para producción audiovisual profesional, con potencia y fiabilidad sin igual en Valencia.",
+      "sales_description": "CINEFORGE es la solución definitiva para profesionales y estudios de producción audiovisual en Valencia que necesitan un ordenador capaz de gestionar proyectos de edición 8K, renderizado 3D y postproducción avanzada. Equipado con un procesador AMD Threadripper 7995WX y la GPU profesional NVIDIA RTX 6000 Ada, este equipo ofrece un rendimiento excepcional y estabilidad durante sesiones intensas de trabajo.\n\nCon 512GB de memoria DDR5 ECC y almacenamiento NVMe de 30TB, garantiza la capacidad y velocidad necesarias para manejar grandes volúmenes de datos y flujos de trabajo complejos sin cuellos de botella. Su fuente de alimentación redundante y la refrigeración líquida personalizada aseguran que el sistema se mantenga fiable y fresco incluso bajo las cargas más exigentes.\n\nDiseñado y ensamblado en Valencia, CINEFORGE es la elección premium para creadores que exigen lo máximo en rendimiento, estabilidad y escalabilidad para proyectos audiovisuales profesionales.",
       "category": "production",
       "name": "CINEFORGE",
       "sticker": {
@@ -2578,6 +2797,22 @@
       ]
     },
     "AI001": {
+      "seo": {
+        "title": "Neural Nexus – Estación de Trabajo para IA y Ciencia de Datos en Valencia | VLCExtreme",
+        "description": "Estación de trabajo premium diseñada para entrenamiento de IA, inferencia y análisis de datos con hardware avanzado y optimizado en Valencia.",
+        "image": "/builds/neural-nexus-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador AMD de alta eficiencia con múltiples núcleos para cargas intensivas de IA y multitarea avanzada",
+        "Gráfica": "GPU NVIDIA de gama ultra con núcleos Tensor dedicados para acelerar frameworks IA líderes como TensorFlow y PyTorch",
+        "Memoria RAM": "64GB DDR5 de alta velocidad, ampliable para manejar grandes volúmenes de datos y modelos complejos",
+        "Almacenamiento": "SSD NVMe ultrarrápido para acceso rápido a datasets y tiempos de carga mínimos",
+        "Caja": "Chasis premium con diseño optimizado para flujo de aire y estabilidad térmica bajo cargas prolongadas",
+        "Refrigeración": "Sistema de refrigeración líquida avanzado que mantiene temperaturas óptimas para máximo rendimiento",
+        "Fuente de alimentación": "Fuente de alta potencia y eficiencia preparada para hardware de última generación y demandas energéticas"
+      },
+      "sales_pitch": "Potencia y velocidad diseñadas para profesionales de inteligencia artificial y ciencia de datos en Valencia.",
+      "sales_description": "Neural Nexus es la estación de trabajo ideal para investigadores, científicos de datos y desarrolladores en Valencia que necesitan un equipo potente y escalable para proyectos de inteligencia artificial y aprendizaje automático. Equipado con un procesador AMD Ryzen 9 7950X y la GPU NVIDIA RTX 4090, esta solución ofrece un rendimiento sobresaliente para entrenamiento de modelos complejos, inferencia en tiempo real y análisis de datos masivos.\n\nCon 64GB de memoria DDR5 rápida y almacenamiento NVMe ultrarrápido, reduce significativamente los tiempos de espera y mejora la productividad en proyectos exigentes. El chasis Fractal Design Torrent XL y la refrigeración líquida NZXT Kraken garantizan estabilidad térmica durante largas jornadas de trabajo.\n\nOptimizado para frameworks líderes como TensorFlow, PyTorch y Keras, Neural Nexus es la elección premium para profesionales que exigen potencia, eficiencia y fiabilidad en sus flujos de trabajo de inteligencia artificial y ciencia de datos.\n\nFabricado y ensamblado en Valencia para asegurar la máxima calidad y soporte local, este equipo es la herramienta definitiva para llevar tus investigaciones y proyectos de IA al siguiente nivel.",
       "category": "ai",
       "name": "Neural Nexus",
       "description": "Estación de trabajo optimizada para inferencia de IA, aprendizaje automático y ciencia de datos.",
@@ -2756,6 +2991,22 @@
       ]
     },
     "AI002": {
+      "seo": {
+        "title": "TensorForge – Estación de Trabajo AI de Alto Rendimiento en Valencia | VLCExtreme",
+        "description": "Estación de trabajo extrema diseñada para entrenamiento de IA, redes neuronales profundas y cómputo científico con hardware profesional en Valencia.",
+        "image": "/builds/tensorforge-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador AMD Threadripper con núcleos múltiples para cargas paralelas y cómputo científico avanzado",
+        "Gráfica": "Configuración dual de GPUs NVIDIA RTX 4090 para acelerar el entrenamiento de modelos complejos y procesos de IA intensivos",
+        "Memoria RAM": "256GB DDR5 de alta velocidad que permite manejar datasets masivos y entrenar redes neuronales profundas sin ralentizaciones",
+        "Almacenamiento": "SSD NVMe de gran capacidad y alta velocidad para acelerar la transferencia de datos y cargas de trabajo pesadas",
+        "Caja": "Chasis rackmount profesional optimizado para máxima eficiencia térmica y escalabilidad en centros de datos o laboratorios",
+        "Refrigeración": "Sistema de refrigeración líquida personalizado para mantener temperaturas estables bajo cargas extremas de trabajo",
+        "Fuente de alimentación": "Fuente de alimentación Titanium de alta potencia diseñada para soportar configuraciones con múltiples GPUs"
+      },
+      "sales_pitch": "Máxima potencia y escalabilidad para investigadores y profesionales de IA que trabajan con proyectos de alto impacto en Valencia.",
+      "sales_description": "TensorForge es la solución definitiva para empresas, investigadores y profesionales en inteligencia artificial y cómputo científico que demandan rendimiento extremo y estabilidad. Diseñada y ensamblada en Valencia, esta estación de trabajo integra un procesador AMD Ryzen Threadripper 7995WX junto con doble GPU NVIDIA RTX 4090, ofreciendo capacidad para acelerar procesos de aprendizaje profundo, simulaciones complejas y análisis de Big Data.\n\nCon 256GB de memoria DDR5 y almacenamiento NVMe ultrarrápido, TensorForge garantiza una gestión eficiente de grandes volúmenes de datos y reduce significativamente los tiempos de entrenamiento y procesamiento. Su diseño rackmount y refrigeración líquida personalizada aseguran una operación estable y silenciosa incluso en entornos profesionales y centros de datos.\n\nOptimizada para frameworks líderes como TensorFlow, PyTorch y CUDA, esta estación de trabajo es la inversión perfecta para quienes buscan llevar sus proyectos de inteligencia artificial y cómputo avanzado al máximo nivel, con el respaldo de la calidad y soporte local de VLCExtreme en Valencia.",
       "category": "ai",
       "name": "TensorForge",
       "description": "Estación de trabajo extrema para entrenamiento de IA, redes neuronales profundas y cómputo científico.",
@@ -2897,6 +3148,22 @@
       ]
     },
     "UA001": {
+      "seo": {
+        "title": "OMNIBRAIN – Supercomputadora AI de Ultra Alto Rendimiento en Valencia | VLCExtreme",
+        "description": "Supercomputadora de inteligencia artificial para entrenamiento avanzado, simulaciones y Big Data, diseñada para centros de datos y laboratorios en Valencia.",
+        "image": "/builds/omnibrain-1.png"
+      },
+      "publicSpecs": {
+        "Procesador": "Procesador AMD EPYC de 96 núcleos, optimizado para cargas paralelas masivas y cómputo intensivo en IA y Big Data",
+        "Gráfica": "Configuración dual de GPUs NVIDIA H100 PCIe x8, líderes en aceleración para entrenamiento de modelos de aprendizaje profundo y simulaciones científicas",
+        "Memoria RAM": "1TB DDR5 ECC de alta capacidad para manejar múltiples modelos y datasets complejos simultáneamente",
+        "Almacenamiento": "Unidad NVMe de ultra alta capacidad y velocidad para almacenamiento y acceso eficiente a grandes volúmenes de datos",
+        "Caja": "Chasis rackmount profesional con soporte completo para configuraciones de servidor de alta densidad",
+        "Refrigeración": "Sistema de refrigeración líquida personalizada de grado servidor para estabilidad térmica en operaciones 24/7",
+        "Fuente de alimentación": "Fuentes de alimentación redundantes de alta potencia para máxima fiabilidad y continuidad en entornos críticos"
+      },
+      "sales_pitch": "La supercomputadora definitiva para investigación y desarrollo en inteligencia artificial avanzada, con potencia, fiabilidad y soporte local en Valencia.",
+      "sales_description": "OMNIBRAIN representa la cúspide del rendimiento informático en inteligencia artificial y cómputo avanzado. Diseñada para centros de datos, laboratorios y organizaciones que requieren una infraestructura de alto nivel, esta supercomputadora ofrece una potencia sin igual con su procesador AMD EPYC 9654 de 96 núcleos y doble GPU NVIDIA H100. Cada componente ha sido seleccionado para garantizar estabilidad, escalabilidad y máxima eficiencia en tareas que van desde el entrenamiento de modelos de IA hasta simulaciones científicas masivas.\n\nCon hasta 1TB de memoria DDR5 ECC y almacenamiento NVMe de última generación, OMNIBRAIN permite a los profesionales en Valencia y alrededores gestionar enormes conjuntos de datos y ejecutar cargas de trabajo que requieren un rendimiento extremo. Su sistema de refrigeración líquida y fuentes de alimentación redundantes aseguran operación ininterrumpida en entornos críticos.\n\nCompatible con frameworks líderes como TensorFlow, PyTorch y JAX, OMNIBRAIN es la inversión definitiva para quienes buscan romper límites y alcanzar nuevos hitos en innovación tecnológica y ciencia de datos, con la confianza y soporte experto de VLCExtreme en Valencia.",
       "category": "ai",
       "name": "OMNIBRAIN",
       "sticker": {

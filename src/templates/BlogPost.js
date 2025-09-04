@@ -1,13 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Button from "../components/Button"
 import BlogCTA from "../components/BlogCTA"
 import BlogRelatedPosts from "../components/BlogRelatedPosts"
 import BlogBuildsHighlight from "../components/BlogBuildsHighlight"
+import { renderRichText } from "../utils/renderRichText"
+
+
 
 const getReadingTime = raw => {
   try {
@@ -25,9 +27,7 @@ const getReadingTime = raw => {
 const BlogPostTemplate = ({ data }) => {
   const post = data.contentfulBlogPost
   const coverImage = getImage(post.coverImage)
-  const richTextContent = documentToReactComponents(
-    post.body.raw && JSON.parse(post.body.raw)
-  )
+const richTextContent = renderRichText(post.body.raw)
   const readingTime = getReadingTime(post.body.raw)
   const publishDate = new Date(post.publishDate).toLocaleDateString("es-ES", {
     day: "numeric",
@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data }) => {
       />
 
       {/* 🔹 Hero Section */}
-      <section className="relative py-20 bg-carbon-black text-light-gray">
+      <section className="relative pt-20 pb-1 bg-carbon-black text-light-gray">
         {coverImage && (
           <div className="w-full max-h-[500px] overflow-hidden rounded-lg mb-10">
             <GatsbyImage
@@ -65,12 +65,12 @@ const BlogPostTemplate = ({ data }) => {
           </p>
 
           {post.category && (
-            <p className="text-neon-cyan text-sm uppercase tracking-widest mb-4">
+            <p className="text-neon-yellow text-md uppercase tracking-widest my-4">
               {post.category.name}
             </p>
           )}
 
-          <p className="text-medium-gray text-lg mb-4">{post.excerpt}</p>
+          <p className="relative text-xl md:text-2xl font-light italic text-neon-green leading-snug mb-2 text-left mt-14 mx-auto before:absolute before:inset-y-0 before:-left-4 before:w-1 before:bg-neon-green">{post.excerpt}</p>
         </div>
       </section>
 
