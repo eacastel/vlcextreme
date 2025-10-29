@@ -79,21 +79,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: [process.env.GATSBY_GOOGLE_GTAG_ID,], 
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-          exclude: [],
-          delayOnRouteUpdate: 2000,
-        },
+        id: process.env.GATSBY_GOOGLE_GTAG_ID, 
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+        enableWebVitalsTracking: true,
       },
-    },    
+    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
