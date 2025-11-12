@@ -43,7 +43,7 @@ export default function Footer() {
 
             {/* Address & Map block */}
             <h4 className="text-lg font-semibold mb-3">Dónde estamos</h4>
-             <p className="text-medium-gray mb-3">
+            <p className="text-medium-gray mb-3">
               (Atención en Valencia <strong>solo con cita previa</strong>).
             </p>
             <address
@@ -66,25 +66,25 @@ export default function Footer() {
               </span>
             </address>
 
-           
+
 
             <div className="relative w-full md:w-4/5 overflow-hidden rounded-xl border border-dark-gray">
-  {/* Map iframe */}
-  <iframe
-  title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
-  src="https://www.google.com/maps?q=C%2F+de+Dalt%2C+37%2C+46003+Val%C3%A8ncia&output=embed"
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  className="w-full"
-  style={{ height: 180 }}
-  aria-label="Mapa de Google con la ubicación de VLCExtreme en C/ de Dalt, València"
-/>
+              {/* Map iframe */}
+              <iframe
+                title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24630.465812509006!2d-0.4194819644473648!3d39.49624269909675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f44c5e3b53b%3A0xd864f11aa29a0f37!2sVLCExtreme!5e0!3m2!1sen!2ses!4v1762965507454!5m2!1sen!2ses"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+                style={{ height: 180 }}
+                aria-label="Mapa de Google con la ubicación de VLCExtreme en C/ de Dalt, València"
+              />
 
 
-  {/* Dark overlay (does not block clicks) */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/15 pointer-events-none rounded-xl" />
+              {/* Dark overlay (does not block clicks) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/15 pointer-events-none rounded-xl" />
 
-</div>
+            </div>
 
             <a
               href="https://www.google.com/maps/search/?api=1&query=C%2F+Alta%2C+37%2C+46003+Val%C3%A8ncia"
@@ -115,7 +115,11 @@ export default function Footer() {
 
             {/* Social Media under quick links */}
             <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
-            <div className="flex gap-4" role="navigation" aria-label="Redes sociales">
+            <div
+              className="flex flex-wrap gap-4"
+              role="navigation"
+              aria-label="Redes sociales"
+            >
               {Object.entries(socialLinks).map(([name, url]) => (
                 <a
                   key={name}
