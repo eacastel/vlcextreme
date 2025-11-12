@@ -54,7 +54,7 @@ export default function Footer() {
             >
               {/* First line: street + city + area + postal code */}
               <span className="block">
-                <span itemProp="streetAddress">C/ Alta, 37 bajo derecha</span>,{" "}
+                <span itemProp="streetAddress">C/ de Dalt 37, bajo derecha</span>,{" "}
                 <span itemProp="addressLocality">València</span>, Ciutat Vella{" "}
                 <span itemProp="postalCode">46003</span>
               </span>
@@ -71,14 +71,15 @@ export default function Footer() {
             <div className="relative w-full md:w-4/5 overflow-hidden rounded-xl border border-dark-gray">
   {/* Map iframe */}
   <iframe
-    title="Mapa de ubicación VLCExtreme en València"
-    src="https://www.google.com/maps?q=C%2F+Alta%2C+37%2C+46003+Val%C3%A8ncia&output=embed"
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    className="w-full"
-    style={{ height: 180 }}
-    aria-label="Mapa de Google con la ubicación de VLCExtreme en València"
-  />
+  title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
+  src="https://www.google.com/maps?q=C%2F+de+Dalt%2C+37%2C+46003+Val%C3%A8ncia&output=embed"
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full"
+  style={{ height: 180 }}
+  aria-label="Mapa de Google con la ubicación de VLCExtreme en C/ de Dalt, València"
+/>
+
 
   {/* Dark overlay (does not block clicks) */}
   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/15 pointer-events-none rounded-xl" />
