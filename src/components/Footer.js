@@ -81,7 +81,8 @@ export default function Footer() {
   />
 
   {/* Dark overlay (does not block clicks) */}
-  <div className="absolute inset-0 bg-black/30 pointer-events-none rounded-xl" />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/15 pointer-events-none rounded-xl" />
+
 </div>
 
             <a
