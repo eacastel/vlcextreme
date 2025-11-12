@@ -46,3 +46,8 @@ SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
   to = "/:slug"
   status = 301
   force = true
+
+[dev]
+  command    = "gatsby develop -p 8001 -H 0.0.0.0"
+  targetPort = 8001   
+  port       = 9999   
