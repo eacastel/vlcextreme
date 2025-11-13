@@ -54,7 +54,7 @@ export default function Footer() {
             >
               {/* First line: street + city + area + postal code */}
               <span className="block">
-                <span itemProp="streetAddress">C/ de Dalt 37, bajo derecha</span>,{" "}
+                <span itemProp="streetAddress">C/ de Dalt 37, 2do bajo derecha</span>,{" "}
                 <span itemProp="addressLocality">València</span>, Ciutat Vella{" "}
                 <span itemProp="postalCode">46003</span>
               </span>
@@ -72,7 +72,7 @@ export default function Footer() {
               {/* Map iframe */}
               <iframe
                 title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24630.465812509006!2d-0.4194819644473648!3d39.49624269909675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f44c5e3b53b%3A0xd864f11aa29a0f37!2sVLCExtreme!5e0!3m2!1sen!2ses!4v1762965507454!5m2!1sen!2ses"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24630.466536031196!2d-0.4194819644473506!3d39.49624269909675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f44c5e3b53b%3A0xd864f11aa29a0f37!2sVLCExtreme!5e0!3m2!1sen!2ses!4v1763035261475!5m2!1sen!2ses"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full"
