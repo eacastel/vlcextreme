@@ -138,12 +138,24 @@ export default function Footer() {
           {/* Contact & Payment Methods */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
+
             <a
               href="mailto:info@vlcextreme.com"
               className="text-medium-gray hover:text-neon-cyan transition-colors block mb-2 focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
               itemProp="email"
             >
               info@vlcextreme.com
+            </a>
+
+            {/* WhatsApp empresarial, discreto y elegante */}
+            <a
+              href="https://wa.me/34963594092"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-medium-gray hover:text-neon-cyan transition-colors block mb-2 focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
+              aria-label="Contactar por WhatsApp con VLCExtreme"
+            >
+              WhatsApp: +34 963 59 40 92
             </a>
 
             <h4 className="text-lg font-semibold mt-6">Métodos de Pago</h4>
@@ -156,7 +168,6 @@ export default function Footer() {
             </ul>
             <PaymentMethods />
           </div>
-        </div>
 
         {/* Copyright */}
         <div className="border-t border-dark-gray mt-8 pt-8 text-center text-medium-gray">
