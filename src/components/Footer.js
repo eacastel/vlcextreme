@@ -55,7 +55,7 @@ export default function Footer() {
               {/* First line: street + city + area + postal code */}
               <span className="block">
                 <span itemProp="streetAddress">C/ de Dalt, 37, 2do bajo derecha</span>,{" "}
-                <span itemProp="addressLocality"> Ciutat Vella, València</span>,{" "}
+                <span itemProp="addressLocality"> Ciutat Vella, València</span>{" "}
                 <span itemProp="postalCode">46003</span>
               </span>
 
@@ -138,7 +138,6 @@ export default function Footer() {
           {/* Contact & Payment Methods */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
-
             <a
               href="mailto:info@vlcextreme.com"
               className="text-medium-gray hover:text-neon-cyan transition-colors block mb-2 focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
@@ -147,7 +146,6 @@ export default function Footer() {
               info@vlcextreme.com
             </a>
 
-            {/* WhatsApp empresarial, discreto y elegante */}
             <a
               href="https://wa.me/34963594092"
               target="_blank"
@@ -168,6 +166,7 @@ export default function Footer() {
             </ul>
             <PaymentMethods />
           </div>
+        </div>
 
         {/* Copyright */}
         <div className="border-t border-dark-gray mt-8 pt-8 text-center text-medium-gray">
