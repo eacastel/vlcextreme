@@ -54,8 +54,8 @@ export default function Footer() {
             >
               {/* First line: street + city + area + postal code */}
               <span className="block">
-                <span itemProp="streetAddress">C/ de Dalt 37, 2do bajo derecha</span>,{" "}
-                <span itemProp="addressLocality">València</span>, Ciutat Vella{" "}
+                <span itemProp="streetAddress">C/ de Dalt, 37, 2do bajo derecha</span>,{" "}
+                <span itemProp="addressLocality"> Ciutat Vella, València</span>,{" "}
                 <span itemProp="postalCode">46003</span>
               </span>
 
