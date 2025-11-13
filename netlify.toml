@@ -47,6 +47,12 @@ SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
   status = 301
   force = true
 
+[[redirects]]
+  from = "/google-review/"
+  to = "https://search.google.com/local/writereview?placeid=ChIJO7XjxURPYA0RNw-aohrxZNg"
+  status = 301
+  force = true
+
 [dev]
   command    = "gatsby develop -p 8001 -H 0.0.0.0"
   targetPort = 8001   
