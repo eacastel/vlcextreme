@@ -153,7 +153,7 @@ export default function Footer() {
               className="text-medium-gray hover:text-neon-cyan transition-colors block mb-2 focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
               aria-label="Contactar por WhatsApp con VLCExtreme"
             >
-              WhatsApp: +34 963 59 40 92
+              WhatsApp: +34 963 594 092
             </a>
 
             <h4 className="text-lg font-semibold mt-6">Métodos de Pago</h4>
