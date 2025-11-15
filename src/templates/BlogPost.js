@@ -148,7 +148,10 @@ export const query = graphql`
         slug
       }
       tags {
-        name
+        ... on ContentfulTag {
+          name
+          slug
+        }
       }
     }
 
@@ -158,7 +161,7 @@ export const query = graphql`
         category: { slug: { eq: $categorySlug } }
       }
       limit: 3
-      sort: { fields: publishDate, order: DESC }
+      sort: { publishDate: DESC }
     ) {
       nodes {
         title
