@@ -117,8 +117,10 @@ export const query = graphql`
           slug
         }
         tags {
-          name
-          slug
+          ... on ContentfulTag {
+            name
+            slug
+          }
         }
         coverImage {
           gatsbyImageData(layout: CONSTRAINED, width: 800)

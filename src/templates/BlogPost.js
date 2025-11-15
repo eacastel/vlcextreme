@@ -133,12 +133,6 @@ export const query = graphql`
       excerpt
       byline
       publishDate(formatString: "DD MMMM YYYY", locale: "es")
-      author {
-        name
-        photo {
-          gatsbyImageData(width: 40, height: 40, layout: FIXED)
-        }
-      }
       coverImage {
         gatsbyImageData(layout: FULL_WIDTH)
         description
@@ -177,6 +171,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
+;
 
 export default BlogPostTemplate
