@@ -124,7 +124,7 @@ const ManufacturerLogos = () => {
     <section className="py-12 bg-dark-gray">
       <div className="container mx-auto px-4">
         <h2 id="vlcextreme-process-title" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-          Trabajamos con los mejores fabricantes
+          Componentes originales de las mejores marcas
         </h2>
         
         {/* Desktop Grid */}
