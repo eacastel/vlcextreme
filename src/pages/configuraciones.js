@@ -38,7 +38,7 @@ const ConfigurePage = ({ data }) => {
             Encuentra tu Ordenador de Alto Rendimiento
           </h1>
           <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            Explora nuestras configuraciones recomendadas o <Link to="/contacto" className="text-neon-cyan underline">contáctanos para personalizar tu ordenador</Link> según tus necesidades.
+            Explora nuestras configuraciones recomendadas o <Link to="/contacto/" className="text-neon-cyan underline">contáctanos para personalizar tu ordenador</Link> según tus necesidades.
           </p>
 
           {/* 🔹 Integrated Multi-Step Form */}

@@ -84,7 +84,7 @@ const AboutPage = ({ data }) => {
           <p className="text-medium-gray max-w-3xl mx-auto">
             Si buscas el mejor rendimiento para gaming, IA o producción, un <strong>VLCExtreme</strong> está diseñado para <strong>potencia sin límites</strong>.
           </p>
-          <a href="/contacto" className="mt-8 inline-block bg-neon-cyan text-carbon-black px-6 py-3 text-lg font-bold rounded-lg transition hover:opacity-80">
+          <a href="/contacto/" className="mt-8 inline-block bg-neon-cyan text-carbon-black px-6 py-3 text-lg font-bold rounded-lg transition hover:opacity-80">
             Contáctanos para diseñar tu PC
           </a>
         </div>

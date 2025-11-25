@@ -9,7 +9,7 @@ export default function ContactPage() {
       <Seo 
         title="Contacto | VLCExtreme | Ensamblaje de Ordenadores Personalizados"
         description="¿Tienes dudas o necesitas asesoramiento sobre tu PC personalizado? Contacta con VLCExtreme, expertos en hardware de alto rendimiento."
-        pathname="/contacto"
+        pathname="/contacto/"
       />
 
       <section className="container mx-auto px-6 py-16">
@@ -33,7 +33,7 @@ export default function ContactPage() {
           "@type": "ContactPage",
           "name": "Contacto VLCExtreme",
           "description": "Contacta con VLCExtreme para asesoramiento sobre ordenadores personalizados de alto rendimiento.",
-          "url": "https://vlcextreme.com/contacto",
+          "url": "https://vlcextreme.com/contacto/",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+34 600 000 000",

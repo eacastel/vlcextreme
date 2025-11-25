@@ -54,8 +54,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                             </p>
 
                             <p className="text-base md:text-lg text-medium-gray mb-3">
-                                Potencia, estabilidad y silencio para proyectos exigentes, edición,
-                                3D, IA o simplemente trabajar sin cuellos de botella.
+                                Potencia, estabilidad silencio y tranquilidad para proyectos exigentes, edición, 3D, IA o simplemente trabajar sin cuellos de botella.
                             </p>
 
                             <p className="text-xs md:text-sm text-medium-gray mb-6">
@@ -384,7 +383,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 >
                                     Escribir por WhatsApp (respuesta rápida)
                                 </a>
-                                <Button to="/contacto" color="neongreen">
+                                <Button to="/contacto/" color="neongreen">
                                     Enviar formulario de proyecto
                                 </Button>
                             </div>
