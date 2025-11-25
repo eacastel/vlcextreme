@@ -383,7 +383,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 >
                                     Escribir por WhatsApp (respuesta rápida)
                                 </a>
-                                <Button to="/contacto/" color="neongreen">
+                                <Button to="/contacto" color="neongreen">
                                     Enviar formulario de proyecto
                                 </Button>
                             </div>

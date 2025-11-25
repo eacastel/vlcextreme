@@ -8,7 +8,7 @@ const CancelPage = () => (
       <div className="text-center max-w-lg px-6 py-10 bg-dark-gray border border-gray-700 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold text-neon-red mb-4">Pago Cancelado</h1>
         <p className="text-lg text-medium-gray mb-6">
-          No se completó tu compra. Si hubo un problema, intenta nuevamente o <Link to="/contacto/" className="text-neon-cyan font-semibold">contáctanos</Link> para obtener ayuda.
+          No se completó tu compra. Si hubo un problema, intenta nuevamente o <Link to="/contacto" className="text-neon-cyan font-semibold">contáctanos</Link> para obtener ayuda.
         </p>
         <Link to="/" className="mt-6 inline-block bg-neon-cyan text-carbon-black px-6 py-3 rounded-md font-bold text-lg transition-all duration-200 hover:bg-neon-cyan/90">
           Volver al Inicio

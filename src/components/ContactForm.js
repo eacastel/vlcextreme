@@ -46,13 +46,13 @@ const ContactForm = () => {
         </div>
       ) : (
         <form
-          name="contact"
+          name="contacto"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contacto" />
 
           <p hidden aria-hidden="true">
             <label>No rellenar: <input name="bot-field" /></label>

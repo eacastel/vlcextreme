@@ -107,7 +107,7 @@ exports.onPostBuild = async ({ graphql }) => {
     { path: "/ordenadores-creadores-streamers/", priority: "0.9" },
     { path: "/ordenadores-ia/", priority: "0.9" },
     { path: "/configuraciones/", priority: "0.8" },
-    { path: "/contacto/", priority: "0.7" },
+    { path: "/contacto", priority: "0.7" },
     { path: "/about/", priority: "0.7" },
     { path: "/ordenadores-gaming/godmode-gamer/", priority: "0.8" },
     { path: "/ordenadores-gaming/casual-cruiser/", priority: "0.8" },

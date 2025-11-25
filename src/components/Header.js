@@ -27,7 +27,7 @@ export default function Header() {
     { name: "Workstations IA", path: "/ordenadores-inteligencia-artificial" },
     { name: "Blog", path: "/blog" },
     { name: "Quiénes somos", path: "/about" },
-    { name: "Contacto", path: "/contacto/" },
+    { name: "Contacto", path: "/contacto" },
   ];
 
   return (
