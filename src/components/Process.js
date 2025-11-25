@@ -15,7 +15,7 @@ const Process = () => {
             {
               step: 'Paso 1',
               title: 'Elige o solicita tu equipo',
-              desc: 'Selecciona una de nuestras <strong><a href="/configuraciones" class="text-neon-cyan underline">configuraciones optimizadas</a></strong> o <strong><a href="/contact" class="text-neon-cyan underline">solicita tu PC</a></strong> completamente personalizado.'
+              desc: 'Selecciona una de nuestras <strong><a href="/configuraciones" class="text-neon-cyan underline">configuraciones optimizadas</a></strong> o <strong><a href="/contacto" class="text-neon-cyan underline">solicita tu PC</a></strong> completamente personalizado.'
             },
             {
               step: 'Paso 2',

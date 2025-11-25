@@ -34,6 +34,11 @@ SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
   status = 301
   force = true
 
+[[redirects]]
+  from = "/contact/"
+  to = "/contacto/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/ordenadores-para-gaming/"

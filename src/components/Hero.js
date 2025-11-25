@@ -42,7 +42,7 @@ const Hero = ({ backgroundImage }) => {
         <Button to="/configuraciones" variant="outline" color="neongreen">
             Ver Configuraciones
           </Button>
-         {/*  <Button to="/contact" variant="outline" color="neoncyan">
+         {/*  <Button to="/contacto" variant="outline" color="neoncyan">
          Consulta con un experto
           </Button>*/}
         </div>
