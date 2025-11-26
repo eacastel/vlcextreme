@@ -435,7 +435,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
 
                             <FaqItem
                                 question="¿Por qué elegir VLCExtreme y no comprar en PcComponentes o Amazon?"
-                                answer="Las grandes tiendas son excelentes para piezas sueltas, pero no para soluciones profesionales. Nosotros no solo ensamblamos; validamos. Tu inversión incluye: asesoramiento técnico real, selección de componentes para evitar cuellos de botella y gestión profesional del cableado. Recibes una máquina lista parLas grandes tiendas son buenas para comprar piezas sueltas, pero no para soluciones profesionales. No solo ensamblamos: diseñamos, montamos y validamos el equipo completo. Tu inversión incluye asesoramiento técnico real, selección de componentes sin cuellos de botella con un montaje profesional. Recibes una máquina lista para producir, no un rompecabezas."
+                                answer="Las grandes tiendas son buenas para comprar piezas sueltas, pero no para soluciones profesionales. No solo ensamblamos: diseñamos, montamos y validamos el equipo completo. Tu inversión incluye asesoramiento técnico real, selección de componentes sin cuellos de botella con un montaje profesional. Recibes una máquina lista para producir, no un rompecabezas."
                             />
 
                             <FaqItem
