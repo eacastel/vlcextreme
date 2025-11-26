@@ -95,16 +95,7 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        workboxConfig: {
-          skipWaiting: false,
-          clientsClaim: false,
-        },
-        precachePages: [], 
-      },
-    },
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
