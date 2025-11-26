@@ -57,7 +57,6 @@ const WorkstationsProfesionalesPage = ({ data }) => {
     const heroImage = getImage(data.hero);
     // Note: Assuming 'comparison' is the image you used for the technical section
     const technicalImage = getImage(data.comparison);
-    const paraQuienImage = getImage(data.paraQuien); // Used for Case Study/Review section if needed
     const googleIcon = getImage(data.googleIcon);
 
     // 💡 STRATEGY: Forces them to admit they want to BUY, filtering out free-loaders.
@@ -354,8 +353,9 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 {/* TEXT */}
                                 {/* Added 'indent-16' to push the first line */}
                                 <p className="text-gray-400 italic leading-relaxed relative z-10 indent-6">
-                                    Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de
-                                    entender exactamente qué necesitaba. El rendimiento ha superado todas mis expectativas: rápido, silencioso y potente.
+                                    Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de entender exactamente qué necesitaba y me recomendaron la configuración perfecta. </p>
+                                    <p className="text-gray-400 italic leading-relaxed relative z-10 mt-4">
+                                    El rendimiento ha superado todas mis expectativas: es rápido, silencioso, potente y está optimizado al detalle. Además, el servicio postventa demuestra un compromiso real con el cliente.
                                 </p>
                             </blockquote>
                         </div>

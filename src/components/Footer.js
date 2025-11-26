@@ -10,11 +10,23 @@ const slugify = (text) =>
     .replace(/\s+/g, "-");
 
 export default function Footer() {
-  const quickLinks = [
-    "Configuraciones",
+  // 1. New Main Navigation Links (Matching Header)
+  const mainLinks = [
+    { name: "Gaming Élite", path: "/ordenadores-gaming" },
+    { name: "Creadores Extrem", path: "/ordenadores-creadores-streamers" },
+    { name: "Workstations IA", path: "/ordenadores-inteligencia-artificial" },
+    { name: "Configuraciones", path: "/configuraciones" },
+    { name: "Blog", path: "/blog" },
+    { name: "Quiénes somos", path: "/about" },
+    { name: "Contacto", path: "/contacto" },
+  ];
+
+  // 2. Legal Links (Moved to bottom)
+  const legalLinks = [
     "Términos y Condiciones",
     "Condiciones de Venta y Garantía",
     "Privacidad",
+    "Cookies"
   ];
 
   const socialLinks = {
@@ -33,7 +45,10 @@ export default function Footer() {
       <meta itemProp="name" content="VLCExtreme" />
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand, About & Address/Map */}
+          
+          {/* ------------------------------------------------------- */}
+          {/* COL 1 & 2: Brand, About & Address/Map (Kept as is)      */}
+          {/* ------------------------------------------------------- */}
           <div className="md:col-span-2">
             <h3 className="text-xl font-bold mb-4">VLCExtreme</h3>
             <p className="text-medium-gray mb-6">
@@ -41,7 +56,6 @@ export default function Footer() {
               máximo rendimiento en gaming, streaming y estaciones de trabajo de IA.
             </p>
 
-            {/* Address & Map block */}
             <h4 className="text-lg font-semibold mb-3">Dónde estamos</h4>
             <p className="text-medium-gray mb-3">
               (Atención en Valencia <strong>solo con cita previa</strong>).
@@ -52,24 +66,18 @@ export default function Footer() {
               itemScope
               itemType="https://schema.org/PostalAddress"
             >
-              {/* First line: street + city + area + postal code */}
               <span className="block">
                 <span itemProp="streetAddress">C/ de Dalt, 37, 2do bajo derecha</span>,{" "}
                 <span itemProp="addressLocality"> Ciutat Vella, València</span>{" "}
                 <span itemProp="postalCode">46003</span>
               </span>
-
-              {/* Second line: region + country */}
               <span className="block">
                 <span itemProp="addressRegion">Comunitat Valenciana</span>,{" "}
                 <span itemProp="addressCountry">España</span>
               </span>
             </address>
 
-
-
             <div className="relative w-full md:w-4/5 overflow-hidden rounded-xl border border-dark-gray">
-              {/* Map iframe */}
               <iframe
                 title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24630.466536031196!2d-0.4194819644473506!3d39.49624269909675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f44c5e3b53b%3A0xd864f11aa29a0f37!2sVLCExtreme!5e0!3m2!1sen!2ses!4v1763035261475!5m2!1sen!2ses"
@@ -79,11 +87,7 @@ export default function Footer() {
                 style={{ height: 180 }}
                 aria-label="Mapa de Google con la ubicación de VLCExtreme en C/ de Dalt, València"
               />
-
-
-              {/* Dark overlay (does not block clicks) */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/15 pointer-events-none rounded-xl" />
-
             </div>
 
             <a
@@ -97,23 +101,24 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Quick Links + Social */}
+          {/* ------------------------------------------------------- */}
+          {/* COL 3: Main Navigation (UPDATED)                        */}
+          {/* ------------------------------------------------------- */}
           <nav aria-label="Enlaces rápidos y redes sociales">
-            <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+            <h4 className="text-lg font-semibold mb-4">Explorar</h4>
             <ul className="space-y-2 mb-6">
-              {quickLinks.map((link) => (
-                <li key={link}>
+              {mainLinks.map((link) => (
+                <li key={link.path}>
                   <Link
-                    to={`/${slugify(link)}`}
-                    className="text-medium-gray hover:text-neon-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
+                    to={link.path}
+                    className="text-medium-gray hover:text-neon-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded block"
                   >
-                    {link}
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            {/* Social Media under quick links */}
             <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
             <div
               className="flex flex-wrap gap-4"
@@ -135,7 +140,9 @@ export default function Footer() {
             </div>
           </nav>
 
-          {/* Contact & Payment Methods */}
+          {/* ------------------------------------------------------- */}
+          {/* COL 4: Contact & Payment (Kept as is)                   */}
+          {/* ------------------------------------------------------- */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <a
@@ -168,13 +175,33 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-dark-gray mt-8 pt-8 text-center text-medium-gray">
-          <p>
-            © {new Date().getFullYear()} <span itemProp="name">VLCExtreme</span>.
-            Todos los derechos reservados.
-          </p>
+        {/* ------------------------------------------------------- */}
+        {/* BOTTOM BAR: Legal Links + Copyright (UPDATED)           */}
+        {/* ------------------------------------------------------- */}
+        <div className="border-t border-dark-gray mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+          
+          {/* Legal Links Row */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-6">
+            {legalLinks.map((link) => (
+                <Link 
+                    key={link} 
+                    to={`/${slugify(link)}`} 
+                    className="text-sm text-medium-gray hover:text-neon-cyan transition-colors"
+                >
+                    {link}
+                </Link>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <div className="text-sm text-medium-gray">
+            <p>
+              © {new Date().getFullYear()} <span itemProp="name">VLCExtreme</span>.
+              Todos los derechos reservados.
+            </p>
+          </div>
         </div>
+
       </div>
     </footer>
   );

@@ -3,49 +3,48 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const BlogRelatedPosts = ({ posts = [] }) => {
-  if (!posts.length) return null;
+  if (!posts || posts.length === 0) return null;
 
   return (
-    <section
-      aria-labelledby="related-posts-title"
-      className="bg-carbon-black py-16 px-4"
-    >
-      <div className="max-w-6xl mx-auto">
-        <h2
-          id="related-posts-title"
-          className="text-3xl font-bold text-light-gray mb-8"
-        >
-          Artículos Relacionados
-        </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map(post => {
-            const image = getImage(post.coverImage);
+    <section className="py-16 px-4 max-w-7xl mx-auto">
+      <div className="flex items-center gap-4 mb-10">
+         <div className="h-px bg-white/10 flex-grow"></div>
+         <h2 className="text-2xl font-bold text-white uppercase tracking-widest">
+            Lectura Relacionada
+         </h2>
+         <div className="h-px bg-white/10 flex-grow"></div>
+      </div>
 
-            return (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.category.slug}/${post.slug}`}
-                className="block bg-dark-gray rounded-lg overflow-hidden shadow hover:shadow-lg transition"
-              >
+      <div className="grid gap-8 md:grid-cols-3">
+        {posts.map(post => {
+          const image = getImage(post.coverImage);
+
+          return (
+            <Link
+              key={post.slug}
+              to={`/blog/${post.category?.slug || 'general'}/${post.slug}`}
+              className="group block bg-dark-gray rounded-xl overflow-hidden border border-white/5 hover:border-neon-cyan/30 transition-all duration-300"
+            >
+              <div className="h-40 overflow-hidden relative">
                 {image && (
                   <GatsbyImage
                     image={image}
-                    alt={post.coverImage.description || post.title}
-                    className="h-48 w-full object-cover"
+                    alt={post.title}
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                 )}
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-light-gray mb-1">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-medium-gray">
-                    {post.excerpt?.slice(0, 120)}...
-                  </p>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+                <p className="text-xs text-gray-500 line-clamp-2">
+                  {post.excerpt}
+                </p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

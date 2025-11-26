@@ -1,25 +1,43 @@
 import React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Testimonials = () => {
+  // 1. Fetch the icon
+  const data = useStaticQuery(graphql`
+    query {
+      googleIcon: file(relativePath: { eq: "google-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 24, layout: FIXED, placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
+    }
+  `)
+
+  const googleImg = getImage(data.googleIcon);
+
+  // 2. Add an 'icon' and 'source' property to your data structure
   const testimonials = [
     {
-      text: 'Mi PC gaming llegó optimizado al 100% y listo para jugar sin hacer nada más',
-      author: 'Juan M.',
-      rating: 5
+      text: 'Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de entender exactamente qué necesitaba y me recomendaron la configuración perfecta. El rendimiento ha superado todas mis expectativas: es rápido, silencioso, potente y está optimizado al detalle. Además, el servicio postventa demuestra un compromiso real con el cliente.',
+      author: 'Cristian A.',
+      rating: 5,
+      icon: googleImg,       
+      source: "Google Reviews" 
     },
     {
       text: 'Mi estación VLCExtreme maneja grandes datasets de IA sin problemas',
       author: 'Laura G.',
-      rating: 5
+      rating: 5,
     },
     {
       text: '6 meses de uso y funciona como el primer día',
       author: 'David S.',
-      rating: 5
+      rating: 5,
     }
   ]
 
-  // ✅ Calculate average rating for structured data
+  // Calculate average rating for structured data
   const averageRating = testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
 
   return (
@@ -31,24 +49,40 @@ const Testimonials = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="p-6 bg-dark-gray rounded-lg border border-dark-gray hover:border-neon-cyan transition-all">
-              <div className="flex gap-2 text-neon-cyan mb-4">
+            <div key={index} className="p-6 bg-dark-gray rounded-lg border border-dark-gray hover:border-neon-cyan transition-all flex flex-col">
+              
+              {/* ✅ OPTIONAL HEADER: If icon exists, show it */}
+              {testimonial.icon && (
+                <div className="flex items-center gap-2 mb-3 border-b border-white/5 pb-3">
+                    <GatsbyImage image={testimonial.icon} alt={testimonial.source || "Review Source"} />
+                    {testimonial.source && (
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">
+                            {testimonial.source}
+                        </span>
+                    )}
+                </div>
+              )}
+
+              {/* Stars */}
+              <div className="flex gap-1 text-neon-yellow mb-4 text-sm">
                 {'★'.repeat(testimonial.rating)}
               </div>
-              <p className="text-medium-gray mb-4">"{testimonial.text}"</p>
-              <p className="text-light-gray font-semibold">- {testimonial.author}</p>
+
+              {/* Text */}
+              <p className="text-medium-gray mb-6 text-sm leading-relaxed italic flex-grow">
+                "{testimonial.text}"
+              </p>
+
+              {/* Author */}
+              <p className="text-light-gray font-bold text-sm">
+                - {testimonial.author}
+              </p>
             </div>
           ))}
         </div>
-        {/*
-        <div className="text-center mt-12">
-          <Button to="/testimonios" variant="outline" color="neoncyan">
-            Ver todas las opiniones
-          </Button>
-        </div>*/}
       </div>
 
-      {/* ✅ JSON-LD Schema Markup for Testimonials */}
+      {/* JSON-LD Schema Markup */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

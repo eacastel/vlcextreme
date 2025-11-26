@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Button from "../Button";
+import { FaMicrochip, FaMemory, FaGamepad } from "react-icons/fa"; 
+import { PiGraphicsCardFill } from "react-icons/pi"; // Nice GPU icon if available, or stick to FaLayerGroup
 
 const GamingBuildCard = ({ build }) => {
-
-
-
 
   const getCategorySlug = (category) => {
     if (category === "gaming") return "ordenadores-gaming";
@@ -15,10 +14,8 @@ const GamingBuildCard = ({ build }) => {
     return "otros";
   };
 
-  // ✅ Generate the slug dynamically
   const slug = `/${getCategorySlug(build.category)}/${build.name.toLowerCase().replace(/\s+/g, "-")}/`;
 
-  
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "builds" } }) {
@@ -36,124 +33,114 @@ const GamingBuildCard = ({ build }) => {
           gatsbyImageData(width: 400, height: 400, placeholder: BLURRED, formats: [AUTO, WEBP, PNG], quality: 90)
         }
       }
-      sticker: file(relativePath: { eq: "extreme-build-sticker.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 96, height: 96, layout: FIXED)
-        }
-      }
     }
   `);
 
-  // **Find and return the correct image**
   const findImage = (imageKeys) => {
-    if (!imageKeys || imageKeys.length === 0) {
-      return data.noImage ? getImage(data.noImage.childImageSharp) : null;
-    }
-
-    const normalizedKeys = imageKeys.map(key =>
-      key.replace(/\.(png|jpg|jpeg|webp)$/i, "").replace(/[()]/g, "")
-    );
-
-    let foundImages = data.allFile.edges.filter(edge =>
-      normalizedKeys.includes(edge.node.name)
-    );
-
-    if (foundImages.length === 0) {
-      return data.noImage ? getImage(data.noImage.childImageSharp) : null;
-    }
-
+    if (!imageKeys || imageKeys.length === 0) return getImage(data.noImage.childImageSharp);
+    const normalizedKeys = imageKeys.map(key => key.replace(/\.(png|jpg|jpeg|webp)$/i, "").replace(/[()]/g, ""));
+    let foundImages = data.allFile.edges.filter(edge => normalizedKeys.includes(edge.node.name));
     foundImages.sort((a, b) => a.node.name.localeCompare(b.node.name, undefined, { numeric: true }));
-
-    return getImage(foundImages[0]?.node?.childImageSharp) || (data.noImage ? getImage(data.noImage.childImageSharp) : null);
+    return getImage(foundImages[0]?.node?.childImageSharp) || getImage(data.noImage.childImageSharp);
   };
 
-  // **Assign Images Before Usage**
   const buildImage = findImage(build.imageKeys);
-  const stickerImage = data.sticker ? getImage(data.sticker.childImageSharp) : null;
 
   const totalPrice = Math.ceil(
-    Object.values(build.base_components)
-      .reduce((sum, component) => sum + component.price, 0) * 1.4 // Apply 40% markup
+    Object.values(build.base_components).reduce((sum, component) => sum + component.price, 0) * 1.4
   ).toLocaleString('es-ES', { useGrouping: true });
 
-  const [showDetails, setShowDetails] = useState(false);
-
   return (
-    <div className="relative bg-dark-gray rounded-xl shadow-lg border border-gray-500/30 transition-all hover:text-carbon-black hover:shadow-[0_0_20px_#00A4C4] text-center">
+    <div className="relative bg-dark-gray rounded-xl shadow-lg border border-white/5 transition-all hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:border-neon-cyan/50 flex flex-col h-full group overflow-hidden">
       
-      {/* Floating Sticker */}
-      {build.sticker && stickerImage && (
-        <div className="absolute top-[230px] z-40 -right-2 w-24 h-24 rounded-full shadow-md overflow-hidden">
-          <GatsbyImage image={stickerImage} alt="VLCExtreme Build" className="w-full h-full object-cover" />
-        </div>
-      )}
+      {/* Badge */}
+      <div className="bg-carbon-black/80 backdrop-blur absolute top-0 left-0 w-full z-10 border-b border-white/10 py-1">
+        <p className="text-center text-[10px] font-bold text-neon-cyan uppercase tracking-[0.2em]">
+           Arquitectura de Referencia
+        </p>
+      </div>
 
-      {/* Short Description */}
-      <div className="bg-neon-cyan text-black text-xs font-bold uppercase w-full rounded-t-xl px-2 py-2 pb-2">
-        {build.short_description}
+      {/* Image */}
+      <div className="h-56 overflow-hidden relative bg-carbon-black">
+        {buildImage ? (
+          <GatsbyImage 
+            image={buildImage} 
+            alt={build.name} 
+            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-gray-600">No Image</div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-gray via-transparent to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="bg-inherit text-light-gray p-6 mb-6 transition-all flex flex-col justify-center min-h-[300px]">
-        <h3 className="text-2xl font-bold text-neon-cyan mt-2 mb-4">{build.name}</h3>
+      <div className="p-6 flex flex-col flex-grow">
+        
+        <div className="mb-6">
+            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors leading-tight">
+                {build.name}
+            </h3>
+            <p className="text-xs text-gray-400 line-clamp-2">
+                {build.short_description || build.description}
+            </p>
+        </div>
 
-        <div className="mb-4 rounded-lg overflow-hidden">
-          {buildImage ? (
-            <GatsbyImage image={buildImage} alt={build.name} className="rounded-lg shadow-lg" />
-          ) : (
-            <div className="w-full h-64 bg-gray-700 flex items-center justify-center">
-              <span className="text-light-gray">Imagen no disponible</span>
+        {/* Hero Specs */}
+        <div className="grid grid-cols-1 gap-2 mb-6">
+            <div className="flex items-center gap-3 bg-carbon-black p-2 rounded border border-white/5">
+                <FaMicrochip className="text-neon-cyan text-sm" />
+                <span className="text-xs font-bold text-gray-200">{build.base_components.CPU?.name}</span>
             </div>
-          )}
+            <div className="flex items-center gap-3 bg-carbon-black p-2 rounded border border-white/5">
+                <PiGraphicsCardFill className="text-neon-cyan text-sm" /> 
+                <span className="text-xs font-bold text-gray-200">{build.base_components.GPU?.name}</span>
+            </div>
+            <div className="flex items-center gap-3 bg-carbon-black p-2 rounded border border-white/5">
+                <FaMemory className="text-neon-cyan text-sm" />
+                <span className="text-xs font-bold text-gray-200">{build.base_components.RAM?.name}</span>
+            </div>
         </div>
 
-        <p className="mb-4 text-gray-300">{build.description}</p>
-
+        {/* Compatible Games (Badges) */}
         {build.compatible_games?.length > 0 && (
-          <p className="text-sm text-gray-300 italic mb-4">
-            <span className="text-white">Programas compatibles: {build.compatible_games.join(', ')}. (No incluidos).</span>
-          </p>
-        )}
-
-        <div className="mt-2">
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="text-sm text-light-gray underline hover:text-white"
-          >
-            {showDetails ? "Ocultar" : "Más Detalles"}
-          </button>
-        </div>
-
-        {showDetails && (
-          <div className="space-y-1 mt-4 mb-4">
-            {Object.entries(build.base_components).map(([key, component]) => (
-              <div key={key} className="p-1 border-b border-dark-gray/60">
-                <p className="text-xs text-gray-400 uppercase">{key}</p>
-                <p className="text-md font-semibold">{component.name}</p>
-              </div>
-            ))}
-            <p className="text-xs text-gray-300 pt-6">
-              **En caso de que no exista disponibilidad de algún componente, o por fluctuación de precios, éste se sustituirá por otro de rendimiento, marca y calidad similares.**
+          <div className="mb-6">
+            <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold flex items-center gap-1">
+               <FaGamepad className="text-neon-cyan"/> Optimizado para
             </p>
-            <p className="text-xs text-gray-300 pt-6">
-              **Nos pondremos en contacto contigo para confirmar la instalación de los componentes finales y del sistema operativo (incluido: Windows o Linux).**
-            </p>
+            <div className="flex flex-wrap gap-1">
+                {build.compatible_games.slice(0, 3).map((game, i) => (
+                    <span key={i} className="text-[10px] bg-white/5 text-gray-300 px-2 py-1 rounded border border-white/5">
+                        {game}
+                    </span>
+                ))}
+                {build.compatible_games.length > 3 && (
+                    <span className="text-[10px] text-gray-500 px-1 py-1">+ {build.compatible_games.length - 3} más</span>
+                )}
+            </div>
           </div>
         )}
 
-        <div className="mt-6 flex flex-col items-center space-y-1 text-neon-cyan font-bold text-lg">
-          <span className="text-sm uppercase">Precio Total:</span>
-          <span className="text-neon-cyan text-2xl font-bold">{totalPrice} €</span>
+        {/* Price & Action */}
+        <div className="mt-auto pt-4 border-t border-white/5">
+            <div className="flex justify-between items-end mb-4">
+                <div className="flex flex-col">
+                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">Inversión Est.</span>
+                    <span className="text-[10px] text-neon-cyan">Desde</span>
+                </div>
+                <span className="text-2xl font-bold text-white">{totalPrice} €</span>
+            </div>
+
+            <Button 
+                to={slug} 
+                color="neoncyan" 
+                variant="solid" 
+                className="w-full shadow-none hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+            >
+                Ver Configuración
+            </Button>
         </div>
 
-        <div className="mt-4">
-          <Button to={slug} color="neoncyan" variant="solid" className="mt-4">
-            Seleccionar
-          </Button>
-        </div>
-        <div className="mt-4">
-
-        </div>
       </div>
     </div>
   );

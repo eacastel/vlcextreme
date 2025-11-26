@@ -118,7 +118,7 @@ const NextArrow = ({ onClick }) => (
           Arquitecturas de Referencia
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          No vendemos cajas cerradas. Estas son <strong>plataformas base validadas</strong> que usamos como punto de partida para diseñar tu máquina única. Elige tu base y personalízala.
+          No vendemos cajas cerradas. Las siguientes configuraciones son <strong>plataformas base validadas</strong> que usamos como punto de partida para diseñar tu máquina única. Elige tu base y personalízala.
         </p>
       </div>
 

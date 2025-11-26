@@ -4,7 +4,7 @@ import Button from './Button' // Importing your custom component
 
 const Hero = ({ backgroundImage }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-carbon-black">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-carbon-black">
       {/* Background Image */}
       {backgroundImage && (
         <div className="absolute inset-0 w-full h-full">

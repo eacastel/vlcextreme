@@ -4,120 +4,126 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Button from "../components/Button"
-import BlogCTA from "../components/BlogCTA"
 import BlogRelatedPosts from "../components/BlogRelatedPosts"
-import BlogBuildsHighlight from "../components/BlogBuildsHighlight"
-import { renderRichText } from "../utils/renderRichText"
+import BlogBuildsHighlight from "../components/BlogBuildsHighlight" // Ensure this file exists or comment out
+import { renderRichText } from "gatsby-source-contentful/rich-text" 
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
-
-
+// Helper for reading time
 const getReadingTime = raw => {
   try {
     const doc = JSON.parse(raw)
-    const text = doc.content
-      .map(n => n.content?.map(c => c.value).join(" "))
-      .join(" ")
+    const text = doc.content.map(n => n.content?.map(c => c.value).join(" ")).join(" ")
     const words = text.trim().split(/\s+/).length
     return Math.ceil(words / 200)
-  } catch {
-    return null
-  }
+  } catch { return 5 }
 }
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.contentfulBlogPost
+  const relatedPosts = data.relatedPosts?.nodes || [] // ✅ Fix: Extract nodes correctly
   const coverImage = getImage(post.coverImage)
-const richTextContent = renderRichText(post.body.raw)
+  
+  // Simple options for Rich Text rendering to style it correctly
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-6 text-gray-300 leading-relaxed text-lg">{children}</p>,
+      [BLOCKS.HEADING_2]: (node, children) => <h2 className="text-3xl font-bold text-white mt-12 mb-6">{children}</h2>,
+      [BLOCKS.HEADING_3]: (node, children) => <h3 className="text-2xl font-bold text-neon-cyan mt-8 mb-4">{children}</h3>,
+      [BLOCKS.UL_LIST]: (node, children) => <ul className="list-disc pl-6 mb-6 text-gray-300 space-y-2 marker:text-neon-cyan">{children}</ul>,
+    },
+  };
+
+  const richTextContent = renderRichText(post.body, options) // Use standard Gatsby Contentful render
   const readingTime = getReadingTime(post.body.raw)
-  const publishDate = new Date(post.publishDate).toLocaleDateString("es-ES", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })
+  const publishDate = new Date(post.publishDate).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })
 
   return (
     <Layout>
       <Seo
         title={post.title}
-        description={post.metaDescription || post.excerpt}
+        description={post.excerpt}
         pathname={`/blog/${post.slug}`}
-        image={post.coverImage?.file?.url}
+        image={post.coverImage?.url}
       />
 
-      {/* 🔹 Hero Section */}
-      <section className="relative pt-20 pb-1 bg-carbon-black text-light-gray">
-        {coverImage && (
-          <div className="w-full max-h-[500px] overflow-hidden rounded-lg mb-10">
-            <GatsbyImage
-              image={coverImage}
-              alt={post.coverImage.description || post.title}
-              className="w-full h-auto"
-            />
-          </div>
-        )}
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
+      {/* 🔹 Editorial Header */}
+      <section className="relative pt-32 pb-12 bg-carbon-black text-center px-6">
+        <div className="max-w-4xl mx-auto">
+            
+            {/* Category & Date */}
+            <div className="flex items-center justify-center gap-4 text-sm font-mono text-gray-500 mb-6 uppercase tracking-widest">
+                {post.category && <span className="text-neon-cyan">{post.category.name}</span>}
+                <span>•</span>
+                <span>{publishDate}</span>
+                <span>•</span>
+                <span>{readingTime} min lectura</span>
+            </div>
 
-          <p className="text-medium-gray text-sm mb-2">
-            {post.byline && <span>{post.byline}</span>}
-            {post.publishDate && <span> · {publishDate}</span>}
-            {readingTime && <span> · {readingTime} min de lectura</span>}
-          </p>
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                {post.title}
+            </h1>
 
-          {post.category && (
-            <p className="text-neon-yellow text-md uppercase tracking-widest my-4">
-              {post.category.name}
+            {/* Excerpt / Lead */}
+            <p className="text-xl md:text-2xl text-gray-400 font-light italic max-w-3xl mx-auto leading-relaxed border-l-4 border-neon-cyan pl-6 text-left">
+                {post.excerpt}
             </p>
-          )}
-
-          <p className="relative text-xl md:text-2xl font-light italic text-neon-green leading-snug mb-2 text-left mt-14 mx-auto before:absolute before:inset-y-0 before:-left-4 before:w-1 before:bg-neon-green">{post.excerpt}</p>
         </div>
       </section>
 
-      {/* 🔹 Main Content */}
-      <article className="prose prose-invert prose-lg max-w-4xl mx-auto px-4 py-10">
-        {richTextContent}
-      </article>
-
-      {/* 🔹 Tags */}
-      {post.tags?.length > 0 && (
-        <div className="max-w-4xl mx-auto px-4 pb-10 text-light-gray">
-          <h4 className="text-base font-semibold mb-2">Etiquetas:</h4>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map(tag => (
-              <span
-                key={tag.slug}
-                className="bg-carbon-gray text-xs px-3 py-1 rounded-full uppercase tracking-wide"
-              >
-                {tag.name}
-              </span>
-            ))}
-          </div>
+      {/* 🔹 Main Image */}
+      {coverImage && (
+        <div className="w-full max-w-6xl mx-auto px-4 mb-12">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <GatsbyImage image={coverImage} alt={post.title} className="w-full max-h-[600px] object-cover" />
+            </div>
         </div>
       )}
 
-      {/* 🔹 CTA: Configura tu PC */}
-      <section className="py-16 bg-dark-gray text-center">
-        <h2 className="text-3xl font-bold text-light-gray mb-4">
-          ¿Listo para tu PC a medida?
-        </h2>
-        <p className="text-medium-gray mb-6 max-w-xl mx-auto">
-          Configura tu ordenador personalizado optimizado para Gaming,
-          Producción o Inteligencia Artificial.
-        </p>
-        <Button to="/configuraciones" color="neongreen">
-          Ver Configuraciones Disponibles
-        </Button>
+      {/* 🔹 Content Body */}
+      <article className="max-w-3xl mx-auto px-6 pb-20">
+        {/* We use standard HTML/JSX rendering here, controlled by 'options' above */}
+        <div className="prose prose-lg prose-invert prose-a:text-neon-cyan prose-strong:text-white max-w-none">
+            {richTextContent}
+        </div>
+
+        {/* Tags Footer */}
+        {post.tags && (
+            <div className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-2">
+                {post.tags.map(tag => (
+                    <span key={tag.slug} className="text-xs text-gray-400 bg-dark-gray px-3 py-1 rounded-full border border-white/5">
+                        #{tag.name}
+                    </span>
+                ))}
+            </div>
+        )}
+      </article>
+
+      {/* 🔹 CTA: Contextual */}
+      <section className="py-20 bg-dark-gray border-y border-white/5 text-center px-6">
+        <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">
+                ¿Necesitas hardware para esto?
+            </h2>
+            <p className="text-gray-400 mb-8 text-lg">
+                Diseñamos máquinas optimizadas para las tecnologías que acabas de leer. 
+                Sin cuellos de botella.
+            </p>
+            <Button to="/configuraciones" color="neongreen" variant="solid">
+                Ver Arquitecturas Disponibles
+            </Button>
+        </div>
       </section>
 
-      {/* 🔹 Builds Highlighted */}
-      <BlogBuildsHighlight category={post.category} />
+      {/* 🔹 Builds Highlight (Optional) */}
+      {/* <BlogBuildsHighlight category={post.category} /> */}
 
-      {/* 🔹 Related Posts */}
-      <BlogRelatedPosts tags={post.tags} currentSlug={post.slug} />
+      {/* 🔹 Related Posts (Now connected correctly) */}
+      <div className="bg-carbon-black">
+          <BlogRelatedPosts posts={relatedPosts} />
+      </div>
 
-      {/* 🔹 Blog CTA */}
-      <BlogCTA />
     </Layout>
   )
 }
@@ -131,24 +137,22 @@ export const query = graphql`
         raw
       }
       excerpt
-      byline
-      publishDate(formatString: "DD MMMM YYYY", locale: "es")
+      publishDate
       coverImage {
-        gatsbyImageData(layout: FULL_WIDTH)
-        description
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+        url
       }
       category {
         name
         slug
       }
       tags {
-        ... on ContentfulTag {
-          name
-          slug
-        }
+        name
+        slug
       }
     }
 
+    # ✅ Correctly fetching related posts by category
     relatedPosts: allContentfulBlogPost(
       filter: {
         slug: { ne: $slug }
@@ -161,17 +165,13 @@ export const query = graphql`
         title
         slug
         excerpt
+        category { slug }
         coverImage {
-          gatsbyImageData(layout: CONSTRAINED, width: 600)
-          description
-        }
-        category {
-          slug
+          gatsbyImageData(layout: CONSTRAINED, width: 600, placeholder: BLURRED)
         }
       }
     }
   }
-`
-;
+`;
 
 export default BlogPostTemplate

@@ -65,7 +65,7 @@ const WhyChoose = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
             <h2 id="why-vlcextreme-title" className="text-3xl md:text-5xl font-bold text-white mb-6">
-            De <span className="text-gray-500">comprar lo que hay</span> a <span className="text-neon-cyan">tener lo que quieres</span>.
+            De comprar lo que hay <span className="text-neon-cyan">a tener lo que quieres</span>.
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
                 Las tiendas convencionales mueven inventario. Nosotros diseñamos instrumentos de precisión.
