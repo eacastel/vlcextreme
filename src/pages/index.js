@@ -13,20 +13,27 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <Hero backgroundImage={data.heroImage.childImageSharp.gatsbyImageData} />
-      <SelectConfigureCarousel />
+      
+      {/* Moved Why Up: Sell the philosophy before the products */}
       <WhyChoose />
-      <Testimonials />
+      
+      {/* Renamed visually to "Architectures" inside the component */}
+      <SelectConfigureCarousel />
+      
       <Process />
+      <Testimonials />
 
-      <div className='p-8'>
-      <h2 id="vlcextreme-process-title" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-          Contáctanos
-        </h2>
-        <p className="text-medium-gray text-center max-w-2xl mx-auto mb-12">
-          ¿Tienes dudas sobre nuestros ordenadores personalizados?  
-          Envíanos un mensaje y te responderemos lo antes posible.
-        </p>
-        <ContactForm />
+      <div className='py-20 bg-carbon-black border-t border-white/10'>
+        <div className="container mx-auto px-4">
+            <h2 id="vlcextreme-process-title" className="text-3xl md:text-5xl font-bold text-white text-center mb-6">
+                ¿Tienes un proyecto especial?
+            </h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12 text-lg">
+                Si ninguna arquitectura base encaja con tu visión, diseñamos desde cero. 
+                Cuéntanos qué necesitas (IA, Render Farm, Flight Sim) y lo construimos.
+            </p>
+            <ContactForm />
+        </div>
       </div>
     </Layout>
   )

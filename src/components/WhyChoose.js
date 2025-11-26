@@ -1,8 +1,8 @@
 import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby' // Added Link import
 
-const Why = () => {
+const WhyChoose = () => {
   const data = useStaticQuery(graphql`
     query {
       latestHardware: file(relativePath: { eq: "vlcextreme-latest-hardware.webp" }) {
@@ -10,7 +10,7 @@ const Why = () => {
           gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
-      optimizedPC: file(relativePath: { eq: "equipos-ordenadores-personalizados-valencia.png" }) {
+      optimizedPC: file(relativePath: { eq: "bios-testing.png" }) {
         childImageSharp {
           gatsbyImageData(width: 400, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
@@ -28,54 +28,74 @@ const Why = () => {
     }
   `)
 
+  // Updated Copy with Links
   const points = [
     { 
-      title: '1. Sin Stock Antiguo', 
-      desc: 'Cada PC incluye procesadores, tarjetas gráficas y memoria RAM de última generación para garantizar el máximo rendimiento.',
+      title: 'Cero Stock. 100% Fresco.', 
+      desc: 'No tenemos estanterías llenas de polvo. Adquirimos el silicio específicamente para tu build, asegurando la última revisión de fábrica.',
       image: getImage(data.latestHardware),
-      alt: 'Componentes de hardware más recientes en un taller de ensamblaje VLCExtreme.'
+      alt: 'Componentes de hardware frescos',
+      link: '/configuraciones' // Context: Product quality
     },
     { 
-      title: '2. Optimización Extrema', 
-      desc: 'Todos los sistemas se ajustan a nivel de BIOS, overclocking y gestión térmica para estabilidad total.',
+      title: 'Bios & Thermal Tuning', 
+      desc: 'No es solo montar piezas. Ajustamos voltajes, curvas de ventilación y BIOS manualmente para lograr silencio y potencia.',
       image: getImage(data.optimizedPC),
-      alt: 'Técnico ajustando un PC para optimización extrema con flujo de aire mejorado.'
+      alt: 'Ajuste de BIOS y optimización térmica',
+      link: '/workstations-profesionales-valencia' // Context: Engineering
     },
     { 
-      title: '3. Testeado a Fondo', 
-      desc: 'Nuestros equipos pasan pruebas de estrés intensivas para garantizar estabilidad y durabilidad en tareas exigentes.',
+      title: 'Validación de 24h', 
+      desc: 'Tu equipo se prueba durante 24 horas en nuestro lab antes de enviarlo para garantizar estabilidad del 100%, antes de la entrega.',
       image: getImage(data.stressTesting),
-      alt: 'Bancos de pruebas en el laboratorio VLCExtreme verificando la estabilidad de ordenadores personalizados.'
+      alt: 'Stress testing en laboratorio',
+      link: '/nosotros' // Context: Methodology
     },
     { 
-      title: '4. Personalización Total', 
-      desc: 'Desde el chasis hasta el sistema de refrigeración, creamos ordenadores adaptados a cada usuario.',
+      title: 'Soporte Personalizado', 
+      desc: 'Si tienes dudas, hablas con quien montó tu PC, no con un call center. Soporte directo de técnico a usuario.',
       image: getImage(data.customPC),
-      alt: 'Cliente satisfecho con su PC gaming personalizado VLCExtreme, con RGB y componentes de alta gama.'
+      alt: 'Soporte técnico directo con cliente',
+      link: '/contacto' // Context: Contact
     },
   ]
 
   return (
-    <section className="py-16 bg-dark-gray" aria-labelledby="why-vlcextreme-title">
+    <section className="py-24 bg-dark-gray border-y border-white/5" aria-labelledby="why-vlcextreme-title">
       <div className="container mx-auto px-4">
-        <h2 id="why-vlcextreme-title" className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-          No fabricamos en serie. Cada PC es único, como tú.
-        </h2>
+        <div className="text-center mb-16">
+            <h2 id="why-vlcextreme-title" className="text-3xl md:text-5xl font-bold text-white mb-6">
+            De <span className="text-gray-500">comprar lo que hay</span> a <span className="text-neon-cyan">tener lo que quieres</span>.
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                Las tiendas convencionales mueven inventario. Nosotros diseñamos instrumentos de precisión.
+            </p>
+        </div>
 
-        {/* Full-Width Grid - No Extra Content, Just 4 Equal Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" role="list">
           {points.map((point, index) => (
-            <div 
+            <Link 
+              to={point.link}
               key={index} 
-              className="p-8 bg-carbon-black rounded-xl hover:bg-neon-cyan/10 transition-all text-center shadow-lg"
+              className="group p-6 bg-carbon-black rounded-xl border border-white/5 hover:border-neon-cyan/50 hover:-translate-y-2 transition-all duration-300 block"
               role="listitem"
             >
-              <div className="mb-6 flex justify-center rounded-full overflow-hidden w-40 h-40 mx-auto">
-                <GatsbyImage image={point.image} alt={point.alt} className="rounded-full object-cover" />
+              <div className="mb-6 overflow-hidden rounded-lg aspect-square border border-white/10 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-shadow">
+                {point.image && (
+                    <GatsbyImage 
+                        image={point.image} 
+                        alt={point.alt} 
+                        // CHANGED: grayscale-[0.8] lets 20% color through.
+                        className="w-full h-full object-cover grayscale-[0.8] group-hover:grayscale-0 transition-all duration-500" 
+                    />
+                )}
               </div>
-              <h3 className="text-xl text-light-gray font-bold mb-3">{point.title}</h3>
-              <p className="text-medium-gray text-lg">{point.desc}</p>
-            </div>
+              {/* Added underline on hover to title to indicate clickability */}
+              <h3 className="text-xl text-white font-bold mb-3 group-hover:text-neon-cyan transition-colors group-hover:underline decoration-neon-cyan/50 underline-offset-4">
+                {point.title}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{point.desc}</p>
+            </Link>
           ))}
         </div>
       </div>
@@ -83,4 +103,4 @@ const Why = () => {
   )
 }
 
-export default Why
+export default WhyChoose

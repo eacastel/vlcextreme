@@ -2,24 +2,25 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import LayoutLanding from "../components/LayoutLanding";
+import PricingTiers from "../components/PricingTiers";
 import Seo from "../components/Seo";
 import Button from "../components/Button";
-import { 
-    FaWhatsapp, 
-    FaCheckCircle, 
-    FaMicrochip, 
-    FaBolt, 
-    FaStopwatch, 
-    FaChevronDown, 
+import {
+    FaWhatsapp,
+    FaCheckCircle,
+    FaMicrochip,
+    FaBolt,
+    FaArrowRight,
+    FaChevronDown,
     FaChevronUp,
     FaStar
 } from 'react-icons/fa';
-import { 
-    SiAutodesk, 
-    SiUnrealengine, 
-    SiBlender, 
-    SiPytorch, 
-    SiDavinciresolve 
+import {
+    SiAutodesk,
+    SiUnrealengine,
+    SiBlender,
+    SiPytorch,
+    SiDavinciresolve
 } from "react-icons/si";
 
 /* 🔹 HELPER COMPONENT: FAQ ACCORDION */
@@ -40,9 +41,8 @@ const FaqItem = ({ question, answer }) => {
                 </span>
             </button>
             <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'
-                }`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'
+                    }`}
             >
                 <p className="text-gray-400 leading-relaxed text-sm md:text-base pr-8">
                     {answer}
@@ -56,15 +56,17 @@ const FaqItem = ({ question, answer }) => {
 const WorkstationsProfesionalesPage = ({ data }) => {
     const heroImage = getImage(data.hero);
     // Note: Assuming 'comparison' is the image you used for the technical section
-    const technicalImage = getImage(data.comparison); 
+    const technicalImage = getImage(data.comparison);
     const paraQuienImage = getImage(data.paraQuien); // Used for Case Study/Review section if needed
-    
+    const googleIcon = getImage(data.googleIcon);
+
     // 💡 STRATEGY: Forces them to admit they want to BUY, filtering out free-loaders.
     const whatsappUrl =
-        "https://wa.me/34963594092?text=Hola%20VLCExtreme%2C%20estoy%20interesado%20en%20adquirir%20una%20Workstation.%20Mi%20uso%20principal%20ser%C3%A1%20...%20y%20tengo%20un%20presupuesto%20estimado%20de...";
+        "https://wa.me/34963594092?text=Hola%20VLCExtreme%2C%20estoy%20interesado%20en%20una%20workstation%20a%20medida.%20Mi%20uso%20principal%20es...%20%28arquitectura%2C%203D%2C%20v%C3%ADdeo%2C%20IA%2C%20etc.%29%20y%20mi%20presupuesto%20aproximado%20es%20de%20...";
+
 
     return (
-        <LayoutLanding hideNavigation={true}> 
+        <LayoutLanding hideNavigation={true}>
             <Seo
                 title="Workstations Profesionales en València | VLCExtreme"
                 description="Ingeniería informática artesanal. Workstations para 3D, IA y Arquitectura. Montaje manual en València. Soporte directo."
@@ -72,15 +74,15 @@ const WorkstationsProfesionalesPage = ({ data }) => {
             />
 
             <main className="bg-carbon-black text-light-gray font-sans selection:bg-neon-green selection:text-carbon-black">
-                
+
                 {/* 1. HERO SECTION: High Impact, Low Noise */}
-                <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+                <section className="relative min-h-[80vh] flex items-center overflow-hidden" id="top">
                     {heroImage && (
                         <div className="absolute inset-0 w-full h-full">
                             <GatsbyImage
                                 image={heroImage}
                                 alt="Workstation profesional VLCExtreme"
-                                className="w-full h-full object-cover opacity-40" 
+                                className="w-full h-full object-cover opacity-40"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-carbon-black via-carbon-black/90 to-transparent" />
                         </div>
@@ -91,7 +93,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                             <div className="inline-block bg-neon-green/10 border border-neon-green/30 px-3 py-1 rounded-full text-neon-green text-xs md:text-sm font-bold tracking-wider mb-6">
                                 INGENIERÍA ARTESANAL EN VALÈNCIA
                             </div>
-                            
+
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                                 Potencia extrema.<br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
@@ -100,32 +102,35 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                             </h1>
 
                             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-                                Deja de perder horas renderizando. Diseñamos estaciones de trabajo de grado servidor para <strong>Arquitectura, 3D e IA</strong>. Sin cuellos de botella. Sin componentes genéricos.
+                                Diseñamos estaciones de trabajo de grado profesional para
+                                <strong> arquitectura, 3D, vídeo, IA </strong>
+                                y para quienes simplemente quieren un ordenador que nunca se despeine.
+                                Sin cuellos de botella. Sin ruidos extraños. Sin equipos de supermercado.
                             </p>
 
                             <div className="flex flex-col gap-4">
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <Button 
-                                        to={whatsappUrl} 
-                                        external 
-                                        color="neongreen" 
+                                    <Button
+                                        to={whatsappUrl}
+                                        external
+                                        color="neongreen"
                                         className="flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
                                     >
                                         <FaWhatsapp className="text-xl" />
                                         Hablar con un Técnico
                                     </Button>
 
-                                    <Button 
-                                        to="/contacto" 
-                                        variant="outline" 
+                                    <Button
+                                        to="/contacto"
+                                        variant="outline"
                                         color="white"
                                         className="flex items-center justify-center gap-2"
                                     >
                                         Solicitar Presupuesto Formal
                                     </Button>
                                 </div>
-                                <p className="text-[10px] md:text-xs text-gray-500 mt-2 max-w-lg">
-                                    * Servicio exclusivo para <strong>proyectos completos</strong>. 
+                                <p className="text-[10px] md:text-sm text-gray-500 mt-2 max-w-lg">
+                                    * Servicio exclusivo para <strong>equipos completos a medida</strong>.
                                     No vendemos componentes sueltos ni asesoramos sobre montajes externos.
                                 </p>
                             </div>
@@ -136,10 +141,10 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                 {/* 2. TRUST BAR (Interactive Software Triggers) */}
                 <section className="border-y border-white/5 bg-dark-gray/50 py-10">
                     <div className="container mx-auto px-4 text-center">
-                        <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-8">
-                            Componentes originales de las mejores marcas
+                        <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-500 mb-8">
+                            Componentes originales de las mejores marcas, elegidos para trabajar muchas horas al día.
                         </p>
-                        
+
                         {/* Software Icons */}
                         <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8">
                             {[
@@ -159,14 +164,14 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                     <div className="text-4xl text-gray-600 group-hover:text-neon-cyan transition-colors duration-300">
                                         {tool.icon}
                                     </div>
-                                    <span className="text-[10px] font-semibold text-gray-600 group-hover:text-white transition-colors duration-300 uppercase tracking-wider hidden md:block">
+                                    <span className="text-[10px] md:text-sm font-semibold text-gray-600 group-hover:text-white transition-colors duration-300 uppercase tracking-wider hidden md:block">
                                         {tool.name}
                                     </span>
                                 </a>
                             ))}
                         </div>
-                        
-                        <p className="text-[10px] text-neon-cyan/80">
+
+                        <p className="text-[10px] md:text-sm text-neon-cyan/80">
                             * Haz clic en tu software para iniciar una consulta técnica específica por WhatsApp.
                         </p>
                     </div>
@@ -175,7 +180,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                 {/* 3. TECHNICAL LOGIC (The "How" - Anti-Supermarket) */}
                 <section className="bg-carbon-black py-24 px-4 border-b border-white/5">
                     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-                        
+
                         {/* Left: Text & Icons */}
                         <div>
                             <h2 className="text-3xl font-bold text-white mb-2">
@@ -184,17 +189,18 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                             <h3 className="text-2xl font-bold text-gray-600 mb-8">
                                 no ensamblaje rápido.
                             </h3>
-                            
+
                             <div className="space-y-8">
                                 {/* Feature 1: ESD */}
                                 <div className="flex gap-5">
                                     <div className="shrink-0 bg-dark-gray border border-white/10 p-4 rounded-xl h-min text-neon-green">
-                                        <FaBolt size={24}/>
+                                        <FaBolt size={24} />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white text-lg mb-1">Protección Antiestática (ESD)</h4>
                                         <p className="text-sm text-gray-400 leading-relaxed">
-                                            Montamos en banco técnico con pulseras de descarga a tierra. Cuidamos la electrónica a nivel microscópico.
+                                            Montamos en banco técnico con pulseras de descarga a tierra (ESD).
+                                            Cuidamos cada componente para que llegue impecable a tu estudio.
                                         </p>
                                     </div>
                                 </div>
@@ -202,12 +208,14 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 {/* Feature 2: Component Architecture */}
                                 <div className="flex gap-5">
                                     <div className="shrink-0 bg-dark-gray border border-white/10 p-4 rounded-xl h-min text-neon-green">
-                                        <FaMicrochip size={24}/>
+                                        <FaMicrochip size={24} />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white text-lg mb-1">Arquitectura de Componentes</h4>
                                         <p className="text-sm text-gray-400 leading-relaxed">
-                                            Seleccionamos combinaciones de Placa Base + RAM certificadas para estabilidad máxima. Sin cuellos de botella.
+                                            Seleccionamos la arquitectura completa del sistema
+                                            (placa base, RAM, almacenamiento y GPU) para que todo trabaje al mismo nivel.
+                                            Sin cuellos de botella ocultos.
                                         </p>
                                     </div>
                                 </div>
@@ -215,12 +223,13 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 {/* Feature 3: Validation */}
                                 <div className="flex gap-5">
                                     <div className="shrink-0 bg-dark-gray border border-white/10 p-4 rounded-xl h-min text-neon-green">
-                                        <FaCheckCircle size={24}/>
+                                        <FaCheckCircle size={24} />
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-white text-lg mb-1">Validación de 24h</h4>
                                         <p className="text-sm text-gray-400 leading-relaxed">
-                                            Test de estrés (CPU+GPU) de día completo antes del envío. Garantizamos que el equipo llega listo para producir.
+                                            Pruebas de estrés completas (CPU + GPU) durante 24 horas antes del envío.
+                                            Cuando te llega, solo tienes que encender y ponerte a trabajar.
                                         </p>
                                     </div>
                                 </div>
@@ -245,137 +254,166 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                 </section>
 
                 {/* 4. PROCESS SECTION (How we work) */}
-                <section className="bg-dark-gray py-20 px-4">
+                <section className="bg-dark-gray py-20 px-4" id="process">
                     <div className="max-w-5xl mx-auto">
                         <h2 className="text-3xl font-bold mb-10 text-center">Protocolo de Trabajo</h2>
+
                         <div className="grid md:grid-cols-4 gap-6">
                             {[
-                                { step: "01", title: "Análisis", text: "Revisamos tu software y flujo de trabajo real." },
-                                { step: "02", title: "Diseño", text: "Propuesta técnica detallada y justificada." },
-                                { step: "03", title: "Montaje", text: "Ensamblaje manual y gestión de cableado." },
-                                { step: "04", title: "Entrega", text: "Envío asegurado y puesta en marcha." }
+                                { 
+                                    step: "01", 
+                                    title: "Análisis", 
+                                    text: "Revisamos tu software, tipo de proyectos y cuellos de botella actuales.",
+                                    link: "#start", // 👈 CHANGED: Jumps to the bottom CTA
+                                    target: "_self" 
+                                },
+                                {
+                                    step: "02",
+                                    title: "Diseño",
+                                    text: "Te presentamos una propuesta técnica clara, con el porqué de cada decisión.",
+                                    link: "#pricing", 
+                                    target: "_self"
+                                },
+                                {
+                                    step: "03",
+                                    title: "Montaje",
+                                    text: "Montaje manual, cableado limpio y optimización de refrigeración y ruido.",
+                                    link: "/about", 
+                                    target: "_self"
+                                },
+                                {
+                                    step: "04",
+                                    title: "Entrega",
+                                    text: "Envío asegurado y equipo listo para producir desde el primer día.",
+                                    link: "#faq", 
+                                    target: "_self"
+                                }
                             ].map((item, i) => (
-                                <div key={i} className="bg-carbon-black p-6 rounded-lg border border-white/5">
-                                    <div className="text-4xl font-bold text-neon-cyan/20 mb-3">{item.step}</div>
-                                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                                    <p className="text-sm text-gray-400">{item.text}</p>
-                                </div>
+                                <a
+                                    key={i}
+                                    href={item.link}
+                                    target={item.target}
+                                    rel={item.target === "_blank" ? "noopener noreferrer" : ""}
+                                    className="group bg-carbon-black p-6 rounded-lg border border-white/5 hover:border-neon-cyan/50 hover:-translate-y-1 transition-all duration-300 relative flex flex-col"
+                                >
+                                    <div className="text-4xl font-bold text-neon-cyan/20 mb-3 transition-colors group-hover:text-neon-cyan/40">
+                                        {item.step}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-400 mb-4 flex-grow">
+                                        {item.text}
+                                    </p>
+
+                                    {/* Tiny "Go" Arrow that appears on hover */}
+                                    <div className="mt-auto flex items-center text-xs font-bold text-neon-cyan opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                                        Saber más <FaArrowRight className="ml-2" />
+                                    </div>
+                                </a>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* 5. PRICING TIERS */}
-                <section className="bg-carbon-black py-20 px-4">
-                    <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl font-bold mb-4">Inversión Profesional</h2>
-                            <p className="text-gray-400 max-w-2xl mx-auto">
-                                Diseñado para quienes amortizan su equipo con su trabajo. 
-                                Componentes de grado industrial y soporte local prioritario.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {/* Tier 1 */}
-                            <div className="bg-dark-gray border border-white/5 rounded-2xl p-8 hover:border-neon-green/50 transition-colors">
-                                <h3 className="text-xl font-bold text-white mb-2">Creative Pro</h3>
-                                <p className="text-sm text-gray-500 mb-6 h-10">Edición 4K, Diseño Gráfico y CAD ligero.</p>
-                                <div className="text-3xl font-bold text-neon-green mb-1">2.500 €</div>
-                                <div className="text-xs text-gray-500 mb-6">Precio base estimado</div>
-                                <ul className="text-sm text-gray-300 space-y-3 mb-8">
-                                    <li className="flex gap-2"><FaCheckCircle className="text-neon-green/50"/> Ryzen 9 / Core i7</li>
-                                    <li className="flex gap-2"><FaCheckCircle className="text-neon-green/50"/> 64GB DDR5 RAM</li>
-                                    <li className="flex gap-2"><FaCheckCircle className="text-neon-green/50"/> NVIDIA RTX 4070 Ti Super</li>
-                                </ul>
-                            </div>
-
-                            {/* Tier 2 - HIGHLIGHTED */}
-                            <div className="bg-dark-gray border border-neon-cyan rounded-2xl p-8 transform md:-translate-y-4 shadow-[0_0_30px_rgba(6,182,212,0.15)] relative">
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neon-cyan text-carbon-black font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
-                                    Más Vendido
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">3D & Motion</h3>
-                                <p className="text-sm text-gray-500 mb-6 h-10">Renderizado GPU pesado, Cinema4D, Unreal Engine.</p>
-                                <div className="text-3xl font-bold text-neon-cyan mb-1">4.200 €</div>
-                                <div className="text-xs text-gray-500 mb-6">Precio base estimado</div>
-                                <ul className="text-sm text-gray-300 space-y-3 mb-8">
-                                    <li className="flex gap-2"><FaCheckCircle className="text-neon-cyan"/> Ryzen 9 7950X / i9</li>
-                                    <li className="flex gap-2"><FaCheckCircle className="text-neon-cyan"/> 96GB - 128GB DDR5</li>
-                                    <li className="flex gap-2"><FaCheckCircle className="text-neon-cyan"/> NVIDIA RTX 4090 24GB</li>
-                                </ul>
-                            </div>
-
-                            {/* Tier 3 */}
-                            <div className="bg-dark-gray border border-white/5 rounded-2xl p-8 hover:border-purple-500/50 transition-colors">
-                                <h3 className="text-xl font-bold text-white mb-2">AI & Deep Learning</h3>
-                                <p className="text-sm text-gray-500 mb-6 h-10">Entrenamiento de modelos LLM, Data Science.</p>
-                                <div className="text-3xl font-bold text-purple-400 mb-1">Let's talk</div>
-                                <div className="text-xs text-gray-500 mb-6">Proyectos Enterprise</div>
-                                <ul className="text-sm text-gray-300 space-y-3 mb-8">
-                                    <li className="flex gap-2"><FaCheckCircle className="text-purple-500/50"/> Dual GPU Configurations</li>
-                                    <li className="flex gap-2"><FaCheckCircle className="text-purple-500/50"/> 192GB+ ECC RAM</li>
-                                    <li className="flex gap-2"><FaCheckCircle className="text-purple-500/50"/> Threadripper PRO</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <PricingTiers />
 
                 {/* 6. SOCIAL PROOF (Review + Case Study) */}
                 <section className="bg-dark-gray py-16 px-4">
                     <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+
                         {/* Google Review */}
-                        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8">
-                            <div className="flex items-center gap-3 mb-3">
-                                <span className="text-light-gray font-semibold text-lg">Google Reviews</span>
+                        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors">
+                            <div className="flex items-center gap-3 mb-4">
+                                {/* ✅ GOOGLE ICON ADDED HERE */}
+                                {googleIcon && (
+                                    <div className=" p-1 rounded-full flex items-center justify-center w-8 h-8">
+                                        <GatsbyImage
+                                            image={googleIcon}
+                                            alt="Google G Logo"
+                                            className="w-5 h-5"
+                                            objectFit="contain"
+                                        />
+                                    </div>
+                                )}
+                                <span className="text-light-gray font-bold text-lg tracking-wide">Google Reviews</span>
                             </div>
-                            <div className="flex text-neon-green text-xl mb-4">★★★★★</div>
-                            <blockquote className="text-gray-400 italic leading-relaxed">
-                                “Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de
-                                entender exactamente qué necesitaba. El rendimiento ha superado todas mis expectativas: rápido, silencioso y potente.”
+
+                            <div className="flex text-neon-yellow text-xl mb-4 shadow-neon-yellow/20 drop-shadow-sm">
+                                ★★★★★
+                            </div>
+
+                            <blockquote className="relative mt-8">
+                                {/* BIG QUOTE MARK */}
+                                {/* Increased size to text-8xl and adjusted positioning */}
+                                <span className="text-8xl text-white/10 absolute -top-8 -left-3 font-serif leading-none select-none pointer-events-none">
+                                    “
+                                </span>
+
+                                {/* TEXT */}
+                                {/* Added 'indent-16' to push the first line */}
+                                <p className="text-gray-400 italic leading-relaxed relative z-10 indent-6">
+                                    Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de
+                                    entender exactamente qué necesitaba. El rendimiento ha superado todas mis expectativas: rápido, silencioso y potente.
+                                </p>
                             </blockquote>
                         </div>
 
                         {/* Case Study */}
-                        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8">
-                            <h3 className="text-xl font-bold text-light-gray mb-3">
-                                Caso real: Workstation 3D
+                        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors">
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="text-neon-cyan text-lg font-bold">CASE STUDY</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">
+                                Workstation 3D & Unreal
                             </h3>
                             <p className="text-gray-400 mb-4 text-sm">
                                 Un diseñador de escenarios virtuales en València necesitaba un equipo para 3ds Max y Unreal. Su estación fue optimizada para renderizado GPU ininterrumpido.
                             </p>
-                            <ul className="text-gray-500 list-disc pl-5 space-y-1 text-sm">
+                            <ul className="text-gray-500 list-disc pl-5 space-y-1 text-sm marker:text-neon-cyan">
                                 <li>Renderizado estable de escenas complejas.</li>
                                 <li>Silencio absoluto en carga media.</li>
-                                <li>Entrega lista para producir en 11 días.</li>
+                                <li>Entrega lista para producir en 10 días.</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                {/* 7. MANIFESTO (The Vacuum Story - Pure Emotion/Philosophy) */}
-                <section className="bg-carbon-black py-24 px-4 border-t border-white/5">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <div className="flex justify-center mb-8 text-neon-green/50">
-                            <FaStar className="text-xl animate-pulse" />
+                {/* 7. MANIFESTO (The Vacuum Story - Empowered) */}
+                <section className="bg-carbon-black py-24 px-4 border-t border-white/5 relative overflow-hidden">
+
+                    {/* 1. AMBIENT GLOW: A soft light behind the text to give it atmosphere */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-neon-cyan/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
+
+                        {/* Star Icon - Brighter with a drop shadow */}
+                        <div className="flex justify-center mb-8">
+                            <FaStar className="text-2xl text-neon-green drop-shadow-[0_0_15px_rgba(34,197,94,0.6)] animate-pulse" />
                         </div>
 
+                        {/* Headline - Visual Storytelling */}
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                            Tu trabajo no es un electrodoméstico. <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
-                                Tu equipo tampoco debería serlo.
+                            Un PC de <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-cyan">Alto Rendimiento</span> <br />
+                            <span className="text-gray-500">
+                                no un electrodoméstico.
                             </span>
                         </h2>
-                        
+
                         <div className="text-lg text-gray-400 leading-relaxed space-y-6 max-w-3xl mx-auto">
                             <p>
-                                En las grandes superficies, verás ordenadores expuestos literalmente al lado de 
-                                aspiradoras y lavadoras. Para ellos, un PC es solo una caja más en el inventario.
+                                En los grandes almacenes, verás ordenadores expuestos literalmente al lado de
+                                aspiradoras y lavadoras. Para ellos, un PC es solo un producto más en el inventario.
                             </p>
                             <p>
-                                En <strong>VLCExtreme</strong>, tratamos tu workstation como un instrumento de precisión. 
-                                Sin bloatware, sin componentes genéricos y <span className="text-white font-medium">jamás verás un aspirador doméstico cerca de tu placa base.</span>
+                                En <strong className="text-white">VLCExtreme</strong>, un ordenador es un
+                                <span className="text-neon-cyan font-medium"> instrumento de precisión</span>.
+                                Seleccionamos exclusivamente los últimos componentes de <strong>alta gama</strong> y
+                                entregamos un <span className="text-neon-cyan font-medium">
+                                    sistema operativo ágil y afinado a mano personalmente
+                                </span> para eliminar cualquier fricción entre tú y tu trabajo.
+
                             </p>
                         </div>
                     </div>
@@ -389,33 +427,33 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                         </h2>
 
                         <div className="bg-carbon-black rounded-2xl p-6 md:p-10 border border-white/5 shadow-2xl">
-                            
-                            <FaqItem 
+
+                            <FaqItem
                                 question="¿Vendéis componentes sueltos o asesoráis sobre montajes caseros?"
                                 answer="No. Somos una firma de ingeniería de sistemas. Nuestro valor reside en el diseño, montaje, validación y garantía de equipos completos 'llave en mano'. No comercializamos componentes sueltos."
                             />
 
-                            <FaqItem 
+                            <FaqItem
                                 question="¿Por qué elegir VLCExtreme y no comprar en PcComponentes o Amazon?"
-                                answer="Las grandes tiendas son excelentes para piezas sueltas, pero no para soluciones profesionales. Nosotros no solo ensamblamos; validamos. Tu inversión incluye: asesoramiento técnico real, selección de componentes para evitar cuellos de botella y gestión profesional del cableado. Recibes una máquina lista para trabajar, no un puzle de piezas."
+                                answer="Las grandes tiendas son excelentes para piezas sueltas, pero no para soluciones profesionales. Nosotros no solo ensamblamos; validamos. Tu inversión incluye: asesoramiento técnico real, selección de componentes para evitar cuellos de botella y gestión profesional del cableado. Recibes una máquina lista parLas grandes tiendas son buenas para comprar piezas sueltas, pero no para soluciones profesionales. No solo ensamblamos: diseñamos, montamos y validamos el equipo completo. Tu inversión incluye asesoramiento técnico real, selección de componentes sin cuellos de botella con un montaje profesional. Recibes una máquina lista para producir, no un rompecabezas."
                             />
 
-                            <FaqItem 
+                            <FaqItem
                                 question="Soy una empresa/autónomo, ¿entregáis factura con IVA?"
                                 answer="Por supuesto. Todos nuestros equipos se entregan con factura oficial española con IVA desglosado (21%) para que puedas deducirte el gasto. Trabajamos habitualmente con estudios de arquitectura y productoras."
                             />
 
-                            <FaqItem 
+                            <FaqItem
                                 question="¿Cuánto tiempo tardáis en entregar el equipo?"
                                 answer="Nuestro plazo estándar es de 10 a 15 días laborables. Preferimos pedir los componentes específicos para tu build (no usamos stock antiguo) y dedicamos un día entero al montaje y otro al testeo de calidad (24h)."
                             />
 
-                            <FaqItem 
+                            <FaqItem
                                 question="¿Qué incluye la garantía de 3 años?"
                                 answer="Ofrecemos Gestión Integral de Garantía. El hardware tiene 3 años de garantía oficial. Si algo falla, nosotros nos encargamos de todo: diagnosticamos el problema, tramitamos el cambio con el fabricante y volvemos a montar la pieza. Tú no tienes que pelearte con servicios técnicos externos."
                             />
 
-                            <FaqItem 
+                            <FaqItem
                                 question="Vivo fuera de València, ¿enviais equipos?"
                                 answer="Sí, enviamos a toda la península. Utilizamos un servicio de transporte asegurado. El equipo viaja con protecciones internas (espuma expansiva) para evitar que la tarjeta gráfica sufra daños."
                             />
@@ -424,15 +462,15 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                 </section>
 
                 {/* 9. FINAL CTA (The Close) */}
-                <section className="bg-carbon-black py-24 px-4 border-t border-white/5">
+                <section className="bg-carbon-black py-24 px-4 border-t border-white/5" id="start">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-white mb-6">
-                            ¿Empezamos tu proyecto?
+                            ¿Comenzamos tu proyecto?
                         </h2>
                         <p className="text-gray-400 mb-10 text-lg">
-                            Tienes dos formas de avanzar. Elige la que mejor se adapte a ti.
+                            Si quieres dejar de luchar con tu ordenador y empezar a disfrutar de él, tienes dos formas de avanzar. Elige la que mejor se adapte a ti.
                         </p>
-                        
+
                         <div className="grid sm:grid-cols-2 gap-6">
                             {/* Option A: Fast */}
                             <div className="bg-dark-gray p-8 rounded-xl border border-white/5 hover:border-neon-green/30 transition-colors flex flex-col items-center">
@@ -440,14 +478,14 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 <p className="text-sm text-gray-500 mb-6 text-center">
                                     Ideal si tienes dudas técnicas o no sabes qué componentes elegir.
                                 </p>
-                                <Button 
-                                    to={whatsappUrl} 
-                                    external 
+                                <Button
+                                    to={whatsappUrl}
+                                    external
                                     color="neongreen"
                                     fullWidth
                                     className="shadow-lg shadow-neon-green/10"
                                 >
-                                    <FaWhatsapp className="mr-2 inline text-lg"/> Chat WhatsApp
+                                    <FaWhatsapp className="mr-2 inline text-lg" /> Chat WhatsApp
                                 </Button>
                             </div>
 
@@ -457,9 +495,9 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                 <p className="text-sm text-gray-500 mb-6 text-center">
                                     Ideal si necesitas una factura proforma o propuesta por email.
                                 </p>
-                                <Button 
-                                    to="/contacto" 
-                                    variant="outline" 
+                                <Button
+                                    to="/contacto"
+                                    variant="outline"
                                     color="white"
                                     fullWidth
                                 >
@@ -482,9 +520,9 @@ export const query = graphql`
         gatsbyImageData(width: 1920, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
       }
     }
-    paraQuien: file(relativePath: { eq: "para-quien6.png" }) {
+    googleIcon: file(relativePath: { eq: "google-logo.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
+        gatsbyImageData(width: 32, layout: FIXED, placeholder: BLURRED, formats: [AUTO, WEBP])
       }
     }
     comparison: file(relativePath: { eq: "workstation-comparison.png" }) {

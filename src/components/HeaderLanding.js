@@ -33,8 +33,8 @@ export default function HeaderLanding() {
 
   // Anchor links specific to this landing page
   const landingLinks = [
-    { name: "Proceso de Trabajo", target: "#process" },
-    { name: "Garantía", target: "#faq" },
+    { name: "Protocolo de Trabajo", target: "#process" },
+    { name: "Preguntas Frequentes", target: "#faq" },
   ];
 
   const whatsappUrl = "https://wa.me/34963594092?text=Hola%20VLCExtreme...";
@@ -77,7 +77,7 @@ export default function HeaderLanding() {
           <div className="flex items-center gap-4">
             {/* Subtle 'Home' link for navigation safety */}
             <Link 
-              to="/" 
+              to="#top" 
               className="hidden lg:flex items-center gap-2 text-xs font-medium text-gray-500 hover:text-white transition-colors mr-2"
             >
               <FaArrowLeft /> Volver

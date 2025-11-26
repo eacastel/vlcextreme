@@ -110,32 +110,55 @@ const NextArrow = ({ onClick }) => (
 
 
   return (
-    <div className="w-full max-w-7xl mx-auto mt-10 px-4">
-      {/* **Top Category Buttons** */}
-      <div className="flex flex-wrap justify-center mb-6 space-x-4">
-        {Object.keys(categories).map(categoryKey => (
+    <div className="w-full max-w-7xl mx-auto mt-20 px-4 mb-20">
+
+      {/* ✅ NEW: Strategic Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Arquitecturas de Referencia
+        </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          No vendemos cajas cerradas. Estas son <strong>plataformas base validadas</strong> que usamos como punto de partida para diseñar tu máquina única. Elige tu base y personalízala.
+        </p>
+      </div>
+
+{/* **Top Category Buttons** */}
+      <div className="flex flex-wrap justify-center mb-10 space-x-4">
+         {/* ... (Keep your existing CategoryButton map logic here) */}
+         {Object.keys(categories).map(categoryKey => (
           <CategoryButton
             key={categoryKey}
             categoryKey={categoryKey}
             label={categories[categoryKey]}
             isActive={selectedCategory === categoryKey}
             onClick={setSelectedCategory}
-            variant="outline" // Ensure background color is applied instead of outline
-            color="neoncyan" // Make all buttons use neon cyan color
-            activeClass="bg-neon-cyan !text-carbon-black shadow-[0_0_15px_#00A4C4] !font-bold hover:!bg-neon-cyan hover:!text-carbon-black hover:!shadow-[0_0_15px_#00A4C4]"
+            variant="outline"
+            color="neoncyan"
+            // Minor tweak: emphasize the active state distinctively
+            activeClass="bg-neon-cyan !text-carbon-black shadow-[0_0_20px_rgba(6,182,212,0.4)] font-bold scale-105"
           />
         ))}
       </div>
 
       {/* **Slick Carousel** */}
+      {/* Keep existing slider logic */}
       <div className="relative w-full overflow-visible">
         <Slider {...sliderSettings} className="mt-6">
           {builds.map(build => (
             <div key={build.id} className="p-4">
+              {/* NOTE: Inside your Card components (GamingBuildCard, etc.), 
+                 change the button text from "Comprar" to "Configurar Base" 
+              */}
               {renderBuildCard(build)}
             </div>
           ))}
         </Slider>
+      </div>
+      
+      <div className="text-center mt-8">
+          <p className="text-sm text-gray-500">
+              * Todos los componentes se piden <strong>on-demand</strong> para garantizar la última revisión de hardware.
+          </p>
       </div>
     </div>
   );
