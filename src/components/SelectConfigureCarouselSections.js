@@ -42,7 +42,9 @@ const NextArrow = ({ onClick }) => (
   const stickerImage = data?.sticker?.childImageSharp?.gatsbyImageData;
 
   // Filter builds dynamically based on the passed `category`
-  const filteredBuilds = Object.values(buildsData.builds).filter(build => build.category === category);
+  const filteredBuilds = Object.values(buildsData.builds)
+  .map(([key, data]) => ({ ...data, id: key }))
+  .filter(build => build.category === category);
 
   // **Render Build Cards based on category**
   const renderBuildCard = (build) => {

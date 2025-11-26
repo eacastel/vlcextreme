@@ -57,7 +57,9 @@ const NextArrow = ({ onClick }) => (
   };
 
   // Filter builds by selected category
-  const builds = Object.values(buildsData.builds).filter(build => build.category === selectedCategory);
+  const builds = Object.entries(buildsData.builds)
+    .map(([key, data]) => ({ ...data, id: key })) 
+    .filter(build => build.category === selectedCategory);
 
   // **Render Build Cards based on category**
   const renderBuildCard = (build) => {
