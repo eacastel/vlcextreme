@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import Button from '../components/Button';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { FaClock, FaTag } from 'react-icons/fa';
+import { FaClock } from 'react-icons/fa';
 
 const BlogIndexPage = ({ data }) => {
     const posts = data.allContentfulBlogPost.nodes;

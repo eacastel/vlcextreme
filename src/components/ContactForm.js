@@ -5,59 +5,67 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   
-  // State for visual selection (to style the active buttons)
+  // State for visual selection
   const [selectedBudget, setSelectedBudget] = useState("");
   const [selectedType, setSelectedType] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(event.target);
-    const encodedData = new URLSearchParams(formData).toString();
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
-    try {
-      const response = await fetch(`${window.location.pathname}?no-cache=1`, {
-        method: "POST",
-        body: encodedData,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      });
-
-      if (response.ok) {
+    // Localhost bypass for testing UI
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      setTimeout(() => {
+        console.log("📝 [Localhost] Sent:", Object.fromEntries(formData));
         setSubmitted(true);
-        event.target.reset();
-        setSelectedBudget("");
-        setSelectedType("");
-      } else {
-        HTMLFormElement.prototype.submit.call(event.target);
-        return;
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      HTMLFormElement.prototype.submit.call(event.target);
-      return;
+        setIsSubmitting(false);
+      }, 1000);
+      return; 
     }
-    setIsSubmitting(false);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        setSubmitted(true);
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Error al enviar. Por favor, inténtalo de nuevo.");
+        setIsSubmitting(false);
+      });
   };
 
   return (
     <div className="max-w-3xl mx-auto bg-dark-gray p-8 rounded-2xl shadow-2xl border border-white/10">
       
-      {/* Header inside the form card */}
       <div className="mb-8 border-b border-white/10 pb-4">
         <h3 className="text-2xl font-bold text-white mb-2">Inicia tu Proyecto</h3>
         <p className="text-sm text-gray-400">Cuéntanos qué necesitas y diseñaremos la arquitectura perfecta.</p>
       </div>
 
       {submitted ? (
-        <div className="bg-neon-green/10 border border-neon-green text-white text-center py-8 rounded-xl animate-fade-in">
-          <p className="text-xl font-bold text-neon-green mb-2">¡Solicitud Recibida!</p>
-          <p className="text-gray-300">Un especialista revisará tus requisitos y te contactará en breve.</p>
+        <div className="bg-neon-green/10 border border-neon-green text-white text-center py-10 rounded-xl animate-fade-in px-4">
+          <p className="text-2xl font-bold text-neon-green mb-4">¡Solicitud Recibida!</p>
+          <p className="text-gray-300 mb-6">Un ingeniero revisará tus requisitos en breve.</p>
+          <button 
+            onClick={() => { setSubmitted(false); setSelectedBudget(""); setSelectedType(""); }} 
+            className="text-neon-cyan hover:underline text-sm"
+          >
+            Enviar otra solicitud
+          </button>
         </div>
       ) : (
         <form
           name="configurador"
           method="POST"
+          action="/"
           data-netlify="true"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
@@ -66,7 +74,7 @@ const ContactForm = () => {
           <input type="hidden" name="form-name" value="configurador" />
           <p hidden><label>Bot Field: <input name="bot-field" /></label></p>
 
-          {/* 1. DATA: Basic Info */}
+          {/* 1. DATA */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-2">Nombre</label>
@@ -92,19 +100,19 @@ const ContactForm = () => {
             </div>
           </div>
 
-          {/* 2. USE CASE: Visual Selectors */}
-          <div>
-            <label className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-3">Uso Principal</label>
+          {/* 2. USE CASE (Custom Radio Buttons) */}
+          <fieldset>
+            <legend className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-3">Uso Principal</legend>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 { id: "gaming", label: "Gaming Elite", icon: <FaGamepad /> },
                 { id: "workstation", label: "Arquitectura / 3D", icon: <FaDesktop /> },
                 { id: "ai", label: "Inteligencia Artificial", icon: <FaServer /> },
-                { id: "streaming", label: "Streaming / Edición", icon: <FaMicrochip /> },
+                { id: "streaming", label: "Streaming", icon: <FaMicrochip /> },
               ].map((type) => (
                 <label 
                   key={type.id}
-                  className={`cursor-pointer border rounded-lg p-4 flex flex-col items-center gap-2 transition-all duration-200
+                  className={`cursor-pointer border rounded-lg p-4 flex flex-col items-center gap-2 transition-all duration-200 select-none
                     ${selectedType === type.id 
                       ? "bg-neon-cyan/20 border-neon-cyan text-white shadow-[0_0_10px_rgba(6,182,212,0.2)]" 
                       : "bg-carbon-black border-gray-700 text-gray-400 hover:border-gray-500"
@@ -116,28 +124,29 @@ const ContactForm = () => {
                     value={type.label} 
                     className="hidden" 
                     onChange={() => setSelectedType(type.id)}
+                    checked={selectedType === type.id}
                     required
                   />
-                  <span className="text-xl mb-1">{type.icon}</span>
-                  <span className="text-xs font-bold text-center">{type.label}</span>
+                  <span className="text-xl mb-1 pointer-events-none">{type.icon}</span>
+                  <span className="text-xs font-bold text-center pointer-events-none">{type.label}</span>
                 </label>
               ))}
             </div>
-          </div>
+          </fieldset>
 
-          {/* 3. BUDGET: Range Selectors */}
-          <div>
-            <label className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-3">Rango de Inversión</label>
+          {/* 3. BUDGET (Custom Radio Buttons) */}
+          <fieldset>
+            <legend className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-3">Rango de Inversión</legend>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 "2.000€ - 3.000€",
                 "3.000€ - 4.500€",
                 "4.500€ - 6.000€",
                 "+6.000€ (Extreme)"
-              ].map((range) => (
+              ].map((range, index) => (
                 <label 
-                  key={range}
-                  className={`cursor-pointer border rounded-lg py-3 px-2 text-center transition-all duration-200
+                  key={index}
+                  className={`cursor-pointer border rounded-lg py-3 px-2 text-center transition-all duration-200 select-none flex items-center justify-center
                     ${selectedBudget === range 
                       ? "bg-neon-green/20 border-neon-green text-white font-bold" 
                       : "bg-carbon-black border-gray-700 text-gray-400 hover:border-gray-500 text-sm"
@@ -149,23 +158,24 @@ const ContactForm = () => {
                     value={range} 
                     className="hidden" 
                     onChange={() => setSelectedBudget(range)}
+                    checked={selectedBudget === range}
                   />
-                  {range}
+                  <span className="pointer-events-none">{range}</span>
                 </label>
               ))}
             </div>
-          </div>
+          </fieldset>
 
-          {/* 4. TECHNICAL DETAILS */}
+          {/* 4. TECHNICAL */}
           <div className="grid md:grid-cols-2 gap-6">
              <div>
-                <label htmlFor="software" className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-2">Software / Juegos Clave</label>
+                <label htmlFor="software" className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-2">Software / Juegos</label>
                 <input
                   type="text"
                   id="software"
                   name="software"
                   className="w-full p-3 border border-gray-600 rounded bg-carbon-black text-white focus:border-neon-cyan transition-all text-sm"
-                  placeholder="Ej: Revit, Unreal 5, Cyberpunk 2077..."
+                  placeholder="Ej: Revit, Cyberpunk 2077..."
                 />
              </div>
              <div>
@@ -176,23 +186,23 @@ const ContactForm = () => {
                   className="w-full p-3 border border-gray-600 rounded bg-carbon-black text-gray-300 focus:border-neon-cyan transition-all text-sm"
                 >
                   <option value="">Seleccionar...</option>
-                  <option value="1080p (Competitive)">1080p (Competitivo)</option>
-                  <option value="1440p (Balanced)">1440p (2K)</option>
-                  <option value="4K (Visual)">4K UHD</option>
-                  <option value="Ultrawide">Ultrawide / Multi-monitor</option>
+                  <option value="1080p">1080p (Competitivo)</option>
+                  <option value="1440p">1440p (2K)</option>
+                  <option value="4K">4K UHD</option>
+                  <option value="Ultrawide">Ultrawide</option>
                 </select>
              </div>
           </div>
 
           {/* 5. MESSAGE */}
           <div>
-            <label htmlFor="message" className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-2">Notas Adicionales</label>
+            <label htmlFor="message" className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-2">Notas / Estética</label>
             <textarea
               id="message"
               name="message"
               rows="3"
               className="w-full p-3 border border-gray-600 rounded bg-carbon-black text-white focus:border-neon-cyan transition-all text-sm"
-              placeholder="¿Alguna preferencia estética? (Ej: Torre negra, sin luces, mucho RGB, refrigeración líquida...)"
+              placeholder="Ej: Torre negra sin luces, refrigeración líquida, silencio absoluto..."
             ></textarea>
           </div>
 

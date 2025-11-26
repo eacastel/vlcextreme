@@ -6,9 +6,9 @@ import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  
+  // ✅ Removed 'dropdownOpen' state. We will use CSS instead.
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -21,25 +21,18 @@ export default function Header() {
     query {
       logo: file(relativePath: { eq: "vlcextreme-logo-header.png" }) {
         childImageSharp {
-          gatsbyImageData(
-            width: 200
-            placeholder: BLURRED
-            formats: [AUTO, WEBP]
-            quality: 90 
-          )
+          gatsbyImageData(width: 200, placeholder: BLURRED, formats: [AUTO, WEBP], quality: 90)
         }
       }
     }
   `);
 
-  // 1. The Product Dropdown Links
   const productLinks = [
     { name: "Gaming Élite", path: "/ordenadores-gaming" },
     { name: "Creadores Extrem", path: "/ordenadores-creadores-streamers" },
     { name: "Workstations IA", path: "/ordenadores-inteligencia-artificial", highlight: true },
   ];
 
-  // 2. The Main Top-Level Links
   const mainLinks = [
     { name: "Configuraciones", path: "/configuraciones" },
     { name: "Blog", path: "/blog" },
@@ -55,38 +48,44 @@ export default function Header() {
           : 'bg-carbon-black border-transparent'
       }`}
     >
-      {/* ✅ RESTORED: py-3 for tighter height */}
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           
-          {/* ✅ RESTORED: Original Logo Sizing Logic */}
           <Link to="/" className="flex-shrink-0 z-50 block" aria-label="Inicio">
             <GatsbyImage
               image={data.logo.childImageSharp.gatsbyImageData}
               alt="VLCExtreme Logo"
-              className="h-12 w-auto" // Height 12 (48px), Width Auto matches aspect ratio
-              imgStyle={{ 
-                objectFit: 'contain', 
-                maxWidth: '200px' // Ensure it doesn't blow up
-              }}
+              className="h-12 w-auto"
+              imgStyle={{ objectFit: 'contain', maxWidth: '200px' }}
             />
           </Link>
 
           {/* ---------------- DESKTOP NAVIGATION ---------------- */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             
-            {/* DROPDOWN: Sistemas */}
-            <div 
-              className="relative group"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              <button className="flex items-center gap-1 text-sm font-bold text-gray-300 hover:text-neon-cyan transition-colors py-2">
-                Sistemas <FaChevronDown className={`text-xs transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+            {/* ✅ FIXED DROPDOWN: 
+               - Removed JS events (onMouseEnter/Leave).
+               - Added 'group' to parent.
+               - Added 'group-hover:...' to child.
+            */}
+            <div className="relative group h-full flex items-center">
+              
+              {/* Trigger Button */}
+              <button 
+                className="flex items-center gap-1 text-sm font-bold text-gray-300 hover:text-neon-cyan transition-colors py-2 focus:outline-none focus:text-neon-cyan"
+                aria-haspopup="true"
+              >
+                Sistemas 
+                {/* Chevron rotates on group hover */}
+                <FaChevronDown className="text-xs transition-transform duration-200 group-hover:rotate-180" />
               </button>
 
               {/* The Dropdown Menu */}
-              <div className={`absolute top-full left-0 w-64 pt-2 transition-all duration-200 ${dropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+              {/* Logic: Hidden by default -> Visible on Group Hover OR Group Focus (Keyboard) */}
+              <div 
+                className="absolute top-full left-0 w-64 pt-2 transition-all duration-200 opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto"
+                aria-label="Submenú Sistemas"
+              >
                 <div className="bg-dark-gray border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2 flex flex-col gap-1">
                   {productLinks.map((item) => (
                     <Link
@@ -144,8 +143,6 @@ export default function Header() {
             }`}
         >
            <ul className="flex flex-col gap-6 text-left">
-              
-              {/* Mobile Products Group */}
               <li className="border-b border-white/10 pb-4 mb-2">
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 block">Sistemas</span>
                 <div className="flex flex-col gap-4 pl-2">
@@ -162,7 +159,6 @@ export default function Header() {
                 </div>
               </li>
 
-              {/* Standard Links */}
               {mainLinks.map((item) => (
                 <li key={item.path}>
                   <Link

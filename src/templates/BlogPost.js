@@ -5,9 +5,8 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Button from "../components/Button"
 import BlogRelatedPosts from "../components/BlogRelatedPosts"
-import BlogBuildsHighlight from "../components/BlogBuildsHighlight" // Ensure this file exists or comment out
 import { renderRichText } from "gatsby-source-contentful/rich-text" 
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@contentful/rich-text-types';
 
 // Helper for reading time
 const getReadingTime = raw => {

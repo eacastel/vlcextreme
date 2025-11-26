@@ -8,7 +8,6 @@ import SelectConfigureCarouselSections from "../components/SelectConfigureCarous
 import { 
   FaTachometerAlt, 
   FaThermometerEmpty, 
-  FaMicrochip, 
   FaGamepad, 
   FaBolt 
 } from 'react-icons/fa';
@@ -16,7 +15,6 @@ import {
   SiNvidia, 
   SiSteam, 
   SiUnrealengine, 
-  SiAmd, 
   SiDiscord 
 } from "react-icons/si";
 

@@ -6,9 +6,6 @@ import Button from '../components/Button'
 import Seo from '../components/Seo'
 import SelectConfigureCarouselSections from "../components/SelectConfigureCarouselSections";
 import { 
-  FaMicrophoneAlt, 
-  FaFilm, 
-  FaStream, 
   FaVolumeMute, 
   FaHdd 
 } from 'react-icons/fa';

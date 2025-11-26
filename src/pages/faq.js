@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import Button from "../components/Button";
-import { FaChevronDown, FaChevronUp, FaSearch, FaWrench, FaShippingFast, FaShieldAlt } from 'react-icons/fa';
+import { FaChevronDown, FaSearch, FaWrench, FaShieldAlt } from 'react-icons/fa';
 
 /* Helper Accordion Component */
 const FaqItem = ({ question, answer }) => {
