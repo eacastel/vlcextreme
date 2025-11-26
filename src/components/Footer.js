@@ -10,7 +10,7 @@ const slugify = (text) =>
     .replace(/\s+/g, "-");
 
 export default function Footer() {
-  // 1. New Main Navigation Links (Matching Header)
+  // 1. Main Navigation (Matching your Header)
   const mainLinks = [
     { name: "Gaming Élite", path: "/ordenadores-gaming" },
     { name: "Creadores Extrem", path: "/ordenadores-creadores-streamers" },
@@ -19,9 +19,10 @@ export default function Footer() {
     { name: "Blog", path: "/blog" },
     { name: "Quiénes somos", path: "/about" },
     { name: "Contacto", path: "/contacto" },
+    { name: "FAQ", path: "/faq" },
   ];
 
-  // 2. Legal Links (Moved to bottom)
+  // 2. Legal Links (Moved to Bottom)
   const legalLinks = [
     "Términos y Condiciones",
     "Condiciones de Venta y Garantía",
@@ -71,6 +72,7 @@ export default function Footer() {
                 <span itemProp="addressLocality"> Ciutat Vella, València</span>{" "}
                 <span itemProp="postalCode">46003</span>
               </span>
+
               <span className="block">
                 <span itemProp="addressRegion">Comunitat Valenciana</span>,{" "}
                 <span itemProp="addressCountry">España</span>
@@ -78,9 +80,10 @@ export default function Footer() {
             </address>
 
             <div className="relative w-full md:w-4/5 overflow-hidden rounded-xl border border-dark-gray">
+              {/* Map iframe - FIXED to HTTPS */}
               <iframe
                 title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24630.466536031196!2d-0.4194819644473506!3d39.49624269909675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f44c5e3b53b%3A0xd864f11aa29a0f37!2sVLCExtreme!5e0!3m2!1sen!2ses!4v1763035261475!5m2!1sen!2ses"
+                src="https://googleusercontent.com/maps.google.com/0" 
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full"
@@ -91,7 +94,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=C%2F+Alta%2C+37%2C+46003+Val%C3%A8ncia"
+              href="https://googleusercontent.com/maps.google.com/1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-3 text-medium-gray hover:text-neon-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
@@ -178,10 +181,18 @@ export default function Footer() {
         {/* ------------------------------------------------------- */}
         {/* BOTTOM BAR: Legal Links + Copyright (UPDATED)           */}
         {/* ------------------------------------------------------- */}
-        <div className="border-t border-dark-gray mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div className="border-t border-dark-gray mt-12 pt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6 text-center md:text-left">
           
+          {/* Copyright */}
+          <div className="text-sm text-medium-gray">
+            <p>
+              © {new Date().getFullYear()} <span itemProp="name">VLCExtreme</span>.
+              Todos los derechos reservados.
+            </p>
+          </div>
+
           {/* Legal Links Row */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-6">
+          <div className="flex flex-wrap justify-center md:justify-end gap-6">
             {legalLinks.map((link) => (
                 <Link 
                     key={link} 
@@ -193,15 +204,7 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Copyright */}
-          <div className="text-sm text-medium-gray">
-            <p>
-              © {new Date().getFullYear()} <span itemProp="name">VLCExtreme</span>.
-              Todos los derechos reservados.
-            </p>
-          </div>
         </div>
-
       </div>
     </footer>
   );
