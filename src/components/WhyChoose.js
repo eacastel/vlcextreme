@@ -53,7 +53,7 @@ const WhyChoose = () => {
     },
     { 
       title: 'Soporte Personalizado', 
-      desc: 'Si tienes dudas, hablas con quien montó tu PC, no con un call center. Soporte directo de técnico a usuario.',
+      desc: 'Si tienes dudas, hablas con quien montó tu PC, no con un call center. Soporte directo de nuestros especialistas a usuarios.',
       image: getImage(data.customPC),
       alt: 'Soporte técnico directo con cliente',
       link: '/contacto' // Context: Contact

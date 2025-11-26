@@ -122,7 +122,7 @@ export default function HeaderLanding() {
                 href={whatsappUrl}
                 className="flex items-center justify-center gap-2 bg-neon-green text-carbon-black py-3 rounded font-bold"
               >
-                <FaWhatsapp /> Hablar con un Técnico
+                <FaWhatsapp /> Hablar con un especialista
               </a>
            </div>
         </div>

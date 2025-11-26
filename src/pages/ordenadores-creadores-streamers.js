@@ -207,7 +207,7 @@ const ProductionWorkstationsPage = ({ data }) => {
                   Diseñamos el hardware que tu espacio necesita.
               </p>
               <Button to="/contacto" color="neoncyan" variant="outline" className="px-10 py-4 text-lg">
-                  Hablar con un Ingeniero
+                  Hablar con un especialista
               </Button>
           </div>
       </section>

@@ -52,7 +52,7 @@ const ContactForm = () => {
       {submitted ? (
         <div className="bg-neon-green/10 border border-neon-green text-white text-center py-8 rounded-xl animate-fade-in">
           <p className="text-xl font-bold text-neon-green mb-2">¡Solicitud Recibida!</p>
-          <p className="text-gray-300">Un ingeniero revisará tus requisitos y te contactará en breve.</p>
+          <p className="text-gray-300">Un especialista revisará tus requisitos y te contactará en breve.</p>
         </div>
       ) : (
         <form

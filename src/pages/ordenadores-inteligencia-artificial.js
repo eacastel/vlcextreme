@@ -231,7 +231,7 @@ const WorkstationsPage = ({ data }) => {
               <h2 className="text-3xl font-bold text-white mb-6">¿Proyecto de Investigación o Enterprise?</h2>
               <p className="text-gray-400 mb-8 text-lg">
                   Las necesidades de cómputo varían drásticamente según el modelo y el dataset. 
-                  No adivines. Habla con nuestros ingenieros para dimensionar tu cluster correctamente.
+                  No adivines. Habla con nuestros especialistas para dimensionar tu cluster correctamente.
               </p>
               <Button to="/contacto" color="purple" variant="solid" className="px-10 py-4 text-lg">
                   Agendar Sesión de Ingeniería

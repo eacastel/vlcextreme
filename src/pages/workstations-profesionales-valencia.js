@@ -116,7 +116,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                                         className="flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
                                     >
                                         <FaWhatsapp className="text-xl" />
-                                        Hablar con un Técnico
+                                        Hablar con un especialista
                                     </Button>
 
                                     <Button
