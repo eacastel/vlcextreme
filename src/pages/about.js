@@ -18,7 +18,7 @@ const AboutPage = ({ data }) => {
       <Seo
         title="Nuestra filosofía | Ingeniería artesanal en València | VLCExtreme"
         description="No somos un almacén, somos un laboratorio. En VLCExtreme diseñamos workstations y ordenadores de alto rendimiento bajo demanda, con componentes seleccionados específicamente para ti."
-        pathname="/nosotros"
+        pathname="/about"
       />
 
       {/* 🔹 HERO: Focus on Philosophy */}

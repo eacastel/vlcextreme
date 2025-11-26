@@ -49,7 +49,7 @@ const WhyChoose = () => {
       desc: 'Tu equipo se prueba durante 24 horas en nuestro lab antes de enviarlo para garantizar estabilidad del 100%, antes de la entrega.',
       image: getImage(data.stressTesting),
       alt: 'Stress testing en laboratorio',
-      link: '/nosotros' // Context: Methodology
+      link: '/about' // Context: Methodology
     },
     { 
       title: 'Soporte Personalizado', 
