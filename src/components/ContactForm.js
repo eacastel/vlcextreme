@@ -10,13 +10,13 @@ const ContactForm = () => {
   const [selectedType, setSelectedType] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
     setIsSubmitting(true);
 
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    // Localhost bypass for testing UI
+    // 1. Localhost Bypass (For testing without Netlify)
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
       setTimeout(() => {
         console.log("📝 [Localhost] Sent:", Object.fromEntries(formData));
@@ -26,18 +26,33 @@ const ContactForm = () => {
       return; 
     }
 
+    // 2. Real Netlify Submission
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
+
+        if (typeof window !== "undefined") {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'generate_lead',
+            'form_location': 'contact_form'
+          });
+        }
+
         setSubmitted(true);
         setIsSubmitting(false);
+        
+        // Reset Form State
+        setSelectedBudget("");
+        setSelectedType("");
+        event.target.reset();
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Error al enviar. Por favor, inténtalo de nuevo.");
+        alert("Hubo un error al enviar. Por favor, recarga y prueba de nuevo.");
         setIsSubmitting(false);
       });
   };
@@ -53,9 +68,9 @@ const ContactForm = () => {
       {submitted ? (
         <div className="bg-neon-green/10 border border-neon-green text-white text-center py-10 rounded-xl animate-fade-in px-4">
           <p className="text-2xl font-bold text-neon-green mb-4">¡Solicitud Recibida!</p>
-          <p className="text-gray-300 mb-6">Un ingeniero revisará tus requisitos en breve.</p>
+          <p className="text-gray-300 mb-6">Un ingeniero revisará tus requisitos y te contactaremos en breve.</p>
           <button 
-            onClick={() => { setSubmitted(false); setSelectedBudget(""); setSelectedType(""); }} 
+            onClick={() => setSubmitted(false)} 
             className="text-neon-cyan hover:underline text-sm"
           >
             Enviar otra solicitud
@@ -65,7 +80,7 @@ const ContactForm = () => {
         <form
           name="configurador"
           method="POST"
-          action="/"
+          action="/" /* Fallback URL */
           data-netlify="true"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
@@ -100,7 +115,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          {/* 2. USE CASE (Custom Radio Buttons) */}
+          {/* 2. USE CASE (Fixed Selection Logic) */}
           <fieldset>
             <legend className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-3">Uso Principal</legend>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -110,31 +125,34 @@ const ContactForm = () => {
                 { id: "ai", label: "Inteligencia Artificial", icon: <FaServer /> },
                 { id: "streaming", label: "Streaming", icon: <FaMicrochip /> },
               ].map((type) => (
-                <label 
-                  key={type.id}
-                  className={`cursor-pointer border rounded-lg p-4 flex flex-col items-center gap-2 transition-all duration-200 select-none
-                    ${selectedType === type.id 
-                      ? "bg-neon-cyan/20 border-neon-cyan text-white shadow-[0_0_10px_rgba(6,182,212,0.2)]" 
-                      : "bg-carbon-black border-gray-700 text-gray-400 hover:border-gray-500"
-                    }`}
-                >
+                <div key={type.id} className="relative">
                   <input 
                     type="radio" 
+                    id={`type-${type.id}`} // Unique ID
                     name="tipo" 
                     value={type.label} 
-                    className="hidden" 
+                    className="peer hidden" // Native radio hidden
                     onChange={() => setSelectedType(type.id)}
                     checked={selectedType === type.id}
                     required
                   />
-                  <span className="text-xl mb-1 pointer-events-none">{type.icon}</span>
-                  <span className="text-xs font-bold text-center pointer-events-none">{type.label}</span>
-                </label>
+                  <label 
+                    htmlFor={`type-${type.id}`} // Connects to input ID
+                    className={`cursor-pointer border rounded-lg p-4 flex flex-col items-center gap-2 transition-all duration-200 h-full
+                      ${selectedType === type.id 
+                        ? "bg-neon-cyan/20 border-neon-cyan text-white shadow-[0_0_10px_rgba(6,182,212,0.2)]" 
+                        : "bg-carbon-black border-gray-700 text-gray-400 hover:border-gray-500"
+                      }`}
+                  >
+                    <span className="text-xl mb-1 pointer-events-none">{type.icon}</span>
+                    <span className="text-xs font-bold text-center pointer-events-none">{type.label}</span>
+                  </label>
+                </div>
               ))}
             </div>
           </fieldset>
 
-          {/* 3. BUDGET (Custom Radio Buttons) */}
+          {/* 3. BUDGET (Fixed Selection Logic) */}
           <fieldset>
             <legend className="block text-xs font-bold text-neon-cyan uppercase tracking-wider mb-3">Rango de Inversión</legend>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -144,24 +162,27 @@ const ContactForm = () => {
                 "4.500€ - 6.000€",
                 "+6.000€ (Extreme)"
               ].map((range, index) => (
-                <label 
-                  key={index}
-                  className={`cursor-pointer border rounded-lg py-3 px-2 text-center transition-all duration-200 select-none flex items-center justify-center
-                    ${selectedBudget === range 
-                      ? "bg-neon-green/20 border-neon-green text-white font-bold" 
-                      : "bg-carbon-black border-gray-700 text-gray-400 hover:border-gray-500 text-sm"
-                    }`}
-                >
+                <div key={index} className="relative">
                   <input 
                     type="radio" 
+                    id={`budget-${index}`} // Unique ID
                     name="presupuesto" 
                     value={range} 
-                    className="hidden" 
+                    className="peer hidden"
                     onChange={() => setSelectedBudget(range)}
                     checked={selectedBudget === range}
                   />
-                  <span className="pointer-events-none">{range}</span>
-                </label>
+                  <label 
+                    htmlFor={`budget-${index}`} // Connects to input ID
+                    className={`cursor-pointer border rounded-lg py-3 px-2 text-center transition-all duration-200 flex items-center justify-center h-full
+                      ${selectedBudget === range 
+                        ? "bg-neon-green/20 border-neon-green text-white font-bold" 
+                        : "bg-carbon-black border-gray-700 text-gray-400 hover:border-gray-500 text-sm"
+                      }`}
+                  >
+                    <span className="pointer-events-none">{range}</span>
+                  </label>
+                </div>
               ))}
             </div>
           </fieldset>

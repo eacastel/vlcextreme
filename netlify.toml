@@ -70,7 +70,16 @@ SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
   status = 301
   force = true
 
+[build]
+  publish = "public"
+  command = "gatsby build"
+
 [dev]
-  command    = "gatsby develop -p 8001 -H 0.0.0.0"
-  targetPort = 8001   
-  port       = 9999   
+  command = "gatsby develop" 
+  
+  targetPort = 8000 
+  
+  port = 9999 
+  
+  publish = "public"
+  autoLaunch = false
