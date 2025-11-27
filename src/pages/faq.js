@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import Button from "../components/Button";
-import { FaChevronDown, FaSearch, FaWrench, FaShieldAlt } from 'react-icons/fa';
+import { 
+    FaChevronDown, 
+    FaChevronUp, 
+    FaSearch, 
+    FaWrench, 
+    FaTruck, 
+    FaMoneyBillWave 
+} from 'react-icons/fa';
 
 /* Helper Accordion Component */
 const FaqItem = ({ question, answer }) => {
@@ -17,7 +24,7 @@ const FaqItem = ({ question, answer }) => {
                     {question}
                 </span>
                 <span className={`ml-4 text-neon-cyan transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-                    <FaChevronDown />
+                    {isOpen ? <FaChevronUp /> : <FaChevronDown />}
                 </span>
             </button>
             <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
@@ -46,7 +53,7 @@ const FaqPage = () => {
                         Centro de Soporte
                     </h1>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Transparencia total sobre cómo trabajamos, cómo pagas y cómo te protegemos.
+                        Transparencia total sobre cómo trabajamos, cómo pagas y cómo protegemos tu inversión.
                     </p>
                 </div>
             </section>
@@ -54,64 +61,82 @@ const FaqPage = () => {
             <div className="bg-dark-gray py-16 px-4">
                 <div className="max-w-4xl mx-auto space-y-16">
                     
-                    {/* Category 1: Purchasing Logic */}
+                    {/* Category 1: Logic & Commission */}
                     <section>
                         <div className="flex items-center gap-3 mb-6">
                             <FaSearch className="text-neon-cyan text-xl" />
-                            <h2 className="text-2xl font-bold text-white">Compras y Pagos</h2>
+                            <h2 className="text-2xl font-bold text-white">Protocolo de Encargo</h2>
                         </div>
                         <div className="bg-carbon-black rounded-xl p-6 border border-white/5">
                             <FaqItem 
                                 question="¿Por qué debo pagar por adelantado?"
-                                answer="Operamos bajo un modelo de 'Comisión'. No almacenamos componentes antiguos. Tu pago asegura la compra inmediata del silicio más fresco disponible en el mercado global, garantizando que recibes la última revisión de hardware, no una caja que lleva 6 meses en una estantería."
+                                answer="Operamos bajo un modelo de 'Ingeniería Bajo Pedido'. No almacenamos componentes antiguos en estanterías. Tu pago asegura la compra inmediata del silicio más fresco (último lote de fabricación) en el mercado global. Esto garantiza que tu garantía empieza el día que recibes el PC, no meses antes."
                             />
                             <FaqItem 
-                                question="¿Puedo financiar mi compra?"
-                                answer="Actualmente trabajamos con transferencia bancaria directa para eliminar comisiones de pasarela y ofrecerte el mejor precio en hardware. Para financiación, recomendamos consultar con tu entidad bancaria habitual antes de realizar el encargo."
+                                question="¿Qué incluye el precio final?"
+                                answer="El presupuesto incluye: Hardware, Montaje Artesanal, Optimización de BIOS/Curvas de Ventilación, Test de Estrés de 24h, Licencia de Sistema Operativo, Embalaje de Seguridad y Envío Asegurado (o Entrega Personal en Valencia)."
                             />
                             <FaqItem 
-                                question="¿Hacéis factura para empresas/autónomos?"
-                                answer="Por supuesto. Todos nuestros equipos se entregan con factura oficial española con IVA desglosado (21%) válida para deducción fiscal. Es nuestro estándar habitual."
+                                question="¿Puedo devolver el equipo si cambio de opinión?"
+                                answer="Al ser bienes confeccionados conforme a las especificaciones del consumidor y claramente personalizados (Art. 103 Ley Defensa Consumidores), no se aplica el derecho de desistimiento estándar. Sin embargo, cubrimos cualquier defecto de funcionamiento con nuestra garantía."
                             />
                         </div>
                     </section>
 
-                    {/* Category 2: Technical & Assembly */}
+                    {/* Category 2: Payment Methods */}
+                    <section>
+                        <div className="flex items-center gap-3 mb-6">
+                            <FaMoneyBillWave className="text-neon-green text-xl" />
+                            <h2 className="text-2xl font-bold text-white">Pagos y Facturación</h2>
+                        </div>
+                        <div className="bg-carbon-black rounded-xl p-6 border border-white/5">
+                            <FaqItem 
+                                question="¿Qué métodos de pago aceptáis?"
+                                answer="Aceptamos Transferencia Bancaria (Recomendado para agilizar trámites de alto valor), Tarjeta de Crédito/Débito y Criptomonedas (Bitcoin/Ethereum bajo consulta). Emitimos factura oficial con IVA desglosado para empresas y autónomos."
+                            />
+                            <FaqItem 
+                                question="¿Ofrecéis financiación?"
+                                answer="Actualmente no gestionamos financiación directa. Recomendamos consultar con tu entidad bancaria habitual antes de realizar el encargo para obtener las mejores condiciones de crédito personal."
+                            />
+                        </div>
+                    </section>
+
+                    {/* Category 3: Technical & OS */}
                     <section>
                         <div className="flex items-center gap-3 mb-6">
                             <FaWrench className="text-purple-500 text-xl" />
-                            <h2 className="text-2xl font-bold text-white">Montaje e Ingeniería</h2>
+                            <h2 className="text-2xl font-bold text-white">Técnica y Software</h2>
                         </div>
                         <div className="bg-carbon-black rounded-xl p-6 border border-white/5">
                             <FaqItem 
-                                question="¿Cuánto tiempo tardáis en entregar el equipo?"
-                                answer="Nuestro ciclo estándar es de 10 a 15 días laborables. Esto incluye: adquisición de componentes (3-5 días), ensamblaje artesanal (1 día) y validación de estrés de 24h (1-2 días). No sacrificamos la calidad por la velocidad."
+                                question="¿Qué Sistema Operativo instaláis?"
+                                answer="Tú eliges. Por defecto instalamos Windows 11 Pro con licencia oficial, limpio de bloatware y optimizado. Si eres desarrollador o científico de datos, podemos entregar el equipo con Linux (Ubuntu/Rocky) o en configuración Dual Boot. Especifícalo al realizar el pedido."
                             />
                             <FaqItem 
-                                question="¿Qué pasa si un componente no está disponible?"
-                                answer="Debido a la volatilidad del mercado High-End, a veces ocurre. Si una pieza específica falta, te contactaremos inmediatamente para proponerte una alternativa de igual o superior rendimiento/calidad. Nunca sustituimos piezas sin tu aprobación."
-                            />
-                            <FaqItem 
-                                question="¿Entregáis el PC con Windows instalado?"
-                                answer="Sí. Instalamos Windows 11 Pro (o Linux bajo petición) y optimizamos la BIOS, drivers y curvas de ventilación. El equipo llega 'Turn-Key': enchufar y trabajar."
+                                question="¿Hacéis Overclocking?"
+                                answer="Aplicamos optimizaciones de estabilidad (XMP/EXPO, PBO, Undervolting) para maximizar el rendimiento térmico. No realizamos overclocking extremo que comprometa la vida útil de los componentes o la garantía del fabricante."
                             />
                         </div>
                     </section>
 
-                    {/* Category 3: Warranty & Shipping */}
+                    {/* Category 4: Shipping & Warranty */}
                     <section>
                         <div className="flex items-center gap-3 mb-6">
-                            <FaShieldAlt className="text-neon-green text-xl" />
-                            <h2 className="text-2xl font-bold text-white">Garantía y Envíos</h2>
+                            <FaTruck className="text-yellow-500 text-xl" />
+                            <h2 className="text-2xl font-bold text-white">Logística y Seguridad</h2>
                         </div>
                         <div className="bg-carbon-black rounded-xl p-6 border border-white/5">
                             <FaqItem 
-                                question="¿Es seguro el envío de un PC tan caro?"
-                                answer="Utilizamos transporte asegurado y un embalaje de grado industrial. El interior del PC se protege con espuma expansiva (Instapak) que inmoviliza la tarjeta gráfica y el disipador para evitar daños por vibración."
+                                question="¿Es seguro el envío de un PC con una RTX 4090?"
+                                answer="Totalmente. Utilizamos espuma expansiva interna (Instapak) que se amolda a los componentes, inmovilizando la tarjeta gráfica y el disipador para que no sufran vibraciones durante el transporte. El equipo viaja como un bloque sólido."
                             />
                             <FaqItem 
-                                question="¿Cómo funciona la garantía de 3 años?"
-                                answer="Ofrecemos Garantía Premium Directa. Si tu equipo falla, no tienes que pelearte con el fabricante de la pieza. Nos contactas a nosotros, diagnosticamos el problema y tramitamos la sustitución. Nosotros somos tu único punto de contacto."
+                                question="¿Entregáis en mano en Valencia?"
+                                answer="Sí. En la Comunidad Valenciana ofrecemos un servicio de 'Entrega VIP' donde un técnico te lleva el equipo personalmente y te ayuda con la puesta en marcha inicial para asegurar que todo llega perfecto."
+                            />
+                            <FaqItem 
+                                question="¿Cómo funciona la garantía?"
+                                answer="Ofrecemos 3 años de garantía oficial en componentes y 1 año de soporte técnico directo sobre el montaje. Si tienes un problema, no llamas a un call center, hablas directamente con el técnico que montó tu máquina."
                             />
                         </div>
                     </section>
@@ -120,9 +145,9 @@ const FaqPage = () => {
 
                 {/* Final CTA */}
                 <div className="text-center mt-20">
-                    <p className="text-gray-400 mb-6">¿No encuentras tu respuesta?</p>
+                    <p className="text-gray-400 mb-6">¿Tienes una duda específica?</p>
                     <Button to="/contacto" color="neoncyan" variant="outline">
-                        Contactar con Soporte
+                        Hablar con un Especialista
                     </Button>
                 </div>
             </div>

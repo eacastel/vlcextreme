@@ -49,19 +49,19 @@ const WorkstationsPage = ({ data }) => {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Infraestructura para la<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
-                Era de la Inteligencia.
+                era de la inteligencia.
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl font-light">
-              Desde <strong>Inferencia Local</strong> hasta <strong>Entrenamiento de LLMs</strong> a gran escala. 
+              Desde <strong>inferencia local</strong> hasta <strong>entrenamiento de LLMs</strong> a gran escala. 
               Diseñamos clusters y estaciones de trabajo validadas para operar 24/7 bajo cargas AVX-512 y CUDA intensivas.
             </p>
             <div className="flex flex-wrap gap-4">
                 <Button to="#models" color="purple" variant="solid" className="shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-                    Ver Arquitecturas
+                    Ver arquitecturas
                 </Button>
                 <Button to="/contacto" color="white" variant="outline">
-                    Consultoría de Hardware
+                    Consultoría de hardware
                 </Button>
             </div>
           </div>
@@ -78,7 +78,7 @@ const WorkstationsPage = ({ data }) => {
                         <span className="text-purple-400">es la VRAM.</span>
                     </h2>
                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                        En el entrenamiento de modelos (LLMs) y Ciencia de Datos, la velocidad del procesador es secundaria. 
+                        En el entrenamiento de modelos (LLMs) y la ciencia de datos, la velocidad del procesador es secundaria. 
                         El límite real es la memoria de vídeo.
                     </p>
                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
@@ -115,7 +115,7 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-carbon-black">
         <div className="container mx-auto px-6 text-center">
             <p className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-12">
-                Entornos Validados & Optimizados
+                Entornos validados & optimizados
             </p>
             
             <div className="flex flex-wrap justify-center gap-12 md:gap-20">
@@ -183,7 +183,7 @@ const WorkstationsPage = ({ data }) => {
       <section className="py-20 bg-dark-gray border-t border-white/5">
         <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-white mb-10 text-center">Diccionario de Hardware IA</h2>
+                <h2 className="text-3xl font-bold text-white mb-10 text-center">Diccionario de hardware IA</h2>
                 
                 <div className="grid md:grid-cols-3 gap-6">
                     {/* Concept 1 */}
@@ -228,13 +228,13 @@ const WorkstationsPage = ({ data }) => {
       {/* 🔹 CTA CONSULTATION */}
       <section className="py-20 bg-gradient-to-b from-dark-gray to-carbon-black border-t border-white/5 text-center">
           <div className="container mx-auto px-6 max-w-3xl">
-              <h2 className="text-3xl font-bold text-white mb-6">¿Proyecto de Investigación o Enterprise?</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">¿Proyecto de investigación o enterprise?</h2>
               <p className="text-gray-400 mb-8 text-lg">
                   Las necesidades de cómputo varían drásticamente según el modelo y el dataset. 
                   No adivines. Habla con nuestros especialistas para dimensionar tu cluster correctamente.
               </p>
               <Button to="/contacto" color="purple" variant="solid" className="px-10 py-4 text-lg">
-                  Agendar Sesión de Ingeniería
+                  Agendar sesión técnica
               </Button>
           </div>
       </section>

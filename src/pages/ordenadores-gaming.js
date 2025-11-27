@@ -60,15 +60,15 @@ const GamingPage = ({ data }) => {
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl font-light">
               Construimos máquinas para quienes la diferencia entre 144 FPS y 240 FPS no es un número, es una ventaja competitiva. 
-              <strong> Latencia Cero. 4K Nativo. Inmersión Total.</strong>
+              <strong> Latencia cero. 4K nativo. Inmersión total.</strong>
             </p>
             
             <div className="flex flex-wrap gap-4">
                 <Button to="#models" color="neongreen" variant="solid" className="shadow-[0_0_20px_rgba(34,197,94,0.4)]">
-                    Configurar mi Máquina
+                    Configurar mi máquina
                 </Button>
                 <Button to="/contacto" color="white" variant="outline">
-                    Consultar Proyecto Sim Racing
+                    Consultar proyecto Sim Racing
                 </Button>
             </div>
           </div>
@@ -84,7 +84,7 @@ const GamingPage = ({ data }) => {
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Afinado como un <br/>
-                        <span className="text-neon-green">Motor de Competición.</span>
+                        <span className="text-neon-green">motor de competición.</span>
                     </h2>
                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                         Cualquiera puede montar piezas caras. Nosotros ajustamos la "telemetría" de tu equipo.
@@ -100,7 +100,7 @@ const GamingPage = ({ data }) => {
                         <div className="bg-carbon-black p-4 rounded border border-white/5 group hover:border-neon-green/30 transition-colors">
                             <FaThermometerEmpty className="text-neon-green text-2xl mb-2"/>
                             <h4 className="text-white font-bold">Thermal Velocity</h4>
-                            <p className="text-xs text-gray-500">Refrigeración líquida calculada para mantener el Boost Clock al máximo indefinidamente.</p>
+                            <p className="text-xs text-gray-500">Refrigeración líquida calculada para mantener el boost clock al máximo indefinidamente.</p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ const GamingPage = ({ data }) => {
       <section className="py-20 bg-carbon-black">
         <div className="container mx-auto px-6 text-center">
             <p className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-12">
-                Optimizado para Tecnologías Next-Gen
+                Optimizado para tecnologías Next-Gen
             </p>
             
             <div className="flex flex-wrap justify-center gap-12 md:gap-20">
@@ -209,11 +209,10 @@ const GamingPage = ({ data }) => {
           
           <div className="container mx-auto px-6 max-w-3xl relative z-10">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                  Tu Setup merece un motor V12.
+                  Tu setup merece un motor V12.
               </h2>
               <p className="text-gray-400 mb-10 text-lg">
-                  Deja de jugar con las configuraciones gráficas en "Medio". 
-                  Experimenta los juegos tal y como los desarrolladores los imaginaron.
+                  Deja de sacrificar resolución. Juega por fin al máximo nivel y sumérgete en cada mundo tal como sus desarrolladores lo diseñaron.
               </p>
               <Button to="/contacto" color="neongreen" variant="solid" className="px-12 py-5 text-xl shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:shadow-[0_0_50px_rgba(34,197,94,0.7)]">
                   Entrar en Pista

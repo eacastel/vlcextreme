@@ -17,6 +17,12 @@ SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
   force = true
 
 [[redirects]]
+  from = "/terminos-y-condiciones/"
+  to = "/condiciones-de-uso/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/politica-de-garantia/"
   to = "/condiciones-de-venta-y-garantia/"
   status = 301

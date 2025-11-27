@@ -24,8 +24,8 @@ export default function Footer() {
 
   // 2. Legal Links (Moved to Bottom)
   const legalLinks = [
-    "Términos y Condiciones",
     "Condiciones de Venta y Garantía",
+    "Condiciones de Uso",
     "Privacidad",
     "Cookies"
   ];

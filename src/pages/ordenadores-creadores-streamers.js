@@ -49,9 +49,9 @@ const ProductionWorkstationsPage = ({ data }) => {
               Studio Grade Engineering
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Renderiza en Tiempo Real.<br/>
+              Renderiza en tiempo real.<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-blue-500">
-                Transmite sin Cortes.
+                Transmite sin cortes.
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl font-light">
@@ -60,10 +60,10 @@ const ProductionWorkstationsPage = ({ data }) => {
             </p>
             <div className="flex flex-wrap gap-4">
                 <Button to="#models" color="neoncyan" variant="solid" className="shadow-[0_0_20px_rgba(6,182,212,0.4)]">
-                    Ver Configuraciones de Estudio
+                    Ver configuraciones de estudio
                 </Button>
                 <Button to="/contacto" color="white" variant="outline">
-                    Consultar Proyecto
+                    Consultar proyecto
                 </Button>
             </div>
           </div>
@@ -85,7 +85,7 @@ const ProductionWorkstationsPage = ({ data }) => {
                         No basta con poner componentes potentes; hay que domar la termodinámica.
                     </p>
                     <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                        Nuestras Workstations de la serie <strong>Studio</strong> utilizan curvas de ventilación personalizadas en BIOS y chasis con aislamiento acústico para garantizar que tu micrófono solo capte tu voz, no tu PC.
+                        Nuestras Workstations de la serie <strong>studio</strong> utilizan curvas de ventilación personalizadas en BIOS y chasis con aislamiento acústico para garantizar que tu micrófono solo capte tu voz, no tu PC.
                     </p>
                     
                     <div className="grid grid-cols-2 gap-4 mt-8">
@@ -124,7 +124,7 @@ const ProductionWorkstationsPage = ({ data }) => {
       <section className="py-20 bg-carbon-black">
         <div className="container mx-auto px-6 text-center">
             <p className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-12">
-                Optimizado para tu Flujo de Trabajo
+                Optimizado para tu flujo de trabajo
             </p>
             
             <div className="flex flex-wrap justify-center gap-12 md:gap-20">
