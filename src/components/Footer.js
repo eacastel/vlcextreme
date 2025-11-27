@@ -80,21 +80,25 @@ export default function Footer() {
             </address>
 
             <div className="relative w-full md:w-4/5 overflow-hidden rounded-xl border border-dark-gray">
-              {/* Map iframe - FIXED to HTTPS */}
+              {/* Map iframe */}
               <iframe
                 title="Mapa de ubicación VLCExtreme en C/ de Dalt, València"
-                src="https://googleusercontent.com/maps.google.com/0" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24630.466536031196!2d-0.4194819644473506!3d39.49624269909675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f44c5e3b53b%3A0xd864f11aa29a0f37!2sVLCExtreme!5e0!3m2!1sen!2ses!4v1763035261475!5m2!1sen!2ses"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full"
                 style={{ height: 180 }}
                 aria-label="Mapa de Google con la ubicación de VLCExtreme en C/ de Dalt, València"
               />
+
+
+              {/* Dark overlay (does not block clicks) */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-black/15 pointer-events-none rounded-xl" />
+
             </div>
 
             <a
-              href="https://googleusercontent.com/maps.google.com/1"
+              href="https://www.google.com/maps/search/?api=1&query=C%2F+Alta%2C+37%2C+46003+Val%C3%A8ncia"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-3 text-medium-gray hover:text-neon-cyan transition-colors focus:outline-none focus:ring-2 focus:ring-neon-cyan/60 rounded"
