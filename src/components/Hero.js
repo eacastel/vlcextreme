@@ -28,16 +28,15 @@ const Hero = ({ backgroundImage }) => {
           </span>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Ordenadores para los <br/>
+            Ordenadores para <br/>
             {/* The "Awesome Colors" Gradient */}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-cyan">
-              Arquitectos del Futuro.
+              visionarios.
             </span>
           </h1>
 
           <p className="text-xl text-gray-300 mb-10 font-light leading-relaxed max-w-2xl">
-            Ingeniería artesanal para el 1% que no acepta cuellos de botella. 
-            <strong>Gaming de élite, IA y Renderizado </strong> sin compromisos.
+            Ingeniería artesanal para quienes exigen rendimiento extremo en <span className="font-semibold">IA, renderizado y gaming</span> de alto nivel.
           </p>
           
           {/* Custom Buttons */}
