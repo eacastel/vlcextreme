@@ -1,43 +1,36 @@
 import React from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, useStaticQuery } from 'gatsby'
+import { FaQuoteLeft, FaCheckCircle } from 'react-icons/fa' 
+
 
 const Testimonials = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      googleIcon: file(relativePath: { eq: "google-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 32, layout: FIXED, placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-    }
-  `)
-
-  const googleImg = getImage(data.googleIcon);
 
   const testimonials = [
     {
-      text: 'Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de entender exactamente qué necesitaba y me recomendaron la configuración perfecta. El rendimiento ha superado todas mis expectativas: es rápido, silencioso, potente y está optimizado al detalle. Además, el servicio postventa demuestra un compromiso real con el cliente.',
+      id: 1,
+      text: 'Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de entender exactamente qué necesitaba y me recomendaron la configuración perfecta. El rendimiento ha superado todas mis expectativas: es rápido, silencioso, potente y está optimizado al detalle.',
       author: 'Cristian A.',
+      role: 'Diseñador 3D',
       rating: 5,
-      icon: googleImg,
-      source: "Google Reviews"
+      featured: true
     },
     {
-      text: 'Mi estación VLCExtreme maneja grandes datasets de IA sin problemas',
+      id: 2,
+      text: 'Mi estación VLCExtreme maneja grandes datasets de IA sin problemas. La estabilidad en cargas de 24h es impresionante.',
       author: 'Laura G.',
+      role: 'Data Scientist',
       rating: 5,
     },
     {
-      text: '6 meses de uso y funciona como el primer día',
+      id: 3,
+      text: '6 meses de uso intensivo y funciona como el primer día. Las temperaturas de la GPU nunca pasan de 65 grados.',
       author: 'David S.',
+      role: 'Editor de Video',
       rating: 5,
     }
   ]
 
   const averageRating = testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
 
-  // Schema Object
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -52,70 +45,71 @@ const Testimonials = () => {
     "review": testimonials.map(t => ({
       "@type": "Review",
       "reviewBody": t.text,
-      "author": {
-        "@type": "Person",
-        "name": t.author
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": t.rating,
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "author": { "@type": "Person", "name": t.author },
+      "reviewRating": { "@type": "Rating", "ratingValue": t.rating, "bestRating": "5", "worstRating": "1" }
     }))
   };
 
   return (
-    <section className="py-20 bg-carbon-black">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-light-gray text-center mb-12">
-          Rendimiento garantizado, clientes satisfechos
+    <section className="py-24 bg-carbon-black border-t border-white/5">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-16">
+            Rendimiento garantizado, <span className="text-neon-cyan">clientes satisfechos</span>.
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="p-6 bg-dark-gray rounded-lg border border-dark-gray hover:border-neon-cyan transition-all flex flex-col shadow-lg">
+            <div 
+              key={index} 
+              className={`relative p-8 bg-dark-gray rounded-2xl border border-white/5 hover:border-neon-cyan/30 transition-all flex flex-col shadow-2xl group 
+              ${testimonial.featured ? 'md:col-span-2 bg-gradient-to-br from-dark-gray to-[#1a1a1a]' : 'md:col-span-1'}`}
+            >
               
-              {/* ✅ RESTORED: Icon Header with White Background */}
-              {testimonial.icon && (
-                <div className="flex items-center gap-3 mb-4 border-b border-white/5 pb-4">
-                    {/* The White Circle Wrapper */}
-                    <div className="bg-white p-1.5 rounded-full flex items-center justify-center w-8 h-8 shrink-0">
-                        <GatsbyImage 
-                            image={testimonial.icon} 
-                            alt={testimonial.source || "Review Source"} 
-                            className="w-full h-full"
-                            imgStyle={{ objectFit: 'contain' }}
-                        />
-                    </div>
-                    {testimonial.source && (
-                        <span className="text-xs font-bold text-gray-300 uppercase tracking-widest">
-                            {testimonial.source}
-                        </span>
-                    )}
-                </div>
-              )}
+              {/* Watermark Quote */}
+              <FaQuoteLeft className="absolute top-6 right-6 text-6xl text-white/5 group-hover:text-neon-cyan/5 transition-colors duration-500" />
 
-              {/* Stars */}
-              <div className="flex gap-1 text-neon-cyan mb-4 text-sm">
+              {/* HEADER: Uniform Verified Badge */}
+              <div className="flex items-center gap-4 mb-6 relative z-10">
+                  {/* Now we always show the strong checkmark badge */}
+                  <div className="flex items-center gap-2 opacity-60">
+                     <FaCheckCircle className="text-neon-green text-lg"/>
+                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
+                         Compra Verificada
+                     </span>
+                  </div>
+              </div>
+
+              {/* Yellow Stars */}
+              <div className="flex gap-1 text-neon-yellow mb-6 text-lg relative z-10">
                 {'★'.repeat(testimonial.rating)}
               </div>
 
               {/* Text */}
-              <p className="text-medium-gray mb-6 text-sm leading-relaxed italic flex-grow">
-                "{testimonial.text}"
-              </p>
+              <blockquote className="relative z-10 mb-8 flex-grow">
+                  <p className={`text-gray-300 leading-relaxed italic font-light ${testimonial.featured ? 'text-lg md:text-xl' : 'text-sm'}`}>
+                    "{testimonial.text}"
+                  </p>
+              </blockquote>
 
-              {/* Author */}
-              <p className="text-light-gray font-bold text-sm">
-                - {testimonial.author}
-              </p>
+              {/* Footer: Author */}
+              <div className="mt-auto pt-6 border-t border-white/10 flex justify-between items-center">
+                  <div>
+                    <p className="text-white font-bold text-base tracking-wide">
+                        {testimonial.author}
+                    </p>
+                    {testimonial.role && (
+                        <p className="text-xs text-neon-cyan mt-1 font-mono opacity-80">
+                            {testimonial.role}
+                        </p>
+                    )}
+                  </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ✅ SAFE JSON-LD (Prevents Meta Pixel Error) */}
+      {/* Safe JSON-LD */}
       <script 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
