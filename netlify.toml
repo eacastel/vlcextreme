@@ -76,10 +76,7 @@ SECRETS_SCAN_OMIT_KEYS = "CONTENTFUL_SPACE_ID"
 
 [dev]
   command = "gatsby develop" 
-  
   targetPort = 8000 
-  
   port = 9999 
-  
   publish = "public"
   autoLaunch = false
