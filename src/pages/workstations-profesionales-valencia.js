@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import LayoutLanding from "../components/LayoutLanding";
+import Layout from "../components/Layout";
 import PricingTiers from "../components/PricingTiers";
 import Seo from "../components/Seo";
 import Button from "../components/Button";
@@ -65,7 +65,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
 
 
     return (
-        <LayoutLanding hideNavigation={true}>
+        <Layout hideNavigation={true}>
             <Seo
                 title="Workstations Profesionales en València | VLCExtreme"
                 description="Ingeniería informática artesanal. Workstations para 3D, IA y Arquitectura. Montaje manual en València. Soporte directo."
@@ -541,7 +541,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                 </section>
 
             </main>
-        </LayoutLanding>
+        </Layout>
     );
 };
 
