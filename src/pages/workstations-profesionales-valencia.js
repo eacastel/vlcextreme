@@ -318,67 +318,99 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                 {/* 5. PRICING TIERS */}
                 <PricingTiers />
 
-                {/* 6. SOCIAL PROOF (Review + Case Study) */}
-                <section className="bg-dark-gray py-16 px-4">
-                    <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-
-                        {/* Google Review */}
-                        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors">
-                            <div className="flex items-center gap-3 mb-4">
-                                {/* ✅ GOOGLE ICON ADDED HERE */}
-                                {googleIcon && (
-                                    <div className=" p-1 rounded-full flex items-center justify-center w-8 h-8">
-                                        <GatsbyImage
-                                            image={googleIcon}
-                                            alt="Google G Logo"
-                                            className="w-5 h-5"
-                                            objectFit="contain"
-                                        />
-                                    </div>
-                                )}
-                                <span className="text-light-gray font-bold text-lg tracking-wide">Google Reviews</span>
-                            </div>
-
-                            <div className="flex text-neon-yellow text-xl mb-4 shadow-neon-yellow/20 drop-shadow-sm">
-                                ★★★★★
-                            </div>
-
-                            <blockquote className="relative mt-8">
-                                {/* BIG QUOTE MARK */}
-                                {/* Increased size to text-8xl and adjusted positioning */}
-                                <span className="text-8xl text-white/10 absolute -top-8 -left-3 font-serif leading-none select-none pointer-events-none">
-                                    “
-                                </span>
-
-                                {/* TEXT */}
-                                {/* Added 'indent-16' to push the first line */}
-                                <p className="text-gray-400 italic leading-relaxed relative z-10 indent-6">
-                                    Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de entender exactamente qué necesitaba y me recomendaron la configuración perfecta. </p>
-                                    <p className="text-gray-400 italic leading-relaxed relative z-10 mt-4">
-                                    El rendimiento ha superado todas mis expectativas: es rápido, silencioso, potente y está optimizado al detalle. Además, el servicio postventa demuestra un compromiso real con el cliente.
-                                </p>
-                            </blockquote>
+{/* 6. SOCIAL PROOF (Review + Case Study) */}
+<section className="bg-dark-gray py-16 px-4">
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
+        
+        {/* ---------------- LEFT CARD: The Review (Editorial Style) ---------------- */}
+        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors relative overflow-hidden group flex flex-col">
+            
+            {/* Header: Google Icon & Stars */}
+            <div className="relative z-10 flex justify-between items-start mb-8">
+                <div className="flex items-center gap-3">
+                    {googleIcon && (
+                        <div className="bg-white p-1.5 rounded-full flex items-center justify-center w-8 h-8 shadow-lg shrink-0">
+                            <GatsbyImage 
+                                image={googleIcon} 
+                                alt="Google Reviews" 
+                                className="w-full h-full"
+                                objectFit="contain"
+                            />
                         </div>
+                    )}
+                    <span className="text-light-gray font-bold text-xs uppercase tracking-[0.15em] pt-1">Google Reviews</span>
+                </div>
+                <div className="flex text-neon-yellow text-lg shadow-neon-green/20 drop-shadow-sm">
+                    ★★★★★
+                </div>
+            </div>
+            
+            {/* THE QUOTE CONTENT */}
+            <blockquote className="relative mb-8 flex-grow">
+                {/* Giant Quote Mark Background (Watermark) */}
+                <span className="text-[10rem] text-white/5 absolute -top-20 -left-8 font-serif leading-none select-none pointer-events-none group-hover:text-neon-green/5 transition-colors duration-500">
+                    “
+                </span>
 
-                        {/* Case Study */}
-                        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors">
-                            <div className="flex items-center gap-3 mb-4">
-                                <span className="text-neon-cyan text-lg font-bold">CASE STUDY</span>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3">
-                                Workstation 3D & Unreal
-                            </h3>
-                            <p className="text-gray-400 mb-4 text-sm">
-                                Un diseñador de escenarios virtuales en València necesitaba un equipo para 3ds Max y Unreal. Su estación fue optimizada para renderizado GPU ininterrumpido.
-                            </p>
-                            <ul className="text-gray-500 list-disc pl-5 space-y-1 text-sm marker:text-neon-cyan">
-                                <li>Renderizado estable de escenas complejas.</li>
-                                <li>Silencio absoluto en carga media.</li>
-                                <li>Entrega lista para producir en 10 días.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                {/* Text Paragraph 1 (Indented for Magazine Look) */}
+                <p className="text-gray-300 italic leading-relaxed relative z-10 indent-12 text-lg font-light">
+                    Desde el primer contacto, el trato fue impecable. Se tomaron el tiempo de entender exactamente qué necesitaba y me recomendaron la configuración perfecta.
+                </p>
+                
+                {/* Text Paragraph 2 */}
+                <p className="text-gray-300 italic leading-relaxed relative z-10 mt-4 text-lg font-light">
+                    El rendimiento ha superado todas mis expectativas: es rápido, silencioso, potente y está optimizado al detalle.
+                </p>
+            </blockquote>
+
+            {/* Author Footer */}
+            <div className="border-t border-white/10 pt-6 mt-auto relative z-10">
+                <p className="text-white font-bold text-base tracking-wide">
+                    Cristian A.
+                </p>
+                <p className="text-xs text-neon-cyan mt-1 font-mono opacity-80">
+                    Diseñador 3D
+                </p>
+            </div>
+        </div>
+
+        {/* ---------------- RIGHT CARD: The Case Study ---------------- */}
+        <div className="bg-carbon-black/60 border border-white/5 rounded-2xl p-8 hover:border-neon-cyan/30 transition-colors h-full flex flex-col justify-center group">
+            <div className="flex items-center gap-3 mb-6">
+                <span className="text-neon-cyan text-[10px] font-bold uppercase tracking-[0.2em] border border-neon-cyan/30 px-3 py-1 rounded bg-neon-cyan/5">
+                    Case Study
+                </span>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-neon-cyan transition-colors">
+                Workstation 3D & Unreal
+            </h3>
+            
+            <p className="text-gray-400 mb-8 text-base leading-relaxed">
+                Un diseñador de escenarios virtuales en València necesitaba un equipo para 3ds Max y Unreal Engine 5. 
+                Su estación fue optimizada específicamente para <strong>renderizado GPU ininterrumpido</strong>.
+            </p>
+            
+            <div className="bg-dark-gray/50 rounded-xl p-5 border border-white/5">
+                <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-neon-cyan mt-1">✓</span> 
+                        Renderizado estable de escenas complejas.
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-neon-cyan mt-1">✓</span> 
+                        Silencio absoluto en carga media.
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-neon-cyan mt-1">✓</span> 
+                        Entrega lista para producir en 10 días.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</section>
 
                 {/* 7. MANIFESTO (The Vacuum Story - Empowered) */}
                 <section className="bg-carbon-black py-24 px-4 border-t border-white/5 relative overflow-hidden">
