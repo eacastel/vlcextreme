@@ -15,6 +15,10 @@ const ContactForm = () => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
+    
+    // EXTRACT DATA FOR ENHANCED CONVERSIONS
+    const userEmail = formData.get("email"); // Get the email field
+    const userName = formData.get("name");   // Get the name (optional but good)
 
     // 1. Localhost Bypass (For testing without Netlify)
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
@@ -34,11 +38,14 @@ const ContactForm = () => {
     })
       .then(() => {
 
+        // ✅ ENHANCED CONVERSION DATALAYER PUSH
         if (typeof window !== "undefined") {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'generate_lead',
-            'form_location': 'contact_form'
+            'form_location': 'contact_form',
+            'user_email': userEmail, // Pushing the captured email
+            'user_name': userName    // Pushing the captured name
           });
         }
 

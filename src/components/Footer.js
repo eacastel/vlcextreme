@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import PaymentMethods from "./PaymentMethods";
+import horchataLogo from "../images/horchata-logo.svg";
 
 const slugify = (text) =>
   text
@@ -46,7 +47,7 @@ export default function Footer() {
       <meta itemProp="name" content="VLCExtreme" />
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
-          
+
           {/* ------------------------------------------------------- */}
           {/* COL 1 & 2: Brand, About & Address/Map (Kept as is)      */}
           {/* ------------------------------------------------------- */}
@@ -183,19 +184,39 @@ export default function Footer() {
         </div>
 
         {/* ------------------------------------------------------- */}
-        {/* BOTTOM BAR: Legal Links + Copyright (UPDATED)           */}
+        {/* BOTTOM BAR: Updated with SVG Logo                       */}
         {/* ------------------------------------------------------- */}
-        <div className="border-t border-dark-gray mt-12 pt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div className="border-t border-dark-gray mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           
-          {/* Copyright */}
-          <div className="text-sm text-medium-gray">
-            <p>
+          {/* LEFT SIDE: Copyright & Dev Credit */}
+          <div className="flex flex-col gap-2">
+            
+            <p className="text-sm text-medium-gray">
               © {new Date().getFullYear()} <span itemProp="name">VLCExtreme</span>.
               Todos los derechos reservados.
             </p>
+
+            <p className="text-xs text-gray-500 flex items-center justify-center md:justify-start gap-1 ml-2">
+              Desarrollo digital por{' '}
+              <a 
+                href="https://horchatalabs.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-bold text-gray-400 hover:text-neon-cyan transition-colors duration-300 flex items-center gap-1 group"
+                aria-label="Visitar Horchata Labs, desarrolladores del sitio"
+              >
+                {/* 👇 2. LOGO IMPLEMENTATION */}
+                <img 
+                    src={horchataLogo} 
+                    alt="Horchata Labs Logo" 
+                    className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 -mt-[4px]"
+                />
+                Horchata Labs
+              </a>
+            </p>
           </div>
 
-          {/* Legal Links Row */}
+          {/* RIGHT SIDE: Legal Links */}
           <div className="flex flex-wrap justify-center md:justify-end gap-6">
             {legalLinks.map((link) => (
                 <Link 
