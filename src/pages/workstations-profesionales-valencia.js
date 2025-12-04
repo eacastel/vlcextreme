@@ -183,7 +183,7 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                         {/* Left: Text & Icons */}
                         <div>
                             <h2 className="text-3xl font-bold text-white mb-2">
-                                Ingeniería de Sistemas,
+                                Arquitectura de Alto Rendimiento,
                             </h2>
                             <h3 className="text-2xl font-bold text-gray-600 mb-8">
                                 no ensamblaje rápido.
@@ -461,8 +461,8 @@ const WorkstationsProfesionalesPage = ({ data }) => {
                         <div className="bg-carbon-black rounded-2xl p-6 md:p-10 border border-white/5 shadow-2xl">
 
                             <FaqItem
-                                question="¿Vendéis componentes sueltos o asesoráis sobre montajes caseros?"
-                                answer="No. Somos una firma de ingeniería de sistemas. Nuestro valor reside en el diseño, montaje, validación y garantía de equipos completos 'llave en mano'. No comercializamos componentes sueltos."
+                                question="¿Vendéis componentes sueltos o asesoráis sobre montajes externos?"
+                                answer="Nos especializamos exclusivamente en la arquitectura de sistemas completos. Nuestra filosofía es ofrecer lo mejor de lo mejor, sin compromisos. Nos dedicamos exclusivamente a crear la máquina definitiva, donde cada pieza ha sido seleccionada y validada para trabajar en perfecta armonía y entregar lo mejor en equipos de alto rendimiento diseñados, validados y garantizados como una unidad 'llave en mano'. Por ello, no comercializamos hardware suelto ni damos soporte a equipos no ensamblados por nosotros."
                             />
 
                             <FaqItem
