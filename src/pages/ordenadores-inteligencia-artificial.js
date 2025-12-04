@@ -22,7 +22,7 @@ const WorkstationsPage = ({ data }) => {
   return (
     <Layout>
       <Seo
-        title="Workstations IA & Deep Learning | NVIDIA H100 & Threadripper | VLCExtreme"
+        title="Workstations IA & Deep Learning | RTX 5090, A6000 & Threadripper | VLCExtreme"
         description="Infraestructura de cómputo para Inteligencia Artificial en Valencia. Servidores y Workstations optimizados para entrenamiento LLM, Data Science y Machine Learning con soporte CUDA nativo."
         image="/og-pc-ia.jpg"
         pathname="/ordenadores-inteligencia-artificial"
